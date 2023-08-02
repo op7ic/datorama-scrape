@@ -31,7 +31,7 @@ jobs:
         pip install bs4
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: execute py script
-      run: python test.py
+      run: python datorama-scrape.py
     - name: commit files
       run: |
         git config --local user.email "action@github.com"
