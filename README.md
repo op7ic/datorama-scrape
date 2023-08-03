@@ -1,2 +1,2 @@
-# Datorama Pull 
-Pulls Datorama results daily and store results in datorama-scrape.csv file
+# Datorama scrape 
+This repo contains a script and automated Github Actions to scrape data from [Datorama]( https://www.dataroma.com/m/home.php) and store results in a CSV file. 
