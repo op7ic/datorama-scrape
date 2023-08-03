@@ -15,7 +15,7 @@ def get_investors():
     portfolio = []
 
 
-    with open('datorama-scrape.csv', 'w', newline='', encoding='utf-8') as f:
+    with open('datorama-holdings.csv', 'w', newline='', encoding='utf-8') as f:
 	    csv_header = ['Investor','Update','Ticker','Action','Purchased Price','Current Price']
 	    writer = csv.writer(f)
 	    writer.writerow(csv_header)
