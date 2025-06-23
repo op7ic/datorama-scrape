@@ -21,6 +21,7 @@ jobs:
           latest_holdings.csv
           analysis/
           holdings/
+          scrape_metadata.json
         sparse-checkout-cone-mode: false
     
     - name: Set up Python 3.10
