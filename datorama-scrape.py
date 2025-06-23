@@ -9,16 +9,6 @@ import re
 import time
 from collections import defaultdict
 
-"""
-Fixed Dataroma Scraper - Key improvements:
-1. Properly filters manager links (only holdings.php?m=, not stock.php)
-2. Better column detection for percentage values
-3. Processes ALL managers, not just first 3
-4. Enhanced debugging with HTML saves
-5. Rate limiting to avoid being blocked
-6. More robust price and sector extraction
-"""
-
 class DataromaScraper:
     def __init__(self):
         self.base_url = "https://www.dataroma.com/m/"
