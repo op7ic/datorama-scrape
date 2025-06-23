@@ -1,0 +1,98 @@
+{
+  "analysis_date": "2025-06-23",
+  "total_managers": 80,
+  "total_unique_stocks": 1508,
+  "total_positions": 3223,
+  "positions_with_valid_percentages": 0,
+  "data_quality": "Partial (Dataroma prices only)",
+  "market_cap_distribution": {},
+  "sector_distribution": {
+    "Unknown": 3223
+  },
+  "top_10_most_held": {
+    "MSFT": {
+      "company": "Microsoft Corp.",
+      "manager_count": 35,
+      "avg_portfolio_pct": 0
+    },
+    "GOOGL": {
+      "company": "Alphabet Inc.",
+      "manager_count": 30,
+      "avg_portfolio_pct": 0
+    },
+    "GOOG": {
+      "company": "Alphabet Inc. CL C",
+      "manager_count": 26,
+      "avg_portfolio_pct": 0
+    },
+    "V": {
+      "company": "Visa Inc.",
+      "manager_count": 24,
+      "avg_portfolio_pct": 0
+    },
+    "AMZN": {
+      "company": "Amazon.com Inc.",
+      "manager_count": 24,
+      "avg_portfolio_pct": 0
+    },
+    "META": {
+      "company": "Meta Platforms Inc.",
+      "manager_count": 24,
+      "avg_portfolio_pct": 0
+    },
+    "BRK.B": {
+      "company": "Berkshire Hathaway CL B",
+      "manager_count": 20,
+      "avg_portfolio_pct": 0
+    },
+    "COF": {
+      "company": "Capital One Financial",
+      "manager_count": 18,
+      "avg_portfolio_pct": 0
+    },
+    "UNH": {
+      "company": "United Health Group Inc.",
+      "manager_count": 17,
+      "avg_portfolio_pct": 0
+    },
+    "AAPL": {
+      "company": "Apple Inc.",
+      "manager_count": 17,
+      "avg_portfolio_pct": 0
+    }
+  },
+  "top_5_by_conviction": {
+    "MSFT": {
+      "company": "Microsoft Corp.",
+      "conviction_score": 70,
+      "manager_count": 35,
+      "avg_portfolio_pct": 0
+    },
+    "GOOGL": {
+      "company": "Alphabet Inc.",
+      "conviction_score": 60,
+      "manager_count": 30,
+      "avg_portfolio_pct": 0
+    },
+    "GOOG": {
+      "company": "Alphabet Inc. CL C",
+      "conviction_score": 52,
+      "manager_count": 26,
+      "avg_portfolio_pct": 0
+    },
+    "V": {
+      "company": "Visa Inc.",
+      "conviction_score": 48,
+      "manager_count": 24,
+      "avg_portfolio_pct": 0
+    },
+    "AMZN": {
+      "company": "Amazon.com Inc.",
+      "conviction_score": 48,
+      "manager_count": 24,
+      "avg_portfolio_pct": 0
+    }
+  },
+  "top_5_concentrated_positions": {},
+  "top_5_hidden_gems": {}
+}
