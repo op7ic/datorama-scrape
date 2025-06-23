@@ -8,7 +8,7 @@ import pandas as pd
 
 class DataromaScraper:
     def __init__(self):
-        self.base_url = "https://www.dataroma.com"
+        self.base_url = "https://www.dataroma.com/m/"
         self.headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"}
         self.holdings_dir = "holdings"
         self.ensure_directories()
