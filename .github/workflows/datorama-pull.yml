@@ -63,7 +63,7 @@ jobs:
     - name: Run smart scraper
       run: |
         echo "Starting Dataroma smart scraper..."
-        python smart_dataroma_scraper.py
+        python datorama-scrape.py
         
         echo ""
         echo "Scraper completed. Checking cache..."
@@ -74,7 +74,7 @@ jobs:
     - name: Analyze holdings
       run: |
         echo "Analyzing holdings..."
-        python pure_dataroma_analyzer.py --mode current
+        python analyze_holdings.py --mode current
     
     - name: Verify output
       run: |
@@ -119,7 +119,7 @@ jobs:
         done
         
         # Re-run analyzer in full mode
-        python pure_dataroma_analyzer.py --mode full
+        python analyze_holdings.py --mode full
     
     - name: Prepare commit
       run: |
