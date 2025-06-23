@@ -1,28 +1,54 @@
-name: datorama pull with analysis
+name: Dataroma Smart Scraper
+
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   schedule:
-  - cron: "0 0 * * *"  # Daily at midnight UTC
+    - cron: "0 0 * * *"  # Daily at midnight UTC
   workflow_dispatch:  # Allow manual trigger
+
 permissions:
   contents: write
+
 jobs:
-  build:
+  scrape-and-analyze:
     runs-on: ubuntu-latest
     steps:
+    # Use sparse checkout to minimize download
     - uses: actions/checkout@v3
       with:
         sparse-checkout: |
           *.py
-          requirements.txt
-          latest_holdings.csv
+          *.txt
+          *.json
+          *.md
+          cache/
           analysis/
-          holdings/
-          scrape_metadata.json
+          latest_holdings.csv
         sparse-checkout-cone-mode: false
+        fetch-depth: 1
+    
+    - name: Configure Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git config core.sparseCheckout true
+        git config advice.updateSparsePath false
+    
+    - name: Setup directories
+      run: |
+        mkdir -p holdings
+        mkdir -p cache
+        mkdir -p analysis/master_stock_analysis
+    
+    - name: Get recent holdings for comparison
+      run: |
+        # Only fetch the most recent holdings file for incremental analysis
+        latest_holding=$(git ls-tree -r HEAD --name-only | grep "holdings/holdings_.*\.csv" | sort -r | head -1)
+        if [ -n "$latest_holding" ]; then
+          echo "Fetching latest holdings: $latest_holding"
+          git checkout HEAD -- "$latest_holding" 2>/dev/null || true
+        fi
     
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
@@ -32,37 +58,132 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install beautifulsoup4 pandas requests gitpython yfinance lxml html5lib openpyxl
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install beautifulsoup4 pandas requests lxml html5lib openpyxl numpy
     
-    - name: execute scraper
-      run: python datorama-scrape.py
-    
-    - name: analyze recent changes
-      run: python analyze_holdings.py --mode incremental
-    
-    - name: weekly full analysis
-      if: github.event_name == 'workflow_dispatch'
-      run: python analyze_holdings.py --mode full
-    
-    - name: check if sunday and run full analysis
+    - name: Run smart scraper
       run: |
-        if [ $(date +%u) -eq 7 ]; then
-          echo "It's Sunday, running full analysis"
-          python analyze_holdings.py --mode full
-        else
-          echo "Not Sunday, skipping full analysis"
+        echo "Starting Dataroma smart scraper..."
+        python smart_dataroma_scraper.py
+        
+        echo ""
+        echo "Scraper completed. Checking cache..."
+        if [ -f "cache/stock_data_cache.json" ]; then
+          echo "Stock cache size: $(wc -l < cache/stock_data_cache.json) lines"
         fi
     
-    - name: commit files
+    - name: Analyze holdings
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add -A
-        git diff --staged --quiet || git commit -m "update data and analysis $(date +%Y-%m-%d)"
+        echo "Analyzing holdings..."
+        python pure_dataroma_analyzer.py --mode current
     
-    - name: push changes
+    - name: Verify output
+      run: |
+        echo ""
+        echo "Checking generated files..."
+        
+        if [ -f "analysis/overview.json" ]; then
+          echo "✓ Overview generated"
+        else
+          echo "✗ Overview missing"
+        fi
+        
+        # Count CSV files
+        csv_count=$(find analysis -name "*.csv" -type f | wc -l)
+        echo "Generated $csv_count CSV files"
+        
+        # Check master folder
+        if [ -d "analysis/master_stock_analysis" ]; then
+          master_count=$(find analysis/master_stock_analysis -name "*.csv" -type f | wc -l)
+          echo "Master folder contains $master_count CSV files"
+        fi
+    
+    - name: Weekly full refresh (Sundays)
+      if: github.event.schedule == '0 0 * * 0' || github.event_name == 'workflow_dispatch'
+      run: |
+        echo "Sunday or manual trigger - clearing old cache for full refresh"
+        
+        # Archive old cache
+        if [ -f "cache/stock_data_cache.json" ]; then
+          cp cache/stock_data_cache.json "cache/stock_data_cache_$(date +%Y%m%d).backup"
+        fi
+        
+        # Fetch more historical holdings for full analysis
+        echo "Fetching last 30 days of holdings..."
+        thirty_days_ago=$(date -d "30 days ago" +%Y%m%d)
+        
+        git ls-tree -r HEAD --name-only | grep "holdings/holdings_.*\.csv" | while read file; do
+          file_date=$(echo $file | grep -o '[0-9]\{8\}')
+          if [ "$file_date" -ge "$thirty_days_ago" ] 2>/dev/null; then
+            git checkout HEAD -- "$file" 2>/dev/null || true
+          fi
+        done
+        
+        # Re-run analyzer in full mode
+        python pure_dataroma_analyzer.py --mode full
+    
+    - name: Prepare commit
+      run: |
+        # Stage new/updated files with sparse flag
+        git add --sparse *.json *.csv analysis/ cache/ || true
+        
+        # Only add today's holdings file
+        today=$(date +%Y%m%d)
+        if [ -f "holdings/holdings_${today}.csv" ]; then
+          git add --sparse "holdings/holdings_${today}.csv" || true
+        fi
+        
+        # Show what will be committed
+        echo ""
+        echo "Files to be committed:"
+        git status --porcelain | head -20
+        
+        file_count=$(git status --porcelain | wc -l)
+        echo "Total files changed: $file_count"
+    
+    - name: Commit and push
+      run: |
+        # Check if there are changes
+        if [ -n "$(git status --porcelain)" ]; then
+          # Create meaningful commit message
+          if [ -f "scrape_metadata.json" ]; then
+            stocks=$(python -c "import json; d=json.load(open('scrape_metadata.json')); print(d.get('unique_stocks', 0))")
+            managers=$(python -c "import json; d=json.load(open('scrape_metadata.json')); print(d.get('managers_tracked', 0))")
+            message="Update: $stocks stocks from $managers managers [$(date +%Y-%m-%d)]"
+          else
+            message="Update Dataroma data [$(date +%Y-%m-%d)]"
+          fi
+          
+          git commit -m "$message"
+          echo "Committed: $message"
+        else
+          echo "No changes to commit"
+        fi
+    
+    - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: main
+    
+    - name: Cleanup old holdings (keep 30 days)
+      run: |
+        # Only run cleanup on Sundays to minimize operations
+        if [ $(date +%u) -eq 0 ]; then
+          echo "Running weekly cleanup..."
+          
+          cutoff_date=$(date -d "30 days ago" +%Y%m%d)
+          removed=0
+          
+          # Remove old holdings files from git
+          git ls-tree -r HEAD --name-only | grep "holdings/holdings_.*\.csv" | while read file; do
+            file_date=$(echo $file | grep -o '[0-9]\{8\}')
+            if [ "$file_date" -lt "$cutoff_date" ] 2>/dev/null; then
+              git rm --cached "$file" 2>/dev/null && ((removed++)) || true
+            fi
+          done
+          
+          if [ $removed -gt 0 ]; then
+            git commit -m "Cleanup: Removed $removed old holdings files"
+            echo "Removed $removed old files"
+          fi
+        fi
