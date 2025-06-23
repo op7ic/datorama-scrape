@@ -62,7 +62,7 @@ jobs:
     
     - name: Run smart scraper
       run: |
-        echo "Starting Dataroma smart scraper..."
+        echo "Starting Dataroma scraper..."
         python datorama-scrape.py
         
         echo ""
