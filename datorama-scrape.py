@@ -1,4 +1,3 @@
-# datorama-scrape.py
 import requests
 from bs4 import BeautifulSoup
 import csv
@@ -6,6 +5,8 @@ import json
 from datetime import datetime
 import os
 import pandas as pd
+import re
+import time
 
 class DataromaScraper:
     def __init__(self):
@@ -44,19 +45,27 @@ class DataromaScraper:
         # Extract manager links - look for links containing 'holdings.php?m='
         for link in soup.find_all('a', href=True):
             if 'holdings.php?m=' in link['href']:
-                manager_links.append(link['href'])
+                # Also try to extract manager name from the link text
+                manager_info = {
+                    'url': link['href'],
+                    'name': link.text.strip() if link.text else ""
+                }
+                manager_links.append(manager_info)
         
         print(f"Found {len(manager_links)} managers to scrape")
         
         # Scrape each manager's holdings
-        for idx, manager_link in enumerate(manager_links, 1):
+        for idx, manager_info in enumerate(manager_links, 1):
             try:
-                print(f"Scraping manager {idx}/{len(manager_links)}: {manager_link}")
-                holdings = self.scrape_manager(manager_link)
+                print(f"Scraping manager {idx}/{len(manager_links)}: {manager_info['url']}")
+                holdings = self.scrape_manager(manager_info['url'], manager_info.get('name', ''))
                 all_holdings.extend(holdings)
                 print(f"  Found {len(holdings)} holdings")
+                
+                # Add a small delay to be polite to the server
+                time.sleep(0.5)
             except Exception as e:
-                print(f"Error scraping {manager_link}: {e}")
+                print(f"Error scraping {manager_info['url']}: {e}")
         
         print(f"Total holdings scraped: {len(all_holdings)}")
         
@@ -65,9 +74,15 @@ class DataromaScraper:
         
         return all_holdings
     
-    def scrape_manager(self, manager_link):
+    def scrape_manager(self, manager_link, hint_name=""):
         """Scrape holdings for a specific manager"""
-        manager_url = self.base_url + manager_link
+        # Handle both relative and absolute URLs
+        if manager_link.startswith('/'):
+            manager_url = "https://www.dataroma.com" + manager_link
+        elif not manager_link.startswith('http'):
+            manager_url = self.base_url + manager_link.lstrip('/')
+        else:
+            manager_url = manager_link
         
         try:
             response = requests.get(manager_url, timeout=30, headers=self.headers)
@@ -81,77 +96,160 @@ class DataromaScraper:
         holdings = []
         
         # Extract manager name - try multiple methods
-        manager_name = "Unknown"
+        manager_name = hint_name
+        
+        # Method 1: Look for h1 tag
         h1_elem = soup.find('h1')
-        if h1_elem:
+        if h1_elem and h1_elem.text.strip():
             manager_name = h1_elem.text.strip()
-        else:
-            # Try to find manager name in title or other elements
-            title_elem = soup.find('title')
-            if title_elem and ' - ' in title_elem.text:
-                manager_name = title_elem.text.split(' - ')[0].strip()
+        
+        # Method 2: Look for bold text or specific patterns
+        if not manager_name or manager_name == "Unknown":
+            # Look for text pattern like "Warren Buffett - Berkshire Hathaway"
+            for text in soup.stripped_strings:
+                if ' - ' in text and 'Portfolio' not in text and 'Period:' not in text:
+                    potential_name = text.strip()
+                    if len(potential_name) < 100:  # Reasonable length for a name
+                        manager_name = potential_name
+                        break
         
         print(f"  Manager: {manager_name}")
         
         # Extract portfolio date
-        date_elem = soup.find(string=lambda string: string and 'Portfolio date:' in string)
         portfolio_date = datetime.now().strftime('%Y-%m-%d')
-        if date_elem:
-            try:
-                date_str = date_elem.split('Portfolio date:')[1].strip()
-                portfolio_date = datetime.strptime(date_str, '%d %b %Y').strftime('%Y-%m-%d')
-            except:
-                pass
+        date_pattern = re.compile(r'Portfolio date:\s*(\d{1,2}\s+\w+\s+\d{4})')
+        for text in soup.stripped_strings:
+            match = date_pattern.search(text)
+            if match:
+                try:
+                    date_str = match.group(1)
+                    portfolio_date = datetime.strptime(date_str, '%d %b %Y').strftime('%Y-%m-%d')
+                    print(f"  Portfolio date: {portfolio_date}")
+                except:
+                    pass
+                break
         
-        # Find holdings table - try multiple approaches
-        table = soup.find('table', {'id': 'grid'})
-        if not table:
-            # Try finding table by class or other attributes
-            table = soup.find('table', class_='portfolio-table') or \
-                   soup.find('table', class_='holdings-table') or \
-                   soup.find('table')
+        # Find holdings - look for links to stock.php?sym=
+        stock_links = soup.find_all('a', href=re.compile(r'/m/stock\.php\?sym='))
         
-        if table:
-            # Find all rows, handling both tbody and direct tr children
-            tbody = table.find('tbody')
-            if tbody:
-                rows = tbody.find_all('tr')
-            else:
-                rows = table.find_all('tr')
+        if stock_links:
+            print(f"  Found {len(stock_links)} stock links")
             
-            # Skip header row(s)
-            data_rows = []
-            for row in rows:
-                # Check if it's a data row (has td elements, not th)
-                if row.find('td'):
-                    data_rows.append(row)
-            
-            print(f"  Found {len(data_rows)} data rows in table")
-            
-            for row in data_rows:
-                cols = row.find_all('td')
-                if len(cols) >= 6:  # Minimum expected columns
-                    try:
+            # The holdings are typically in a table structure
+            # Find the parent table of these links
+            for link in stock_links:
+                try:
+                    # Get the ticker from the URL
+                    ticker_match = re.search(r'sym=([A-Z0-9\.]+)', link['href'])
+                    if not ticker_match:
+                        continue
+                    
+                    ticker = ticker_match.group(1)
+                    
+                    # Get the stock name from the link text
+                    link_text = link.text.strip()
+                    # Parse format like "AAPL - Apple Inc."
+                    if ' - ' in link_text:
+                        parts = link_text.split(' - ', 1)
+                        stock_name = parts[1] if len(parts) > 1 else link_text
+                    else:
+                        stock_name = link_text
+                    
+                    # Find the parent row
+                    parent_row = link.find_parent('tr')
+                    if parent_row:
+                        # Extract data from the row
+                        cells = parent_row.find_all('td')
+                        
                         holding = {
                             'date': datetime.now().strftime('%Y-%m-%d'),
                             'portfolio_date': portfolio_date,
                             'manager': manager_name,
-                            'stock': cols[0].text.strip(),
-                            'ticker': cols[1].text.strip() if len(cols) > 1 else "",
-                            'portfolio_percent': cols[2].text.strip().replace('%', '') if len(cols) > 2 else "0",
-                            'shares': cols[3].text.strip().replace(',', '') if len(cols) > 3 else "0",
-                            'recent_activity': cols[4].text.strip() if len(cols) > 4 else "",
-                            'reported_price': self.clean_price(cols[5].text.strip()) if len(cols) > 5 else None,
-                            'current_price': self.clean_price(cols[6].text.strip()) if len(cols) > 6 else None
+                            'stock': stock_name,
+                            'ticker': ticker,
+                            'portfolio_percent': "0",
+                            'shares': "0",
+                            'recent_activity': "",
+                            'reported_price': None,
+                            'current_price': None,
+                            'value': None
                         }
                         
-                        # Only add if we have valid ticker and stock name
-                        if holding['ticker'] and holding['stock']:
-                            holdings.append(holding)
-                    except Exception as e:
-                        print(f"    Error parsing row: {e}")
+                        # Try to extract percentage, shares, and other data
+                        # The exact positions might vary, so we'll look for patterns
+                        for i, cell in enumerate(cells):
+                            cell_text = cell.text.strip()
+                            
+                            # Portfolio percentage (look for %)
+                            if '%' in cell_text and 'portfolio_percent' not in holding:
+                                holding['portfolio_percent'] = cell_text.replace('%', '').strip()
+                            
+                            # Shares (look for large numbers with commas)
+                            elif re.match(r'^[\d,]+$', cell_text.replace(',', '')) and int(cell_text.replace(',', '')) > 1000:
+                                holding['shares'] = cell_text.replace(',', '')
+                            
+                            # Recent activity
+                            elif cell_text in ['Buy', 'Sell', 'Add', 'Reduce', 'New', 'Sold Out']:
+                                holding['recent_activity'] = cell_text
+                            
+                            # Prices (look for $ or decimal numbers)
+                            elif '$' in cell_text or re.match(r'^\d+\.\d{2}$', cell_text):
+                                price = self.clean_price(cell_text)
+                                if price and not holding['reported_price']:
+                                    holding['reported_price'] = price
+                                elif price and not holding['current_price']:
+                                    holding['current_price'] = price
+                        
+                        holdings.append(holding)
+                        
+                except Exception as e:
+                    print(f"    Error parsing holding: {e}")
+                    continue
+        
         else:
-            print(f"  No holdings table found for {manager_name}")
+            # Alternative method: Look for table with stock data
+            # Find all tables and look for the one with holdings
+            tables = soup.find_all('table')
+            for table in tables:
+                # Check if this table contains stock data
+                if table.find('a', href=re.compile(r'stock\.php\?sym=')):
+                    rows = table.find_all('tr')
+                    print(f"  Found table with {len(rows)} rows")
+                    
+                    for row in rows:
+                        # Skip header rows
+                        if row.find('th'):
+                            continue
+                        
+                        cells = row.find_all('td')
+                        if len(cells) >= 2:
+                            # Look for stock link in the row
+                            stock_link = row.find('a', href=re.compile(r'stock\.php\?sym='))
+                            if stock_link:
+                                ticker_match = re.search(r'sym=([A-Z0-9\.]+)', stock_link['href'])
+                                if ticker_match:
+                                    ticker = ticker_match.group(1)
+                                    stock_name = stock_link.text.strip()
+                                    
+                                    if ' - ' in stock_name:
+                                        parts = stock_name.split(' - ', 1)
+                                        stock_name = parts[1] if len(parts) > 1 else stock_name
+                                    
+                                    holding = {
+                                        'date': datetime.now().strftime('%Y-%m-%d'),
+                                        'portfolio_date': portfolio_date,
+                                        'manager': manager_name,
+                                        'stock': stock_name,
+                                        'ticker': ticker,
+                                        'portfolio_percent': "0",
+                                        'shares': "0",
+                                        'recent_activity': "",
+                                        'reported_price': None,
+                                        'current_price': None
+                                    }
+                                    
+                                    holdings.append(holding)
+                    break
         
         return holdings
     
@@ -198,6 +296,8 @@ class DataromaScraper:
             json.dump(metadata, f, indent=2)
         
         print(f"Saved {len(all_holdings)} holdings to {daily_filename}")
+        print(f"Managers tracked: {metadata['managers_tracked']}")
+        print(f"Unique stocks: {metadata['unique_stocks']}")
 
 def main():
     scraper = DataromaScraper()
