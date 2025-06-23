@@ -9,6 +9,16 @@ import re
 import time
 from collections import defaultdict
 
+"""
+Fixed Dataroma Scraper - Key improvements:
+1. Properly filters manager links (only holdings.php?m=, not stock.php)
+2. Better column detection for percentage values
+3. Processes ALL managers, not just first 3
+4. Enhanced debugging with HTML saves
+5. Rate limiting to avoid being blocked
+6. More robust price and sector extraction
+"""
+
 class DataromaScraper:
     def __init__(self):
         self.base_url = "https://www.dataroma.com/m/"
@@ -127,18 +137,25 @@ class DataromaScraper:
             if industry_match:
                 stock_data['industry'] = industry_match.group(1).strip()
             
-            # Current Price
+            # Current Price - look for various patterns
             price_patterns = [
                 r'Current Price[:\s]+\$?([\d,]+\.?\d*)',
                 r'Price[:\s]+\$?([\d,]+\.?\d*)',
                 r'\$?([\d,]+\.?\d*)\s+(?:USD|usd)',
+                r'Last[:\s]+\$?([\d,]+\.?\d*)',
+                r'Quote[:\s]+\$?([\d,]+\.?\d*)'
             ]
             
             for pattern in price_patterns:
                 price_match = re.search(pattern, text_content)
                 if price_match:
-                    stock_data['current_price'] = float(price_match.group(1).replace(',', ''))
-                    break
+                    try:
+                        price = float(price_match.group(1).replace(',', ''))
+                        if 0.01 <= price <= 100000:  # Sanity check
+                            stock_data['current_price'] = price
+                            break
+                    except:
+                        pass
             
             # Update cache
             self.stock_cache[ticker] = stock_data
@@ -189,34 +206,48 @@ class DataromaScraper:
         all_holdings = []
         manager_links = []
         
-        # Extract manager links - try multiple patterns
+        # Extract manager links - ONLY get holdings.php?m= links
         for link in soup.find_all('a', href=True):
             href = link['href']
-            # Look for various patterns that might indicate a manager page
-            if any(pattern in href for pattern in ['holdings.php?m=', 'holdings.php', 'm=']):
+            # Only accept holdings.php?m= pattern (not stock.php)
+            if 'holdings.php?m=' in href and 'stock.php' not in href:
                 manager_info = {
                     'url': href,
                     'name': link.text.strip() if link.text else ""
                 }
-                manager_links.append(manager_info)
+                # Avoid duplicates
+                if not any(m['url'] == manager_info['url'] for m in manager_links):
+                    manager_links.append(manager_info)
         
         print(f"Found {len(manager_links)} managers to scrape")
         
+        # Count actual manager pages vs other pages
+        if manager_links:
+            holdings_pages = sum(1 for m in manager_links if 'holdings.php?m=' in m['url'])
+            print(f"  - Holdings pages: {holdings_pages}")
+            print(f"  - Other pages: {len(manager_links) - holdings_pages}")
+        
         # Debug: print first few manager links
         if manager_links:
-            print("\nFirst 3 manager links found:")
-            for ml in manager_links[:3]:
+            print("\nFirst 5 manager links found:")
+            for ml in manager_links[:5]:
                 print(f"  - {ml['url']} ({ml['name']})")
         
-        # First pass: Get all holdings (limit to first 3 for debugging)
-        for idx, manager_info in enumerate(manager_links[:3], 1):  # LIMIT TO 3 FOR DEBUGGING
+        # First pass: Get all holdings
+        for idx, manager_info in enumerate(manager_links, 1):
             try:
-                print(f"\nScraping manager {idx}/3 (DEBUG MODE): {manager_info['url']}")
-                holdings = self.scrape_manager(manager_info['url'], manager_info.get('name', ''), debug_index=idx)
+                print(f"\nScraping manager {idx}/{len(manager_links)}: {manager_info['url']}")
+                # Only save debug HTML for first 3 managers
+                holdings = self.scrape_manager(manager_info['url'], manager_info.get('name', ''), debug_index=idx if idx <= 3 else 0)
                 all_holdings.extend(holdings)
                 print(f"  Found {len(holdings)} holdings")
                 
-                time.sleep(1)  # Increased delay
+                time.sleep(1)  # Be polite to avoid rate limiting
+                
+                # Add longer delay every 10 managers
+                if idx % 10 == 0:
+                    print(f"  Pausing for 5 seconds to avoid rate limiting...")
+                    time.sleep(5)
             except Exception as e:
                 print(f"Error scraping {manager_info['url']}: {e}")
                 import traceback
@@ -231,9 +262,9 @@ class DataromaScraper:
         # Second pass: Enrich with detailed stock data
         if unique_tickers:
             print("\nEnriching holdings with detailed stock data...")
-            for i, ticker in enumerate(unique_tickers[:10]):  # Limit for debugging
-                if i % 5 == 0:
-                    print(f"Progress: {i}/{min(len(unique_tickers), 10)} stocks processed")
+            for i, ticker in enumerate(unique_tickers):
+                if i % 10 == 0:
+                    print(f"Progress: {i}/{len(unique_tickers)} stocks processed")
                 
                 stock_data = self.scrape_stock_page(ticker)
                 
@@ -244,6 +275,10 @@ class DataromaScraper:
                         holding['sector'] = stock_data.get('sector', 'Unknown')
                         holding['industry'] = stock_data.get('industry', 'Unknown')
                         holding['current_price'] = stock_data.get('current_price', holding.get('current_price', 0))
+                        holding['52_week_high'] = stock_data.get('52_week_high', 0)
+                        holding['52_week_low'] = stock_data.get('52_week_low', 0)
+                        holding['pe_ratio'] = stock_data.get('pe_ratio', 0)
+                        holding['dividend_yield'] = stock_data.get('dividend_yield', 0)
         
         # Save the cache
         self.save_stock_cache()
@@ -274,7 +309,7 @@ class DataromaScraper:
             return []
         
         # Save HTML for debugging
-        if debug_index <= 3:  # Save first 3 for debugging
+        if debug_index > 0 and debug_index <= 3:  # Save first 3 for debugging
             self.debug_save_html(response.text, f"manager_{debug_index}_holdings.html")
         
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -364,7 +399,13 @@ class DataromaScraper:
             # Map column positions
             col_map = {}
             if header_row:
-                headers = [th.text.strip().lower() for th in header_row.find_all('th')]
+                headers = []
+                # Get text from all th elements, handling nested elements
+                for th in header_row.find_all('th'):
+                    # Get all text, including from nested elements
+                    header_text = ' '.join(th.stripped_strings).lower()
+                    headers.append(header_text)
+                
                 print(f"  DEBUG: Headers found: {headers}")
                 
                 for i, header in enumerate(headers):
@@ -372,18 +413,57 @@ class DataromaScraper:
                         col_map['stock'] = i
                     elif 'portfolio' in header and '%' in header:
                         col_map['percent'] = i
+                    elif 'of portfolio' in header:
+                        col_map['percent'] = i
                     elif '%' in header and 'percent' not in col_map:
                         col_map['percent'] = i
                     elif 'shares' in header:
                         col_map['shares'] = i
-                    elif 'activity' in header:
+                    elif 'activity' in header or 'recent' in header:
                         col_map['activity'] = i
                     elif 'reported' in header and 'price' in header:
                         col_map['reported_price'] = i
+                    elif 'price' in header and 'reported_price' not in col_map:
+                        col_map['reported_price'] = i
                     elif 'value' in header:
                         col_map['value'] = i
+            else:
+                # If no header row found, try to infer from first data row
+                print("  DEBUG: No header row found, inferring column positions...")
+                first_data_row = None
+                for row in rows:
+                    if not row.find('th') and row.find('td'):
+                        first_data_row = row
+                        break
+                
+                if first_data_row:
+                    cells = first_data_row.find_all('td')
+                    for i, cell in enumerate(cells):
+                        cell_text = cell.text.strip()
+                        # Stock column usually has a link
+                        if cell.find('a', href=lambda x: x and 'stock.php' in x):
+                            col_map['stock'] = i
+                        # Percentage column usually has %
+                        elif '%' in cell_text:
+                            col_map['percent'] = i
+                        # Shares column usually has large numbers with commas
+                        elif re.match(r'^[\d,]+$', cell_text):
+                            col_map['shares'] = i
             
             print(f"  DEBUG: Column mapping: {col_map}")
+            
+            # If we still don't have a proper column mapping, print first data row for debugging
+            if not col_map or 'stock' not in col_map:
+                for row in rows:
+                    if not row.find('th') and row.find('td'):
+                        cells = row.find_all('td')
+                        if len(cells) >= 2:
+                            print(f"  DEBUG: First data row cells ({len(cells)} columns):")
+                            for i, cell in enumerate(cells[:6]):  # Show first 6 cells
+                                cell_text = cell.text.strip()[:30]  # First 30 chars
+                                has_link = 'LINK' if cell.find('a') else ''
+                                print(f"    Cell {i}: '{cell_text}' {has_link}")
+                            break
             
             # Process data rows
             data_rows_processed = 0
@@ -441,17 +521,30 @@ class DataromaScraper:
                             # Portfolio percent
                             if 'percent' in col_map and col_map['percent'] < len(cells):
                                 percent_text = cells[col_map['percent']].text.strip()
-                                percent_text = percent_text.replace('%', '').strip()
-                                if percent_text and percent_text != '-':
-                                    holding['portfolio_percent'] = percent_text
+                                # Clean up percentage text
+                                percent_text = percent_text.replace('%', '').replace('*', '').strip()
+                                if percent_text and percent_text != '-' and percent_text != 'N/A':
+                                    try:
+                                        # Handle potential decimal values
+                                        percent_val = float(percent_text)
+                                        if percent_val > 0:
+                                            holding['portfolio_percent'] = str(percent_val)
+                                    except ValueError:
+                                        pass
                             
-                            # If no percent found, look for % in any cell
+                            # If no percent found in mapped column, search all cells
                             if holding['portfolio_percent'] == "0":
-                                for cell in cells:
+                                for i, cell in enumerate(cells):
                                     text = cell.text.strip()
-                                    if '%' in text and text.replace('%', '').replace('.', '').replace(',', '').isdigit():
-                                        holding['portfolio_percent'] = text.replace('%', '').strip()
-                                        break
+                                    # Look for percentage patterns
+                                    percent_match = re.search(r'(\d+\.?\d*)\s*%', text)
+                                    if percent_match:
+                                        percent_val = float(percent_match.group(1))
+                                        if percent_val > 0 and percent_val <= 100:  # Sanity check
+                                            holding['portfolio_percent'] = str(percent_val)
+                                            if 'percent' not in col_map:
+                                                col_map['percent'] = i  # Remember this column
+                                            break
                             
                             # Shares
                             if 'shares' in col_map and col_map['shares'] < len(cells):
@@ -565,8 +658,11 @@ def main():
     scraper.scrape_dataroma()
     
     print("\n" + "="*50)
-    print("DEBUG: Check the 'debug' folder for saved HTML files")
-    print("This will help you see what the scraper is actually receiving")
+    print("DEBUGGING TIPS:")
+    print("1. Check the 'debug' folder for saved HTML files")
+    print("2. Open manager_1_holdings.html to see the table structure")
+    print("3. If percentages are missing, check if they're in a different column")
+    print("4. Look for any JavaScript that might be loading data dynamically")
     print("="*50)
 
 if __name__ == "__main__":
