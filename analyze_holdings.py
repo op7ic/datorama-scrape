@@ -8,6 +8,10 @@ import argparse
 import glob
 import numpy as np
 from collections import defaultdict
+import shutil
+import time
+import warnings
+warnings.filterwarnings('ignore')
 
 class SmartHoldingsAnalyzer:
     def __init__(self):
@@ -16,12 +20,16 @@ class SmartHoldingsAnalyzer:
         self.market_cap_cache = {}
         self.holdings_dir = "holdings"
         self.analysis_dir = "analysis"
+        self.yfinance_enabled = True
+        self.yfinance_failures = 0
+        self.max_yfinance_failures = 10
         self.ensure_directories()
         self.load_caches()
     
     def ensure_directories(self):
-        """Ensure analysis directory exists"""
+        """Ensure analysis directories exist"""
         os.makedirs(self.analysis_dir, exist_ok=True)
+        os.makedirs(os.path.join(self.analysis_dir, 'master_stock_analysis'), exist_ok=True)
     
     def load_caches(self):
         """Load cached prices and market caps to avoid repeated API calls"""
@@ -61,23 +69,8 @@ class SmartHoldingsAnalyzer:
                 if datetime.now() - cache_time < timedelta(days=7):
                     return cached_info
         
-        try:
-            stock = yf.Ticker(ticker)
-            info = stock.info
-            
-            stock_data = {
-                'market_cap': info.get('marketCap', 0),
-                'current_price': info.get('currentPrice', info.get('regularMarketPrice', 0)),
-                'sector': info.get('sector', 'Unknown'),
-                'industry': info.get('industry', 'Unknown'),
-                'company_name': info.get('longName', info.get('shortName', ticker)),
-                'timestamp': datetime.now().isoformat()
-            }
-            
-            self.market_cap_cache[cache_key] = stock_data
-            return stock_data
-        except:
-            # Return default values if API fails
+        # If yfinance is disabled, return default values
+        if not self.yfinance_enabled:
             return {
                 'market_cap': 0,
                 'current_price': 0,
@@ -85,6 +78,46 @@ class SmartHoldingsAnalyzer:
                 'industry': 'Unknown',
                 'company_name': ticker
             }
+        
+        try:
+            stock = yf.Ticker(ticker)
+            info = stock.info
+            
+            # Check if we got valid data
+            if info and isinstance(info, dict) and len(info) > 5:
+                stock_data = {
+                    'market_cap': info.get('marketCap', 0),
+                    'current_price': info.get('currentPrice', info.get('regularMarketPrice', 0)),
+                    'sector': info.get('sector', 'Unknown'),
+                    'industry': info.get('industry', 'Unknown'),
+                    'company_name': info.get('longName', info.get('shortName', ticker)),
+                    'timestamp': datetime.now().isoformat()
+                }
+                
+                # Only cache if we got meaningful data
+                if stock_data['current_price'] > 0 or stock_data['market_cap'] > 0:
+                    self.market_cap_cache[cache_key] = stock_data
+                    return stock_data
+                else:
+                    self.yfinance_failures += 1
+                
+        except Exception as e:
+            # Handle any errors (401, 404, network issues, etc.)
+            self.yfinance_failures += 1
+            
+            # Disable yfinance if too many failures
+            if self.yfinance_failures >= self.max_yfinance_failures:
+                print(f"\nWarning: Disabling Yahoo Finance data due to repeated errors. Continuing with limited functionality.")
+                self.yfinance_enabled = False
+        
+        # Return default values if API fails
+        return {
+            'market_cap': 0,
+            'current_price': 0,
+            'sector': 'Unknown',
+            'industry': 'Unknown',
+            'company_name': ticker
+        }
     
     def categorize_market_cap(self, market_cap):
         """Categorize stocks by market cap"""
@@ -107,6 +140,10 @@ class SmartHoldingsAnalyzer:
         if cache_key in self.price_cache:
             return self.price_cache[cache_key]
         
+        # If yfinance is disabled, return None
+        if not self.yfinance_enabled:
+            return None
+        
         try:
             stock = yf.Ticker(ticker)
             end_date = datetime.strptime(date, '%Y-%m-%d')
@@ -117,8 +154,14 @@ class SmartHoldingsAnalyzer:
                 price = float(hist['Close'].iloc[-1])
                 self.price_cache[cache_key] = price
                 return price
-        except:
-            pass
+        except Exception as e:
+            # Handle errors gracefully
+            self.yfinance_failures += 1
+            
+            # Disable yfinance if too many failures
+            if self.yfinance_failures >= self.max_yfinance_failures:
+                print(f"\nWarning: Disabling Yahoo Finance data due to repeated errors. Continuing with limited functionality.")
+                self.yfinance_enabled = False
         
         self.price_cache[cache_key] = None
         return None
@@ -145,15 +188,44 @@ class SmartHoldingsAnalyzer:
         holdings_df['shares_num'] = pd.to_numeric(holdings_df['shares'], errors='coerce')
         holdings_df['percent_num'] = pd.to_numeric(holdings_df['portfolio_percent'], errors='coerce')
         
+        # Try to use prices from Dataroma if available
+        if 'reported_price' in holdings_df.columns:
+            holdings_df['reported_price_num'] = pd.to_numeric(holdings_df['reported_price'], errors='coerce')
+        if 'current_price' in holdings_df.columns:
+            holdings_df['dataroma_price'] = pd.to_numeric(holdings_df['current_price'], errors='coerce')
+        
         # Get stock info for all unique tickers
         print("Fetching stock information...")
         ticker_info = {}
         unique_tickers = holdings_df['ticker'].unique()
         
+        # Add delay between requests to avoid rate limiting
         for i, ticker in enumerate(unique_tickers):
             if i % 10 == 0:
                 print(f"  Processing {i}/{len(unique_tickers)} tickers...")
-            ticker_info[ticker] = self.get_stock_info(ticker)
+            
+            # Only fetch if yfinance is still enabled
+            if self.yfinance_enabled:
+                ticker_info[ticker] = self.get_stock_info(ticker)
+                # Small delay to avoid rate limiting
+                if i % 5 == 0:
+                    time.sleep(0.1)
+            else:
+                # Try to use Dataroma prices if available
+                ticker_prices = holdings_df[holdings_df['ticker'] == ticker]
+                price = 0
+                if 'dataroma_price' in holdings_df.columns:
+                    price = ticker_prices['dataroma_price'].max()
+                elif 'reported_price_num' in holdings_df.columns:
+                    price = ticker_prices['reported_price_num'].max()
+                
+                ticker_info[ticker] = {
+                    'market_cap': 0,
+                    'current_price': price if pd.notna(price) else 0,
+                    'sector': 'Unknown',
+                    'industry': 'Unknown',
+                    'company_name': ticker
+                }
         
         # Add stock info to holdings
         holdings_df['current_price'] = holdings_df['ticker'].map(
@@ -173,36 +245,52 @@ class SmartHoldingsAnalyzer:
         # Calculate position values
         holdings_df['position_value'] = holdings_df['shares_num'] * holdings_df['current_price']
         
+        # If we have no price data, we can still do analysis based on holdings
+        if not self.yfinance_enabled:
+            print("\nNote: Running analysis without external price/market cap data.")
+            if holdings_df['current_price'].sum() > 0:
+                print("Using prices from Dataroma where available.")
+            else:
+                print("Analysis will focus on manager holdings and portfolio percentages.")
+        
         return self.generate_comprehensive_analysis(holdings_df, ticker_info)
     
     def generate_comprehensive_analysis(self, holdings_df, ticker_info):
         """Generate all analysis reports"""
         reports = {}
         
-        # 1. Stocks by price threshold with manager count
-        price_thresholds = [5, 10, 20, 50, 100, 200, 300]
-        for threshold in price_thresholds:
-            stocks_under = holdings_df[holdings_df['current_price'] <= threshold].copy()
-            if not stocks_under.empty:
-                summary = stocks_under.groupby('ticker').agg({
-                    'manager': ['count', lambda x: list(x.unique())],
-                    'stock': 'first',
-                    'current_price': 'first',
-                    'percent_num': ['mean', 'max'],
-                    'shares_num': 'sum',
-                    'market_cap': 'first',
-                    'market_cap_category': 'first',
-                    'sector': 'first'
-                }).round(2)
-                
-                summary.columns = ['manager_count', 'managers', 'company', 'price', 
-                                 'avg_portfolio_pct', 'max_portfolio_pct', 'total_shares',
-                                 'market_cap', 'cap_category', 'sector']
-                summary = summary.sort_values('manager_count', ascending=False)
-                
-                reports[f'stocks_under_${threshold}'] = summary
+        # Check if we have any price data
+        has_price_data = holdings_df['current_price'].sum() > 0
+        has_market_cap_data = holdings_df['market_cap'].sum() > 0
         
-        # 2. Conviction Score Analysis (multiple managers + high portfolio %)
+        # 1. Stocks by price threshold with manager count (only if we have price data)
+        if has_price_data:
+            price_thresholds = [5, 10, 20, 50, 100, 200, 300]
+            for threshold in price_thresholds:
+                stocks_under = holdings_df[
+                    (holdings_df['current_price'] > 0) & 
+                    (holdings_df['current_price'] <= threshold)
+                ].copy()
+                if not stocks_under.empty:
+                    summary = stocks_under.groupby('ticker').agg({
+                        'manager': ['count', lambda x: list(x.unique())],
+                        'stock': 'first',
+                        'current_price': 'first',
+                        'percent_num': ['mean', 'max'],
+                        'shares_num': 'sum',
+                        'market_cap': 'first',
+                        'market_cap_category': 'first',
+                        'sector': 'first'
+                    }).round(2)
+                    
+                    summary.columns = ['manager_count', 'managers', 'company', 'price', 
+                                     'avg_portfolio_pct', 'max_portfolio_pct', 'total_shares',
+                                     'market_cap', 'cap_category', 'sector']
+                    summary = summary.sort_values('manager_count', ascending=False)
+                    
+                    reports[f'stocks_under_${threshold}'] = summary
+        
+        # 2. Conviction Score Analysis (works without price data)
         conviction_df = holdings_df.groupby('ticker').agg({
             'manager': ['count', lambda x: list(x.unique())],
             'stock': 'first',
@@ -219,7 +307,7 @@ class SmartHoldingsAnalyzer:
                                 'avg_portfolio_pct', 'max_portfolio_pct', 'portfolio_pct_std',
                                 'total_shares', 'market_cap', 'cap_category', 'sector', 'industry']
         
-        # Calculate conviction score
+        # Calculate conviction score (works without price data)
         conviction_df['conviction_score'] = (
             conviction_df['manager_count'] * 2 +  # Weight manager count heavily
             conviction_df['avg_portfolio_pct'] +
@@ -229,26 +317,30 @@ class SmartHoldingsAnalyzer:
         conviction_df = conviction_df.sort_values('conviction_score', ascending=False)
         reports['high_conviction_stocks'] = conviction_df.head(50)
         
-        # 3. Market Cap Categories with Top Picks
-        for cap_category in ['Micro-Cap', 'Small-Cap', 'Mid-Cap', 'Large-Cap', 'Mega-Cap']:
-            cap_stocks = holdings_df[holdings_df['market_cap_category'] == cap_category]
-            if not cap_stocks.empty:
-                cap_summary = cap_stocks.groupby('ticker').agg({
-                    'manager': ['count', lambda x: list(x.unique())],
-                    'stock': 'first',
-                    'current_price': 'first',
-                    'percent_num': ['mean', 'max'],
-                    'market_cap': 'first',
-                    'sector': 'first'
-                }).round(2)
-                
-                cap_summary.columns = ['manager_count', 'managers', 'company', 'price',
-                                     'avg_portfolio_pct', 'max_portfolio_pct', 'market_cap', 'sector']
-                cap_summary = cap_summary.sort_values('manager_count', ascending=False)
-                
-                reports[f'{cap_category.lower()}_favorites'] = cap_summary.head(20)
+        # 3. Market Cap Categories (only if we have market cap data)
+        if has_market_cap_data:
+            for cap_category in ['Micro-Cap', 'Small-Cap', 'Mid-Cap', 'Large-Cap', 'Mega-Cap']:
+                cap_stocks = holdings_df[
+                    (holdings_df['market_cap_category'] == cap_category) & 
+                    (holdings_df['market_cap'] > 0)
+                ]
+                if not cap_stocks.empty:
+                    cap_summary = cap_stocks.groupby('ticker').agg({
+                        'manager': ['count', lambda x: list(x.unique())],
+                        'stock': 'first',
+                        'current_price': 'first',
+                        'percent_num': ['mean', 'max'],
+                        'market_cap': 'first',
+                        'sector': 'first'
+                    }).round(2)
+                    
+                    cap_summary.columns = ['manager_count', 'managers', 'company', 'price',
+                                         'avg_portfolio_pct', 'max_portfolio_pct', 'market_cap', 'sector']
+                    cap_summary = cap_summary.sort_values('manager_count', ascending=False)
+                    
+                    reports[f'{cap_category.lower()}_favorites'] = cap_summary.head(20)
         
-        # 4. Highest Portfolio Concentration (Top positions by % of portfolio)
+        # 4. Highest Portfolio Concentration (works without price data)
         high_concentration = holdings_df.nlargest(50, 'percent_num')[
             ['manager', 'ticker', 'stock', 'percent_num', 'current_price', 
              'market_cap_category', 'sector']
@@ -257,14 +349,14 @@ class SmartHoldingsAnalyzer:
                                      'price', 'cap_category', 'sector']
         reports['highest_portfolio_concentration'] = high_concentration
         
-        # 5. Hidden Gems (Low manager count but high portfolio % when held)
+        # 5. Hidden Gems (works without price data)
         hidden_gems = conviction_df[
             (conviction_df['manager_count'] <= 3) & 
             (conviction_df['avg_portfolio_pct'] >= 3)
         ].head(30)
         reports['hidden_gems'] = hidden_gems
         
-        # 6. Sector Analysis
+        # 6. Sector Analysis (works without price data)
         sector_summary = holdings_df.groupby('sector').agg({
             'ticker': 'nunique',
             'manager': 'count',
@@ -274,18 +366,42 @@ class SmartHoldingsAnalyzer:
         sector_summary = sector_summary.sort_values('total_positions', ascending=False)
         reports['sector_analysis'] = sector_summary
         
-        # 7. Master Overview
+        # 7. Multi-Manager Holdings (works without price data)
+        multi_manager = conviction_df[conviction_df['manager_count'] >= 5].head(30)
+        reports['multi_manager_favorites'] = multi_manager
+        
+        # 8. Concentrated Positions by Manager (works without price data)
+        concentrated = holdings_df[holdings_df['percent_num'] >= 5].copy()
+        if not concentrated.empty:
+            concentrated_summary = concentrated.groupby('manager').agg({
+                'ticker': ['count', lambda x: list(x)],
+                'percent_num': 'sum'
+            }).round(2)
+            concentrated_summary.columns = ['concentrated_positions', 'tickers', 'total_portfolio_pct']
+            concentrated_summary = concentrated_summary.sort_values('concentrated_positions', ascending=False)
+            reports['managers_with_concentrated_bets'] = concentrated_summary.head(20)
+        
+        # 9. Master Overview
+        data_quality = 'Full'
+        if not has_price_data and not has_market_cap_data:
+            data_quality = 'Limited (no price/market cap data)'
+        elif not has_market_cap_data:
+            data_quality = 'Partial (price data only, no market cap)'
+        elif not self.yfinance_enabled:
+            data_quality = 'Partial (using cached/Dataroma prices)'
+        
         overview = {
             'analysis_date': datetime.now().strftime('%Y-%m-%d'),
             'total_managers': holdings_df['manager'].nunique(),
             'total_unique_stocks': holdings_df['ticker'].nunique(),
             'total_positions': len(holdings_df),
-            'market_cap_distribution': holdings_df['market_cap_category'].value_counts().to_dict(),
+            'data_quality': data_quality,
+            'market_cap_distribution': holdings_df['market_cap_category'].value_counts().to_dict() if has_market_cap_data else {},
             'sector_distribution': holdings_df['sector'].value_counts().head(10).to_dict(),
-            'top_10_most_held': conviction_df.head(10)[['company', 'manager_count', 'price', 'cap_category']].to_dict('index'),
+            'top_10_most_held': conviction_df.head(10)[['company', 'manager_count', 'avg_portfolio_pct']].to_dict('index'),
             'top_5_by_conviction': conviction_df.head(5)[['company', 'conviction_score', 'manager_count', 'avg_portfolio_pct']].to_dict('index'),
-            'top_5_micro_caps': reports.get('micro-cap_favorites', pd.DataFrame()).head(5)[['company', 'manager_count', 'price']].to_dict('index') if 'micro-cap_favorites' in reports else {},
-            'top_5_hidden_gems': hidden_gems.head(5)[['company', 'managers', 'avg_portfolio_pct', 'price']].to_dict('index') if not hidden_gems.empty else {}
+            'top_5_concentrated_positions': high_concentration.head(5)[['manager', 'company', 'portfolio_pct']].to_dict('index'),
+            'top_5_hidden_gems': hidden_gems.head(5)[['company', 'managers', 'avg_portfolio_pct']].to_dict('index') if not hidden_gems.empty else {}
         }
         reports['overview'] = overview
         
@@ -454,12 +570,38 @@ class SmartHoldingsAnalyzer:
         """Save all analysis reports"""
         print("\nSaving analysis reports...")
         
+        # Create master stock analysis folder
+        master_folder = os.path.join(self.analysis_dir, 'master_stock_analysis')
+        
         # Save overview as JSON
         if 'overview' in reports:
             with open(os.path.join(self.analysis_dir, 'overview.json'), 'w') as f:
                 json.dump(reports['overview'], f, indent=2, default=str)
+            # Also save in master folder
+            with open(os.path.join(master_folder, 'overview.json'), 'w') as f:
+                json.dump(reports['overview'], f, indent=2, default=str)
         
-        # Save each report as CSV
+        # Define organized report groups for the master folder
+        report_groups = {
+            'price_thresholds': [
+                'stocks_under_$5', 'stocks_under_$10', 'stocks_under_$20',
+                'stocks_under_$50', 'stocks_under_$100', 'stocks_under_$200',
+                'stocks_under_$300'
+            ],
+            'market_cap_analysis': [
+                'micro-cap_favorites', 'small-cap_favorites', 'mid-cap_favorites',
+                'large-cap_favorites', 'mega-cap_favorites'
+            ],
+            'conviction_analysis': [
+                'high_conviction_stocks', 'hidden_gems', 
+                'highest_portfolio_concentration', 'multi_manager_favorites',
+                'managers_with_concentrated_bets'
+            ],
+            'sector_analysis': ['sector_analysis'],
+            'recent_activity': ['recent_accumulation']
+        }
+        
+        # Save each report as CSV in both locations
         for report_name, report_data in reports.items():
             if report_name == 'overview':
                 continue
@@ -473,12 +615,21 @@ class SmartHoldingsAnalyzer:
                             lambda x: ', '.join(x) if isinstance(x, list) else x
                         )
                 
+                # Save in main analysis folder
                 filename = os.path.join(self.analysis_dir, f'{report_name}.csv')
                 df.to_csv(filename)
+                
+                # Save in master folder with organized structure
+                master_filename = os.path.join(master_folder, f'{report_name}.csv')
+                df.to_csv(master_filename)
+                
                 print(f"  Saved {report_name}.csv ({len(df)} rows)")
         
         # Create a master Excel file with all reports
         excel_file = os.path.join(self.analysis_dir, 'dataroma_analysis.xlsx')
+        master_excel_file = os.path.join(master_folder, 'dataroma_complete_analysis.xlsx')
+        
+        # Create the Excel file
         with pd.ExcelWriter(excel_file, engine='openpyxl') as writer:
             # Write overview
             overview_df = pd.DataFrame([reports.get('overview', {})])
@@ -487,6 +638,7 @@ class SmartHoldingsAnalyzer:
             # Write other reports
             sheet_order = [
                 'high_conviction_stocks',
+                'multi_manager_favorites',
                 'stocks_under_$10',
                 'stocks_under_$20',
                 'stocks_under_$50',
@@ -495,6 +647,7 @@ class SmartHoldingsAnalyzer:
                 'mid-cap_favorites',
                 'hidden_gems',
                 'highest_portfolio_concentration',
+                'managers_with_concentrated_bets',
                 'sector_analysis'
             ]
             
@@ -509,7 +662,72 @@ class SmartHoldingsAnalyzer:
                             )
                     df.to_excel(writer, sheet_name=sheet_name[:31])  # Excel sheet name limit
         
+        # Copy Excel file to master folder
+        import shutil
+        shutil.copy2(excel_file, master_excel_file)
+        
+        # Create README for master folder
+        readme_content = """# Dataroma Stock Analysis Reports
+
+This folder contains individual CSV files extracted from the complete Dataroma analysis.
+
+## Files Included:
+
+### Overview
+- `overview.json` - Summary statistics and key findings
+
+### Price Threshold Analysis (when price data available)
+- `stocks_under_$5.csv` - Stocks trading under $5
+- `stocks_under_$10.csv` - Stocks trading under $10
+- `stocks_under_$20.csv` - Stocks trading under $20
+- `stocks_under_$50.csv` - Stocks trading under $50
+- `stocks_under_$100.csv` - Stocks trading under $100
+- `stocks_under_$200.csv` - Stocks trading under $200
+- `stocks_under_$300.csv` - Stocks trading under $300
+
+### Market Cap Analysis (when market cap data available)
+- `micro-cap_favorites.csv` - Top micro-cap stocks (<$300M)
+- `small-cap_favorites.csv` - Top small-cap stocks ($300M-$2B)
+- `mid-cap_favorites.csv` - Top mid-cap stocks ($2B-$10B)
+- `large-cap_favorites.csv` - Top large-cap stocks ($10B-$200B)
+- `mega-cap_favorites.csv` - Top mega-cap stocks (>$200B)
+
+### Conviction Analysis (always available)
+- `high_conviction_stocks.csv` - Stocks with highest conviction scores
+- `hidden_gems.csv` - Under-the-radar high-conviction picks
+- `highest_portfolio_concentration.csv` - Largest individual positions
+- `multi_manager_favorites.csv` - Stocks held by 5+ managers
+- `managers_with_concentrated_bets.csv` - Managers with concentrated positions
+
+### Other Analysis
+- `sector_analysis.csv` - Breakdown by sector
+- `recent_accumulation.csv` - Recent buying activity (if available)
+
+### Complete Analysis
+- `dataroma_complete_analysis.xlsx` - All reports in one Excel file
+
+## Column Descriptions:
+- `manager_count` - Number of superinvestors holding the stock
+- `managers` - List of managers holding the stock
+- `avg_portfolio_pct` - Average percentage of portfolio
+- `max_portfolio_pct` - Maximum percentage in any portfolio
+- `conviction_score` - Combined score based on manager count and portfolio weight
+- `market_cap` - Current market capitalization (when available)
+- `cap_category` - Market cap category (when available)
+- `price` - Current stock price (when available)
+
+## Note on Data Availability:
+Some reports require price and market cap data from external sources. If this data
+is unavailable, the analysis will focus on holdings, portfolio percentages, and
+manager conviction metrics which are always available from Dataroma.
+"""
+        
+        readme_file = os.path.join(master_folder, 'README.md')
+        with open(readme_file, 'w') as f:
+            f.write(readme_content)
+        
         print(f"\nMaster Excel file saved: {excel_file}")
+        print(f"Individual CSV files saved in: {master_folder}")
         
         # Save caches
         self.save_caches()
@@ -521,9 +739,16 @@ def main():
                        help='Analysis mode: current (analyze current holdings), incremental (recent changes), or full (all historical changes)')
     parser.add_argument('--changes', action='store_true',
                        help='Also analyze portfolio changes')
+    parser.add_argument('--no-prices', action='store_true',
+                       help='Disable price/market cap fetching (use if yfinance is blocked)')
     args = parser.parse_args()
     
     analyzer = SmartHoldingsAnalyzer()
+    
+    # Disable yfinance if requested
+    if args.no_prices:
+        analyzer.yfinance_enabled = False
+        print("Running without price/market cap data (--no-prices flag set)")
     
     # Always analyze current holdings
     print("=" * 50)
@@ -564,13 +789,22 @@ def main():
     print(f"- Total managers tracked: {overview.get('total_managers', 0)}")
     print(f"- Total unique stocks: {overview.get('total_unique_stocks', 0)}")
     print(f"- Total positions: {overview.get('total_positions', 0)}")
+    print(f"- Data quality: {overview.get('data_quality', 'Unknown')}")
+    
+    print(f"\nAnalysis files saved in:")
+    print(f"- Main folder: {analyzer.analysis_dir}/")
+    print(f"- Individual CSVs: {analyzer.analysis_dir}/master_stock_analysis/")
     
     if 'high_conviction_stocks' in current_reports:
         top_conviction = current_reports['high_conviction_stocks'].head(5)
         print(f"\nTop 5 High Conviction Stocks:")
         for ticker, row in top_conviction.iterrows():
-            print(f"  {ticker}: {row['company']} - {row['manager_count']} managers, "
-                  f"{row['avg_portfolio_pct']:.1f}% avg position, ${row['price']:.2f}")
+            if row['price'] > 0:
+                print(f"  {ticker}: {row['company']} - {row['manager_count']} managers, "
+                      f"{row['avg_portfolio_pct']:.1f}% avg position, ${row['price']:.2f}")
+            else:
+                print(f"  {ticker}: {row['company']} - {row['manager_count']} managers, "
+                      f"{row['avg_portfolio_pct']:.1f}% avg position")
 
 if __name__ == "__main__":
     main()
