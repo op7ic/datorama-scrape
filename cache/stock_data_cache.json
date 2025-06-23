@@ -1,0 +1,7542 @@
+{
+  "TRN": {
+    "ticker": "TRN",
+    "last_updated": "2025-06-23T16:23:09.020349",
+    "sector": "Industrials"
+  },
+  "CZR": {
+    "ticker": "CZR",
+    "last_updated": "2025-06-23T16:23:09.500866",
+    "sector": "Services"
+  },
+  "GDX": {
+    "ticker": "GDX",
+    "last_updated": "2025-06-23T16:23:09.991153",
+    "sector": "NA"
+  },
+  "CACI": {
+    "ticker": "CACI",
+    "last_updated": "2025-06-23T16:23:10.475911",
+    "sector": "Information Technology"
+  },
+  "NUVB.WS": {
+    "ticker": "NUVB.WS",
+    "last_updated": "2025-06-23T16:23:10.947926",
+    "sector": "NA"
+  },
+  "KW": {
+    "ticker": "KW",
+    "last_updated": "2025-06-23T16:23:11.379068",
+    "sector": "Financials"
+  },
+  "CDW": {
+    "ticker": "CDW",
+    "last_updated": "2025-06-23T16:23:11.857166",
+    "sector": "Information Technology"
+  },
+  "MS": {
+    "ticker": "MS",
+    "last_updated": "2025-06-23T16:23:12.331119",
+    "sector": "Financials"
+  },
+  "CNX": {
+    "ticker": "CNX",
+    "last_updated": "2025-06-23T16:23:12.787273",
+    "sector": "Energy"
+  },
+  "PR": {
+    "ticker": "PR",
+    "last_updated": "2025-06-23T16:23:13.252194",
+    "sector": "Materials"
+  },
+  "LBRDK": {
+    "ticker": "LBRDK",
+    "last_updated": "2025-06-23T16:23:13.728071",
+    "sector": "Services"
+  },
+  "ALNY": {
+    "ticker": "ALNY",
+    "last_updated": "2025-06-23T16:23:14.207493",
+    "sector": "Health Care"
+  },
+  "RNR": {
+    "ticker": "RNR",
+    "last_updated": "2025-06-23T16:23:14.711807",
+    "sector": "Financials"
+  },
+  "VSEC": {
+    "ticker": "VSEC",
+    "last_updated": "2025-06-23T16:23:15.175779",
+    "sector": "Industrials"
+  },
+  "RDI": {
+    "ticker": "RDI",
+    "last_updated": "2025-06-23T16:23:15.653409",
+    "sector": "Services"
+  },
+  "SPSC": {
+    "ticker": "SPSC",
+    "last_updated": "2025-06-23T16:23:16.125119",
+    "sector": "Technology"
+  },
+  "AMBC": {
+    "ticker": "AMBC",
+    "last_updated": "2025-06-23T16:23:16.590837",
+    "sector": "Financials"
+  },
+  "FLEX": {
+    "ticker": "FLEX",
+    "last_updated": "2025-06-23T16:23:17.064158",
+    "sector": "Technology"
+  },
+  "AXTA": {
+    "ticker": "AXTA",
+    "last_updated": "2025-06-23T16:23:17.525503",
+    "sector": "Materials"
+  },
+  "MMC": {
+    "ticker": "MMC",
+    "last_updated": "2025-06-23T16:23:17.990389",
+    "sector": "Financials"
+  },
+  "TRMB": {
+    "ticker": "TRMB",
+    "last_updated": "2025-06-23T16:23:18.458779",
+    "sector": "Information Technology"
+  },
+  "TBN": {
+    "ticker": "TBN",
+    "last_updated": "2025-06-23T16:23:18.926510",
+    "sector": "Energy"
+  },
+  "MIDD": {
+    "ticker": "MIDD",
+    "last_updated": "2025-06-23T16:23:19.413501",
+    "sector": "Industrial Goods"
+  },
+  "BRC": {
+    "ticker": "BRC",
+    "last_updated": "2025-06-23T16:23:19.868878",
+    "sector": "Industrials"
+  },
+  "PPG": {
+    "ticker": "PPG",
+    "last_updated": "2025-06-23T16:23:20.335142",
+    "sector": "Materials"
+  },
+  "GTN": {
+    "ticker": "GTN",
+    "last_updated": "2025-06-23T16:23:20.957121",
+    "sector": "Consumer Discretionary"
+  },
+  "BL": {
+    "ticker": "BL",
+    "last_updated": "2025-06-23T16:23:21.435452",
+    "sector": "Technology"
+  },
+  "ARE": {
+    "ticker": "ARE",
+    "last_updated": "2025-06-23T16:23:21.892023",
+    "sector": "Financials"
+  },
+  "BZ": {
+    "ticker": "BZ",
+    "last_updated": "2025-06-23T16:23:22.358236",
+    "sector": "Services"
+  },
+  "FDX": {
+    "ticker": "FDX",
+    "last_updated": "2025-06-23T16:23:22.834237",
+    "sector": "Industrials"
+  },
+  "JCI": {
+    "ticker": "JCI",
+    "last_updated": "2025-06-23T16:23:23.302714",
+    "sector": "Consumer Discretionary"
+  },
+  "VIG": {
+    "ticker": "VIG",
+    "last_updated": "2025-06-23T16:23:23.770831",
+    "sector": "Super Investor Stats:"
+  },
+  "DNN": {
+    "ticker": "DNN",
+    "last_updated": "2025-06-23T16:23:24.237998",
+    "sector": "Energy"
+  },
+  "CDNS": {
+    "ticker": "CDNS",
+    "last_updated": "2025-06-23T16:23:24.674549",
+    "sector": "Information Technology"
+  },
+  "SOFI": {
+    "ticker": "SOFI",
+    "last_updated": "2025-06-23T16:23:25.154516",
+    "sector": "Financials"
+  },
+  "AMR": {
+    "ticker": "AMR",
+    "last_updated": "2025-06-23T16:23:25.623591",
+    "sector": "Materials"
+  },
+  "ASTE": {
+    "ticker": "ASTE",
+    "last_updated": "2025-06-23T16:23:26.083328",
+    "sector": "Industrials"
+  },
+  "OCSL": {
+    "ticker": "OCSL",
+    "last_updated": "2025-06-23T16:23:26.558456",
+    "sector": "Financials"
+  },
+  "GWRE": {
+    "ticker": "GWRE",
+    "last_updated": "2025-06-23T16:23:27.043164",
+    "sector": "Technology"
+  },
+  "ITUB": {
+    "ticker": "ITUB",
+    "last_updated": "2025-06-23T16:23:27.547263",
+    "sector": "Financials"
+  },
+  "MCG-OLD": {
+    "ticker": "MCG-OLD",
+    "last_updated": "2025-06-23T16:23:28.021246",
+    "sector": "Consumer Cyclical"
+  },
+  "IIIN": {
+    "ticker": "IIIN",
+    "last_updated": "2025-06-23T16:23:28.483707",
+    "sector": "Materials"
+  },
+  "LASR": {
+    "ticker": "LASR",
+    "last_updated": "2025-06-23T16:23:28.960624",
+    "sector": "Information Technology"
+  },
+  "TDS": {
+    "ticker": "TDS",
+    "last_updated": "2025-06-23T16:23:29.427738",
+    "sector": "Communication Services"
+  },
+  "VRTX": {
+    "ticker": "VRTX",
+    "last_updated": "2025-06-23T16:23:29.899011",
+    "sector": "Health Care"
+  },
+  "SE": {
+    "ticker": "SE",
+    "last_updated": "2025-06-23T16:23:30.344051",
+    "sector": "Technology"
+  },
+  "NVO": {
+    "ticker": "NVO",
+    "last_updated": "2025-06-23T16:23:30.813786",
+    "sector": "Health Care"
+  },
+  "DY": {
+    "ticker": "DY",
+    "last_updated": "2025-06-23T16:23:31.288143",
+    "sector": "Information Technology"
+  },
+  "FIS": {
+    "ticker": "FIS",
+    "last_updated": "2025-06-23T16:23:31.763446",
+    "sector": "Information Technology"
+  },
+  "TIC": {
+    "ticker": "TIC",
+    "last_updated": "2025-06-23T16:23:32.232023",
+    "sector": "Industrials"
+  },
+  "LOAR": {
+    "ticker": "LOAR",
+    "last_updated": "2025-06-23T16:23:32.717768",
+    "sector": "Industrials"
+  },
+  "ECPG": {
+    "ticker": "ECPG",
+    "last_updated": "2025-06-23T16:23:33.357305",
+    "sector": "Financials"
+  },
+  "TEVA": {
+    "ticker": "TEVA",
+    "last_updated": "2025-06-23T16:23:33.842460",
+    "sector": "Health Care"
+  },
+  "FUN": {
+    "ticker": "FUN",
+    "last_updated": "2025-06-23T16:23:34.302723",
+    "sector": "Services"
+  },
+  "2531.T": {
+    "ticker": "2531.T",
+    "last_updated": "2025-06-23T16:23:34.757537",
+    "sector": "Consumer Staples"
+  },
+  "TROX": {
+    "ticker": "TROX",
+    "last_updated": "2025-06-23T16:23:35.220876",
+    "sector": "Materials"
+  },
+  "BILI": {
+    "ticker": "BILI",
+    "last_updated": "2025-06-23T16:23:35.688285",
+    "sector": "Communication Services"
+  },
+  "TXN": {
+    "ticker": "TXN",
+    "last_updated": "2025-06-23T16:23:36.160160",
+    "sector": "Information Technology"
+  },
+  "ARW": {
+    "ticker": "ARW",
+    "last_updated": "2025-06-23T16:23:36.624334",
+    "sector": "Information Technology"
+  },
+  "EWJ": {
+    "ticker": "EWJ",
+    "last_updated": "2025-06-23T16:23:37.104701",
+    "sector": "NA"
+  },
+  "GT": {
+    "ticker": "GT",
+    "last_updated": "2025-06-23T16:23:37.583852",
+    "sector": "Consumer Discretionary"
+  },
+  "ENB": {
+    "ticker": "ENB",
+    "last_updated": "2025-06-23T16:23:38.056313",
+    "sector": "Materials"
+  },
+  "WHD": {
+    "ticker": "WHD",
+    "last_updated": "2025-06-23T16:23:38.526309",
+    "sector": "Energy"
+  },
+  "CAE": {
+    "ticker": "CAE",
+    "last_updated": "2025-06-23T16:23:38.991139",
+    "sector": "Industrials"
+  },
+  "PHM": {
+    "ticker": "PHM",
+    "last_updated": "2025-06-23T16:23:39.456174",
+    "sector": "Consumer Discretionary"
+  },
+  "PEYUF": {
+    "ticker": "PEYUF",
+    "last_updated": "2025-06-23T16:23:39.932766",
+    "sector": "Energy"
+  },
+  "STKL": {
+    "ticker": "STKL",
+    "last_updated": "2025-06-23T16:23:40.402742",
+    "sector": "Consumer Goods"
+  },
+  "UHAL": {
+    "ticker": "UHAL",
+    "last_updated": "2025-06-23T16:23:40.898811",
+    "sector": "Services"
+  },
+  "MCDIF": {
+    "ticker": "MCDIF",
+    "last_updated": "2025-06-23T16:23:41.362207",
+    "sector": "Industrial Goods"
+  },
+  "ORI": {
+    "ticker": "ORI",
+    "last_updated": "2025-06-23T16:23:41.854445",
+    "sector": "Financials"
+  },
+  "ASML": {
+    "ticker": "ASML",
+    "last_updated": "2025-06-23T16:23:42.328036",
+    "sector": "Technology"
+  },
+  "CCI": {
+    "ticker": "CCI",
+    "last_updated": "2025-06-23T16:23:42.793850",
+    "sector": "Technology"
+  },
+  "ARLP": {
+    "ticker": "ARLP",
+    "last_updated": "2025-06-23T16:23:43.258454",
+    "sector": "Materials"
+  },
+  "BE": {
+    "ticker": "BE",
+    "last_updated": "2025-06-23T16:23:43.722382",
+    "sector": "Utilities"
+  },
+  "LAMR": {
+    "ticker": "LAMR",
+    "last_updated": "2025-06-23T16:23:44.188130",
+    "sector": "Services"
+  },
+  "COLL": {
+    "ticker": "COLL",
+    "last_updated": "2025-06-23T16:23:44.658110",
+    "sector": "Health Care"
+  },
+  "BFH": {
+    "ticker": "BFH",
+    "last_updated": "2025-06-23T16:23:45.118286",
+    "sector": "Information Technology"
+  },
+  "CR": {
+    "ticker": "CR",
+    "last_updated": "2025-06-23T16:23:45.585873",
+    "sector": "Industrials"
+  },
+  "SEIC": {
+    "ticker": "SEIC",
+    "last_updated": "2025-06-23T16:23:46.057153",
+    "sector": "Financials"
+  },
+  "INCH.L": {
+    "ticker": "INCH.L",
+    "last_updated": "2025-06-23T16:23:46.559086",
+    "sector": "Consumer Goods"
+  },
+  "IWM": {
+    "ticker": "IWM",
+    "last_updated": "2025-06-23T16:23:47.016994",
+    "sector": "NA"
+  },
+  "LUCK": {
+    "ticker": "LUCK",
+    "last_updated": "2025-06-23T16:23:47.490961",
+    "sector": "Communication Services"
+  },
+  "EQH": {
+    "ticker": "EQH",
+    "last_updated": "2025-06-23T16:23:47.965980",
+    "sector": "Financials"
+  },
+  "CSL": {
+    "ticker": "CSL",
+    "last_updated": "2025-06-23T16:23:48.431900",
+    "sector": "Industrials"
+  },
+  "TPIC": {
+    "ticker": "TPIC",
+    "last_updated": "2025-06-23T16:23:48.908263",
+    "sector": "Industrials"
+  },
+  "UTI": {
+    "ticker": "UTI",
+    "last_updated": "2025-06-23T16:23:49.446333",
+    "sector": "Consumer Discretionary"
+  },
+  "LILA": {
+    "ticker": "LILA",
+    "last_updated": "2025-06-23T16:23:49.939890",
+    "sector": "Services"
+  },
+  "CRWV": {
+    "ticker": "CRWV",
+    "last_updated": "2025-06-23T16:23:50.405483",
+    "sector": "Technology"
+  },
+  "SPT": {
+    "ticker": "SPT",
+    "last_updated": "2025-06-23T16:23:50.980393",
+    "sector": "Information Technology"
+  },
+  "CTVA": {
+    "ticker": "CTVA",
+    "last_updated": "2025-06-23T16:23:51.457186",
+    "sector": "Materials"
+  },
+  "TYNPF": {
+    "ticker": "TYNPF",
+    "last_updated": "2025-06-23T16:23:51.940226",
+    "sector": "Materials"
+  },
+  "APH": {
+    "ticker": "APH",
+    "last_updated": "2025-06-23T16:23:52.376753",
+    "sector": "Information Technology"
+  },
+  "BIDU": {
+    "ticker": "BIDU",
+    "last_updated": "2025-06-23T16:23:52.861305",
+    "sector": "Technology"
+  },
+  "NVT": {
+    "ticker": "NVT",
+    "last_updated": "2025-06-23T16:23:53.333913",
+    "sector": "Technology"
+  },
+  "TTAN": {
+    "ticker": "TTAN",
+    "last_updated": "2025-06-23T16:23:53.798772",
+    "sector": "Technology"
+  },
+  "0116.HK": {
+    "ticker": "0116.HK",
+    "last_updated": "2025-06-23T16:23:54.270515",
+    "sector": "Consumer Cyclical"
+  },
+  "MAVF": {
+    "ticker": "MAVF",
+    "last_updated": "2025-06-23T16:23:54.755637",
+    "sector": "Super Investor Stats:"
+  },
+  "CART": {
+    "ticker": "CART",
+    "last_updated": "2025-06-23T16:23:55.236096",
+    "sector": "Super Investor Stats:"
+  },
+  "BLND": {
+    "ticker": "BLND",
+    "last_updated": "2025-06-23T16:23:55.725378",
+    "sector": "Technology"
+  },
+  "EAF": {
+    "ticker": "EAF",
+    "last_updated": "2025-06-23T16:23:56.194077",
+    "sector": "Industrial Goods"
+  },
+  "PCVX": {
+    "ticker": "PCVX",
+    "last_updated": "2025-06-23T16:23:56.669565",
+    "sector": "Health Care"
+  },
+  "PEPG": {
+    "ticker": "PEPG",
+    "last_updated": "2025-06-23T16:23:57.128595",
+    "sector": "Health Care"
+  },
+  "SKIL": {
+    "ticker": "SKIL",
+    "last_updated": "2025-06-23T16:23:57.593428",
+    "sector": "Information Technology"
+  },
+  "LEGN": {
+    "ticker": "LEGN",
+    "last_updated": "2025-06-23T16:23:58.044948",
+    "sector": "Health Care"
+  },
+  "HIZOF": {
+    "ticker": "HIZOF",
+    "last_updated": "2025-06-23T16:23:58.513745",
+    "sector": "Industrials"
+  },
+  "FOR": {
+    "ticker": "FOR",
+    "last_updated": "2025-06-23T16:23:58.980744",
+    "sector": "Real Estate"
+  },
+  "MPWR": {
+    "ticker": "MPWR",
+    "last_updated": "2025-06-23T16:23:59.466718",
+    "sector": "Technology"
+  },
+  "VTEB": {
+    "ticker": "VTEB",
+    "last_updated": "2025-06-23T16:23:59.920683",
+    "sector": "Super Investor Stats:"
+  },
+  "FHN": {
+    "ticker": "FHN",
+    "last_updated": "2025-06-23T16:24:00.389488",
+    "sector": "Financials"
+  },
+  "AME": {
+    "ticker": "AME",
+    "last_updated": "2025-06-23T16:24:00.864560",
+    "sector": "Industrials"
+  },
+  "LBTYA": {
+    "ticker": "LBTYA",
+    "last_updated": "2025-06-23T16:24:01.369186",
+    "sector": "Services"
+  },
+  "AS": {
+    "ticker": "AS",
+    "last_updated": "2025-06-23T16:24:01.828236",
+    "sector": "Consumer Cyclical"
+  },
+  "NVST": {
+    "ticker": "NVST",
+    "last_updated": "2025-06-23T16:24:02.316473",
+    "sector": "Health Care"
+  },
+  "OCFC": {
+    "ticker": "OCFC",
+    "last_updated": "2025-06-23T16:24:02.802749",
+    "sector": "Financials"
+  },
+  "BCC": {
+    "ticker": "BCC",
+    "last_updated": "2025-06-23T16:24:03.274419",
+    "sector": "Industrial Goods"
+  },
+  "SPGI": {
+    "ticker": "SPGI",
+    "last_updated": "2025-06-23T16:24:03.753289",
+    "sector": "Consumer Discretionary"
+  },
+  "ATMU": {
+    "ticker": "ATMU",
+    "last_updated": "2025-06-23T16:24:04.230812",
+    "sector": "Industrials"
+  },
+  "ACWX": {
+    "ticker": "ACWX",
+    "last_updated": "2025-06-23T16:24:04.701901",
+    "sector": "NA"
+  },
+  "EQNR": {
+    "ticker": "EQNR",
+    "last_updated": "2025-06-23T16:24:05.166046",
+    "sector": "Energy"
+  },
+  "LII": {
+    "ticker": "LII",
+    "last_updated": "2025-06-23T16:24:05.672921",
+    "sector": "Industrials"
+  },
+  "TNC": {
+    "ticker": "TNC",
+    "last_updated": "2025-06-23T16:24:06.139790",
+    "sector": "Industrial Goods"
+  },
+  "TLPFF": {
+    "ticker": "TLPFF",
+    "last_updated": "2025-06-23T16:24:06.600739",
+    "sector": "Industrials"
+  },
+  "REPX": {
+    "ticker": "REPX",
+    "last_updated": "2025-06-23T16:24:07.458707",
+    "sector": "Energy"
+  },
+  "FER": {
+    "ticker": "FER",
+    "last_updated": "2025-06-23T16:24:07.952059",
+    "sector": "Industrials"
+  },
+  "DB": {
+    "ticker": "DB",
+    "last_updated": "2025-06-23T16:24:08.412553",
+    "sector": "Financials"
+  },
+  "CHRD": {
+    "ticker": "CHRD",
+    "last_updated": "2025-06-23T16:24:08.884010",
+    "sector": "Materials"
+  },
+  "TKTT.PA": {
+    "ticker": "TKTT.PA",
+    "last_updated": "2025-06-23T16:24:09.339097",
+    "sector": "Consumer Goods"
+  },
+  "UAL": {
+    "ticker": "UAL",
+    "last_updated": "2025-06-23T16:24:09.822252",
+    "sector": "Services"
+  },
+  "CROX": {
+    "ticker": "CROX",
+    "last_updated": "2025-06-23T16:24:10.297688",
+    "sector": "Consumer Discretionary"
+  },
+  "NUVB": {
+    "ticker": "NUVB",
+    "last_updated": "2025-06-23T16:24:10.783946",
+    "sector": "Health Care"
+  },
+  "BBWI": {
+    "ticker": "BBWI",
+    "last_updated": "2025-06-23T16:24:11.266720",
+    "sector": "Services"
+  },
+  "GE": {
+    "ticker": "GE",
+    "last_updated": "2025-06-23T16:24:11.757753",
+    "sector": "Industrials"
+  },
+  "CIVI": {
+    "ticker": "CIVI",
+    "last_updated": "2025-06-23T16:24:12.200545",
+    "sector": "Materials"
+  },
+  "TME": {
+    "ticker": "TME",
+    "last_updated": "2025-06-23T16:24:12.691346",
+    "sector": "Communication Services"
+  },
+  "ZUMZ": {
+    "ticker": "ZUMZ",
+    "last_updated": "2025-06-23T16:24:13.175994",
+    "sector": "Services"
+  },
+  "RYAN": {
+    "ticker": "RYAN",
+    "last_updated": "2025-06-23T16:24:13.709013",
+    "sector": "Financials"
+  },
+  "WRLC": {
+    "ticker": "WRLC",
+    "last_updated": "2025-06-23T16:24:14.213544",
+    "sector": "Industrials"
+  },
+  "BJRI": {
+    "ticker": "BJRI",
+    "last_updated": "2025-06-23T16:24:14.691239",
+    "sector": "Services"
+  },
+  "SVV": {
+    "ticker": "SVV",
+    "last_updated": "2025-06-23T16:24:15.176218",
+    "sector": "Consumer Cyclical"
+  },
+  "GFTU.L": {
+    "ticker": "GFTU.L",
+    "last_updated": "2025-06-23T16:24:15.649318",
+    "sector": "Industrials"
+  },
+  "FITB": {
+    "ticker": "FITB",
+    "last_updated": "2025-06-23T16:24:16.115737",
+    "sector": "Financials"
+  },
+  "LNT": {
+    "ticker": "LNT",
+    "last_updated": "2025-06-23T16:24:16.579886",
+    "sector": "Utilities"
+  },
+  "GSHD": {
+    "ticker": "GSHD",
+    "last_updated": "2025-06-23T16:24:17.062571",
+    "sector": "Financials"
+  },
+  "STEM.L": {
+    "ticker": "STEM.L",
+    "last_updated": "2025-06-23T16:24:17.536173",
+    "sector": "Industrials"
+  },
+  "BKD": {
+    "ticker": "BKD",
+    "last_updated": "2025-06-23T16:24:18.000393",
+    "sector": "Health Care"
+  },
+  "CVSGF": {
+    "ticker": "CVSGF",
+    "last_updated": "2025-06-23T16:24:18.493678",
+    "sector": "Consumer Cyclical"
+  },
+  "AVTR": {
+    "ticker": "AVTR",
+    "last_updated": "2025-06-23T16:24:18.967324",
+    "sector": "Materials"
+  },
+  "GNE": {
+    "ticker": "GNE",
+    "last_updated": "2025-06-23T16:24:19.428047",
+    "sector": "Materials"
+  },
+  "NWG": {
+    "ticker": "NWG",
+    "last_updated": "2025-06-23T16:24:19.878527",
+    "sector": "Financials"
+  },
+  "LEN.B": {
+    "ticker": "LEN.B",
+    "last_updated": "2025-06-23T16:24:20.342510",
+    "sector": "Industrial Goods"
+  },
+  "NSC": {
+    "ticker": "NSC",
+    "last_updated": "2025-06-23T16:24:20.965078",
+    "sector": "Industrials"
+  },
+  "XOM": {
+    "ticker": "XOM",
+    "last_updated": "2025-06-23T16:24:21.471292",
+    "sector": "Energy"
+  },
+  "BJ": {
+    "ticker": "BJ",
+    "last_updated": "2025-06-23T16:24:21.954213",
+    "sector": "Consumer Staples"
+  },
+  "ESS": {
+    "ticker": "ESS",
+    "last_updated": "2025-06-23T16:24:22.416914",
+    "sector": "Financials"
+  },
+  "HSTM": {
+    "ticker": "HSTM",
+    "last_updated": "2025-06-23T16:24:22.888226",
+    "sector": "Health Care"
+  },
+  "NBIX": {
+    "ticker": "NBIX",
+    "last_updated": "2025-06-23T16:24:23.363743",
+    "sector": "Health Care"
+  },
+  "NJR": {
+    "ticker": "NJR",
+    "last_updated": "2025-06-23T16:24:23.827836",
+    "sector": "Utilities"
+  },
+  "AVB": {
+    "ticker": "AVB",
+    "last_updated": "2025-06-23T16:24:24.297387",
+    "sector": "Financials"
+  },
+  "KOF": {
+    "ticker": "KOF",
+    "last_updated": "2025-06-23T16:24:24.761110",
+    "sector": "Consumer Goods"
+  },
+  "UNH": {
+    "ticker": "UNH",
+    "last_updated": "2025-06-23T16:24:25.208269",
+    "sector": "Health Care"
+  },
+  "GSK": {
+    "ticker": "GSK",
+    "last_updated": "2025-06-23T16:24:25.670748",
+    "sector": "Health Care"
+  },
+  "DPZ": {
+    "ticker": "DPZ",
+    "last_updated": "2025-06-23T16:24:26.148107",
+    "sector": "Services"
+  },
+  "SBLK": {
+    "ticker": "SBLK",
+    "last_updated": "2025-06-23T16:24:26.618715",
+    "sector": "Services"
+  },
+  "CASH": {
+    "ticker": "CASH",
+    "last_updated": "2025-06-23T16:24:27.085266",
+    "sector": "Financials"
+  },
+  "CAKE": {
+    "ticker": "CAKE",
+    "last_updated": "2025-06-23T16:24:27.551325",
+    "sector": "Consumer Discretionary"
+  },
+  "TTWO": {
+    "ticker": "TTWO",
+    "last_updated": "2025-06-23T16:24:28.035878",
+    "sector": "Information Technology"
+  },
+  "DNA": {
+    "ticker": "DNA",
+    "last_updated": "2025-06-23T16:24:28.529862",
+    "sector": "Health Care"
+  },
+  "GAP": {
+    "ticker": "GAP",
+    "last_updated": "2025-06-23T16:24:28.999738",
+    "sector": "Consumer Discretionary"
+  },
+  "RHHVF": {
+    "ticker": "RHHVF",
+    "last_updated": "2025-06-23T16:24:29.464376",
+    "sector": "Health Care"
+  },
+  "ATZ.TO": {
+    "ticker": "ATZ.TO",
+    "last_updated": "2025-06-23T16:24:29.915976",
+    "sector": "Consumer Cyclical"
+  },
+  "GPRO": {
+    "ticker": "GPRO",
+    "last_updated": "2025-06-23T16:24:30.395013",
+    "sector": "Consumer Goods"
+  },
+  "CXW": {
+    "ticker": "CXW",
+    "last_updated": "2025-06-23T16:24:30.875123",
+    "sector": "Financials"
+  },
+  "MBC": {
+    "ticker": "MBC",
+    "last_updated": "2025-06-23T16:24:31.358688",
+    "sector": "Consumer Cyclical"
+  },
+  "IDCC": {
+    "ticker": "IDCC",
+    "last_updated": "2025-06-23T16:24:31.789405",
+    "sector": "Technology"
+  },
+  "WTW": {
+    "ticker": "WTW",
+    "last_updated": "2025-06-23T16:24:32.249721",
+    "sector": "Financials"
+  },
+  "FN": {
+    "ticker": "FN",
+    "last_updated": "2025-06-23T16:24:32.715897",
+    "sector": "Consumer Goods"
+  },
+  "FAF": {
+    "ticker": "FAF",
+    "last_updated": "2025-06-23T16:24:33.173873",
+    "sector": "Financials"
+  },
+  "OSW": {
+    "ticker": "OSW",
+    "last_updated": "2025-06-23T16:24:33.668433",
+    "sector": "Consumer Cyclical"
+  },
+  "BC": {
+    "ticker": "BC",
+    "last_updated": "2025-06-23T16:24:34.147420",
+    "sector": "Consumer Discretionary"
+  },
+  "FLCA": {
+    "ticker": "FLCA",
+    "last_updated": "2025-06-23T16:24:34.614898",
+    "sector": "Super Investor Stats:"
+  },
+  "BSX": {
+    "ticker": "BSX",
+    "last_updated": "2025-06-23T16:24:35.078730",
+    "sector": "Health Care"
+  },
+  "PYPL": {
+    "ticker": "PYPL",
+    "last_updated": "2025-06-23T16:24:35.513264",
+    "sector": "Financials"
+  },
+  "ALC": {
+    "ticker": "ALC",
+    "last_updated": "2025-06-23T16:24:35.971900",
+    "sector": "Health Care"
+  },
+  "AON": {
+    "ticker": "AON",
+    "last_updated": "2025-06-23T16:24:36.458268",
+    "sector": "Financials"
+  },
+  "CFRUY": {
+    "ticker": "CFRUY",
+    "last_updated": "2025-06-23T16:24:36.944156",
+    "sector": "Consumer Discretionary"
+  },
+  "DXC": {
+    "ticker": "DXC",
+    "last_updated": "2025-06-23T16:24:37.418227",
+    "sector": "Technology"
+  },
+  "OTIS": {
+    "ticker": "OTIS",
+    "last_updated": "2025-06-23T16:24:37.888401",
+    "sector": "Industrials"
+  },
+  "IQV": {
+    "ticker": "IQV",
+    "last_updated": "2025-06-23T16:24:38.349153",
+    "sector": "Health Care"
+  },
+  "NTNX": {
+    "ticker": "NTNX",
+    "last_updated": "2025-06-23T16:24:38.824984",
+    "sector": "Technology"
+  },
+  "WMB": {
+    "ticker": "WMB",
+    "last_updated": "2025-06-23T16:24:39.287350",
+    "sector": "Energy"
+  },
+  "BIIB": {
+    "ticker": "BIIB",
+    "last_updated": "2025-06-23T16:24:39.756311",
+    "sector": "Health Care"
+  },
+  "GRPN": {
+    "ticker": "GRPN",
+    "last_updated": "2025-06-23T16:24:40.213325",
+    "sector": "Technology"
+  },
+  "IEUR": {
+    "ticker": "IEUR",
+    "last_updated": "2025-06-23T16:24:40.672224",
+    "sector": "NA"
+  },
+  "PSA": {
+    "ticker": "PSA",
+    "last_updated": "2025-06-23T16:24:41.128109",
+    "sector": "Financials"
+  },
+  "HPP": {
+    "ticker": "HPP",
+    "last_updated": "2025-06-23T16:24:41.602321",
+    "sector": "Real Estate"
+  },
+  "BAM": {
+    "ticker": "BAM",
+    "last_updated": "2025-06-23T16:24:42.066465",
+    "sector": "Financials"
+  },
+  "RELY": {
+    "ticker": "RELY",
+    "last_updated": "2025-06-23T16:24:42.550448",
+    "sector": "Technology"
+  },
+  "DENN": {
+    "ticker": "DENN",
+    "last_updated": "2025-06-23T16:24:43.053918",
+    "sector": "Services"
+  },
+  "TJX": {
+    "ticker": "TJX",
+    "last_updated": "2025-06-23T16:24:43.495939",
+    "sector": "Consumer Discretionary"
+  },
+  "LSDAF": {
+    "ticker": "LSDAF",
+    "last_updated": "2025-06-23T16:24:43.955290",
+    "sector": "Consumer Staples"
+  },
+  "CSTM": {
+    "ticker": "CSTM",
+    "last_updated": "2025-06-23T16:24:44.419990",
+    "sector": "Industrial Goods"
+  },
+  "GEHC": {
+    "ticker": "GEHC",
+    "last_updated": "2025-06-23T16:24:44.899231",
+    "sector": "Health Care"
+  },
+  "KFY": {
+    "ticker": "KFY",
+    "last_updated": "2025-06-23T16:24:45.390782",
+    "sector": "Industrials"
+  },
+  "UNFI": {
+    "ticker": "UNFI",
+    "last_updated": "2025-06-23T16:24:45.854759",
+    "sector": "Consumer Staples"
+  },
+  "ERFSF": {
+    "ticker": "ERFSF",
+    "last_updated": "2025-06-23T16:24:46.317046",
+    "sector": "Health Care"
+  },
+  "AMAT": {
+    "ticker": "AMAT",
+    "last_updated": "2025-06-23T16:24:46.800471",
+    "sector": "Information Technology"
+  },
+  "IWF": {
+    "ticker": "IWF",
+    "last_updated": "2025-06-23T16:24:47.270776",
+    "sector": "NA"
+  },
+  "MSGS": {
+    "ticker": "MSGS",
+    "last_updated": "2025-06-23T16:24:47.753193",
+    "sector": "Communication Services"
+  },
+  "VTRS": {
+    "ticker": "VTRS",
+    "last_updated": "2025-06-23T16:24:48.234548",
+    "sector": "Health Care"
+  },
+  "PENN": {
+    "ticker": "PENN",
+    "last_updated": "2025-06-23T16:24:48.709533",
+    "sector": "Services"
+  },
+  "ALL": {
+    "ticker": "ALL",
+    "last_updated": "2025-06-23T16:24:49.163577",
+    "sector": "Financials"
+  },
+  "ALG": {
+    "ticker": "ALG",
+    "last_updated": "2025-06-23T16:24:49.631672",
+    "sector": "Industrial Goods"
+  },
+  "ACA": {
+    "ticker": "ACA",
+    "last_updated": "2025-06-23T16:24:50.103360",
+    "sector": "Industrials"
+  },
+  "TEL": {
+    "ticker": "TEL",
+    "last_updated": "2025-06-23T16:24:50.537803",
+    "sector": "Technology"
+  },
+  "SIG": {
+    "ticker": "SIG",
+    "last_updated": "2025-06-23T16:24:51.139372",
+    "sector": "Services"
+  },
+  "TRU": {
+    "ticker": "TRU",
+    "last_updated": "2025-06-23T16:24:51.600318",
+    "sector": "Services"
+  },
+  "NVDA": {
+    "ticker": "NVDA",
+    "last_updated": "2025-06-23T16:24:52.042267",
+    "sector": "Information Technology"
+  },
+  "WAL": {
+    "ticker": "WAL",
+    "last_updated": "2025-06-23T16:24:52.525652",
+    "sector": "Financials"
+  },
+  "ISRG": {
+    "ticker": "ISRG",
+    "last_updated": "2025-06-23T16:24:53.035893",
+    "sector": "Health Care"
+  },
+  "SBCF": {
+    "ticker": "SBCF",
+    "last_updated": "2025-06-23T16:24:53.505050",
+    "sector": "Financials"
+  },
+  "MNST": {
+    "ticker": "MNST",
+    "last_updated": "2025-06-23T16:24:53.998832",
+    "sector": "Consumer Goods"
+  },
+  "ZIMV": {
+    "ticker": "ZIMV",
+    "last_updated": "2025-06-23T16:24:54.460705",
+    "sector": "Health Care"
+  },
+  "OZK": {
+    "ticker": "OZK",
+    "last_updated": "2025-06-23T16:24:54.931765",
+    "sector": "Financials"
+  },
+  "ACGL": {
+    "ticker": "ACGL",
+    "last_updated": "2025-06-23T16:24:55.367728",
+    "sector": "Financials"
+  },
+  "CCK": {
+    "ticker": "CCK",
+    "last_updated": "2025-06-23T16:24:55.825862",
+    "sector": "Consumer Goods"
+  },
+  "NTPIF": {
+    "ticker": "NTPIF",
+    "last_updated": "2025-06-23T16:24:56.291226",
+    "sector": "Technology"
+  },
+  "DFNL": {
+    "ticker": "DFNL",
+    "last_updated": "2025-06-23T16:24:56.757225",
+    "sector": "Super Investor Stats:"
+  },
+  "ETN": {
+    "ticker": "ETN",
+    "last_updated": "2025-06-23T16:24:57.197131",
+    "sector": "Industrials"
+  },
+  "EYE": {
+    "ticker": "EYE",
+    "last_updated": "2025-06-23T16:24:57.663035",
+    "sector": "Consumer Cyclical"
+  },
+  "UBER": {
+    "ticker": "UBER",
+    "last_updated": "2025-06-23T16:24:58.131530",
+    "sector": "Technology"
+  },
+  "PLOW": {
+    "ticker": "PLOW",
+    "last_updated": "2025-06-23T16:24:58.602835",
+    "sector": "Consumer Goods"
+  },
+  "VMC": {
+    "ticker": "VMC",
+    "last_updated": "2025-06-23T16:24:59.060832",
+    "sector": "Materials"
+  },
+  "MIR": {
+    "ticker": "MIR",
+    "last_updated": "2025-06-23T16:24:59.543684",
+    "sector": "Industrials"
+  },
+  "YNDX": {
+    "ticker": "YNDX",
+    "last_updated": "2025-06-23T16:25:00.017002",
+    "sector": "Technology"
+  },
+  "BELFA": {
+    "ticker": "BELFA",
+    "last_updated": "2025-06-23T16:25:00.494747",
+    "sector": "Information Technology"
+  },
+  "PDD": {
+    "ticker": "PDD",
+    "last_updated": "2025-06-23T16:25:00.953182",
+    "sector": "Consumer Goods"
+  },
+  "GPRE": {
+    "ticker": "GPRE",
+    "last_updated": "2025-06-23T16:25:01.450462",
+    "sector": "Energy"
+  },
+  "NWE": {
+    "ticker": "NWE",
+    "last_updated": "2025-06-23T16:25:01.919965",
+    "sector": "Utilities"
+  },
+  "AN3.F": {
+    "ticker": "AN3.F",
+    "last_updated": "2025-06-23T16:25:02.451691",
+    "sector": "Technology"
+  },
+  "DLTR": {
+    "ticker": "DLTR",
+    "last_updated": "2025-06-23T16:25:02.924055",
+    "sector": "Consumer Discretionary"
+  },
+  "VSH": {
+    "ticker": "VSH",
+    "last_updated": "2025-06-23T16:25:03.423998",
+    "sector": "Information Technology"
+  },
+  "FOXA": {
+    "ticker": "FOXA",
+    "last_updated": "2025-06-23T16:25:03.871021",
+    "sector": "Services"
+  },
+  "KOTMY": {
+    "ticker": "KOTMY",
+    "last_updated": "2025-06-23T16:25:04.328672",
+    "sector": "Consumer Cyclical"
+  },
+  "QNST": {
+    "ticker": "QNST",
+    "last_updated": "2025-06-23T16:25:04.810185",
+    "sector": "Services"
+  },
+  "SPB": {
+    "ticker": "SPB",
+    "last_updated": "2025-06-23T16:25:05.275723",
+    "sector": "Consumer Staples"
+  },
+  "FOUR": {
+    "ticker": "FOUR",
+    "last_updated": "2025-06-23T16:25:05.745215",
+    "sector": "Information Technology"
+  },
+  "IJR": {
+    "ticker": "IJR",
+    "last_updated": "2025-06-23T16:25:06.197780",
+    "sector": "Super Investor Stats:"
+  },
+  "URI": {
+    "ticker": "URI",
+    "last_updated": "2025-06-23T16:25:06.665632",
+    "sector": "Industrials"
+  },
+  "SYY": {
+    "ticker": "SYY",
+    "last_updated": "2025-06-23T16:25:07.129861",
+    "sector": "Consumer Staples"
+  },
+  "AMPY": {
+    "ticker": "AMPY",
+    "last_updated": "2025-06-23T16:25:07.593315",
+    "sector": "Energy"
+  },
+  "SHW": {
+    "ticker": "SHW",
+    "last_updated": "2025-06-23T16:25:08.059524",
+    "sector": "Consumer Discretionary"
+  },
+  "SAIL": {
+    "ticker": "SAIL",
+    "last_updated": "2025-06-23T16:25:08.522277",
+    "sector": "Technology"
+  },
+  "LIVN": {
+    "ticker": "LIVN",
+    "last_updated": "2025-06-23T16:25:08.992120",
+    "sector": "Health Care"
+  },
+  "6250.T": {
+    "ticker": "6250.T",
+    "last_updated": "2025-06-23T16:25:09.471912",
+    "sector": "Industrials"
+  },
+  "AGCO": {
+    "ticker": "AGCO",
+    "last_updated": "2025-06-23T16:25:09.937034",
+    "sector": "Industrials"
+  },
+  "EAT": {
+    "ticker": "EAT",
+    "last_updated": "2025-06-23T16:25:10.410307",
+    "sector": "Consumer Discretionary"
+  },
+  "NXE": {
+    "ticker": "NXE",
+    "last_updated": "2025-06-23T16:25:10.876459",
+    "sector": "Materials"
+  },
+  "STNG": {
+    "ticker": "STNG",
+    "last_updated": "2025-06-23T16:25:11.337472",
+    "sector": "Services"
+  },
+  "PAGS": {
+    "ticker": "PAGS",
+    "last_updated": "2025-06-23T16:25:11.793647",
+    "sector": "Technology"
+  },
+  "CE": {
+    "ticker": "CE",
+    "last_updated": "2025-06-23T16:25:12.269299",
+    "sector": "Materials"
+  },
+  "RBA": {
+    "ticker": "RBA",
+    "last_updated": "2025-06-23T16:25:12.745386",
+    "sector": "Services"
+  },
+  "CRMT": {
+    "ticker": "CRMT",
+    "last_updated": "2025-06-23T16:25:13.198334",
+    "sector": "Consumer Cyclical"
+  },
+  "CATH": {
+    "ticker": "CATH",
+    "last_updated": "2025-06-23T16:25:13.657194",
+    "sector": "NA"
+  },
+  "WMT": {
+    "ticker": "WMT",
+    "last_updated": "2025-06-23T16:25:14.159768",
+    "sector": "Consumer Staples"
+  },
+  "MUR": {
+    "ticker": "MUR",
+    "last_updated": "2025-06-23T16:25:14.639031",
+    "sector": "Energy"
+  },
+  "DVA": {
+    "ticker": "DVA",
+    "last_updated": "2025-06-23T16:25:15.099993",
+    "sector": "Health Care"
+  },
+  "IONS": {
+    "ticker": "IONS",
+    "last_updated": "2025-06-23T16:25:15.569702",
+    "sector": "Health Care"
+  },
+  "SJM": {
+    "ticker": "SJM",
+    "last_updated": "2025-06-23T16:25:16.078507",
+    "sector": "Consumer Staples"
+  },
+  "ROP": {
+    "ticker": "ROP",
+    "last_updated": "2025-06-23T16:25:16.550700",
+    "sector": "Industrials"
+  },
+  "RLYB": {
+    "ticker": "RLYB",
+    "last_updated": "2025-06-23T16:25:17.049070",
+    "sector": "Health Care"
+  },
+  "ACN": {
+    "ticker": "ACN",
+    "last_updated": "2025-06-23T16:25:17.527077",
+    "sector": "Services"
+  },
+  "BLBD": {
+    "ticker": "BLBD",
+    "last_updated": "2025-06-23T16:25:17.999710",
+    "sector": "Consumer Goods"
+  },
+  "APO": {
+    "ticker": "APO",
+    "last_updated": "2025-06-23T16:25:18.438175",
+    "sector": "Financials"
+  },
+  "SDRL": {
+    "ticker": "SDRL",
+    "last_updated": "2025-06-23T16:25:18.895972",
+    "sector": "Energy"
+  },
+  "ABM": {
+    "ticker": "ABM",
+    "last_updated": "2025-06-23T16:25:19.387346",
+    "sector": "Industrials"
+  },
+  "FLMNF": {
+    "ticker": "FLMNF",
+    "last_updated": "2025-06-23T16:25:19.858244",
+    "sector": "Health Care"
+  },
+  "CARG": {
+    "ticker": "CARG",
+    "last_updated": "2025-06-23T16:25:20.321644",
+    "sector": "Services"
+  },
+  "REVG": {
+    "ticker": "REVG",
+    "last_updated": "2025-06-23T16:25:20.855638",
+    "sector": "Consumer Goods"
+  },
+  "CME": {
+    "ticker": "CME",
+    "last_updated": "2025-06-23T16:25:21.308197",
+    "sector": "Financials"
+  },
+  "ROIV": {
+    "ticker": "ROIV",
+    "last_updated": "2025-06-23T16:25:21.776180",
+    "sector": "Health Care"
+  },
+  "CHKEZ": {
+    "ticker": "CHKEZ",
+    "last_updated": "2025-06-23T16:25:22.232059",
+    "sector": "Energy"
+  },
+  "WVE": {
+    "ticker": "WVE",
+    "last_updated": "2025-06-23T16:25:22.689391",
+    "sector": "Health Care"
+  },
+  "AMKR": {
+    "ticker": "AMKR",
+    "last_updated": "2025-06-23T16:25:23.162870",
+    "sector": "Technology"
+  },
+  "AU": {
+    "ticker": "AU",
+    "last_updated": "2025-06-23T16:25:23.598058",
+    "sector": "Materials"
+  },
+  "THS": {
+    "ticker": "THS",
+    "last_updated": "2025-06-23T16:25:24.066343",
+    "sector": "Consumer Staples"
+  },
+  "KWEB": {
+    "ticker": "KWEB",
+    "last_updated": "2025-06-23T16:25:24.529244",
+    "sector": "Super Investor Stats:"
+  },
+  "WERN": {
+    "ticker": "WERN",
+    "last_updated": "2025-06-23T16:25:24.995900",
+    "sector": "Industrials"
+  },
+  "RMR": {
+    "ticker": "RMR",
+    "last_updated": "2025-06-23T16:25:25.459049",
+    "sector": "Real Estate"
+  },
+  "MCO": {
+    "ticker": "MCO",
+    "last_updated": "2025-06-23T16:25:25.923081",
+    "sector": "Financials"
+  },
+  "NTAP": {
+    "ticker": "NTAP",
+    "last_updated": "2025-06-23T16:25:26.389302",
+    "sector": "Information Technology"
+  },
+  "HCC": {
+    "ticker": "HCC",
+    "last_updated": "2025-06-23T16:25:26.858047",
+    "sector": "Financials"
+  },
+  "SBAC": {
+    "ticker": "SBAC",
+    "last_updated": "2025-06-23T16:25:27.313905",
+    "sector": "Technology"
+  },
+  "CPNG": {
+    "ticker": "CPNG",
+    "last_updated": "2025-06-23T16:25:27.811592",
+    "sector": "Consumer Cyclical"
+  },
+  "GANX": {
+    "ticker": "GANX",
+    "last_updated": "2025-06-23T16:25:28.273104",
+    "sector": "NA"
+  },
+  "SDGR": {
+    "ticker": "SDGR",
+    "last_updated": "2025-06-23T16:25:28.733474",
+    "sector": "Health Care"
+  },
+  "AAMI": {
+    "ticker": "AAMI",
+    "last_updated": "2025-06-23T16:25:29.207226",
+    "sector": "Financials"
+  },
+  "CCCS": {
+    "ticker": "CCCS",
+    "last_updated": "2025-06-23T16:25:29.678705",
+    "sector": "Technology"
+  },
+  "ACHC": {
+    "ticker": "ACHC",
+    "last_updated": "2025-06-23T16:25:30.159190",
+    "sector": "Health Care"
+  },
+  "HI6.F": {
+    "ticker": "HI6.F",
+    "last_updated": "2025-06-23T16:25:30.624838",
+    "sector": "Industrials"
+  },
+  "PCOR": {
+    "ticker": "PCOR",
+    "last_updated": "2025-06-23T16:25:31.116028",
+    "sector": "Technology"
+  },
+  "DCI": {
+    "ticker": "DCI",
+    "last_updated": "2025-06-23T16:25:31.572620",
+    "sector": "Industrials"
+  },
+  "NOK": {
+    "ticker": "NOK",
+    "last_updated": "2025-06-23T16:25:32.053752",
+    "sector": "Technology"
+  },
+  "FANG": {
+    "ticker": "FANG",
+    "last_updated": "2025-06-23T16:25:32.540075",
+    "sector": "Materials"
+  },
+  "WY": {
+    "ticker": "WY",
+    "last_updated": "2025-06-23T16:25:32.999162",
+    "sector": "Materials"
+  },
+  "SATS": {
+    "ticker": "SATS",
+    "last_updated": "2025-06-23T16:25:33.478765",
+    "sector": "Technology"
+  },
+  "COP": {
+    "ticker": "COP",
+    "last_updated": "2025-06-23T16:25:33.940291",
+    "sector": "Energy"
+  },
+  "NPO": {
+    "ticker": "NPO",
+    "last_updated": "2025-06-23T16:25:34.413854",
+    "sector": "Industrials"
+  },
+  "PUIGF": {
+    "ticker": "PUIGF",
+    "last_updated": "2025-06-23T16:25:34.881590",
+    "sector": "Consumer Staples"
+  },
+  "LKQ": {
+    "ticker": "LKQ",
+    "last_updated": "2025-06-23T16:25:35.351920",
+    "sector": "Consumer Discretionary"
+  },
+  "VRDN": {
+    "ticker": "VRDN",
+    "last_updated": "2025-06-23T16:25:35.810371",
+    "sector": "Health Care"
+  },
+  "ABT": {
+    "ticker": "ABT",
+    "last_updated": "2025-06-23T16:25:36.263593",
+    "sector": "Health Care"
+  },
+  "MNDY": {
+    "ticker": "MNDY",
+    "last_updated": "2025-06-23T16:25:36.706464",
+    "sector": "Technology"
+  },
+  "LZAGY": {
+    "ticker": "LZAGY",
+    "last_updated": "2025-06-23T16:25:37.160706",
+    "sector": "Health Care"
+  },
+  "NATL": {
+    "ticker": "NATL",
+    "last_updated": "2025-06-23T16:25:37.603311",
+    "sector": "Technology"
+  },
+  "BLD": {
+    "ticker": "BLD",
+    "last_updated": "2025-06-23T16:25:38.079056",
+    "sector": "Consumer Discretionary"
+  },
+  "CMG": {
+    "ticker": "CMG",
+    "last_updated": "2025-06-23T16:25:38.539402",
+    "sector": "Services"
+  },
+  "GFI": {
+    "ticker": "GFI",
+    "last_updated": "2025-06-23T16:25:39.008295",
+    "sector": "Materials"
+  },
+  "MCD": {
+    "ticker": "MCD",
+    "last_updated": "2025-06-23T16:25:39.455899",
+    "sector": "Consumer Discretionary"
+  },
+  "FIVE": {
+    "ticker": "FIVE",
+    "last_updated": "2025-06-23T16:25:39.939560",
+    "sector": "Services"
+  },
+  "383800.KS": {
+    "ticker": "383800.KS",
+    "last_updated": "2025-06-23T16:25:40.412165",
+    "sector": "Industrials"
+  },
+  "KOS": {
+    "ticker": "KOS",
+    "last_updated": "2025-06-23T16:25:40.882363",
+    "sector": "Materials"
+  },
+  "IBKR": {
+    "ticker": "IBKR",
+    "last_updated": "2025-06-23T16:25:41.372332",
+    "sector": "Financials"
+  },
+  "BRX": {
+    "ticker": "BRX",
+    "last_updated": "2025-06-23T16:25:41.842021",
+    "sector": "Real Estate"
+  },
+  "NVGS": {
+    "ticker": "NVGS",
+    "last_updated": "2025-06-23T16:25:42.321928",
+    "sector": "Services"
+  },
+  "NG": {
+    "ticker": "NG",
+    "last_updated": "2025-06-23T16:25:42.807705",
+    "sector": "Materials"
+  },
+  "SPSAF": {
+    "ticker": "SPSAF",
+    "last_updated": "2025-06-23T16:25:43.271479",
+    "sector": "Technology"
+  },
+  "KMB": {
+    "ticker": "KMB",
+    "last_updated": "2025-06-23T16:25:43.762388",
+    "sector": "Consumer Staples"
+  },
+  "LVS": {
+    "ticker": "LVS",
+    "last_updated": "2025-06-23T16:25:44.221741",
+    "sector": "Services"
+  },
+  "FLYW": {
+    "ticker": "FLYW",
+    "last_updated": "2025-06-23T16:25:44.706010",
+    "sector": "Technology"
+  },
+  "CYD": {
+    "ticker": "CYD",
+    "last_updated": "2025-06-23T16:25:45.163113",
+    "sector": "Industrial Goods"
+  },
+  "IVE": {
+    "ticker": "IVE",
+    "last_updated": "2025-06-23T16:25:45.632307",
+    "sector": "Super Investor Stats:"
+  },
+  "CARR": {
+    "ticker": "CARR",
+    "last_updated": "2025-06-23T16:25:46.089202",
+    "sector": "Industrials"
+  },
+  "AIG": {
+    "ticker": "AIG",
+    "last_updated": "2025-06-23T16:25:46.572509",
+    "sector": "Financials"
+  },
+  "ZS": {
+    "ticker": "ZS",
+    "last_updated": "2025-06-23T16:25:47.041484",
+    "sector": "Technology"
+  },
+  "FOA": {
+    "ticker": "FOA",
+    "last_updated": "2025-06-23T16:25:47.522108",
+    "sector": "Financials"
+  },
+  "PEG": {
+    "ticker": "PEG",
+    "last_updated": "2025-06-23T16:25:48.002568",
+    "sector": "Utilities"
+  },
+  "OGS": {
+    "ticker": "OGS",
+    "last_updated": "2025-06-23T16:25:48.469566",
+    "sector": "Utilities"
+  },
+  "ITIC": {
+    "ticker": "ITIC",
+    "last_updated": "2025-06-23T16:25:48.924595",
+    "sector": "Financials"
+  },
+  "ROAD": {
+    "ticker": "ROAD",
+    "last_updated": "2025-06-23T16:25:49.387528",
+    "sector": "Industrials"
+  },
+  "ICE": {
+    "ticker": "ICE",
+    "last_updated": "2025-06-23T16:25:49.852762",
+    "sector": "Financials"
+  },
+  "FSLR": {
+    "ticker": "FSLR",
+    "last_updated": "2025-06-23T16:25:50.321073",
+    "sector": "Technology"
+  },
+  "KKR": {
+    "ticker": "KKR",
+    "last_updated": "2025-06-23T16:25:50.898757",
+    "sector": "Financials"
+  },
+  "NBR": {
+    "ticker": "NBR",
+    "last_updated": "2025-06-23T16:25:51.371069",
+    "sector": "Energy"
+  },
+  "SYNA": {
+    "ticker": "SYNA",
+    "last_updated": "2025-06-23T16:25:51.848513",
+    "sector": "Information Technology"
+  },
+  "0590.HK": {
+    "ticker": "0590.HK",
+    "last_updated": "2025-06-23T16:25:52.300098",
+    "sector": "Consumer Cyclical"
+  },
+  "PSX": {
+    "ticker": "PSX",
+    "last_updated": "2025-06-23T16:25:52.754876",
+    "sector": "Materials"
+  },
+  "LYG": {
+    "ticker": "LYG",
+    "last_updated": "2025-06-23T16:25:53.212059",
+    "sector": "Financials"
+  },
+  "MAS": {
+    "ticker": "MAS",
+    "last_updated": "2025-06-23T16:25:53.688165",
+    "sector": "Industrials"
+  },
+  "KNCRF": {
+    "ticker": "KNCRF",
+    "last_updated": "2025-06-23T16:25:54.147622",
+    "sector": "Industrials"
+  },
+  "HRL": {
+    "ticker": "HRL",
+    "last_updated": "2025-06-23T16:25:54.646385",
+    "sector": "Consumer Staples"
+  },
+  "WSO": {
+    "ticker": "WSO",
+    "last_updated": "2025-06-23T16:25:55.078901",
+    "sector": "Industrials"
+  },
+  "HOMB": {
+    "ticker": "HOMB",
+    "last_updated": "2025-06-23T16:25:55.542278",
+    "sector": "Financials"
+  },
+  "BTG": {
+    "ticker": "BTG",
+    "last_updated": "2025-06-23T16:25:56.005267",
+    "sector": "Materials"
+  },
+  "DELL": {
+    "ticker": "DELL",
+    "last_updated": "2025-06-23T16:25:56.481305",
+    "sector": "Technology"
+  },
+  "UNF": {
+    "ticker": "UNF",
+    "last_updated": "2025-06-23T16:25:56.948591",
+    "sector": "Consumer Discretionary"
+  },
+  "IMO": {
+    "ticker": "IMO",
+    "last_updated": "2025-06-23T16:25:57.413284",
+    "sector": "Materials"
+  },
+  "IDXX": {
+    "ticker": "IDXX",
+    "last_updated": "2025-06-23T16:25:57.907173",
+    "sector": "Health Care"
+  },
+  "ZDGE": {
+    "ticker": "ZDGE",
+    "last_updated": "2025-06-23T16:25:58.397587",
+    "sector": "Technology"
+  },
+  "VST": {
+    "ticker": "VST",
+    "last_updated": "2025-06-23T16:25:58.874620",
+    "sector": "Utilities"
+  },
+  "FG": {
+    "ticker": "FG",
+    "last_updated": "2025-06-23T16:25:59.354159",
+    "sector": "Financials"
+  },
+  "SEE": {
+    "ticker": "SEE",
+    "last_updated": "2025-06-23T16:25:59.812163",
+    "sector": "Materials"
+  },
+  "SNY": {
+    "ticker": "SNY",
+    "last_updated": "2025-06-23T16:26:00.273121",
+    "sector": "Health Care"
+  },
+  "TGS": {
+    "ticker": "TGS",
+    "last_updated": "2025-06-23T16:26:00.738537",
+    "sector": "Utilities"
+  },
+  "MBI": {
+    "ticker": "MBI",
+    "last_updated": "2025-06-23T16:26:01.211072",
+    "sector": "Financials"
+  },
+  "PTEN": {
+    "ticker": "PTEN",
+    "last_updated": "2025-06-23T16:26:01.720323",
+    "sector": "Energy"
+  },
+  "ARMK": {
+    "ticker": "ARMK",
+    "last_updated": "2025-06-23T16:26:02.210435",
+    "sector": "Services"
+  },
+  "D": {
+    "ticker": "D",
+    "last_updated": "2025-06-23T16:26:02.673366",
+    "sector": "Utilities"
+  },
+  "NEXOF": {
+    "ticker": "NEXOF",
+    "last_updated": "2025-06-23T16:26:03.143750",
+    "sector": "Technology"
+  },
+  "CRH": {
+    "ticker": "CRH",
+    "last_updated": "2025-06-23T16:26:03.623102",
+    "sector": "Materials"
+  },
+  "DUSA": {
+    "ticker": "DUSA",
+    "last_updated": "2025-06-23T16:26:04.081346",
+    "sector": "Super Investor Stats:"
+  },
+  "CIR.MI": {
+    "ticker": "CIR.MI",
+    "last_updated": "2025-06-23T16:26:04.542330",
+    "sector": "Industrials"
+  },
+  "AEP": {
+    "ticker": "AEP",
+    "last_updated": "2025-06-23T16:26:05.019897",
+    "sector": "Utilities"
+  },
+  "EBAY": {
+    "ticker": "EBAY",
+    "last_updated": "2025-06-23T16:26:05.517176",
+    "sector": "Information Technology"
+  },
+  "ATS": {
+    "ticker": "ATS",
+    "last_updated": "2025-06-23T16:26:05.996447",
+    "sector": "Industrials"
+  },
+  "CTLP": {
+    "ticker": "CTLP",
+    "last_updated": "2025-06-23T16:26:06.478915",
+    "sector": "Technology"
+  },
+  "145720.KS": {
+    "ticker": "145720.KS",
+    "last_updated": "2025-06-23T16:26:06.945463",
+    "sector": "Health Care"
+  },
+  "ARKAY": {
+    "ticker": "ARKAY",
+    "last_updated": "2025-06-23T16:26:07.407732",
+    "sector": "Materials"
+  },
+  "ELV": {
+    "ticker": "ELV",
+    "last_updated": "2025-06-23T16:26:07.882212",
+    "sector": "Health Care"
+  },
+  "CLB": {
+    "ticker": "CLB",
+    "last_updated": "2025-06-23T16:26:08.341805",
+    "sector": "Materials"
+  },
+  "J": {
+    "ticker": "J",
+    "last_updated": "2025-06-23T16:26:08.812631",
+    "sector": "Industrials"
+  },
+  "MMM": {
+    "ticker": "MMM",
+    "last_updated": "2025-06-23T16:26:09.280851",
+    "sector": "Industrials"
+  },
+  "WBD": {
+    "ticker": "WBD",
+    "last_updated": "2025-06-23T16:26:09.716736",
+    "sector": "Consumer Discretionary"
+  },
+  "LBTYK": {
+    "ticker": "LBTYK",
+    "last_updated": "2025-06-23T16:26:10.211586",
+    "sector": "Services"
+  },
+  "AMRK": {
+    "ticker": "AMRK",
+    "last_updated": "2025-06-23T16:26:10.714574",
+    "sector": "Financials"
+  },
+  "TKR": {
+    "ticker": "TKR",
+    "last_updated": "2025-06-23T16:26:11.171596",
+    "sector": "Industrials"
+  },
+  "AXP": {
+    "ticker": "AXP",
+    "last_updated": "2025-06-23T16:26:11.665015",
+    "sector": "Financials"
+  },
+  "VAL": {
+    "ticker": "VAL",
+    "last_updated": "2025-06-23T16:26:12.108793",
+    "sector": "Energy"
+  },
+  "PTLO": {
+    "ticker": "PTLO",
+    "last_updated": "2025-06-23T16:26:12.556927",
+    "sector": "Consumer Cyclical"
+  },
+  "IDWM": {
+    "ticker": "IDWM",
+    "last_updated": "2025-06-23T16:26:13.038985",
+    "sector": "Services"
+  },
+  "EVRG": {
+    "ticker": "EVRG",
+    "last_updated": "2025-06-23T16:26:13.529732",
+    "sector": "Utilities"
+  },
+  "IWD": {
+    "ticker": "IWD",
+    "last_updated": "2025-06-23T16:26:13.985228",
+    "sector": "NA"
+  },
+  "OI": {
+    "ticker": "OI",
+    "last_updated": "2025-06-23T16:26:14.450169",
+    "sector": "Consumer Goods"
+  },
+  "SOC": {
+    "ticker": "SOC",
+    "last_updated": "2025-06-23T16:26:14.928464",
+    "sector": "Energy"
+  },
+  "TEX": {
+    "ticker": "TEX",
+    "last_updated": "2025-06-23T16:26:15.401157",
+    "sector": "Industrials"
+  },
+  "DINT": {
+    "ticker": "DINT",
+    "last_updated": "2025-06-23T16:26:15.879695",
+    "sector": "Super Investor Stats:"
+  },
+  "DAN": {
+    "ticker": "DAN",
+    "last_updated": "2025-06-23T16:26:16.335549",
+    "sector": "Consumer Goods"
+  },
+  "GLNG": {
+    "ticker": "GLNG",
+    "last_updated": "2025-06-23T16:26:16.808631",
+    "sector": "Services"
+  },
+  "ASH": {
+    "ticker": "ASH",
+    "last_updated": "2025-06-23T16:26:17.255698",
+    "sector": "Materials"
+  },
+  "ROKU": {
+    "ticker": "ROKU",
+    "last_updated": "2025-06-23T16:26:17.753599",
+    "sector": "Technology"
+  },
+  "K": {
+    "ticker": "K",
+    "last_updated": "2025-06-23T16:26:18.227332",
+    "sector": "Consumer Staples"
+  },
+  "BBIO": {
+    "ticker": "BBIO",
+    "last_updated": "2025-06-23T16:26:18.754305",
+    "sector": "Health Care"
+  },
+  "BR": {
+    "ticker": "BR",
+    "last_updated": "2025-06-23T16:26:19.229782",
+    "sector": "Information Technology"
+  },
+  "BHE": {
+    "ticker": "BHE",
+    "last_updated": "2025-06-23T16:26:19.706052",
+    "sector": "Information Technology"
+  },
+  "AYI": {
+    "ticker": "AYI",
+    "last_updated": "2025-06-23T16:26:20.158966",
+    "sector": "Industrials"
+  },
+  "900925.SS": {
+    "ticker": "900925.SS",
+    "last_updated": "2025-06-23T16:26:20.636777",
+    "sector": "Industrials"
+  },
+  "COO": {
+    "ticker": "COO",
+    "last_updated": "2025-06-23T16:26:21.199691",
+    "sector": "Health Care"
+  },
+  "MAT": {
+    "ticker": "MAT",
+    "last_updated": "2025-06-23T16:26:21.643866",
+    "sector": "Consumer Discretionary"
+  },
+  "TTEK": {
+    "ticker": "TTEK",
+    "last_updated": "2025-06-23T16:26:22.109439",
+    "sector": "Industrials"
+  },
+  "MKL": {
+    "ticker": "MKL",
+    "last_updated": "2025-06-23T16:26:22.556035",
+    "sector": "Financials"
+  },
+  "VLO": {
+    "ticker": "VLO",
+    "last_updated": "2025-06-23T16:26:23.016157",
+    "sector": "Energy"
+  },
+  "PHJMF": {
+    "ticker": "PHJMF",
+    "last_updated": "2025-06-23T16:26:23.476699",
+    "sector": "Consumer Goods"
+  },
+  "CRBU": {
+    "ticker": "CRBU",
+    "last_updated": "2025-06-23T16:26:23.971768",
+    "sector": "Health Care"
+  },
+  "BF.B": {
+    "ticker": "BF.B",
+    "last_updated": "2025-06-23T16:26:24.442772",
+    "sector": "Consumer Staples"
+  },
+  "FXI": {
+    "ticker": "FXI",
+    "last_updated": "2025-06-23T16:26:24.922974",
+    "sector": "Super Investor Stats:"
+  },
+  "BIO": {
+    "ticker": "BIO",
+    "last_updated": "2025-06-23T16:26:25.395994",
+    "sector": "Technology"
+  },
+  "PB": {
+    "ticker": "PB",
+    "last_updated": "2025-06-23T16:26:25.877746",
+    "sector": "Financials"
+  },
+  "JPM": {
+    "ticker": "JPM",
+    "last_updated": "2025-06-23T16:26:26.350807",
+    "sector": "Financials"
+  },
+  "FIX": {
+    "ticker": "FIX",
+    "last_updated": "2025-06-23T16:26:26.813170",
+    "sector": "Industrials"
+  },
+  "OXY": {
+    "ticker": "OXY",
+    "last_updated": "2025-06-23T16:26:27.276446",
+    "sector": "Energy"
+  },
+  "4368.T": {
+    "ticker": "4368.T",
+    "last_updated": "2025-06-23T16:26:27.748946",
+    "sector": "Materials"
+  },
+  "HLT": {
+    "ticker": "HLT",
+    "last_updated": "2025-06-23T16:26:28.241923",
+    "sector": "Consumer Discretionary"
+  },
+  "MEDP": {
+    "ticker": "MEDP",
+    "last_updated": "2025-06-23T16:26:28.703910",
+    "sector": "Health Care"
+  },
+  "AMZN": {
+    "ticker": "AMZN",
+    "last_updated": "2025-06-23T16:26:29.213723",
+    "sector": "Consumer Discretionary"
+  },
+  "AXL": {
+    "ticker": "AXL",
+    "last_updated": "2025-06-23T16:26:29.668211",
+    "sector": "Consumer Goods"
+  },
+  "PG": {
+    "ticker": "PG",
+    "last_updated": "2025-06-23T16:26:30.098594",
+    "sector": "Consumer Staples"
+  },
+  "AR": {
+    "ticker": "AR",
+    "last_updated": "2025-06-23T16:26:30.560699",
+    "sector": "Materials"
+  },
+  "LEN": {
+    "ticker": "LEN",
+    "last_updated": "2025-06-23T16:26:30.996495",
+    "sector": "Consumer Discretionary"
+  },
+  "MRKR": {
+    "ticker": "MRKR",
+    "last_updated": "2025-06-23T16:26:31.479427",
+    "sector": "Health Care"
+  },
+  "TDG": {
+    "ticker": "TDG",
+    "last_updated": "2025-06-23T16:26:31.984687",
+    "sector": "Industrial Goods"
+  },
+  "CACC": {
+    "ticker": "CACC",
+    "last_updated": "2025-06-23T16:26:32.425385",
+    "sector": "Financials"
+  },
+  "UNM": {
+    "ticker": "UNM",
+    "last_updated": "2025-06-23T16:26:32.895468",
+    "sector": "Financials"
+  },
+  "MAR": {
+    "ticker": "MAR",
+    "last_updated": "2025-06-23T16:26:33.367596",
+    "sector": "Consumer Discretionary"
+  },
+  "PRGO": {
+    "ticker": "PRGO",
+    "last_updated": "2025-06-23T16:26:33.856908",
+    "sector": "Health Care"
+  },
+  "VGK": {
+    "ticker": "VGK",
+    "last_updated": "2025-06-23T16:26:34.313476",
+    "sector": "NA"
+  },
+  "BABA": {
+    "ticker": "BABA",
+    "last_updated": "2025-06-23T16:26:34.781198",
+    "sector": "Technology"
+  },
+  "FNF": {
+    "ticker": "FNF",
+    "last_updated": "2025-06-23T16:26:35.244428",
+    "sector": "Financials"
+  },
+  "BRY": {
+    "ticker": "BRY",
+    "last_updated": "2025-06-23T16:26:35.725052",
+    "sector": "Energy"
+  },
+  "VECO": {
+    "ticker": "VECO",
+    "last_updated": "2025-06-23T16:26:36.207314",
+    "sector": "Information Technology"
+  },
+  "TMHC": {
+    "ticker": "TMHC",
+    "last_updated": "2025-06-23T16:26:36.676283",
+    "sector": "Industrial Goods"
+  },
+  "ICHR": {
+    "ticker": "ICHR",
+    "last_updated": "2025-06-23T16:26:37.155108",
+    "sector": "Industrials"
+  },
+  "VGIT": {
+    "ticker": "VGIT",
+    "last_updated": "2025-06-23T16:26:37.643500",
+    "sector": "Super Investor Stats:"
+  },
+  "MYRG": {
+    "ticker": "MYRG",
+    "last_updated": "2025-06-23T16:26:38.140651",
+    "sector": "Industrial Goods"
+  },
+  "LPG": {
+    "ticker": "LPG",
+    "last_updated": "2025-06-23T16:26:38.607439",
+    "sector": "Energy"
+  },
+  "HNST": {
+    "ticker": "HNST",
+    "last_updated": "2025-06-23T16:26:39.113546",
+    "sector": "Consumer Goods"
+  },
+  "DHT": {
+    "ticker": "DHT",
+    "last_updated": "2025-06-23T16:26:39.593999",
+    "sector": "Energy"
+  },
+  "LOW": {
+    "ticker": "LOW",
+    "last_updated": "2025-06-23T16:26:40.064588",
+    "sector": "Consumer Discretionary"
+  },
+  "EXPO": {
+    "ticker": "EXPO",
+    "last_updated": "2025-06-23T16:26:40.501066",
+    "sector": "Services"
+  },
+  "GGG": {
+    "ticker": "GGG",
+    "last_updated": "2025-06-23T16:26:40.971452",
+    "sector": "Industrials"
+  },
+  "VTMX": {
+    "ticker": "VTMX",
+    "last_updated": "2025-06-23T16:26:41.424164",
+    "sector": "Real Estate"
+  },
+  "XYZ": {
+    "ticker": "XYZ",
+    "last_updated": "2025-06-23T16:26:41.913392",
+    "sector": "Technology"
+  },
+  "LLY": {
+    "ticker": "LLY",
+    "last_updated": "2025-06-23T16:26:42.427187",
+    "sector": "Health Care"
+  },
+  "BDC": {
+    "ticker": "BDC",
+    "last_updated": "2025-06-23T16:26:42.888652",
+    "sector": "Industrials"
+  },
+  "FBAK": {
+    "ticker": "FBAK",
+    "last_updated": "2025-06-23T16:26:43.358179",
+    "sector": "Financials"
+  },
+  "TDW": {
+    "ticker": "TDW",
+    "last_updated": "2025-06-23T16:26:43.822057",
+    "sector": "Energy"
+  },
+  "JBL": {
+    "ticker": "JBL",
+    "last_updated": "2025-06-23T16:26:44.289452",
+    "sector": "Information Technology"
+  },
+  "DVDCF": {
+    "ticker": "DVDCF",
+    "last_updated": "2025-06-23T16:26:44.748195",
+    "sector": "Consumer Goods"
+  },
+  "MOH": {
+    "ticker": "MOH",
+    "last_updated": "2025-06-23T16:26:45.185753",
+    "sector": "Health Care"
+  },
+  "CCU": {
+    "ticker": "CCU",
+    "last_updated": "2025-06-23T16:26:45.642855",
+    "sector": "Consumer Staples"
+  },
+  "BOOT": {
+    "ticker": "BOOT",
+    "last_updated": "2025-06-23T16:26:46.108047",
+    "sector": "Consumer Discretionary"
+  },
+  "FWONK": {
+    "ticker": "FWONK",
+    "last_updated": "2025-06-23T16:26:46.540816",
+    "sector": "Services"
+  },
+  "AER": {
+    "ticker": "AER",
+    "last_updated": "2025-06-23T16:26:47.050559",
+    "sector": "Services"
+  },
+  "CWK": {
+    "ticker": "CWK",
+    "last_updated": "2025-06-23T16:26:47.512517",
+    "sector": "Real Estate"
+  },
+  "MNRO": {
+    "ticker": "MNRO",
+    "last_updated": "2025-06-23T16:26:47.988725",
+    "sector": "Consumer Goods"
+  },
+  "DOW": {
+    "ticker": "DOW",
+    "last_updated": "2025-06-23T16:26:48.463460",
+    "sector": "Materials"
+  },
+  "ORLA": {
+    "ticker": "ORLA",
+    "last_updated": "2025-06-23T16:26:48.937464",
+    "sector": "Materials"
+  },
+  "DIS": {
+    "ticker": "DIS",
+    "last_updated": "2025-06-23T16:26:49.418646",
+    "sector": "Consumer Discretionary"
+  },
+  "IBP": {
+    "ticker": "IBP",
+    "last_updated": "2025-06-23T16:26:49.885051",
+    "sector": "Industrial Goods"
+  },
+  "INGR": {
+    "ticker": "INGR",
+    "last_updated": "2025-06-23T16:26:50.353217",
+    "sector": "Consumer Goods"
+  },
+  "OC": {
+    "ticker": "OC",
+    "last_updated": "2025-06-23T16:26:50.953360",
+    "sector": "Industrial Goods"
+  },
+  "CPRI": {
+    "ticker": "CPRI",
+    "last_updated": "2025-06-23T16:26:51.426818",
+    "sector": "Services"
+  },
+  "QXO": {
+    "ticker": "QXO",
+    "last_updated": "2025-06-23T16:26:51.860037",
+    "sector": "Technology"
+  },
+  "INTU": {
+    "ticker": "INTU",
+    "last_updated": "2025-06-23T16:26:52.373708",
+    "sector": "Information Technology"
+  },
+  "SSNLF": {
+    "ticker": "SSNLF",
+    "last_updated": "2025-06-23T16:26:52.843412",
+    "sector": "Consumer Goods"
+  },
+  "NSIT": {
+    "ticker": "NSIT",
+    "last_updated": "2025-06-23T16:26:53.309755",
+    "sector": "Information Technology"
+  },
+  "OVV": {
+    "ticker": "OVV",
+    "last_updated": "2025-06-23T16:26:53.773331",
+    "sector": "Materials"
+  },
+  "WFC": {
+    "ticker": "WFC",
+    "last_updated": "2025-06-23T16:26:54.273889",
+    "sector": "Financials"
+  },
+  "EVER": {
+    "ticker": "EVER",
+    "last_updated": "2025-06-23T16:26:54.747828",
+    "sector": "Communication Services"
+  },
+  "HXL": {
+    "ticker": "HXL",
+    "last_updated": "2025-06-23T16:26:55.240774",
+    "sector": "Industrial Goods"
+  },
+  "EFA": {
+    "ticker": "EFA",
+    "last_updated": "2025-06-23T16:26:55.711465",
+    "sector": "NA"
+  },
+  "WFRD": {
+    "ticker": "WFRD",
+    "last_updated": "2025-06-23T16:26:56.166137",
+    "sector": "Energy"
+  },
+  "APP": {
+    "ticker": "APP",
+    "last_updated": "2025-06-23T16:26:56.603005",
+    "sector": "Technology"
+  },
+  "OIH": {
+    "ticker": "OIH",
+    "last_updated": "2025-06-23T16:26:57.061661",
+    "sector": "Super Investor Stats:"
+  },
+  "BAC": {
+    "ticker": "BAC",
+    "last_updated": "2025-06-23T16:26:57.553891",
+    "sector": "Financials"
+  },
+  "BOKF": {
+    "ticker": "BOKF",
+    "last_updated": "2025-06-23T16:26:58.024972",
+    "sector": "Financials"
+  },
+  "SBUX": {
+    "ticker": "SBUX",
+    "last_updated": "2025-06-23T16:26:58.488601",
+    "sector": "Consumer Discretionary"
+  },
+  "QRVO": {
+    "ticker": "QRVO",
+    "last_updated": "2025-06-23T16:26:58.954921",
+    "sector": "Technology"
+  },
+  "FBIN": {
+    "ticker": "FBIN",
+    "last_updated": "2025-06-23T16:26:59.427479",
+    "sector": "Consumer Goods"
+  },
+  "ABNB": {
+    "ticker": "ABNB",
+    "last_updated": "2025-06-23T16:26:59.905107",
+    "sector": "Communication Services"
+  },
+  "LPX": {
+    "ticker": "LPX",
+    "last_updated": "2025-06-23T16:27:00.363014",
+    "sector": "Materials"
+  },
+  "7718.T": {
+    "ticker": "7718.T",
+    "last_updated": "2025-06-23T16:27:00.833281",
+    "sector": "Industrials"
+  },
+  "AMGN": {
+    "ticker": "AMGN",
+    "last_updated": "2025-06-23T16:27:01.312600",
+    "sector": "Health Care"
+  },
+  "CRIS": {
+    "ticker": "CRIS",
+    "last_updated": "2025-06-23T16:27:01.774579",
+    "sector": "Health Care"
+  },
+  "LINC": {
+    "ticker": "LINC",
+    "last_updated": "2025-06-23T16:27:02.266667",
+    "sector": "Consumer Discretionary"
+  },
+  "CNM": {
+    "ticker": "CNM",
+    "last_updated": "2025-06-23T16:27:02.729542",
+    "sector": "Industrials"
+  },
+  "CDLX": {
+    "ticker": "CDLX",
+    "last_updated": "2025-06-23T16:27:03.195950",
+    "sector": "Communication Services"
+  },
+  "SD": {
+    "ticker": "SD",
+    "last_updated": "2025-06-23T16:27:03.656746",
+    "sector": "Materials"
+  },
+  "CAVA": {
+    "ticker": "CAVA",
+    "last_updated": "2025-06-23T16:27:04.096356",
+    "sector": "Consumer Cyclical"
+  },
+  "GDDY": {
+    "ticker": "GDDY",
+    "last_updated": "2025-06-23T16:27:04.561428",
+    "sector": "Technology"
+  },
+  "TCBI": {
+    "ticker": "TCBI",
+    "last_updated": "2025-06-23T16:27:05.070583",
+    "sector": "Financials"
+  },
+  "UDR": {
+    "ticker": "UDR",
+    "last_updated": "2025-06-23T16:27:05.536903",
+    "sector": "Financials"
+  },
+  "CHH": {
+    "ticker": "CHH",
+    "last_updated": "2025-06-23T16:27:06.022089",
+    "sector": "Services"
+  },
+  "BAX": {
+    "ticker": "BAX",
+    "last_updated": "2025-06-23T16:27:06.480174",
+    "sector": "Health Care"
+  },
+  "REYN": {
+    "ticker": "REYN",
+    "last_updated": "2025-06-23T16:27:06.952007",
+    "sector": "Consumer Staples"
+  },
+  "FBLA": {
+    "ticker": "FBLA",
+    "last_updated": "2025-06-23T16:27:07.418772",
+    "sector": "Financials"
+  },
+  "JELD": {
+    "ticker": "JELD",
+    "last_updated": "2025-06-23T16:27:07.919538",
+    "sector": "Industrials"
+  },
+  "271560.KS": {
+    "ticker": "271560.KS",
+    "last_updated": "2025-06-23T16:27:08.404218",
+    "sector": "Consumer Goods"
+  },
+  "TMO": {
+    "ticker": "TMO",
+    "last_updated": "2025-06-23T16:27:08.874718",
+    "sector": "Health Care"
+  },
+  "SCVL": {
+    "ticker": "SCVL",
+    "last_updated": "2025-06-23T16:27:09.364353",
+    "sector": "Services"
+  },
+  "LILAK": {
+    "ticker": "LILAK",
+    "last_updated": "2025-06-23T16:27:09.823321",
+    "sector": "Services"
+  },
+  "ABG": {
+    "ticker": "ABG",
+    "last_updated": "2025-06-23T16:27:10.283531",
+    "sector": "Services"
+  },
+  "JDEPY": {
+    "ticker": "JDEPY",
+    "last_updated": "2025-06-23T16:27:10.751728",
+    "sector": "Consumer Goods"
+  },
+  "ALAB": {
+    "ticker": "ALAB",
+    "last_updated": "2025-06-23T16:27:11.209780",
+    "sector": "Technology"
+  },
+  "SAP": {
+    "ticker": "SAP",
+    "last_updated": "2025-06-23T16:27:11.642126",
+    "sector": "Technology"
+  },
+  "HCA": {
+    "ticker": "HCA",
+    "last_updated": "2025-06-23T16:27:12.118132",
+    "sector": "Health Care"
+  },
+  "HII": {
+    "ticker": "HII",
+    "last_updated": "2025-06-23T16:27:12.586249",
+    "sector": "Industrial Goods"
+  },
+  "ALK": {
+    "ticker": "ALK",
+    "last_updated": "2025-06-23T16:27:13.044178",
+    "sector": "Industrials"
+  },
+  "CNH": {
+    "ticker": "CNH",
+    "last_updated": "2025-06-23T16:27:13.491663",
+    "sector": "Industrial Goods"
+  },
+  "DT": {
+    "ticker": "DT",
+    "last_updated": "2025-06-23T16:27:13.966396",
+    "sector": "Technology"
+  },
+  "6277.T": {
+    "ticker": "6277.T",
+    "last_updated": "2025-06-23T16:27:14.435340",
+    "sector": "Industrials"
+  },
+  "L": {
+    "ticker": "L",
+    "last_updated": "2025-06-23T16:27:14.900477",
+    "sector": "Financials"
+  },
+  "CI": {
+    "ticker": "CI",
+    "last_updated": "2025-06-23T16:27:15.368266",
+    "sector": "Health Care"
+  },
+  "HDB": {
+    "ticker": "HDB",
+    "last_updated": "2025-06-23T16:27:15.824309",
+    "sector": "Financials"
+  },
+  "RYCEF": {
+    "ticker": "RYCEF",
+    "last_updated": "2025-06-23T16:27:16.300985",
+    "sector": "Industrial Goods"
+  },
+  "RH": {
+    "ticker": "RH",
+    "last_updated": "2025-06-23T16:27:16.770724",
+    "sector": "Services"
+  },
+  "UPS": {
+    "ticker": "UPS",
+    "last_updated": "2025-06-23T16:27:17.249721",
+    "sector": "Industrials"
+  },
+  "AM": {
+    "ticker": "AM",
+    "last_updated": "2025-06-23T16:27:17.717373",
+    "sector": "Energy"
+  },
+  "FCN": {
+    "ticker": "FCN",
+    "last_updated": "2025-06-23T16:27:18.193375",
+    "sector": "Industrials"
+  },
+  "MSM": {
+    "ticker": "MSM",
+    "last_updated": "2025-06-23T16:27:18.650311",
+    "sector": "Industrials"
+  },
+  "GLOB": {
+    "ticker": "GLOB",
+    "last_updated": "2025-06-23T16:27:19.127664",
+    "sector": "Technology"
+  },
+  "LNTH": {
+    "ticker": "LNTH",
+    "last_updated": "2025-06-23T16:27:19.591715",
+    "sector": "Health Care"
+  },
+  "ICFI": {
+    "ticker": "ICFI",
+    "last_updated": "2025-06-23T16:27:20.070636",
+    "sector": "Industrials"
+  },
+  "STC": {
+    "ticker": "STC",
+    "last_updated": "2025-06-23T16:27:20.536177",
+    "sector": "Financials"
+  },
+  "NFLX": {
+    "ticker": "NFLX",
+    "last_updated": "2025-06-23T16:27:21.137295",
+    "sector": "Consumer Discretionary"
+  },
+  "DWLD": {
+    "ticker": "DWLD",
+    "last_updated": "2025-06-23T16:27:21.618352",
+    "sector": "Super Investor Stats:"
+  },
+  "DMAC": {
+    "ticker": "DMAC",
+    "last_updated": "2025-06-23T16:27:22.094479",
+    "sector": "Health Care"
+  },
+  "AUR": {
+    "ticker": "AUR",
+    "last_updated": "2025-06-23T16:27:22.556992",
+    "sector": "Financials"
+  },
+  "CMI": {
+    "ticker": "CMI",
+    "last_updated": "2025-06-23T16:27:23.014879",
+    "sector": "Industrials"
+  },
+  "PSTG": {
+    "ticker": "PSTG",
+    "last_updated": "2025-06-23T16:27:23.499379",
+    "sector": "Technology"
+  },
+  "FRFHF": {
+    "ticker": "FRFHF",
+    "last_updated": "2025-06-23T16:27:23.976939",
+    "sector": "Financials"
+  },
+  "DKS": {
+    "ticker": "DKS",
+    "last_updated": "2025-06-23T16:27:24.449826",
+    "sector": "Consumer Discretionary"
+  },
+  "ZKH": {
+    "ticker": "ZKH",
+    "last_updated": "2025-06-23T16:27:24.909294",
+    "sector": "Consumer Cyclical"
+  },
+  "FWONA": {
+    "ticker": "FWONA",
+    "last_updated": "2025-06-23T16:27:25.377996",
+    "sector": "Services"
+  },
+  "CL": {
+    "ticker": "CL",
+    "last_updated": "2025-06-23T16:27:25.849133",
+    "sector": "Consumer Staples"
+  },
+  "NFE": {
+    "ticker": "NFE",
+    "last_updated": "2025-06-23T16:27:26.320616",
+    "sector": "Energy"
+  },
+  "PCG": {
+    "ticker": "PCG",
+    "last_updated": "2025-06-23T16:27:26.851454",
+    "sector": "Utilities"
+  },
+  "FLYX.WS": {
+    "ticker": "FLYX.WS",
+    "last_updated": "2025-06-23T16:27:27.319347",
+    "sector": "Super Investor Stats:"
+  },
+  "FBTC": {
+    "ticker": "FBTC",
+    "last_updated": "2025-06-23T16:27:27.780761",
+    "sector": "Super Investor Stats:"
+  },
+  "POOL": {
+    "ticker": "POOL",
+    "last_updated": "2025-06-23T16:27:28.272041",
+    "sector": "Consumer Discretionary"
+  },
+  "DQ": {
+    "ticker": "DQ",
+    "last_updated": "2025-06-23T16:27:28.749044",
+    "sector": "Technology"
+  },
+  "YETI": {
+    "ticker": "YETI",
+    "last_updated": "2025-06-23T16:27:29.190655",
+    "sector": "Consumer Cyclical"
+  },
+  "ATHM": {
+    "ticker": "ATHM",
+    "last_updated": "2025-06-23T16:27:29.752573",
+    "sector": "Technology"
+  },
+  "SG": {
+    "ticker": "SG",
+    "last_updated": "2025-06-23T16:27:30.235757",
+    "sector": "Consumer Discretionary"
+  },
+  "GRBK": {
+    "ticker": "GRBK",
+    "last_updated": "2025-06-23T16:27:30.702981",
+    "sector": "Financials"
+  },
+  "DNTUY": {
+    "ticker": "DNTUY",
+    "last_updated": "2025-06-23T16:27:31.161183",
+    "sector": "Communication Services"
+  },
+  "RS": {
+    "ticker": "RS",
+    "last_updated": "2025-06-23T16:27:31.623554",
+    "sector": "Materials"
+  },
+  "MSI": {
+    "ticker": "MSI",
+    "last_updated": "2025-06-23T16:27:32.061020",
+    "sector": "Technology"
+  },
+  "KPLTW": {
+    "ticker": "KPLTW",
+    "last_updated": "2025-06-23T16:27:32.537045",
+    "sector": "NA"
+  },
+  "GLPI": {
+    "ticker": "GLPI",
+    "last_updated": "2025-06-23T16:27:32.998425",
+    "sector": "Financials"
+  },
+  "KDP": {
+    "ticker": "KDP",
+    "last_updated": "2025-06-23T16:27:33.482663",
+    "sector": "Consumer Staples"
+  },
+  "FOSL": {
+    "ticker": "FOSL",
+    "last_updated": "2025-06-23T16:27:33.966628",
+    "sector": "Consumer Discretionary"
+  },
+  "ORLY": {
+    "ticker": "ORLY",
+    "last_updated": "2025-06-23T16:27:34.406667",
+    "sector": "Consumer Discretionary"
+  },
+  "THR": {
+    "ticker": "THR",
+    "last_updated": "2025-06-23T16:27:34.868344",
+    "sector": "Industrials"
+  },
+  "AXS": {
+    "ticker": "AXS",
+    "last_updated": "2025-06-23T16:27:35.346049",
+    "sector": "Financials"
+  },
+  "HD": {
+    "ticker": "HD",
+    "last_updated": "2025-06-23T16:27:35.824559",
+    "sector": "Consumer Discretionary"
+  },
+  "DHLGY": {
+    "ticker": "DHLGY",
+    "last_updated": "2025-06-23T16:27:36.282840",
+    "sector": "Industrials"
+  },
+  "DCOM": {
+    "ticker": "DCOM",
+    "last_updated": "2025-06-23T16:27:36.773793",
+    "sector": "Financials"
+  },
+  "IBM": {
+    "ticker": "IBM",
+    "last_updated": "2025-06-23T16:27:37.257326",
+    "sector": "Information Technology"
+  },
+  "NU": {
+    "ticker": "NU",
+    "last_updated": "2025-06-23T16:27:37.689866",
+    "sector": "Financials"
+  },
+  "LPLA": {
+    "ticker": "LPLA",
+    "last_updated": "2025-06-23T16:27:38.129402",
+    "sector": "Financials"
+  },
+  "ONON": {
+    "ticker": "ONON",
+    "last_updated": "2025-06-23T16:27:38.593508",
+    "sector": "Consumer Cyclical"
+  },
+  "PIPR": {
+    "ticker": "PIPR",
+    "last_updated": "2025-06-23T16:27:39.078019",
+    "sector": "Financials"
+  },
+  "ANET": {
+    "ticker": "ANET",
+    "last_updated": "2025-06-23T16:27:39.557685",
+    "sector": "Technology"
+  },
+  "BKR": {
+    "ticker": "BKR",
+    "last_updated": "2025-06-23T16:27:40.025636",
+    "sector": "Industrials"
+  },
+  "RMNI": {
+    "ticker": "RMNI",
+    "last_updated": "2025-06-23T16:27:40.506742",
+    "sector": "Information Technology"
+  },
+  "CHD": {
+    "ticker": "CHD",
+    "last_updated": "2025-06-23T16:27:40.974324",
+    "sector": "Consumer Staples"
+  },
+  "HLNE": {
+    "ticker": "HLNE",
+    "last_updated": "2025-06-23T16:27:41.445091",
+    "sector": "Financials"
+  },
+  "GOOGL": {
+    "ticker": "GOOGL",
+    "last_updated": "2025-06-23T16:27:41.890017",
+    "sector": "Technology"
+  },
+  "NRG": {
+    "ticker": "NRG",
+    "last_updated": "2025-06-23T16:27:42.363739",
+    "sector": "Utilities"
+  },
+  "LLYVA": {
+    "ticker": "LLYVA",
+    "last_updated": "2025-06-23T16:27:42.830093",
+    "sector": "Services"
+  },
+  "QSR": {
+    "ticker": "QSR",
+    "last_updated": "2025-06-23T16:27:43.306379",
+    "sector": "Services"
+  },
+  "SUN": {
+    "ticker": "SUN",
+    "last_updated": "2025-06-23T16:27:43.768647",
+    "sector": "Energy"
+  },
+  "HLF": {
+    "ticker": "HLF",
+    "last_updated": "2025-06-23T16:27:44.243323",
+    "sector": "Health Care"
+  },
+  "MSGE": {
+    "ticker": "MSGE",
+    "last_updated": "2025-06-23T16:27:44.719724",
+    "sector": "Communication Services"
+  },
+  "CHRW": {
+    "ticker": "CHRW",
+    "last_updated": "2025-06-23T16:27:45.188801",
+    "sector": "Industrials"
+  },
+  "NCLH": {
+    "ticker": "NCLH",
+    "last_updated": "2025-06-23T16:27:45.669363",
+    "sector": "Services"
+  },
+  "PVH": {
+    "ticker": "PVH",
+    "last_updated": "2025-06-23T16:27:46.136676",
+    "sector": "Consumer Discretionary"
+  },
+  "SMHI": {
+    "ticker": "SMHI",
+    "last_updated": "2025-06-23T16:27:46.614429",
+    "sector": "Energy"
+  },
+  "IWB": {
+    "ticker": "IWB",
+    "last_updated": "2025-06-23T16:27:47.083229",
+    "sector": "Super Investor Stats:"
+  },
+  "TW": {
+    "ticker": "TW",
+    "last_updated": "2025-06-23T16:27:47.567699",
+    "sector": "Financials"
+  },
+  "DBRG": {
+    "ticker": "DBRG",
+    "last_updated": "2025-06-23T16:27:48.029259",
+    "sector": "Financials"
+  },
+  "HLNCF": {
+    "ticker": "HLNCF",
+    "last_updated": "2025-06-23T16:27:48.501510",
+    "sector": "Health Care"
+  },
+  "EG": {
+    "ticker": "EG",
+    "last_updated": "2025-06-23T16:27:48.960539",
+    "sector": "Financials"
+  },
+  "GIII": {
+    "ticker": "GIII",
+    "last_updated": "2025-06-23T16:27:49.424756",
+    "sector": "Consumer Goods"
+  },
+  "LAZ": {
+    "ticker": "LAZ",
+    "last_updated": "2025-06-23T16:27:49.892788",
+    "sector": "Financials"
+  },
+  "DG": {
+    "ticker": "DG",
+    "last_updated": "2025-06-23T16:27:50.351819",
+    "sector": "Consumer Discretionary"
+  },
+  "MDT": {
+    "ticker": "MDT",
+    "last_updated": "2025-06-23T16:27:50.967505",
+    "sector": "Health Care"
+  },
+  "MDY": {
+    "ticker": "MDY",
+    "last_updated": "2025-06-23T16:27:51.435885",
+    "sector": "Super Investor Stats:"
+  },
+  "IGT": {
+    "ticker": "IGT",
+    "last_updated": "2025-06-23T16:27:51.891660",
+    "sector": "Consumer Discretionary"
+  },
+  "BUR": {
+    "ticker": "BUR",
+    "last_updated": "2025-06-23T16:27:52.349643",
+    "sector": "Financials"
+  },
+  "RYN": {
+    "ticker": "RYN",
+    "last_updated": "2025-06-23T16:27:52.811359",
+    "sector": "Financials"
+  },
+  "BRLT": {
+    "ticker": "BRLT",
+    "last_updated": "2025-06-23T16:27:53.274512",
+    "sector": "Consumer Cyclical"
+  },
+  "FTNT": {
+    "ticker": "FTNT",
+    "last_updated": "2025-06-23T16:27:53.710154",
+    "sector": "Technology"
+  },
+  "BBW": {
+    "ticker": "BBW",
+    "last_updated": "2025-06-23T16:27:54.177750",
+    "sector": "Services"
+  },
+  "SPYX": {
+    "ticker": "SPYX",
+    "last_updated": "2025-06-23T16:27:54.636525",
+    "sector": "Super Investor Stats:"
+  },
+  "AES": {
+    "ticker": "AES",
+    "last_updated": "2025-06-23T16:27:55.117314",
+    "sector": "Utilities"
+  },
+  "THG": {
+    "ticker": "THG",
+    "last_updated": "2025-06-23T16:27:55.597360",
+    "sector": "Financials"
+  },
+  "LAB": {
+    "ticker": "LAB",
+    "last_updated": "2025-06-23T16:27:56.080475",
+    "sector": "Health Care"
+  },
+  "GB.WS": {
+    "ticker": "GB.WS",
+    "last_updated": "2025-06-23T16:27:56.575466",
+    "sector": "Technology"
+  },
+  "UNP": {
+    "ticker": "UNP",
+    "last_updated": "2025-06-23T16:27:57.045346",
+    "sector": "Industrials"
+  },
+  "TRMLF": {
+    "ticker": "TRMLF",
+    "last_updated": "2025-06-23T16:27:57.510915",
+    "sector": "Energy"
+  },
+  "CMC": {
+    "ticker": "CMC",
+    "last_updated": "2025-06-23T16:27:57.977672",
+    "sector": "Materials"
+  },
+  "NAVI": {
+    "ticker": "NAVI",
+    "last_updated": "2025-06-23T16:27:58.445808",
+    "sector": "Financials"
+  },
+  "PFG": {
+    "ticker": "PFG",
+    "last_updated": "2025-06-23T16:27:58.910869",
+    "sector": "Financials"
+  },
+  "MRNA": {
+    "ticker": "MRNA",
+    "last_updated": "2025-06-23T16:27:59.406299",
+    "sector": "Health Care"
+  },
+  "SPNS": {
+    "ticker": "SPNS",
+    "last_updated": "2025-06-23T16:27:59.870686",
+    "sector": "Technology"
+  },
+  "CATO": {
+    "ticker": "CATO",
+    "last_updated": "2025-06-23T16:28:00.341020",
+    "sector": "Consumer Discretionary"
+  },
+  "JOE": {
+    "ticker": "JOE",
+    "last_updated": "2025-06-23T16:28:00.800677",
+    "sector": "Financials"
+  },
+  "QQQM": {
+    "ticker": "QQQM",
+    "last_updated": "2025-06-23T16:28:01.257242",
+    "sector": "Super Investor Stats:"
+  },
+  "CHKEL": {
+    "ticker": "CHKEL",
+    "last_updated": "2025-06-23T16:28:01.713851",
+    "sector": "Energy"
+  },
+  "ILMN": {
+    "ticker": "ILMN",
+    "last_updated": "2025-06-23T16:28:02.153882",
+    "sector": "Health Care"
+  },
+  "BRCC": {
+    "ticker": "BRCC",
+    "last_updated": "2025-06-23T16:28:02.592293",
+    "sector": "NA"
+  },
+  "CLFD": {
+    "ticker": "CLFD",
+    "last_updated": "2025-06-23T16:28:03.052867",
+    "sector": "Information Technology"
+  },
+  "LHX": {
+    "ticker": "LHX",
+    "last_updated": "2025-06-23T16:28:03.520994",
+    "sector": "Industrials"
+  },
+  "TCHP": {
+    "ticker": "TCHP",
+    "last_updated": "2025-06-23T16:28:03.982466",
+    "sector": "Super Investor Stats:"
+  },
+  "CECO": {
+    "ticker": "CECO",
+    "last_updated": "2025-06-23T16:28:04.468126",
+    "sector": "Industrial Goods"
+  },
+  "PENG": {
+    "ticker": "PENG",
+    "last_updated": "2025-06-23T16:28:04.934823",
+    "sector": "Technology"
+  },
+  "CNI": {
+    "ticker": "CNI",
+    "last_updated": "2025-06-23T16:28:05.382657",
+    "sector": "Services"
+  },
+  "CHWY": {
+    "ticker": "CHWY",
+    "last_updated": "2025-06-23T16:28:05.852976",
+    "sector": "Consumer Cyclical"
+  },
+  "KO": {
+    "ticker": "KO",
+    "last_updated": "2025-06-23T16:28:06.323382",
+    "sector": "Consumer Staples"
+  },
+  "FULT": {
+    "ticker": "FULT",
+    "last_updated": "2025-06-23T16:28:06.791935",
+    "sector": "Financials"
+  },
+  "UNPSF": {
+    "ticker": "UNPSF",
+    "last_updated": "2025-06-23T16:28:07.254198",
+    "sector": "Consumer Staples"
+  },
+  "MAG": {
+    "ticker": "MAG",
+    "last_updated": "2025-06-23T16:28:07.715061",
+    "sector": "Materials"
+  },
+  "COF": {
+    "ticker": "COF",
+    "last_updated": "2025-06-23T16:28:08.203860",
+    "sector": "Financials"
+  },
+  "IVZ": {
+    "ticker": "IVZ",
+    "last_updated": "2025-06-23T16:28:08.642854",
+    "sector": "Financials"
+  },
+  "RGLD": {
+    "ticker": "RGLD",
+    "last_updated": "2025-06-23T16:28:09.109575",
+    "sector": "Materials"
+  },
+  "HSY": {
+    "ticker": "HSY",
+    "last_updated": "2025-06-23T16:28:09.570655",
+    "sector": "Consumer Staples"
+  },
+  "SM": {
+    "ticker": "SM",
+    "last_updated": "2025-06-23T16:28:10.042600",
+    "sector": "Energy"
+  },
+  "INSM": {
+    "ticker": "INSM",
+    "last_updated": "2025-06-23T16:28:10.519212",
+    "sector": "Health Care"
+  },
+  "OUST": {
+    "ticker": "OUST",
+    "last_updated": "2025-06-23T16:28:11.006588",
+    "sector": "Technology"
+  },
+  "SSNC": {
+    "ticker": "SSNC",
+    "last_updated": "2025-06-23T16:28:11.468258",
+    "sector": "Technology"
+  },
+  "AEM": {
+    "ticker": "AEM",
+    "last_updated": "2025-06-23T16:28:11.933678",
+    "sector": "Materials"
+  },
+  "HL": {
+    "ticker": "HL",
+    "last_updated": "2025-06-23T16:28:12.404756",
+    "sector": "Materials"
+  },
+  "UL": {
+    "ticker": "UL",
+    "last_updated": "2025-06-23T16:28:12.865668",
+    "sector": "Consumer Goods"
+  },
+  "4401.T": {
+    "ticker": "4401.T",
+    "last_updated": "2025-06-23T16:28:13.324256",
+    "sector": "Materials"
+  },
+  "CCC.L": {
+    "ticker": "CCC.L",
+    "last_updated": "2025-06-23T16:28:13.790451",
+    "sector": "Technology"
+  },
+  "BELFB": {
+    "ticker": "BELFB",
+    "last_updated": "2025-06-23T16:28:14.229320",
+    "sector": "Information Technology"
+  },
+  "TFC": {
+    "ticker": "TFC",
+    "last_updated": "2025-06-23T16:28:14.708802",
+    "sector": "Financials"
+  },
+  "NE": {
+    "ticker": "NE",
+    "last_updated": "2025-06-23T16:28:15.178534",
+    "sector": "Energy"
+  },
+  "BMA": {
+    "ticker": "BMA",
+    "last_updated": "2025-06-23T16:28:15.641313",
+    "sector": "Financials"
+  },
+  "BYNN.F": {
+    "ticker": "BYNN.F",
+    "last_updated": "2025-06-23T16:28:16.108598",
+    "sector": "Utilities"
+  },
+  "GEO": {
+    "ticker": "GEO",
+    "last_updated": "2025-06-23T16:28:16.575046",
+    "sector": "Services"
+  },
+  "GCI": {
+    "ticker": "GCI",
+    "last_updated": "2025-06-23T16:28:17.031314",
+    "sector": "Consumer Discretionary"
+  },
+  "QDEL": {
+    "ticker": "QDEL",
+    "last_updated": "2025-06-23T16:28:17.506231",
+    "sector": "Health Care"
+  },
+  "FRPH": {
+    "ticker": "FRPH",
+    "last_updated": "2025-06-23T16:28:17.971257",
+    "sector": "Services"
+  },
+  "COCXF": {
+    "ticker": "COCXF",
+    "last_updated": "2025-06-23T16:28:18.454360",
+    "sector": "Consumer Goods"
+  },
+  "GDS": {
+    "ticker": "GDS",
+    "last_updated": "2025-06-23T16:28:18.912670",
+    "sector": "Technology"
+  },
+  "SYF": {
+    "ticker": "SYF",
+    "last_updated": "2025-06-23T16:28:19.354667",
+    "sector": "Financials"
+  },
+  "CLVT": {
+    "ticker": "CLVT",
+    "last_updated": "2025-06-23T16:28:19.817912",
+    "sector": "Super Investor Stats:"
+  },
+  "WEN": {
+    "ticker": "WEN",
+    "last_updated": "2025-06-23T16:28:20.343616",
+    "sector": "Consumer Discretionary"
+  },
+  "CERT": {
+    "ticker": "CERT",
+    "last_updated": "2025-06-23T16:28:20.819801",
+    "sector": "Health Care"
+  },
+  "HIW": {
+    "ticker": "HIW",
+    "last_updated": "2025-06-23T16:28:21.387898",
+    "sector": "Financials"
+  },
+  "ENR": {
+    "ticker": "ENR",
+    "last_updated": "2025-06-23T16:28:21.876088",
+    "sector": "Consumer Staples"
+  },
+  "028260.KS": {
+    "ticker": "028260.KS",
+    "last_updated": "2025-06-23T16:28:22.331791",
+    "sector": "Industrials"
+  },
+  "CPB": {
+    "ticker": "CPB",
+    "last_updated": "2025-06-23T16:28:22.794894",
+    "sector": "Consumer Staples"
+  },
+  "HTZWW": {
+    "ticker": "HTZWW",
+    "last_updated": "2025-06-23T16:28:23.256327",
+    "sector": "Super Investor Stats:"
+  },
+  "BWA": {
+    "ticker": "BWA",
+    "last_updated": "2025-06-23T16:28:23.743940",
+    "sector": "Consumer Discretionary"
+  },
+  "BRZE": {
+    "ticker": "BRZE",
+    "last_updated": "2025-06-23T16:28:24.223388",
+    "sector": "Technology"
+  },
+  "CF": {
+    "ticker": "CF",
+    "last_updated": "2025-06-23T16:28:24.685286",
+    "sector": "Materials"
+  },
+  "CVNA": {
+    "ticker": "CVNA",
+    "last_updated": "2025-06-23T16:28:25.207446",
+    "sector": "Services"
+  },
+  "BATL": {
+    "ticker": "BATL",
+    "last_updated": "2025-06-23T16:28:25.681801",
+    "sector": "Energy"
+  },
+  "GLW": {
+    "ticker": "GLW",
+    "last_updated": "2025-06-23T16:28:26.162339",
+    "sector": "Information Technology"
+  },
+  "MTH": {
+    "ticker": "MTH",
+    "last_updated": "2025-06-23T16:28:26.627866",
+    "sector": "Consumer Discretionary"
+  },
+  "ROST": {
+    "ticker": "ROST",
+    "last_updated": "2025-06-23T16:28:27.107118",
+    "sector": "Consumer Discretionary"
+  },
+  "DEI": {
+    "ticker": "DEI",
+    "last_updated": "2025-06-23T16:28:27.584964",
+    "sector": "Real Estate"
+  },
+  "FSBC": {
+    "ticker": "FSBC",
+    "last_updated": "2025-06-23T16:28:28.072467",
+    "sector": "Financials"
+  },
+  "AX": {
+    "ticker": "AX",
+    "last_updated": "2025-06-23T16:28:28.547881",
+    "sector": "Financials"
+  },
+  "GFL": {
+    "ticker": "GFL",
+    "last_updated": "2025-06-23T16:28:29.018048",
+    "sector": "Industrials"
+  },
+  "HSIC": {
+    "ticker": "HSIC",
+    "last_updated": "2025-06-23T16:28:29.483921",
+    "sector": "Health Care"
+  },
+  "NVR": {
+    "ticker": "NVR",
+    "last_updated": "2025-06-23T16:28:29.924277",
+    "sector": "Consumer Discretionary"
+  },
+  "EXXRF": {
+    "ticker": "EXXRF",
+    "last_updated": "2025-06-23T16:28:30.361763",
+    "sector": "Consumer Cyclical"
+  },
+  "KNSL": {
+    "ticker": "KNSL",
+    "last_updated": "2025-06-23T16:28:30.840922",
+    "sector": "Financials"
+  },
+  "BIRK": {
+    "ticker": "BIRK",
+    "last_updated": "2025-06-23T16:28:31.303711",
+    "sector": "Consumer Cyclical"
+  },
+  "OEC": {
+    "ticker": "OEC",
+    "last_updated": "2025-06-23T16:28:31.782962",
+    "sector": "Materials"
+  },
+  "PL": {
+    "ticker": "PL",
+    "last_updated": "2025-06-23T16:28:32.237336",
+    "sector": "Industrials"
+  },
+  "086790.KS": {
+    "ticker": "086790.KS",
+    "last_updated": "2025-06-23T16:28:32.704849",
+    "sector": "Financials"
+  },
+  "ADSK": {
+    "ticker": "ADSK",
+    "last_updated": "2025-06-23T16:28:33.184891",
+    "sector": "Information Technology"
+  },
+  "ALGGF": {
+    "ticker": "ALGGF",
+    "last_updated": "2025-06-23T16:28:33.640742",
+    "sector": "Industrials"
+  },
+  "EXPE": {
+    "ticker": "EXPE",
+    "last_updated": "2025-06-23T16:28:34.101004",
+    "sector": "Technology"
+  },
+  "EC": {
+    "ticker": "EC",
+    "last_updated": "2025-06-23T16:28:34.574217",
+    "sector": "Energy"
+  },
+  "CPT": {
+    "ticker": "CPT",
+    "last_updated": "2025-06-23T16:28:35.042107",
+    "sector": "Real Estate"
+  },
+  "AZO": {
+    "ticker": "AZO",
+    "last_updated": "2025-06-23T16:28:35.530238",
+    "sector": "Consumer Discretionary"
+  },
+  "VO": {
+    "ticker": "VO",
+    "last_updated": "2025-06-23T16:28:35.995705",
+    "sector": "Super Investor Stats:"
+  },
+  "ECL": {
+    "ticker": "ECL",
+    "last_updated": "2025-06-23T16:28:36.474714",
+    "sector": "Materials"
+  },
+  "TTMI": {
+    "ticker": "TTMI",
+    "last_updated": "2025-06-23T16:28:36.931364",
+    "sector": "Technology"
+  },
+  "RBC": {
+    "ticker": "RBC",
+    "last_updated": "2025-06-23T16:28:37.387644",
+    "sector": "Industrial Goods"
+  },
+  "YOU": {
+    "ticker": "YOU",
+    "last_updated": "2025-06-23T16:28:37.916214",
+    "sector": "Technology"
+  },
+  "ALBO-OLD": {
+    "ticker": "ALBO-OLD",
+    "last_updated": "2025-06-23T16:28:38.379389",
+    "sector": "Health Care"
+  },
+  "ZBH": {
+    "ticker": "ZBH",
+    "last_updated": "2025-06-23T16:28:38.843555",
+    "sector": "Health Care"
+  },
+  "ALVO": {
+    "ticker": "ALVO",
+    "last_updated": "2025-06-23T16:28:39.304508",
+    "sector": "Health Care"
+  },
+  "SABR": {
+    "ticker": "SABR",
+    "last_updated": "2025-06-23T16:28:39.786627",
+    "sector": "Technology"
+  },
+  "SMLR": {
+    "ticker": "SMLR",
+    "last_updated": "2025-06-23T16:28:40.267125",
+    "sector": "Health Care"
+  },
+  "HRB": {
+    "ticker": "HRB",
+    "last_updated": "2025-06-23T16:28:40.727298",
+    "sector": "Consumer Discretionary"
+  },
+  "WDAY": {
+    "ticker": "WDAY",
+    "last_updated": "2025-06-23T16:28:41.205812",
+    "sector": "Technology"
+  },
+  "GIL": {
+    "ticker": "GIL",
+    "last_updated": "2025-06-23T16:28:41.653519",
+    "sector": "Consumer Goods"
+  },
+  "CRGY": {
+    "ticker": "CRGY",
+    "last_updated": "2025-06-23T16:28:42.151253",
+    "sector": "Energy"
+  },
+  "SCHD": {
+    "ticker": "SCHD",
+    "last_updated": "2025-06-23T16:28:42.629281",
+    "sector": "Super Investor Stats:"
+  },
+  "EHC": {
+    "ticker": "EHC",
+    "last_updated": "2025-06-23T16:28:43.097007",
+    "sector": "Health Care"
+  },
+  "RMBS": {
+    "ticker": "RMBS",
+    "last_updated": "2025-06-23T16:28:43.555656",
+    "sector": "Technology"
+  },
+  "TTE": {
+    "ticker": "TTE",
+    "last_updated": "2025-06-23T16:28:44.017530",
+    "sector": "Energy"
+  },
+  "SGI": {
+    "ticker": "SGI",
+    "last_updated": "2025-06-23T16:28:44.478072",
+    "sector": "Consumer Goods"
+  },
+  "DE": {
+    "ticker": "DE",
+    "last_updated": "2025-06-23T16:28:44.952793",
+    "sector": "Industrials"
+  },
+  "UTZ": {
+    "ticker": "UTZ",
+    "last_updated": "2025-06-23T16:28:45.434913",
+    "sector": "Consumer Staples"
+  },
+  "WEYS": {
+    "ticker": "WEYS",
+    "last_updated": "2025-06-23T16:28:45.913235",
+    "sector": "Consumer Goods"
+  },
+  "COR": {
+    "ticker": "COR",
+    "last_updated": "2025-06-23T16:28:46.356549",
+    "sector": "Health Care"
+  },
+  "IBN": {
+    "ticker": "IBN",
+    "last_updated": "2025-06-23T16:28:46.829470",
+    "sector": "Financials"
+  },
+  "VT": {
+    "ticker": "VT",
+    "last_updated": "2025-06-23T16:28:47.297215",
+    "sector": "Super Investor Stats:"
+  },
+  "ONB": {
+    "ticker": "ONB",
+    "last_updated": "2025-06-23T16:28:47.787566",
+    "sector": "Financials"
+  },
+  "VB": {
+    "ticker": "VB",
+    "last_updated": "2025-06-23T16:28:48.269025",
+    "sector": "Super Investor Stats:"
+  },
+  "CENTA": {
+    "ticker": "CENTA",
+    "last_updated": "2025-06-23T16:28:48.728139",
+    "sector": "Consumer Staples"
+  },
+  "CRI": {
+    "ticker": "CRI",
+    "last_updated": "2025-06-23T16:28:49.216629",
+    "sector": "Consumer Goods"
+  },
+  "AWI": {
+    "ticker": "AWI",
+    "last_updated": "2025-06-23T16:28:49.687590",
+    "sector": "Industrial Goods"
+  },
+  "MU": {
+    "ticker": "MU",
+    "last_updated": "2025-06-23T16:28:50.163513",
+    "sector": "Information Technology"
+  },
+  "NTES": {
+    "ticker": "NTES",
+    "last_updated": "2025-06-23T16:28:50.631937",
+    "sector": "Technology"
+  },
+  "TGT": {
+    "ticker": "TGT",
+    "last_updated": "2025-06-23T16:28:51.239354",
+    "sector": "Consumer Discretionary"
+  },
+  "GUTS": {
+    "ticker": "GUTS",
+    "last_updated": "2025-06-23T16:28:51.717157",
+    "sector": "Health Care"
+  },
+  "BWMN": {
+    "ticker": "BWMN",
+    "last_updated": "2025-06-23T16:28:52.191971",
+    "sector": "Industrials"
+  },
+  "CSCO": {
+    "ticker": "CSCO",
+    "last_updated": "2025-06-23T16:28:52.671080",
+    "sector": "Information Technology"
+  },
+  "000858.SZ": {
+    "ticker": "000858.SZ",
+    "last_updated": "2025-06-23T16:28:53.129221",
+    "sector": "Consumer Goods"
+  },
+  "LYFT": {
+    "ticker": "LYFT",
+    "last_updated": "2025-06-23T16:28:53.611068",
+    "sector": "Health Care"
+  },
+  "ALV": {
+    "ticker": "ALV",
+    "last_updated": "2025-06-23T16:28:54.084430",
+    "sector": "Consumer Goods"
+  },
+  "SLM": {
+    "ticker": "SLM",
+    "last_updated": "2025-06-23T16:28:54.548241",
+    "sector": "Financials"
+  },
+  "MDLZ": {
+    "ticker": "MDLZ",
+    "last_updated": "2025-06-23T16:28:55.050425",
+    "sector": "Consumer Staples"
+  },
+  "PCH": {
+    "ticker": "PCH",
+    "last_updated": "2025-06-23T16:28:55.531320",
+    "sector": "Financials"
+  },
+  "NAMS": {
+    "ticker": "NAMS",
+    "last_updated": "2025-06-23T16:28:56.001718",
+    "sector": "Health Care"
+  },
+  "SWK": {
+    "ticker": "SWK",
+    "last_updated": "2025-06-23T16:28:56.465784",
+    "sector": "Consumer Discretionary"
+  },
+  "FICO": {
+    "ticker": "FICO",
+    "last_updated": "2025-06-23T16:28:56.938349",
+    "sector": "Information Technology"
+  },
+  "ADPT": {
+    "ticker": "ADPT",
+    "last_updated": "2025-06-23T16:28:57.418382",
+    "sector": "Health Care"
+  },
+  "BUDFF": {
+    "ticker": "BUDFF",
+    "last_updated": "2025-06-23T16:28:57.916354",
+    "sector": "Consumer Staples"
+  },
+  "PHYS": {
+    "ticker": "PHYS",
+    "last_updated": "2025-06-23T16:28:58.378800",
+    "sector": "Super Investor Stats:"
+  },
+  "RACE": {
+    "ticker": "RACE",
+    "last_updated": "2025-06-23T16:28:58.868073",
+    "sector": "Consumer Goods"
+  },
+  "NCMI": {
+    "ticker": "NCMI",
+    "last_updated": "2025-06-23T16:28:59.336268",
+    "sector": "Services"
+  },
+  "NRP": {
+    "ticker": "NRP",
+    "last_updated": "2025-06-23T16:28:59.787707",
+    "sector": "Materials"
+  },
+  "DJCO": {
+    "ticker": "DJCO",
+    "last_updated": "2025-06-23T16:29:00.216415",
+    "sector": "Services"
+  },
+  "KALU": {
+    "ticker": "KALU",
+    "last_updated": "2025-06-23T16:29:00.677967",
+    "sector": "Materials"
+  },
+  "BN": {
+    "ticker": "BN",
+    "last_updated": "2025-06-23T16:29:01.156074",
+    "sector": "Financials"
+  },
+  "NCNO": {
+    "ticker": "NCNO",
+    "last_updated": "2025-06-23T16:29:01.589885",
+    "sector": "Technology"
+  },
+  "KMI": {
+    "ticker": "KMI",
+    "last_updated": "2025-06-23T16:29:02.079727",
+    "sector": "Energy"
+  },
+  "BALL": {
+    "ticker": "BALL",
+    "last_updated": "2025-06-23T16:29:02.533106",
+    "sector": "Materials"
+  },
+  "CLBT": {
+    "ticker": "CLBT",
+    "last_updated": "2025-06-23T16:29:03.000417",
+    "sector": "Technology"
+  },
+  "VRNA": {
+    "ticker": "VRNA",
+    "last_updated": "2025-06-23T16:29:03.462630",
+    "sector": "Health Care"
+  },
+  "KD": {
+    "ticker": "KD",
+    "last_updated": "2025-06-23T16:29:03.900990",
+    "sector": "Technology"
+  },
+  "NOV": {
+    "ticker": "NOV",
+    "last_updated": "2025-06-23T16:29:04.371875",
+    "sector": "Energy"
+  },
+  "VALE": {
+    "ticker": "VALE",
+    "last_updated": "2025-06-23T16:29:04.858649",
+    "sector": "Materials"
+  },
+  "HRI": {
+    "ticker": "HRI",
+    "last_updated": "2025-06-23T16:29:05.349388",
+    "sector": "Services"
+  },
+  "MANH": {
+    "ticker": "MANH",
+    "last_updated": "2025-06-23T16:29:05.813665",
+    "sector": "Information Technology"
+  },
+  "UVE": {
+    "ticker": "UVE",
+    "last_updated": "2025-06-23T16:29:06.295581",
+    "sector": "Financials"
+  },
+  "EQC-OLD": {
+    "ticker": "EQC-OLD",
+    "last_updated": "2025-06-23T16:29:06.757889",
+    "sector": "Financials"
+  },
+  "JBI": {
+    "ticker": "JBI",
+    "last_updated": "2025-06-23T16:29:07.230099",
+    "sector": "Materials"
+  },
+  "SDY": {
+    "ticker": "SDY",
+    "last_updated": "2025-06-23T16:29:07.727002",
+    "sector": "Super Investor Stats:"
+  },
+  "GTLS": {
+    "ticker": "GTLS",
+    "last_updated": "2025-06-23T16:29:08.210478",
+    "sector": "Industrial Goods"
+  },
+  "LULU": {
+    "ticker": "LULU",
+    "last_updated": "2025-06-23T16:29:08.678587",
+    "sector": "Consumer Goods"
+  },
+  "WU": {
+    "ticker": "WU",
+    "last_updated": "2025-06-23T16:29:09.148666",
+    "sector": "Information Technology"
+  },
+  "APG": {
+    "ticker": "APG",
+    "last_updated": "2025-06-23T16:29:09.620127",
+    "sector": "Industrials"
+  },
+  "ERO": {
+    "ticker": "ERO",
+    "last_updated": "2025-06-23T16:29:10.085297",
+    "sector": "Materials"
+  },
+  "DEO": {
+    "ticker": "DEO",
+    "last_updated": "2025-06-23T16:29:10.516110",
+    "sector": "Consumer Goods"
+  },
+  "GLD": {
+    "ticker": "GLD",
+    "last_updated": "2025-06-23T16:29:10.970020",
+    "sector": "NA"
+  },
+  "FNV": {
+    "ticker": "FNV",
+    "last_updated": "2025-06-23T16:29:11.457997",
+    "sector": "Materials"
+  },
+  "CNR": {
+    "ticker": "CNR",
+    "last_updated": "2025-06-23T16:29:11.928135",
+    "sector": "Energy"
+  },
+  "BKH": {
+    "ticker": "BKH",
+    "last_updated": "2025-06-23T16:29:12.403165",
+    "sector": "Utilities"
+  },
+  "PARA": {
+    "ticker": "PARA",
+    "last_updated": "2025-06-23T16:29:12.855336",
+    "sector": "Communication Services"
+  },
+  "BA": {
+    "ticker": "BA",
+    "last_updated": "2025-06-23T16:29:13.338119",
+    "sector": "Industrials"
+  },
+  "IEX": {
+    "ticker": "IEX",
+    "last_updated": "2025-06-23T16:29:13.775261",
+    "sector": "Industrials"
+  },
+  "APTV": {
+    "ticker": "APTV",
+    "last_updated": "2025-06-23T16:29:14.217028",
+    "sector": "Consumer Goods"
+  },
+  "ANF": {
+    "ticker": "ANF",
+    "last_updated": "2025-06-23T16:29:14.683507",
+    "sector": "Consumer Discretionary"
+  },
+  "TVTX": {
+    "ticker": "TVTX",
+    "last_updated": "2025-06-23T16:29:15.173508",
+    "sector": "Health Care"
+  },
+  "AAP": {
+    "ticker": "AAP",
+    "last_updated": "2025-06-23T16:29:15.654915",
+    "sector": "Consumer Discretionary"
+  },
+  "RHHBY": {
+    "ticker": "RHHBY",
+    "last_updated": "2025-06-23T16:29:16.132380",
+    "sector": "Health Care"
+  },
+  "TCOM": {
+    "ticker": "TCOM",
+    "last_updated": "2025-06-23T16:29:16.621028",
+    "sector": "Consumer Cyclical"
+  },
+  "CVI": {
+    "ticker": "CVI",
+    "last_updated": "2025-06-23T16:29:17.120158",
+    "sector": "Materials"
+  },
+  "9715.T": {
+    "ticker": "9715.T",
+    "last_updated": "2025-06-23T16:29:17.611199",
+    "sector": "Information Technology"
+  },
+  "QUAD": {
+    "ticker": "QUAD",
+    "last_updated": "2025-06-23T16:29:18.084301",
+    "sector": "Services"
+  },
+  "KMPR": {
+    "ticker": "KMPR",
+    "last_updated": "2025-06-23T16:29:18.549615",
+    "sector": "Financials"
+  },
+  "H": {
+    "ticker": "H",
+    "last_updated": "2025-06-23T16:29:19.011812",
+    "sector": "Financials"
+  },
+  "TAC": {
+    "ticker": "TAC",
+    "last_updated": "2025-06-23T16:29:19.474899",
+    "sector": "Utilities"
+  },
+  "HMN": {
+    "ticker": "HMN",
+    "last_updated": "2025-06-23T16:29:19.949979",
+    "sector": "Financials"
+  },
+  "TLN": {
+    "ticker": "TLN",
+    "last_updated": "2025-06-23T16:29:20.431496",
+    "sector": "Utilities"
+  },
+  "IWR": {
+    "ticker": "IWR",
+    "last_updated": "2025-06-23T16:29:20.892462",
+    "sector": "Super Investor Stats:"
+  },
+  "AAPL": {
+    "ticker": "AAPL",
+    "last_updated": "2025-06-23T16:29:21.468624",
+    "sector": "Technology"
+  },
+  "LXU": {
+    "ticker": "LXU",
+    "last_updated": "2025-06-23T16:29:21.937522",
+    "sector": "Industrial Goods"
+  },
+  "AALBF": {
+    "ticker": "AALBF",
+    "last_updated": "2025-06-23T16:29:22.398630",
+    "sector": "Industrials"
+  },
+  "TBABF": {
+    "ticker": "TBABF",
+    "last_updated": "2025-06-23T16:29:22.863405",
+    "sector": "Industrials"
+  },
+  "CVE": {
+    "ticker": "CVE",
+    "last_updated": "2025-06-23T16:29:23.332501",
+    "sector": "Materials"
+  },
+  "LUV": {
+    "ticker": "LUV",
+    "last_updated": "2025-06-23T16:29:23.865350",
+    "sector": "Industrials"
+  },
+  "SMG": {
+    "ticker": "SMG",
+    "last_updated": "2025-06-23T16:29:24.361494",
+    "sector": "Materials"
+  },
+  "HHH": {
+    "ticker": "HHH",
+    "last_updated": "2025-06-23T16:29:24.904927",
+    "sector": "Financials"
+  },
+  "TSCO": {
+    "ticker": "TSCO",
+    "last_updated": "2025-06-23T16:29:25.378171",
+    "sector": "Consumer Discretionary"
+  },
+  "TEO": {
+    "ticker": "TEO",
+    "last_updated": "2025-06-23T16:29:25.858488",
+    "sector": "Technology"
+  },
+  "MDB": {
+    "ticker": "MDB",
+    "last_updated": "2025-06-23T16:29:26.359466",
+    "sector": "Technology"
+  },
+  "TAP": {
+    "ticker": "TAP",
+    "last_updated": "2025-06-23T16:29:26.813465",
+    "sector": "Consumer Staples"
+  },
+  "NXPI": {
+    "ticker": "NXPI",
+    "last_updated": "2025-06-23T16:29:27.270827",
+    "sector": "Technology"
+  },
+  "RNMBF": {
+    "ticker": "RNMBF",
+    "last_updated": "2025-06-23T16:29:27.721548",
+    "sector": "Industrials"
+  },
+  "SPG": {
+    "ticker": "SPG",
+    "last_updated": "2025-06-23T16:29:28.243944",
+    "sector": "Financials"
+  },
+  "BATRA": {
+    "ticker": "BATRA",
+    "last_updated": "2025-06-23T16:29:28.737465",
+    "sector": "Services"
+  },
+  "COIN": {
+    "ticker": "COIN",
+    "last_updated": "2025-06-23T16:29:29.292448",
+    "sector": "Technology"
+  },
+  "BHC": {
+    "ticker": "BHC",
+    "last_updated": "2025-06-23T16:29:29.787029",
+    "sector": "Health Care"
+  },
+  "MMSI": {
+    "ticker": "MMSI",
+    "last_updated": "2025-06-23T16:29:30.255387",
+    "sector": "Health Care"
+  },
+  "MTN": {
+    "ticker": "MTN",
+    "last_updated": "2025-06-23T16:29:30.721477",
+    "sector": "Consumer Cyclical"
+  },
+  "BYD": {
+    "ticker": "BYD",
+    "last_updated": "2025-06-23T16:29:31.190588",
+    "sector": "Consumer Discretionary"
+  },
+  "5122.T": {
+    "ticker": "5122.T",
+    "last_updated": "2025-06-23T16:29:31.660522",
+    "sector": "Materials"
+  },
+  "GPK": {
+    "ticker": "GPK",
+    "last_updated": "2025-06-23T16:29:32.118214",
+    "sector": "Consumer Goods"
+  },
+  "CPAY": {
+    "ticker": "CPAY",
+    "last_updated": "2025-06-23T16:29:32.585392",
+    "sector": "Services"
+  },
+  "LWAY": {
+    "ticker": "LWAY",
+    "last_updated": "2025-06-23T16:29:33.068392",
+    "sector": "Consumer Goods"
+  },
+  "WCN": {
+    "ticker": "WCN",
+    "last_updated": "2025-06-23T16:29:33.545650",
+    "sector": "Industrials"
+  },
+  "NSRGF": {
+    "ticker": "NSRGF",
+    "last_updated": "2025-06-23T16:29:34.008177",
+    "sector": "Consumer Staples"
+  },
+  "CG": {
+    "ticker": "CG",
+    "last_updated": "2025-06-23T16:29:34.475099",
+    "sector": "Financials"
+  },
+  "QCOM": {
+    "ticker": "QCOM",
+    "last_updated": "2025-06-23T16:29:34.945802",
+    "sector": "Information Technology"
+  },
+  "ODD": {
+    "ticker": "ODD",
+    "last_updated": "2025-06-23T16:29:35.419827",
+    "sector": "Technology"
+  },
+  "0019.HK": {
+    "ticker": "0019.HK",
+    "last_updated": "2025-06-23T16:29:35.910511",
+    "sector": "Industrials"
+  },
+  "MO": {
+    "ticker": "MO",
+    "last_updated": "2025-06-23T16:29:36.346061",
+    "sector": "Consumer Staples"
+  },
+  "STT": {
+    "ticker": "STT",
+    "last_updated": "2025-06-23T16:29:36.822460",
+    "sector": "Financials"
+  },
+  "BBDC": {
+    "ticker": "BBDC",
+    "last_updated": "2025-06-23T16:29:37.302080",
+    "sector": "Financials"
+  },
+  "WYNN": {
+    "ticker": "WYNN",
+    "last_updated": "2025-06-23T16:29:37.768165",
+    "sector": "Services"
+  },
+  "TPC": {
+    "ticker": "TPC",
+    "last_updated": "2025-06-23T16:29:38.230439",
+    "sector": "Industrial Goods"
+  },
+  "BK": {
+    "ticker": "BK",
+    "last_updated": "2025-06-23T16:29:38.691832",
+    "sector": "Financials"
+  },
+  "KTB": {
+    "ticker": "KTB",
+    "last_updated": "2025-06-23T16:29:39.172543",
+    "sector": "Consumer Discretionary"
+  },
+  "MP": {
+    "ticker": "MP",
+    "last_updated": "2025-06-23T16:29:39.677676",
+    "sector": "Materials"
+  },
+  "ADM": {
+    "ticker": "ADM",
+    "last_updated": "2025-06-23T16:29:40.145024",
+    "sector": "Consumer Staples"
+  },
+  "VNO": {
+    "ticker": "VNO",
+    "last_updated": "2025-06-23T16:29:40.612957",
+    "sector": "Financials"
+  },
+  "BPMC": {
+    "ticker": "BPMC",
+    "last_updated": "2025-06-23T16:29:41.083053",
+    "sector": "Health Care"
+  },
+  "PHLT": {
+    "ticker": "PHLT",
+    "last_updated": "2025-06-23T16:29:41.562500",
+    "sector": "Industrials"
+  },
+  "CHEF": {
+    "ticker": "CHEF",
+    "last_updated": "2025-06-23T16:29:42.036736",
+    "sector": "Services"
+  },
+  "FOX": {
+    "ticker": "FOX",
+    "last_updated": "2025-06-23T16:29:42.508164",
+    "sector": "Services"
+  },
+  "EXE": {
+    "ticker": "EXE",
+    "last_updated": "2025-06-23T16:29:42.973830",
+    "sector": "Energy"
+  },
+  "CHKP": {
+    "ticker": "CHKP",
+    "last_updated": "2025-06-23T16:29:43.443435",
+    "sector": "Technology"
+  },
+  "VVV": {
+    "ticker": "VVV",
+    "last_updated": "2025-06-23T16:29:43.914779",
+    "sector": "Materials"
+  },
+  "MTCH": {
+    "ticker": "MTCH",
+    "last_updated": "2025-06-23T16:29:44.412040",
+    "sector": "Services"
+  },
+  "9934.T": {
+    "ticker": "9934.T",
+    "last_updated": "2025-06-23T16:29:44.874721",
+    "sector": "Industrials"
+  },
+  "OLLI": {
+    "ticker": "OLLI",
+    "last_updated": "2025-06-23T16:29:45.352559",
+    "sector": "Services"
+  },
+  "VEEV": {
+    "ticker": "VEEV",
+    "last_updated": "2025-06-23T16:29:45.863762",
+    "sector": "Technology"
+  },
+  "IDT": {
+    "ticker": "IDT",
+    "last_updated": "2025-06-23T16:29:46.332085",
+    "sector": "Technology"
+  },
+  "ORCL": {
+    "ticker": "ORCL",
+    "last_updated": "2025-06-23T16:29:46.769595",
+    "sector": "Information Technology"
+  },
+  "RAMP": {
+    "ticker": "RAMP",
+    "last_updated": "2025-06-23T16:29:47.249660",
+    "sector": "Technology"
+  },
+  "FRT": {
+    "ticker": "FRT",
+    "last_updated": "2025-06-23T16:29:47.712880",
+    "sector": "Financials"
+  },
+  "OSK": {
+    "ticker": "OSK",
+    "last_updated": "2025-06-23T16:29:48.200305",
+    "sector": "Industrials"
+  },
+  "AMTM": {
+    "ticker": "AMTM",
+    "last_updated": "2025-06-23T16:29:48.666961",
+    "sector": "Industrials"
+  },
+  "CET": {
+    "ticker": "CET",
+    "last_updated": "2025-06-23T16:29:49.176401",
+    "sector": "Financials"
+  },
+  "LTGIF": {
+    "ticker": "LTGIF",
+    "last_updated": "2025-06-23T16:29:49.698757",
+    "sector": "Consumer Goods"
+  },
+  "GIS": {
+    "ticker": "GIS",
+    "last_updated": "2025-06-23T16:29:50.166223",
+    "sector": "Consumer Staples"
+  },
+  "IWO": {
+    "ticker": "IWO",
+    "last_updated": "2025-06-23T16:29:50.637515",
+    "sector": "Super Investor Stats:"
+  },
+  "ELF": {
+    "ticker": "ELF",
+    "last_updated": "2025-06-23T16:29:51.218225",
+    "sector": "Consumer Goods"
+  },
+  "MRK": {
+    "ticker": "MRK",
+    "last_updated": "2025-06-23T16:29:51.683278",
+    "sector": "Health Care"
+  },
+  "HON": {
+    "ticker": "HON",
+    "last_updated": "2025-06-23T16:29:52.229529",
+    "sector": "Industrials"
+  },
+  "ANSS": {
+    "ticker": "ANSS",
+    "last_updated": "2025-06-23T16:29:52.686882",
+    "sector": "Information Technology"
+  },
+  "ADT": {
+    "ticker": "ADT",
+    "last_updated": "2025-06-23T16:29:53.177873",
+    "sector": "Services"
+  },
+  "ADI": {
+    "ticker": "ADI",
+    "last_updated": "2025-06-23T16:29:53.655631",
+    "sector": "Information Technology"
+  },
+  "PCTY": {
+    "ticker": "PCTY",
+    "last_updated": "2025-06-23T16:29:54.153115",
+    "sector": "Information Technology"
+  },
+  "KEYS": {
+    "ticker": "KEYS",
+    "last_updated": "2025-06-23T16:29:54.666756",
+    "sector": "Technology"
+  },
+  "EWBC": {
+    "ticker": "EWBC",
+    "last_updated": "2025-06-23T16:29:55.155532",
+    "sector": "Financials"
+  },
+  "CNXC": {
+    "ticker": "CNXC",
+    "last_updated": "2025-06-23T16:29:55.638480",
+    "sector": "Technology"
+  },
+  "CSGP": {
+    "ticker": "CSGP",
+    "last_updated": "2025-06-23T16:29:56.083228",
+    "sector": "Financials"
+  },
+  "MTSR": {
+    "ticker": "MTSR",
+    "last_updated": "2025-06-23T16:29:56.564059",
+    "sector": "Health Care"
+  },
+  "AMWD": {
+    "ticker": "AMWD",
+    "last_updated": "2025-06-23T16:29:57.028056",
+    "sector": "Industrials"
+  },
+  "WRBY": {
+    "ticker": "WRBY",
+    "last_updated": "2025-06-23T16:29:57.496657",
+    "sector": "Health Care"
+  },
+  "PACK": {
+    "ticker": "PACK",
+    "last_updated": "2025-06-23T16:29:57.992651",
+    "sector": "Materials"
+  },
+  "SPY": {
+    "ticker": "SPY",
+    "last_updated": "2025-06-23T16:29:58.468071",
+    "sector": "NA"
+  },
+  "CP": {
+    "ticker": "CP",
+    "last_updated": "2025-06-23T16:29:58.907341",
+    "sector": "Services"
+  },
+  "INCY": {
+    "ticker": "INCY",
+    "last_updated": "2025-06-23T16:29:59.381747",
+    "sector": "Health Care"
+  },
+  "DLVHF": {
+    "ticker": "DLVHF",
+    "last_updated": "2025-06-23T16:29:59.857695",
+    "sector": "Consumer Cyclical"
+  },
+  "PRKS": {
+    "ticker": "PRKS",
+    "last_updated": "2025-06-23T16:30:00.328915",
+    "sector": "Services"
+  },
+  "DLR": {
+    "ticker": "DLR",
+    "last_updated": "2025-06-23T16:30:00.784177",
+    "sector": "Financials"
+  },
+  "VRSN": {
+    "ticker": "VRSN",
+    "last_updated": "2025-06-23T16:30:01.362862",
+    "sector": "Information Technology"
+  },
+  "VTI": {
+    "ticker": "VTI",
+    "last_updated": "2025-06-23T16:30:01.878308",
+    "sector": "Super Investor Stats:"
+  },
+  "CEVA": {
+    "ticker": "CEVA",
+    "last_updated": "2025-06-23T16:30:02.343347",
+    "sector": "Information Technology"
+  },
+  "HGTY": {
+    "ticker": "HGTY",
+    "last_updated": "2025-06-23T16:30:02.811142",
+    "sector": "Financials"
+  },
+  "ENTG": {
+    "ticker": "ENTG",
+    "last_updated": "2025-06-23T16:30:03.273628",
+    "sector": "Technology"
+  },
+  "RPM": {
+    "ticker": "RPM",
+    "last_updated": "2025-06-23T16:30:03.741992",
+    "sector": "Materials"
+  },
+  "VRSK": {
+    "ticker": "VRSK",
+    "last_updated": "2025-06-23T16:30:04.238322",
+    "sector": "Services"
+  },
+  "HCMLF": {
+    "ticker": "HCMLF",
+    "last_updated": "2025-06-23T16:30:04.678191",
+    "sector": "Industrial Goods"
+  },
+  "DCO": {
+    "ticker": "DCO",
+    "last_updated": "2025-06-23T16:30:05.135599",
+    "sector": "Industrials"
+  },
+  "CEG": {
+    "ticker": "CEG",
+    "last_updated": "2025-06-23T16:30:05.587970",
+    "sector": "Utilities"
+  },
+  "VTS": {
+    "ticker": "VTS",
+    "last_updated": "2025-06-23T16:30:06.063297",
+    "sector": "Energy"
+  },
+  "VIST": {
+    "ticker": "VIST",
+    "last_updated": "2025-06-23T16:30:06.550824",
+    "sector": "Energy"
+  },
+  "TRVI": {
+    "ticker": "TRVI",
+    "last_updated": "2025-06-23T16:30:07.033150",
+    "sector": "Health Care"
+  },
+  "UCTT": {
+    "ticker": "UCTT",
+    "last_updated": "2025-06-23T16:30:07.552892",
+    "sector": "Information Technology"
+  },
+  "CBOE": {
+    "ticker": "CBOE",
+    "last_updated": "2025-06-23T16:30:08.009572",
+    "sector": "Financials"
+  },
+  "CIEN": {
+    "ticker": "CIEN",
+    "last_updated": "2025-06-23T16:30:08.486140",
+    "sector": "Information Technology"
+  },
+  "WAT": {
+    "ticker": "WAT",
+    "last_updated": "2025-06-23T16:30:08.951837",
+    "sector": "Health Care"
+  },
+  "EQIX": {
+    "ticker": "EQIX",
+    "last_updated": "2025-06-23T16:30:09.428695",
+    "sector": "Technology"
+  },
+  "EXLS": {
+    "ticker": "EXLS",
+    "last_updated": "2025-06-23T16:30:09.900670",
+    "sector": "Information Technology"
+  },
+  "NVTS": {
+    "ticker": "NVTS",
+    "last_updated": "2025-06-23T16:30:10.365824",
+    "sector": "Technology"
+  },
+  "DIN": {
+    "ticker": "DIN",
+    "last_updated": "2025-06-23T16:30:10.849295",
+    "sector": "Services"
+  },
+  "IART": {
+    "ticker": "IART",
+    "last_updated": "2025-06-23T16:30:11.326296",
+    "sector": "Health Care"
+  },
+  "HAYW": {
+    "ticker": "HAYW",
+    "last_updated": "2025-06-23T16:30:11.837179",
+    "sector": "Industrials"
+  },
+  "SAIC": {
+    "ticker": "SAIC",
+    "last_updated": "2025-06-23T16:30:12.329572",
+    "sector": "Technology"
+  },
+  "AIT": {
+    "ticker": "AIT",
+    "last_updated": "2025-06-23T16:30:12.815800",
+    "sector": "Industrials"
+  },
+  "BB": {
+    "ticker": "BB",
+    "last_updated": "2025-06-23T16:30:13.255861",
+    "sector": "Technology"
+  },
+  "GOOS": {
+    "ticker": "GOOS",
+    "last_updated": "2025-06-23T16:30:13.710343",
+    "sector": "Consumer Cyclical"
+  },
+  "ZBIO": {
+    "ticker": "ZBIO",
+    "last_updated": "2025-06-23T16:30:14.184082",
+    "sector": "Health Care"
+  },
+  "Z": {
+    "ticker": "Z",
+    "last_updated": "2025-06-23T16:30:14.692651",
+    "sector": "Financials"
+  },
+  "HUSQF": {
+    "ticker": "HUSQF",
+    "last_updated": "2025-06-23T16:30:15.150316",
+    "sector": "Industrials"
+  },
+  "WSR": {
+    "ticker": "WSR",
+    "last_updated": "2025-06-23T16:30:15.651953",
+    "sector": "Real Estate"
+  },
+  "UMBF": {
+    "ticker": "UMBF",
+    "last_updated": "2025-06-23T16:30:16.152541",
+    "sector": "Financials"
+  },
+  "PDRDF": {
+    "ticker": "PDRDF",
+    "last_updated": "2025-06-23T16:30:16.587232",
+    "sector": "Consumer Goods"
+  },
+  "SWTX": {
+    "ticker": "SWTX",
+    "last_updated": "2025-06-23T16:30:17.061878",
+    "sector": "Health Care"
+  },
+  "HWDN.L": {
+    "ticker": "HWDN.L",
+    "last_updated": "2025-06-23T16:30:17.536793",
+    "sector": "Consumer Cyclical"
+  },
+  "CABO": {
+    "ticker": "CABO",
+    "last_updated": "2025-06-23T16:30:18.013464",
+    "sector": "Technology"
+  },
+  "PLAY": {
+    "ticker": "PLAY",
+    "last_updated": "2025-06-23T16:30:18.558345",
+    "sector": "Consumer Discretionary"
+  },
+  "SEB": {
+    "ticker": "SEB",
+    "last_updated": "2025-06-23T16:30:19.002426",
+    "sector": "Consumer Goods"
+  },
+  "PFE": {
+    "ticker": "PFE",
+    "last_updated": "2025-06-23T16:30:19.446409",
+    "sector": "Health Care"
+  },
+  "LRCX": {
+    "ticker": "LRCX",
+    "last_updated": "2025-06-23T16:30:19.911864",
+    "sector": "Information Technology"
+  },
+  "FPH": {
+    "ticker": "FPH",
+    "last_updated": "2025-06-23T16:30:20.382491",
+    "sector": "Real Estate"
+  },
+  "BRK.A": {
+    "ticker": "BRK.A",
+    "last_updated": "2025-06-23T16:30:20.855589",
+    "sector": "Financials"
+  },
+  "TROW": {
+    "ticker": "TROW",
+    "last_updated": "2025-06-23T16:30:21.534384",
+    "sector": "Financials"
+  },
+  "CNA": {
+    "ticker": "CNA",
+    "last_updated": "2025-06-23T16:30:22.001419",
+    "sector": "Financials"
+  },
+  "FSV": {
+    "ticker": "FSV",
+    "last_updated": "2025-06-23T16:30:22.476746",
+    "sector": "Real Estate"
+  },
+  "BNS": {
+    "ticker": "BNS",
+    "last_updated": "2025-06-23T16:30:22.933578",
+    "sector": "Financials"
+  },
+  "GPN": {
+    "ticker": "GPN",
+    "last_updated": "2025-06-23T16:30:23.395561",
+    "sector": "Information Technology"
+  },
+  "LEGH": {
+    "ticker": "LEGH",
+    "last_updated": "2025-06-23T16:30:23.888564",
+    "sector": "Consumer Cyclical"
+  },
+  "CNO": {
+    "ticker": "CNO",
+    "last_updated": "2025-06-23T16:30:24.348653",
+    "sector": "Financials"
+  },
+  "IEP": {
+    "ticker": "IEP",
+    "last_updated": "2025-06-23T16:30:24.784860",
+    "sector": "Financials"
+  },
+  "NOAH": {
+    "ticker": "NOAH",
+    "last_updated": "2025-06-23T16:30:25.244731",
+    "sector": "Financials"
+  },
+  "QQQ": {
+    "ticker": "QQQ",
+    "last_updated": "2025-06-23T16:30:25.694249",
+    "sector": "Super Investor Stats:"
+  },
+  "VRAYQ": {
+    "ticker": "VRAYQ",
+    "last_updated": "2025-06-23T16:30:26.170789",
+    "sector": "Health Care"
+  },
+  "PCAR": {
+    "ticker": "PCAR",
+    "last_updated": "2025-06-23T16:30:26.662643",
+    "sector": "Industrials"
+  },
+  "CNSWF": {
+    "ticker": "CNSWF",
+    "last_updated": "2025-06-23T16:30:27.131833",
+    "sector": "Technology"
+  },
+  "ACI": {
+    "ticker": "ACI",
+    "last_updated": "2025-06-23T16:30:27.603128",
+    "sector": "Consumer Staples"
+  },
+  "STZ": {
+    "ticker": "STZ",
+    "last_updated": "2025-06-23T16:30:28.073350",
+    "sector": "Consumer Staples"
+  },
+  "ALVOW": {
+    "ticker": "ALVOW",
+    "last_updated": "2025-06-23T16:30:28.527349",
+    "sector": "Super Investor Stats:"
+  },
+  "BLDR": {
+    "ticker": "BLDR",
+    "last_updated": "2025-06-23T16:30:29.011213",
+    "sector": "Services"
+  },
+  "IPGP": {
+    "ticker": "IPGP",
+    "last_updated": "2025-06-23T16:30:29.481532",
+    "sector": "Technology"
+  },
+  "AMN": {
+    "ticker": "AMN",
+    "last_updated": "2025-06-23T16:30:29.990927",
+    "sector": "Health Care"
+  },
+  "GPC": {
+    "ticker": "GPC",
+    "last_updated": "2025-06-23T16:30:30.472978",
+    "sector": "Consumer Discretionary"
+  },
+  "IMVT": {
+    "ticker": "IMVT",
+    "last_updated": "2025-06-23T16:30:30.958361",
+    "sector": "Health Care"
+  },
+  "VLY": {
+    "ticker": "VLY",
+    "last_updated": "2025-06-23T16:30:31.453189",
+    "sector": "Financials"
+  },
+  "CDE": {
+    "ticker": "CDE",
+    "last_updated": "2025-06-23T16:30:31.922187",
+    "sector": "Materials"
+  },
+  "JD": {
+    "ticker": "JD",
+    "last_updated": "2025-06-23T16:30:32.411736",
+    "sector": "Technology"
+  },
+  "SAFRY": {
+    "ticker": "SAFRY",
+    "last_updated": "2025-06-23T16:30:32.925796",
+    "sector": "Industrial Goods"
+  },
+  "PHIN": {
+    "ticker": "PHIN",
+    "last_updated": "2025-06-23T16:30:33.396334",
+    "sector": "Consumer Cyclical"
+  },
+  "HOLX": {
+    "ticker": "HOLX",
+    "last_updated": "2025-06-23T16:30:33.879670",
+    "sector": "Health Care"
+  },
+  "PROSF": {
+    "ticker": "PROSF",
+    "last_updated": "2025-06-23T16:30:34.351080",
+    "sector": "Technology"
+  },
+  "FAST": {
+    "ticker": "FAST",
+    "last_updated": "2025-06-23T16:30:34.818188",
+    "sector": "Industrials"
+  },
+  "AGS": {
+    "ticker": "AGS",
+    "last_updated": "2025-06-23T16:30:35.288022",
+    "sector": "Consumer Cyclical"
+  },
+  "KMX": {
+    "ticker": "KMX",
+    "last_updated": "2025-06-23T16:30:35.757053",
+    "sector": "Consumer Discretionary"
+  },
+  "SHEL": {
+    "ticker": "SHEL",
+    "last_updated": "2025-06-23T16:30:36.225400",
+    "sector": "Materials"
+  },
+  "SBSI": {
+    "ticker": "SBSI",
+    "last_updated": "2025-06-23T16:30:36.708590",
+    "sector": "Financials"
+  },
+  "UAN": {
+    "ticker": "UAN",
+    "last_updated": "2025-06-23T16:30:37.171034",
+    "sector": "Materials"
+  },
+  "TSM": {
+    "ticker": "TSM",
+    "last_updated": "2025-06-23T16:30:37.648520",
+    "sector": "Technology"
+  },
+  "UMH": {
+    "ticker": "UMH",
+    "last_updated": "2025-06-23T16:30:38.120691",
+    "sector": "Financials"
+  },
+  "MTD": {
+    "ticker": "MTD",
+    "last_updated": "2025-06-23T16:30:38.594895",
+    "sector": "Health Care"
+  },
+  "MKTX": {
+    "ticker": "MKTX",
+    "last_updated": "2025-06-23T16:30:39.058477",
+    "sector": "Financials"
+  },
+  "LH": {
+    "ticker": "LH",
+    "last_updated": "2025-06-23T16:30:39.532404",
+    "sector": "Health Care"
+  },
+  "CHTR": {
+    "ticker": "CHTR",
+    "last_updated": "2025-06-23T16:30:40.012884",
+    "sector": "Services"
+  },
+  "LLYVK": {
+    "ticker": "LLYVK",
+    "last_updated": "2025-06-23T16:30:40.475266",
+    "sector": "Services"
+  },
+  "MCHP": {
+    "ticker": "MCHP",
+    "last_updated": "2025-06-23T16:30:40.949209",
+    "sector": "Information Technology"
+  },
+  "OLN": {
+    "ticker": "OLN",
+    "last_updated": "2025-06-23T16:30:41.411265",
+    "sector": "Materials"
+  },
+  "V": {
+    "ticker": "V",
+    "last_updated": "2025-06-23T16:30:41.859527",
+    "sector": "Services"
+  },
+  "BRK.B": {
+    "ticker": "BRK.B",
+    "last_updated": "2025-06-23T16:30:42.302629",
+    "sector": "Financials"
+  },
+  "NMIH": {
+    "ticker": "NMIH",
+    "last_updated": "2025-06-23T16:30:42.767081",
+    "sector": "Financials"
+  },
+  "BAH": {
+    "ticker": "BAH",
+    "last_updated": "2025-06-23T16:30:43.257188",
+    "sector": "Industrials"
+  },
+  "LYV": {
+    "ticker": "LYV",
+    "last_updated": "2025-06-23T16:30:43.700121",
+    "sector": "Consumer Discretionary"
+  },
+  "OIS": {
+    "ticker": "OIS",
+    "last_updated": "2025-06-23T16:30:44.166528",
+    "sector": "Materials"
+  },
+  "SKY": {
+    "ticker": "SKY",
+    "last_updated": "2025-06-23T16:30:44.658919",
+    "sector": "Consumer Discretionary"
+  },
+  "AIR": {
+    "ticker": "AIR",
+    "last_updated": "2025-06-23T16:30:45.119150",
+    "sector": "Industrials"
+  },
+  "SKX": {
+    "ticker": "SKX",
+    "last_updated": "2025-06-23T16:30:45.589837",
+    "sector": "Consumer Discretionary"
+  },
+  "PBF": {
+    "ticker": "PBF",
+    "last_updated": "2025-06-23T16:30:46.091531",
+    "sector": "Materials"
+  },
+  "DD": {
+    "ticker": "DD",
+    "last_updated": "2025-06-23T16:30:46.562221",
+    "sector": "Materials"
+  },
+  "TOL": {
+    "ticker": "TOL",
+    "last_updated": "2025-06-23T16:30:47.031512",
+    "sector": "Consumer Discretionary"
+  },
+  "TPHS": {
+    "ticker": "TPHS",
+    "last_updated": "2025-06-23T16:30:47.534515",
+    "sector": "Financials"
+  },
+  "NTST": {
+    "ticker": "NTST",
+    "last_updated": "2025-06-23T16:30:48.019824",
+    "sector": "Real Estate"
+  },
+  "KARO": {
+    "ticker": "KARO",
+    "last_updated": "2025-06-23T16:30:48.492821",
+    "sector": "Technology"
+  },
+  "SWX": {
+    "ticker": "SWX",
+    "last_updated": "2025-06-23T16:30:48.939717",
+    "sector": "Utilities"
+  },
+  "REZI": {
+    "ticker": "REZI",
+    "last_updated": "2025-06-23T16:30:49.419149",
+    "sector": "Industrials"
+  },
+  "IFS": {
+    "ticker": "IFS",
+    "last_updated": "2025-06-23T16:30:49.882011",
+    "sector": "Financials"
+  },
+  "FLUT": {
+    "ticker": "FLUT",
+    "last_updated": "2025-06-23T16:30:50.366921",
+    "sector": "Consumer Cyclical"
+  },
+  "CLX": {
+    "ticker": "CLX",
+    "last_updated": "2025-06-23T16:30:50.823744",
+    "sector": "Consumer Staples"
+  },
+  "A": {
+    "ticker": "A",
+    "last_updated": "2025-06-23T16:30:51.435535",
+    "sector": "Information Technology"
+  },
+  "EXR": {
+    "ticker": "EXR",
+    "last_updated": "2025-06-23T16:30:51.901934",
+    "sector": "Financials"
+  },
+  "TYL": {
+    "ticker": "TYL",
+    "last_updated": "2025-06-23T16:30:52.378773",
+    "sector": "Technology"
+  },
+  "EW": {
+    "ticker": "EW",
+    "last_updated": "2025-06-23T16:30:52.854152",
+    "sector": "Health Care"
+  },
+  "AN": {
+    "ticker": "AN",
+    "last_updated": "2025-06-23T16:30:53.303223",
+    "sector": "Consumer Discretionary"
+  },
+  "CWAN": {
+    "ticker": "CWAN",
+    "last_updated": "2025-06-23T16:30:53.808945",
+    "sector": "Technology"
+  },
+  "KLAC": {
+    "ticker": "KLAC",
+    "last_updated": "2025-06-23T16:30:54.273312",
+    "sector": "Information Technology"
+  },
+  "HUM": {
+    "ticker": "HUM",
+    "last_updated": "2025-06-23T16:30:54.715287",
+    "sector": "Health Care"
+  },
+  "THC": {
+    "ticker": "THC",
+    "last_updated": "2025-06-23T16:30:55.178862",
+    "sector": "Health Care"
+  },
+  "PBH": {
+    "ticker": "PBH",
+    "last_updated": "2025-06-23T16:30:55.640628",
+    "sector": "Health Care"
+  },
+  "CFRHF": {
+    "ticker": "CFRHF",
+    "last_updated": "2025-06-23T16:30:56.082628",
+    "sector": "Consumer Discretionary"
+  },
+  "JNJ": {
+    "ticker": "JNJ",
+    "last_updated": "2025-06-23T16:30:56.587769",
+    "sector": "Health Care"
+  },
+  "AJG": {
+    "ticker": "AJG",
+    "last_updated": "2025-06-23T16:30:57.084374",
+    "sector": "Financials"
+  },
+  "HKHHF": {
+    "ticker": "HKHHF",
+    "last_updated": "2025-06-23T16:30:57.566649",
+    "sector": "Consumer Goods"
+  },
+  "SPOT": {
+    "ticker": "SPOT",
+    "last_updated": "2025-06-23T16:30:58.049488",
+    "sector": "Technology"
+  },
+  "FR": {
+    "ticker": "FR",
+    "last_updated": "2025-06-23T16:30:58.522754",
+    "sector": "Financials"
+  },
+  "CTO": {
+    "ticker": "CTO",
+    "last_updated": "2025-06-23T16:30:58.974521",
+    "sector": "Financials"
+  },
+  "LBRDA": {
+    "ticker": "LBRDA",
+    "last_updated": "2025-06-23T16:30:59.431073",
+    "sector": "Technology"
+  },
+  "ROL": {
+    "ticker": "ROL",
+    "last_updated": "2025-06-23T16:30:59.932412",
+    "sector": "Industrials"
+  },
+  "VYM": {
+    "ticker": "VYM",
+    "last_updated": "2025-06-23T16:31:00.390963",
+    "sector": "Super Investor Stats:"
+  },
+  "MSTR": {
+    "ticker": "MSTR",
+    "last_updated": "2025-06-23T16:31:00.959675",
+    "sector": "Technology"
+  },
+  "KNX": {
+    "ticker": "KNX",
+    "last_updated": "2025-06-23T16:31:01.418132",
+    "sector": "Industrials"
+  },
+  "NTRS": {
+    "ticker": "NTRS",
+    "last_updated": "2025-06-23T16:31:01.889272",
+    "sector": "Financials"
+  },
+  "BLK": {
+    "ticker": "BLK",
+    "last_updated": "2025-06-23T16:31:02.359265",
+    "sector": "Financials"
+  },
+  "EMN": {
+    "ticker": "EMN",
+    "last_updated": "2025-06-23T16:31:02.828901",
+    "sector": "Materials"
+  },
+  "GRAB": {
+    "ticker": "GRAB",
+    "last_updated": "2025-06-23T16:31:03.317671",
+    "sector": "Financials"
+  },
+  "SKYX": {
+    "ticker": "SKYX",
+    "last_updated": "2025-06-23T16:31:03.765893",
+    "sector": "Industrials"
+  },
+  "AORT": {
+    "ticker": "AORT",
+    "last_updated": "2025-06-23T16:31:04.229026",
+    "sector": "Health Care"
+  },
+  "ADTN": {
+    "ticker": "ADTN",
+    "last_updated": "2025-06-23T16:31:04.706673",
+    "sector": "Information Technology"
+  },
+  "CRWD": {
+    "ticker": "CRWD",
+    "last_updated": "2025-06-23T16:31:05.189132",
+    "sector": "Technology"
+  },
+  "FUL": {
+    "ticker": "FUL",
+    "last_updated": "2025-06-23T16:31:05.661317",
+    "sector": "Materials"
+  },
+  "BAK": {
+    "ticker": "BAK",
+    "last_updated": "2025-06-23T16:31:06.152191",
+    "sector": "Materials"
+  },
+  "PBR": {
+    "ticker": "PBR",
+    "last_updated": "2025-06-23T16:31:06.612424",
+    "sector": "Materials"
+  },
+  "GILD": {
+    "ticker": "GILD",
+    "last_updated": "2025-06-23T16:31:07.068355",
+    "sector": "Health Care"
+  },
+  "TECH": {
+    "ticker": "TECH",
+    "last_updated": "2025-06-23T16:31:07.539583",
+    "sector": "Health Care"
+  },
+  "VTV": {
+    "ticker": "VTV",
+    "last_updated": "2025-06-23T16:31:08.019726",
+    "sector": "Super Investor Stats:"
+  },
+  "WIPKF": {
+    "ticker": "WIPKF",
+    "last_updated": "2025-06-23T16:31:08.475969",
+    "sector": "Consumer Cyclical"
+  },
+  "1979.T": {
+    "ticker": "1979.T",
+    "last_updated": "2025-06-23T16:31:08.945643",
+    "sector": "Industrials"
+  },
+  "BTU": {
+    "ticker": "BTU",
+    "last_updated": "2025-06-23T16:31:09.402999",
+    "sector": "Energy"
+  },
+  "BSY": {
+    "ticker": "BSY",
+    "last_updated": "2025-06-23T16:31:09.871101",
+    "sector": "Technology"
+  },
+  "CABJF": {
+    "ticker": "CABJF",
+    "last_updated": "2025-06-23T16:31:10.356829",
+    "sector": "Industrial Goods"
+  },
+  "TMUS": {
+    "ticker": "TMUS",
+    "last_updated": "2025-06-23T16:31:10.848786",
+    "sector": "Technology"
+  },
+  "FSTR": {
+    "ticker": "FSTR",
+    "last_updated": "2025-06-23T16:31:11.307961",
+    "sector": "Industrials"
+  },
+  "ECG": {
+    "ticker": "ECG",
+    "last_updated": "2025-06-23T16:31:11.764979",
+    "sector": "Industrials"
+  },
+  "JHG": {
+    "ticker": "JHG",
+    "last_updated": "2025-06-23T16:31:12.197689",
+    "sector": "Financials"
+  },
+  "CPRX": {
+    "ticker": "CPRX",
+    "last_updated": "2025-06-23T16:31:12.666518",
+    "sector": "Health Care"
+  },
+  "HLI": {
+    "ticker": "HLI",
+    "last_updated": "2025-06-23T16:31:13.134797",
+    "sector": "Financials"
+  },
+  "DINO": {
+    "ticker": "DINO",
+    "last_updated": "2025-06-23T16:31:13.620072",
+    "sector": "Materials"
+  },
+  "DFS-OLD": {
+    "ticker": "DFS-OLD",
+    "last_updated": "2025-06-23T16:31:14.088850",
+    "sector": "Financials"
+  },
+  "SHO": {
+    "ticker": "SHO",
+    "last_updated": "2025-06-23T16:31:14.550143",
+    "sector": "Financials"
+  },
+  "GXO": {
+    "ticker": "GXO",
+    "last_updated": "2025-06-23T16:31:14.988899",
+    "sector": "Industrials"
+  },
+  "YUM": {
+    "ticker": "YUM",
+    "last_updated": "2025-06-23T16:31:15.470787",
+    "sector": "Consumer Discretionary"
+  },
+  "PEP": {
+    "ticker": "PEP",
+    "last_updated": "2025-06-23T16:31:15.908317",
+    "sector": "Consumer Staples"
+  },
+  "KN": {
+    "ticker": "KN",
+    "last_updated": "2025-06-23T16:31:16.370627",
+    "sector": "Technology"
+  },
+  "BBY": {
+    "ticker": "BBY",
+    "last_updated": "2025-06-23T16:31:16.854158",
+    "sector": "Consumer Discretionary"
+  },
+  "OUT": {
+    "ticker": "OUT",
+    "last_updated": "2025-06-23T16:31:17.328795",
+    "sector": "Services"
+  },
+  "CAG": {
+    "ticker": "CAG",
+    "last_updated": "2025-06-23T16:31:17.781263",
+    "sector": "Consumer Staples"
+  },
+  "AUROW": {
+    "ticker": "AUROW",
+    "last_updated": "2025-06-23T16:31:18.243509",
+    "sector": "Financials"
+  },
+  "FA": {
+    "ticker": "FA",
+    "last_updated": "2025-06-23T16:31:18.715378",
+    "sector": "Industrials"
+  },
+  "PGEN": {
+    "ticker": "PGEN",
+    "last_updated": "2025-06-23T16:31:19.217267",
+    "sector": "Health Care"
+  },
+  "UBS": {
+    "ticker": "UBS",
+    "last_updated": "2025-06-23T16:31:19.687190",
+    "sector": "Financials"
+  },
+  "PINS": {
+    "ticker": "PINS",
+    "last_updated": "2025-06-23T16:31:20.194088",
+    "sector": "Technology"
+  },
+  "NGD": {
+    "ticker": "NGD",
+    "last_updated": "2025-06-23T16:31:20.649914",
+    "sector": "Materials"
+  },
+  "GPI": {
+    "ticker": "GPI",
+    "last_updated": "2025-06-23T16:31:21.228641",
+    "sector": "Consumer Discretionary"
+  },
+  "ABBV": {
+    "ticker": "ABBV",
+    "last_updated": "2025-06-23T16:31:21.684349",
+    "sector": "Health Care"
+  },
+  "COYA": {
+    "ticker": "COYA",
+    "last_updated": "2025-06-23T16:31:22.153702",
+    "sector": "Super Investor Stats:"
+  },
+  "PDRDY": {
+    "ticker": "PDRDY",
+    "last_updated": "2025-06-23T16:31:22.615435",
+    "sector": "Consumer Goods"
+  },
+  "VNT": {
+    "ticker": "VNT",
+    "last_updated": "2025-06-23T16:31:23.115298",
+    "sector": "Technology"
+  },
+  "ADP": {
+    "ticker": "ADP",
+    "last_updated": "2025-06-23T16:31:23.548199",
+    "sector": "Information Technology"
+  },
+  "CSX": {
+    "ticker": "CSX",
+    "last_updated": "2025-06-23T16:31:24.030625",
+    "sector": "Industrials"
+  },
+  "QLYS": {
+    "ticker": "QLYS",
+    "last_updated": "2025-06-23T16:31:24.526839",
+    "sector": "Technology"
+  },
+  "AVGO": {
+    "ticker": "AVGO",
+    "last_updated": "2025-06-23T16:31:24.993341",
+    "sector": "Technology"
+  },
+  "RWAY": {
+    "ticker": "RWAY",
+    "last_updated": "2025-06-23T16:31:25.473224",
+    "sector": "Financials"
+  },
+  "GS": {
+    "ticker": "GS",
+    "last_updated": "2025-06-23T16:31:25.947531",
+    "sector": "Financials"
+  },
+  "SNOW": {
+    "ticker": "SNOW",
+    "last_updated": "2025-06-23T16:31:26.453004",
+    "sector": "Technology"
+  },
+  "NSP": {
+    "ticker": "NSP",
+    "last_updated": "2025-06-23T16:31:26.919739",
+    "sector": "Services"
+  },
+  "DGEAF": {
+    "ticker": "DGEAF",
+    "last_updated": "2025-06-23T16:31:27.396260",
+    "sector": "Consumer Goods"
+  },
+  "UHS": {
+    "ticker": "UHS",
+    "last_updated": "2025-06-23T16:31:27.865112",
+    "sector": "Health Care"
+  },
+  "MGA": {
+    "ticker": "MGA",
+    "last_updated": "2025-06-23T16:31:28.325261",
+    "sector": "Consumer Goods"
+  },
+  "GM": {
+    "ticker": "GM",
+    "last_updated": "2025-06-23T16:31:28.806296",
+    "sector": "Consumer Discretionary"
+  },
+  "EGO": {
+    "ticker": "EGO",
+    "last_updated": "2025-06-23T16:31:29.275676",
+    "sector": "Materials"
+  },
+  "AGO": {
+    "ticker": "AGO",
+    "last_updated": "2025-06-23T16:31:29.746286",
+    "sector": "Financials"
+  },
+  "LFUS": {
+    "ticker": "LFUS",
+    "last_updated": "2025-06-23T16:31:30.232136",
+    "sector": "Information Technology"
+  },
+  "DRI": {
+    "ticker": "DRI",
+    "last_updated": "2025-06-23T16:31:30.689249",
+    "sector": "Consumer Discretionary"
+  },
+  "JEF": {
+    "ticker": "JEF",
+    "last_updated": "2025-06-23T16:31:31.162288",
+    "sector": "Financials"
+  },
+  "RFL": {
+    "ticker": "RFL",
+    "last_updated": "2025-06-23T16:31:31.703523",
+    "sector": "Financials"
+  },
+  "IOO": {
+    "ticker": "IOO",
+    "last_updated": "2025-06-23T16:31:32.170296",
+    "sector": "Super Investor Stats:"
+  },
+  "URBN": {
+    "ticker": "URBN",
+    "last_updated": "2025-06-23T16:31:32.630660",
+    "sector": "Consumer Discretionary"
+  },
+  "CASY": {
+    "ticker": "CASY",
+    "last_updated": "2025-06-23T16:31:33.101335",
+    "sector": "Consumer Staples"
+  },
+  "CVS": {
+    "ticker": "CVS",
+    "last_updated": "2025-06-23T16:31:33.570509",
+    "sector": "Consumer Staples"
+  },
+  "HUBS": {
+    "ticker": "HUBS",
+    "last_updated": "2025-06-23T16:31:34.061346",
+    "sector": "Technology"
+  },
+  "MEOH": {
+    "ticker": "MEOH",
+    "last_updated": "2025-06-23T16:31:34.541655",
+    "sector": "Materials"
+  },
+  "AGI": {
+    "ticker": "AGI",
+    "last_updated": "2025-06-23T16:31:34.997575",
+    "sector": "Materials"
+  },
+  "VEA": {
+    "ticker": "VEA",
+    "last_updated": "2025-06-23T16:31:35.455835",
+    "sector": "Super Investor Stats:"
+  },
+  "KLIC": {
+    "ticker": "KLIC",
+    "last_updated": "2025-06-23T16:31:35.954082",
+    "sector": "Information Technology"
+  },
+  "RTLLF": {
+    "ticker": "RTLLF",
+    "last_updated": "2025-06-23T16:31:36.474658",
+    "sector": "Industrials"
+  },
+  "CX": {
+    "ticker": "CX",
+    "last_updated": "2025-06-23T16:31:36.963422",
+    "sector": "Industrial Goods"
+  },
+  "IVVD": {
+    "ticker": "IVVD",
+    "last_updated": "2025-06-23T16:31:37.484830",
+    "sector": "Health Care"
+  },
+  "META": {
+    "ticker": "META",
+    "last_updated": "2025-06-23T16:31:37.957069",
+    "sector": "Technology"
+  },
+  "JNPR": {
+    "ticker": "JNPR",
+    "last_updated": "2025-06-23T16:31:38.440435",
+    "sector": "Information Technology"
+  },
+  "HP": {
+    "ticker": "HP",
+    "last_updated": "2025-06-23T16:31:38.914045",
+    "sector": "Energy"
+  },
+  "FLS": {
+    "ticker": "FLS",
+    "last_updated": "2025-06-23T16:31:39.397076",
+    "sector": "Industrials"
+  },
+  "SSPPF": {
+    "ticker": "SSPPF",
+    "last_updated": "2025-06-23T16:31:39.856790",
+    "sector": "Consumer Cyclical"
+  },
+  "CPRT": {
+    "ticker": "CPRT",
+    "last_updated": "2025-06-23T16:31:40.324364",
+    "sector": "Industrials"
+  },
+  "RYAAY": {
+    "ticker": "RYAAY",
+    "last_updated": "2025-06-23T16:31:40.765665",
+    "sector": "Services"
+  },
+  "TSN": {
+    "ticker": "TSN",
+    "last_updated": "2025-06-23T16:31:41.247030",
+    "sector": "Consumer Staples"
+  },
+  "VUG": {
+    "ticker": "VUG",
+    "last_updated": "2025-06-23T16:31:41.715958",
+    "sector": "Super Investor Stats:"
+  },
+  "SIRI": {
+    "ticker": "SIRI",
+    "last_updated": "2025-06-23T16:31:42.222236",
+    "sector": "Services"
+  },
+  "VIAV": {
+    "ticker": "VIAV",
+    "last_updated": "2025-06-23T16:31:42.668900",
+    "sector": "Information Technology"
+  },
+  "VZ": {
+    "ticker": "VZ",
+    "last_updated": "2025-06-23T16:31:43.109938",
+    "sector": "Communication Services"
+  },
+  "BEPC": {
+    "ticker": "BEPC",
+    "last_updated": "2025-06-23T16:31:43.572948",
+    "sector": "Utilities"
+  },
+  "ICLR": {
+    "ticker": "ICLR",
+    "last_updated": "2025-06-23T16:31:44.008490",
+    "sector": "Health Care"
+  },
+  "NWSA": {
+    "ticker": "NWSA",
+    "last_updated": "2025-06-23T16:31:44.510625",
+    "sector": "Consumer Discretionary"
+  },
+  "ZTS": {
+    "ticker": "ZTS",
+    "last_updated": "2025-06-23T16:31:44.975225",
+    "sector": "Health Care"
+  },
+  "BUD": {
+    "ticker": "BUD",
+    "last_updated": "2025-06-23T16:31:45.438427",
+    "sector": "Consumer Staples"
+  },
+  "ST": {
+    "ticker": "ST",
+    "last_updated": "2025-06-23T16:31:45.903630",
+    "sector": "Consumer Goods"
+  },
+  "DECK": {
+    "ticker": "DECK",
+    "last_updated": "2025-06-23T16:31:46.360372",
+    "sector": "Consumer Discretionary"
+  },
+  "MANU": {
+    "ticker": "MANU",
+    "last_updated": "2025-06-23T16:31:46.814341",
+    "sector": "Consumer Discretionary"
+  },
+  "TX": {
+    "ticker": "TX",
+    "last_updated": "2025-06-23T16:31:47.277325",
+    "sector": "Materials"
+  },
+  "PTVE-OLD": {
+    "ticker": "PTVE-OLD",
+    "last_updated": "2025-06-23T16:31:47.727298",
+    "sector": "Consumer Cyclical"
+  },
+  "RTO": {
+    "ticker": "RTO",
+    "last_updated": "2025-06-23T16:31:48.182457",
+    "sector": "Industrials"
+  },
+  "ATEC": {
+    "ticker": "ATEC",
+    "last_updated": "2025-06-23T16:31:48.653851",
+    "sector": "Health Care"
+  },
+  "AEIS": {
+    "ticker": "AEIS",
+    "last_updated": "2025-06-23T16:31:49.124303",
+    "sector": "Information Technology"
+  },
+  "BKLN": {
+    "ticker": "BKLN",
+    "last_updated": "2025-06-23T16:31:49.584930",
+    "sector": "NA"
+  },
+  "JSG.L": {
+    "ticker": "JSG.L",
+    "last_updated": "2025-06-23T16:31:50.071075",
+    "sector": "Industrials"
+  },
+  "PUKPF": {
+    "ticker": "PUKPF",
+    "last_updated": "2025-06-23T16:31:50.534667",
+    "sector": "Financials"
+  },
+  "FAGR.BR": {
+    "ticker": "FAGR.BR",
+    "last_updated": "2025-06-23T16:31:51.013494",
+    "sector": "Health Care"
+  },
+  "OMF": {
+    "ticker": "OMF",
+    "last_updated": "2025-06-23T16:31:51.647180",
+    "sector": "Financials"
+  },
+  "HAS": {
+    "ticker": "HAS",
+    "last_updated": "2025-06-23T16:31:52.126118",
+    "sector": "Consumer Discretionary"
+  },
+  "KTOS": {
+    "ticker": "KTOS",
+    "last_updated": "2025-06-23T16:31:52.600594",
+    "sector": "Services"
+  },
+  "NVS": {
+    "ticker": "NVS",
+    "last_updated": "2025-06-23T16:31:53.076512",
+    "sector": "Health Care"
+  },
+  "INBX": {
+    "ticker": "INBX",
+    "last_updated": "2025-06-23T16:31:53.521577",
+    "sector": "Health Care"
+  },
+  "APA": {
+    "ticker": "APA",
+    "last_updated": "2025-06-23T16:31:53.965516",
+    "sector": "Energy"
+  },
+  "ABR": {
+    "ticker": "ABR",
+    "last_updated": "2025-06-23T16:31:54.447021",
+    "sector": "Financials"
+  },
+  "TWLO": {
+    "ticker": "TWLO",
+    "last_updated": "2025-06-23T16:31:54.935568",
+    "sector": "Technology"
+  },
+  "REXR": {
+    "ticker": "REXR",
+    "last_updated": "2025-06-23T16:31:55.418762",
+    "sector": "Real Estate"
+  },
+  "RCKT": {
+    "ticker": "RCKT",
+    "last_updated": "2025-06-23T16:31:55.900008",
+    "sector": "Health Care"
+  },
+  "BLMN": {
+    "ticker": "BLMN",
+    "last_updated": "2025-06-23T16:31:56.375174",
+    "sector": "Services"
+  },
+  "BZH": {
+    "ticker": "BZH",
+    "last_updated": "2025-06-23T16:31:56.833986",
+    "sector": "Consumer Discretionary"
+  },
+  "DHR": {
+    "ticker": "DHR",
+    "last_updated": "2025-06-23T16:31:57.303221",
+    "sector": "Industrials"
+  },
+  "FERG": {
+    "ticker": "FERG",
+    "last_updated": "2025-06-23T16:31:57.749171",
+    "sector": "Industrial Goods"
+  },
+  "UMGNF": {
+    "ticker": "UMGNF",
+    "last_updated": "2025-06-23T16:31:58.201662",
+    "sector": "Communication Services"
+  },
+  "KC": {
+    "ticker": "KC",
+    "last_updated": "2025-06-23T16:31:58.657710",
+    "sector": "Technology"
+  },
+  "AXSM": {
+    "ticker": "AXSM",
+    "last_updated": "2025-06-23T16:31:59.123596",
+    "sector": "Health Care"
+  },
+  "AEG": {
+    "ticker": "AEG",
+    "last_updated": "2025-06-23T16:31:59.588838",
+    "sector": "Financials"
+  },
+  "MTB": {
+    "ticker": "MTB",
+    "last_updated": "2025-06-23T16:32:00.064023",
+    "sector": "Financials"
+  },
+  "GPOR": {
+    "ticker": "GPOR",
+    "last_updated": "2025-06-23T16:32:00.520586",
+    "sector": "Materials"
+  },
+  "TITN": {
+    "ticker": "TITN",
+    "last_updated": "2025-06-23T16:32:01.001820",
+    "sector": "Services"
+  },
+  "KHC": {
+    "ticker": "KHC",
+    "last_updated": "2025-06-23T16:32:01.439862",
+    "sector": "Consumer Staples"
+  },
+  "ON": {
+    "ticker": "ON",
+    "last_updated": "2025-06-23T16:32:01.951249",
+    "sector": "Technology"
+  },
+  "ULTA": {
+    "ticker": "ULTA",
+    "last_updated": "2025-06-23T16:32:02.445463",
+    "sector": "Services"
+  },
+  "USB": {
+    "ticker": "USB",
+    "last_updated": "2025-06-23T16:32:02.959674",
+    "sector": "Financials"
+  },
+  "MSFT": {
+    "ticker": "MSFT",
+    "last_updated": "2025-06-23T16:32:03.424803",
+    "sector": "Information Technology"
+  },
+  "OGN": {
+    "ticker": "OGN",
+    "last_updated": "2025-06-23T16:32:03.894846",
+    "sector": "Health Care"
+  },
+  "AGRO": {
+    "ticker": "AGRO",
+    "last_updated": "2025-06-23T16:32:04.357595",
+    "sector": "Consumer Goods"
+  },
+  "ZI": {
+    "ticker": "ZI",
+    "last_updated": "2025-06-23T16:32:04.836046",
+    "sector": "Technology"
+  },
+  "KBR": {
+    "ticker": "KBR",
+    "last_updated": "2025-06-23T16:32:05.356175",
+    "sector": "Industrials"
+  },
+  "EVH": {
+    "ticker": "EVH",
+    "last_updated": "2025-06-23T16:32:05.799771",
+    "sector": "Technology"
+  },
+  "CAT": {
+    "ticker": "CAT",
+    "last_updated": "2025-06-23T16:32:06.260567",
+    "sector": "Industrials"
+  },
+  "KGC": {
+    "ticker": "KGC",
+    "last_updated": "2025-06-23T16:32:06.715728",
+    "sector": "Materials"
+  },
+  "PNTG": {
+    "ticker": "PNTG",
+    "last_updated": "2025-06-23T16:32:07.226107",
+    "sector": "Health Care"
+  },
+  "VOYA": {
+    "ticker": "VOYA",
+    "last_updated": "2025-06-23T16:32:07.728930",
+    "sector": "Financials"
+  },
+  "ATKR": {
+    "ticker": "ATKR",
+    "last_updated": "2025-06-23T16:32:08.191582",
+    "sector": "Industrial Goods"
+  },
+  "COST": {
+    "ticker": "COST",
+    "last_updated": "2025-06-23T16:32:08.670445",
+    "sector": "Consumer Staples"
+  },
+  "HEI.A": {
+    "ticker": "HEI.A",
+    "last_updated": "2025-06-23T16:32:09.138727",
+    "sector": "Industrial Goods"
+  },
+  "AL": {
+    "ticker": "AL",
+    "last_updated": "2025-06-23T16:32:09.612045",
+    "sector": "Industrials"
+  },
+  "PGNY": {
+    "ticker": "PGNY",
+    "last_updated": "2025-06-23T16:32:10.105987",
+    "sector": "Health Care"
+  },
+  "ITGR": {
+    "ticker": "ITGR",
+    "last_updated": "2025-06-23T16:32:10.585507",
+    "sector": "Health Care"
+  },
+  "PM": {
+    "ticker": "PM",
+    "last_updated": "2025-06-23T16:32:11.063463",
+    "sector": "Consumer Staples"
+  },
+  "MOS": {
+    "ticker": "MOS",
+    "last_updated": "2025-06-23T16:32:11.561955",
+    "sector": "Materials"
+  },
+  "COOP": {
+    "ticker": "COOP",
+    "last_updated": "2025-06-23T16:32:12.005055",
+    "sector": "Financials"
+  },
+  "CNC": {
+    "ticker": "CNC",
+    "last_updated": "2025-06-23T16:32:12.480350",
+    "sector": "Health Care"
+  },
+  "HPQ": {
+    "ticker": "HPQ",
+    "last_updated": "2025-06-23T16:32:12.980366",
+    "sector": "Information Technology"
+  },
+  "EWC": {
+    "ticker": "EWC",
+    "last_updated": "2025-06-23T16:32:13.444011",
+    "sector": "NA"
+  },
+  "EPD": {
+    "ticker": "EPD",
+    "last_updated": "2025-06-23T16:32:13.917674",
+    "sector": "Materials"
+  },
+  "TRNO": {
+    "ticker": "TRNO",
+    "last_updated": "2025-06-23T16:32:14.412071",
+    "sector": "Real Estate"
+  },
+  "TTC": {
+    "ticker": "TTC",
+    "last_updated": "2025-06-23T16:32:14.881884",
+    "sector": "Industrials"
+  },
+  "ITW": {
+    "ticker": "ITW",
+    "last_updated": "2025-06-23T16:32:15.359165",
+    "sector": "Industrials"
+  },
+  "RKT": {
+    "ticker": "RKT",
+    "last_updated": "2025-06-23T16:32:15.880954",
+    "sector": "Financials"
+  },
+  "YUMC": {
+    "ticker": "YUMC",
+    "last_updated": "2025-06-23T16:32:16.324659",
+    "sector": "Services"
+  },
+  "PONY": {
+    "ticker": "PONY",
+    "last_updated": "2025-06-23T16:32:16.796662",
+    "sector": "Technology"
+  },
+  "CUZ": {
+    "ticker": "CUZ",
+    "last_updated": "2025-06-23T16:32:17.264949",
+    "sector": "Financials"
+  },
+  "SPYG": {
+    "ticker": "SPYG",
+    "last_updated": "2025-06-23T16:32:17.736520",
+    "sector": "Super Investor Stats:"
+  },
+  "ESGR": {
+    "ticker": "ESGR",
+    "last_updated": "2025-06-23T16:32:18.215453",
+    "sector": "Financials"
+  },
+  "ERJ": {
+    "ticker": "ERJ",
+    "last_updated": "2025-06-23T16:32:18.682044",
+    "sector": "Industrials"
+  },
+  "ELME": {
+    "ticker": "ELME",
+    "last_updated": "2025-06-23T16:32:19.146882",
+    "sector": "Financials"
+  },
+  "EPP": {
+    "ticker": "EPP",
+    "last_updated": "2025-06-23T16:32:19.621335",
+    "sector": "NA"
+  },
+  "SGU": {
+    "ticker": "SGU",
+    "last_updated": "2025-06-23T16:32:20.055209",
+    "sector": "Services"
+  },
+  "INDV": {
+    "ticker": "INDV",
+    "last_updated": "2025-06-23T16:32:20.516663",
+    "sector": "Health Care"
+  },
+  "ELAN": {
+    "ticker": "ELAN",
+    "last_updated": "2025-06-23T16:32:20.985624",
+    "sector": "Health Care"
+  },
+  "TKO": {
+    "ticker": "TKO",
+    "last_updated": "2025-06-23T16:32:21.648136",
+    "sector": "Services"
+  },
+  "WING": {
+    "ticker": "WING",
+    "last_updated": "2025-06-23T16:32:22.131442",
+    "sector": "Services"
+  },
+  "CBL": {
+    "ticker": "CBL",
+    "last_updated": "2025-06-23T16:32:22.596849",
+    "sector": "Financials"
+  },
+  "SYK": {
+    "ticker": "SYK",
+    "last_updated": "2025-06-23T16:32:23.031325",
+    "sector": "Health Care"
+  },
+  "YMM": {
+    "ticker": "YMM",
+    "last_updated": "2025-06-23T16:32:23.533096",
+    "sector": "Technology"
+  },
+  "ATUS": {
+    "ticker": "ATUS",
+    "last_updated": "2025-06-23T16:32:24.026750",
+    "sector": "Services"
+  },
+  "DHI": {
+    "ticker": "DHI",
+    "last_updated": "2025-06-23T16:32:24.466556",
+    "sector": "Consumer Discretionary"
+  },
+  "IPG": {
+    "ticker": "IPG",
+    "last_updated": "2025-06-23T16:32:24.944156",
+    "sector": "Consumer Discretionary"
+  },
+  "SOLV": {
+    "ticker": "SOLV",
+    "last_updated": "2025-06-23T16:32:25.424996",
+    "sector": "Health Care"
+  },
+  "DAL": {
+    "ticker": "DAL",
+    "last_updated": "2025-06-23T16:32:25.903971",
+    "sector": "Services"
+  },
+  "WAB": {
+    "ticker": "WAB",
+    "last_updated": "2025-06-23T16:32:26.374558",
+    "sector": "Industrials"
+  },
+  "NDAQ": {
+    "ticker": "NDAQ",
+    "last_updated": "2025-06-23T16:32:26.858101",
+    "sector": "Financials"
+  },
+  "VOO": {
+    "ticker": "VOO",
+    "last_updated": "2025-06-23T16:32:27.321964",
+    "sector": "NA"
+  },
+  "005830.KS": {
+    "ticker": "005830.KS",
+    "last_updated": "2025-06-23T16:32:27.779847",
+    "sector": "Financials"
+  },
+  "ET": {
+    "ticker": "ET",
+    "last_updated": "2025-06-23T16:32:28.266575",
+    "sector": "Energy"
+  },
+  "CFG": {
+    "ticker": "CFG",
+    "last_updated": "2025-06-23T16:32:28.740103",
+    "sector": "Financials"
+  },
+  "HKHHY": {
+    "ticker": "HKHHY",
+    "last_updated": "2025-06-23T16:32:29.197072",
+    "sector": "Consumer Goods"
+  },
+  "ALIT": {
+    "ticker": "ALIT",
+    "last_updated": "2025-06-23T16:32:29.676324",
+    "sector": "Technology"
+  },
+  "HLN": {
+    "ticker": "HLN",
+    "last_updated": "2025-06-23T16:32:30.123104",
+    "sector": "Health Care"
+  },
+  "RVLV": {
+    "ticker": "RVLV",
+    "last_updated": "2025-06-23T16:32:30.601837",
+    "sector": "Consumer Cyclical"
+  },
+  "MET": {
+    "ticker": "MET",
+    "last_updated": "2025-06-23T16:32:31.058708",
+    "sector": "Financials"
+  },
+  "VERX": {
+    "ticker": "VERX",
+    "last_updated": "2025-06-23T16:32:31.544180",
+    "sector": "Technology"
+  },
+  "SRLN": {
+    "ticker": "SRLN",
+    "last_updated": "2025-06-23T16:32:32.011677",
+    "sector": "Super Investor Stats:"
+  },
+  "SNRE": {
+    "ticker": "SNRE",
+    "last_updated": "2025-06-23T16:32:32.494536",
+    "sector": "Communication Services"
+  },
+  "4182.T": {
+    "ticker": "4182.T",
+    "last_updated": "2025-06-23T16:32:32.952513",
+    "sector": "Industrials"
+  },
+  "SGOV": {
+    "ticker": "SGOV",
+    "last_updated": "2025-06-23T16:32:33.438651",
+    "sector": "Super Investor Stats:"
+  },
+  "BEKE": {
+    "ticker": "BEKE",
+    "last_updated": "2025-06-23T16:32:33.926048",
+    "sector": "Real Estate"
+  },
+  "AOSL": {
+    "ticker": "AOSL",
+    "last_updated": "2025-06-23T16:32:34.425668",
+    "sector": "Technology"
+  },
+  "MX": {
+    "ticker": "MX",
+    "last_updated": "2025-06-23T16:32:34.898533",
+    "sector": "Technology"
+  },
+  "SHOP": {
+    "ticker": "SHOP",
+    "last_updated": "2025-06-23T16:32:35.334138",
+    "sector": "Technology"
+  },
+  "PTON": {
+    "ticker": "PTON",
+    "last_updated": "2025-06-23T16:32:35.809834",
+    "sector": "Consumer Cyclical"
+  },
+  "LAD": {
+    "ticker": "LAD",
+    "last_updated": "2025-06-23T16:32:36.251824",
+    "sector": "Consumer Discretionary"
+  },
+  "TRV": {
+    "ticker": "TRV",
+    "last_updated": "2025-06-23T16:32:36.688892",
+    "sector": "Financials"
+  },
+  "7839.T": {
+    "ticker": "7839.T",
+    "last_updated": "2025-06-23T16:32:37.159010",
+    "sector": "Consumer Cyclical"
+  },
+  "CYBR": {
+    "ticker": "CYBR",
+    "last_updated": "2025-06-23T16:32:37.628950",
+    "sector": "Technology"
+  },
+  "CCS": {
+    "ticker": "CCS",
+    "last_updated": "2025-06-23T16:32:38.097495",
+    "sector": "Industrial Goods"
+  },
+  "EQR": {
+    "ticker": "EQR",
+    "last_updated": "2025-06-23T16:32:38.558827",
+    "sector": "Financials"
+  },
+  "ODFL": {
+    "ticker": "ODFL",
+    "last_updated": "2025-06-23T16:32:39.030976",
+    "sector": "Industrials"
+  },
+  "WK": {
+    "ticker": "WK",
+    "last_updated": "2025-06-23T16:32:39.497720",
+    "sector": "Technology"
+  },
+  "ALLY": {
+    "ticker": "ALLY",
+    "last_updated": "2025-06-23T16:32:39.938908",
+    "sector": "Financials"
+  },
+  "PRA": {
+    "ticker": "PRA",
+    "last_updated": "2025-06-23T16:32:40.401513",
+    "sector": "Financials"
+  },
+  "BKE": {
+    "ticker": "BKE",
+    "last_updated": "2025-06-23T16:32:40.867105",
+    "sector": "Services"
+  },
+  "NTR": {
+    "ticker": "NTR",
+    "last_updated": "2025-06-23T16:32:41.326291",
+    "sector": "Materials"
+  },
+  "GHC": {
+    "ticker": "GHC",
+    "last_updated": "2025-06-23T16:32:41.784259",
+    "sector": "Consumer Discretionary"
+  },
+  "RPRX": {
+    "ticker": "RPRX",
+    "last_updated": "2025-06-23T16:32:42.233942",
+    "sector": "Health Care"
+  },
+  "VRT": {
+    "ticker": "VRT",
+    "last_updated": "2025-06-23T16:32:42.757898",
+    "sector": "Industrials"
+  },
+  "7988.T": {
+    "ticker": "7988.T",
+    "last_updated": "2025-06-23T16:32:43.260751",
+    "sector": "Industrials"
+  },
+  "FMS": {
+    "ticker": "FMS",
+    "last_updated": "2025-06-23T16:32:43.692777",
+    "sector": "Health Care"
+  },
+  "SNA": {
+    "ticker": "SNA",
+    "last_updated": "2025-06-23T16:32:44.140270",
+    "sector": "Consumer Discretionary"
+  },
+  "RGEN": {
+    "ticker": "RGEN",
+    "last_updated": "2025-06-23T16:32:44.605951",
+    "sector": "Health Care"
+  },
+  "FTI": {
+    "ticker": "FTI",
+    "last_updated": "2025-06-23T16:32:45.084280",
+    "sector": "Energy"
+  },
+  "TRUP": {
+    "ticker": "TRUP",
+    "last_updated": "2025-06-23T16:32:45.547927",
+    "sector": "Financials"
+  },
+  "EOG": {
+    "ticker": "EOG",
+    "last_updated": "2025-06-23T16:32:46.021476",
+    "sector": "Energy"
+  },
+  "UI": {
+    "ticker": "UI",
+    "last_updated": "2025-06-23T16:32:46.488595",
+    "sector": "Technology"
+  },
+  "COHR": {
+    "ticker": "COHR",
+    "last_updated": "2025-06-23T16:32:46.964999",
+    "sector": "Technology"
+  },
+  "MTDR": {
+    "ticker": "MTDR",
+    "last_updated": "2025-06-23T16:32:47.473841",
+    "sector": "Materials"
+  },
+  "IT": {
+    "ticker": "IT",
+    "last_updated": "2025-06-23T16:32:47.956070",
+    "sector": "Information Technology"
+  },
+  "B": {
+    "ticker": "B",
+    "last_updated": "2025-06-23T16:32:48.470535",
+    "sector": "Materials"
+  },
+  "NTRA": {
+    "ticker": "NTRA",
+    "last_updated": "2025-06-23T16:32:48.910367",
+    "sector": "Health Care"
+  },
+  "IAC": {
+    "ticker": "IAC",
+    "last_updated": "2025-06-23T16:32:49.343365",
+    "sector": "Consumer Discretionary"
+  },
+  "MTG": {
+    "ticker": "MTG",
+    "last_updated": "2025-06-23T16:32:49.817918",
+    "sector": "Financials"
+  },
+  "DOX": {
+    "ticker": "DOX",
+    "last_updated": "2025-06-23T16:32:50.293285",
+    "sector": "Technology"
+  },
+  "SWBI": {
+    "ticker": "SWBI",
+    "last_updated": "2025-06-23T16:32:50.758231",
+    "sector": "Industrials"
+  },
+  "VWO": {
+    "ticker": "VWO",
+    "last_updated": "2025-06-23T16:32:51.377841",
+    "sector": "Super Investor Stats:"
+  },
+  "HALO": {
+    "ticker": "HALO",
+    "last_updated": "2025-06-23T16:32:51.841046",
+    "sector": "Health Care"
+  },
+  "BNTX": {
+    "ticker": "BNTX",
+    "last_updated": "2025-06-23T16:32:52.309445",
+    "sector": "Health Care"
+  },
+  "NOC": {
+    "ticker": "NOC",
+    "last_updated": "2025-06-23T16:32:52.778484",
+    "sector": "Industrials"
+  },
+  "BLCO": {
+    "ticker": "BLCO",
+    "last_updated": "2025-06-23T16:32:53.237132",
+    "sector": "Health Care"
+  },
+  "TREX": {
+    "ticker": "TREX",
+    "last_updated": "2025-06-23T16:32:53.710490",
+    "sector": "Industrials"
+  },
+  "FI": {
+    "ticker": "FI",
+    "last_updated": "2025-06-23T16:32:54.176813",
+    "sector": "Information Technology"
+  },
+  "BMY": {
+    "ticker": "BMY",
+    "last_updated": "2025-06-23T16:32:54.615244",
+    "sector": "Health Care"
+  },
+  "003550.KS": {
+    "ticker": "003550.KS",
+    "last_updated": "2025-06-23T16:32:55.110106",
+    "sector": "Technology"
+  },
+  "LI": {
+    "ticker": "LI",
+    "last_updated": "2025-06-23T16:32:55.570632",
+    "sector": "Consumer Cyclical"
+  },
+  "WIX": {
+    "ticker": "WIX",
+    "last_updated": "2025-06-23T16:32:56.032004",
+    "sector": "Technology"
+  },
+  "MAA": {
+    "ticker": "MAA",
+    "last_updated": "2025-06-23T16:32:56.499652",
+    "sector": "Financials"
+  },
+  "PAYC": {
+    "ticker": "PAYC",
+    "last_updated": "2025-06-23T16:32:56.949678",
+    "sector": "Technology"
+  },
+  "WM": {
+    "ticker": "WM",
+    "last_updated": "2025-06-23T16:32:57.396872",
+    "sector": "Industrials"
+  },
+  "APD": {
+    "ticker": "APD",
+    "last_updated": "2025-06-23T16:32:57.904292",
+    "sector": "Materials"
+  },
+  "GEV": {
+    "ticker": "GEV",
+    "last_updated": "2025-06-23T16:32:58.363400",
+    "sector": "Utilities"
+  },
+  "VCSA": {
+    "ticker": "VCSA",
+    "last_updated": "2025-06-23T16:32:58.831872",
+    "sector": "Technology"
+  },
+  "IDA": {
+    "ticker": "IDA",
+    "last_updated": "2025-06-23T16:32:59.286107",
+    "sector": "Utilities"
+  },
+  "RDDT": {
+    "ticker": "RDDT",
+    "last_updated": "2025-06-23T16:32:59.766271",
+    "sector": "Communication Services"
+  },
+  "AVDX": {
+    "ticker": "AVDX",
+    "last_updated": "2025-06-23T16:33:00.238751",
+    "sector": "Technology"
+  },
+  "SCHW": {
+    "ticker": "SCHW",
+    "last_updated": "2025-06-23T16:33:00.750174",
+    "sector": "Financials"
+  },
+  "GNRC": {
+    "ticker": "GNRC",
+    "last_updated": "2025-06-23T16:33:01.209809",
+    "sector": "Industrial Goods"
+  },
+  "LRLCF": {
+    "ticker": "LRLCF",
+    "last_updated": "2025-06-23T16:33:01.692591",
+    "sector": "Consumer Goods"
+  },
+  "ADBE": {
+    "ticker": "ADBE",
+    "last_updated": "2025-06-23T16:33:02.149584",
+    "sector": "Information Technology"
+  },
+  "SHYF": {
+    "ticker": "SHYF",
+    "last_updated": "2025-06-23T16:33:02.661736",
+    "sector": "Industrials"
+  },
+  "ORIC": {
+    "ticker": "ORIC",
+    "last_updated": "2025-06-23T16:33:03.133294",
+    "sector": "Health Care"
+  },
+  "GLPG": {
+    "ticker": "GLPG",
+    "last_updated": "2025-06-23T16:33:03.609261",
+    "sector": "Health Care"
+  },
+  "MLR": {
+    "ticker": "MLR",
+    "last_updated": "2025-06-23T16:33:04.066897",
+    "sector": "Consumer Goods"
+  },
+  "ZVIA": {
+    "ticker": "ZVIA",
+    "last_updated": "2025-06-23T16:33:04.538961",
+    "sector": "Consumer Goods"
+  },
+  "NPWR.WS": {
+    "ticker": "NPWR.WS",
+    "last_updated": "2025-06-23T16:33:05.005683",
+    "sector": "Super Investor Stats:"
+  },
+  "KEMIRA.HE": {
+    "ticker": "KEMIRA.HE",
+    "last_updated": "2025-06-23T16:33:05.484972",
+    "sector": "Materials"
+  },
+  "DGX": {
+    "ticker": "DGX",
+    "last_updated": "2025-06-23T16:33:05.973172",
+    "sector": "Health Care"
+  },
+  "SLB": {
+    "ticker": "SLB",
+    "last_updated": "2025-06-23T16:33:06.455901",
+    "sector": "Energy"
+  },
+  "MHK": {
+    "ticker": "MHK",
+    "last_updated": "2025-06-23T16:33:06.963394",
+    "sector": "Consumer Discretionary"
+  },
+  "BF.A": {
+    "ticker": "BF.A",
+    "last_updated": "2025-06-23T16:33:07.434186",
+    "sector": "Consumer Staples"
+  },
+  "SEG": {
+    "ticker": "SEG",
+    "last_updated": "2025-06-23T16:33:07.891505",
+    "sector": "Real Estate"
+  },
+  "BTI": {
+    "ticker": "BTI",
+    "last_updated": "2025-06-23T16:33:08.346316",
+    "sector": "Consumer Goods"
+  },
+  "ITB": {
+    "ticker": "ITB",
+    "last_updated": "2025-06-23T16:33:08.811007",
+    "sector": "Super Investor Stats:"
+  },
+  "FHB": {
+    "ticker": "FHB",
+    "last_updated": "2025-06-23T16:33:09.304070",
+    "sector": "Financials"
+  },
+  "WRB": {
+    "ticker": "WRB",
+    "last_updated": "2025-06-23T16:33:09.760750",
+    "sector": "Financials"
+  },
+  "GHM": {
+    "ticker": "GHM",
+    "last_updated": "2025-06-23T16:33:10.230485",
+    "sector": "Industrial Goods"
+  },
+  "VYX": {
+    "ticker": "VYX",
+    "last_updated": "2025-06-23T16:33:10.697837",
+    "sector": "Technology"
+  },
+  "MELI": {
+    "ticker": "MELI",
+    "last_updated": "2025-06-23T16:33:11.155951",
+    "sector": "Services"
+  },
+  "IPI": {
+    "ticker": "IPI",
+    "last_updated": "2025-06-23T16:33:11.608830",
+    "sector": "Materials"
+  },
+  "LGIH": {
+    "ticker": "LGIH",
+    "last_updated": "2025-06-23T16:33:12.069906",
+    "sector": "Consumer Cyclical"
+  },
+  "AVT": {
+    "ticker": "AVT",
+    "last_updated": "2025-06-23T16:33:12.534368",
+    "sector": "Information Technology"
+  },
+  "LNC": {
+    "ticker": "LNC",
+    "last_updated": "2025-06-23T16:33:12.968190",
+    "sector": "Financials"
+  },
+  "EPAM": {
+    "ticker": "EPAM",
+    "last_updated": "2025-06-23T16:33:13.428294",
+    "sector": "Technology"
+  },
+  "ADEA": {
+    "ticker": "ADEA",
+    "last_updated": "2025-06-23T16:33:13.902894",
+    "sector": "Technology"
+  },
+  "FLG": {
+    "ticker": "FLG",
+    "last_updated": "2025-06-23T16:33:14.373100",
+    "sector": "Financials"
+  },
+  "PNC": {
+    "ticker": "PNC",
+    "last_updated": "2025-06-23T16:33:14.885523",
+    "sector": "Financials"
+  },
+  "FDS": {
+    "ticker": "FDS",
+    "last_updated": "2025-06-23T16:33:15.354237",
+    "sector": "Information Technology"
+  },
+  "AMT": {
+    "ticker": "AMT",
+    "last_updated": "2025-06-23T16:33:15.849970",
+    "sector": "Technology"
+  },
+  "EQT": {
+    "ticker": "EQT",
+    "last_updated": "2025-06-23T16:33:16.329692",
+    "sector": "Utilities"
+  },
+  "CRL": {
+    "ticker": "CRL",
+    "last_updated": "2025-06-23T16:33:16.803196",
+    "sector": "Health Care"
+  },
+  "CMCSA": {
+    "ticker": "CMCSA",
+    "last_updated": "2025-06-23T16:33:17.241336",
+    "sector": "Consumer Discretionary"
+  },
+  "GNTX": {
+    "ticker": "GNTX",
+    "last_updated": "2025-06-23T16:33:17.709925",
+    "sector": "Consumer Discretionary"
+  },
+  "EGP": {
+    "ticker": "EGP",
+    "last_updated": "2025-06-23T16:33:18.192251",
+    "sector": "Financials"
+  },
+  "PRMB": {
+    "ticker": "PRMB",
+    "last_updated": "2025-06-23T16:33:18.676504",
+    "sector": "Consumer Goods"
+  },
+  "NSRGY": {
+    "ticker": "NSRGY",
+    "last_updated": "2025-06-23T16:33:19.118928",
+    "sector": "Consumer Staples"
+  },
+  "LYB": {
+    "ticker": "LYB",
+    "last_updated": "2025-06-23T16:33:19.584504",
+    "sector": "Materials"
+  },
+  "UHAL.B": {
+    "ticker": "UHAL.B",
+    "last_updated": "2025-06-23T16:33:20.022626",
+    "sector": "Industrials"
+  },
+  "FTV": {
+    "ticker": "FTV",
+    "last_updated": "2025-06-23T16:33:20.506295",
+    "sector": "Industrial Goods"
+  },
+  "CB": {
+    "ticker": "CB",
+    "last_updated": "2025-06-23T16:33:20.976195",
+    "sector": "Financials"
+  },
+  "HMC": {
+    "ticker": "HMC",
+    "last_updated": "2025-06-23T16:33:21.631547",
+    "sector": "Consumer Goods"
+  },
+  "SN": {
+    "ticker": "SN",
+    "last_updated": "2025-06-23T16:33:22.090782",
+    "sector": "Consumer Cyclical"
+  },
+  "JKHY": {
+    "ticker": "JKHY",
+    "last_updated": "2025-06-23T16:33:22.549166",
+    "sector": "Information Technology"
+  },
+  "OKE": {
+    "ticker": "OKE",
+    "last_updated": "2025-06-23T16:33:23.019662",
+    "sector": "Utilities"
+  },
+  "KMT": {
+    "ticker": "KMT",
+    "last_updated": "2025-06-23T16:33:23.481735",
+    "sector": "Industrials"
+  },
+  "WPM": {
+    "ticker": "WPM",
+    "last_updated": "2025-06-23T16:33:23.940516",
+    "sector": "Materials"
+  },
+  "BKNG": {
+    "ticker": "BKNG",
+    "last_updated": "2025-06-23T16:33:24.430549",
+    "sector": "Technology"
+  },
+  "BIL": {
+    "ticker": "BIL",
+    "last_updated": "2025-06-23T16:33:24.911786",
+    "sector": "Super Investor Stats:"
+  },
+  "PLD": {
+    "ticker": "PLD",
+    "last_updated": "2025-06-23T16:33:25.374899",
+    "sector": "Financials"
+  },
+  "NWL": {
+    "ticker": "NWL",
+    "last_updated": "2025-06-23T16:33:25.840913",
+    "sector": "Consumer Discretionary"
+  },
+  "ECTXF": {
+    "ticker": "ECTXF",
+    "last_updated": "2025-06-23T16:33:26.315208",
+    "sector": "Industrials"
+  },
+  "CLF": {
+    "ticker": "CLF",
+    "last_updated": "2025-06-23T16:33:26.774201",
+    "sector": "Materials"
+  },
+  "RDN": {
+    "ticker": "RDN",
+    "last_updated": "2025-06-23T16:33:27.242490",
+    "sector": "Financials"
+  },
+  "SRG": {
+    "ticker": "SRG",
+    "last_updated": "2025-06-23T16:33:27.717346",
+    "sector": "Financials"
+  },
+  "SITE": {
+    "ticker": "SITE",
+    "last_updated": "2025-06-23T16:33:28.194062",
+    "sector": "Industrials"
+  },
+  "SUPN": {
+    "ticker": "SUPN",
+    "last_updated": "2025-06-23T16:33:28.655208",
+    "sector": "Health Care"
+  },
+  "HTHT": {
+    "ticker": "HTHT",
+    "last_updated": "2025-06-23T16:33:29.139938",
+    "sector": "Consumer Cyclical"
+  },
+  "BMRN": {
+    "ticker": "BMRN",
+    "last_updated": "2025-06-23T16:33:29.606987",
+    "sector": "Health Care"
+  },
+  "PRI": {
+    "ticker": "PRI",
+    "last_updated": "2025-06-23T16:33:30.047465",
+    "sector": "Financials"
+  },
+  "NKE": {
+    "ticker": "NKE",
+    "last_updated": "2025-06-23T16:33:30.524061",
+    "sector": "Consumer Discretionary"
+  },
+  "FSNUF": {
+    "ticker": "FSNUF",
+    "last_updated": "2025-06-23T16:33:30.994708",
+    "sector": "Health Care"
+  },
+  "SFM": {
+    "ticker": "SFM",
+    "last_updated": "2025-06-23T16:33:31.466222",
+    "sector": "Services"
+  },
+  "ABCB": {
+    "ticker": "ABCB",
+    "last_updated": "2025-06-23T16:33:31.937477",
+    "sector": "Financials"
+  },
+  "DOV": {
+    "ticker": "DOV",
+    "last_updated": "2025-06-23T16:33:32.407177",
+    "sector": "Industrials"
+  },
+  "CNQ": {
+    "ticker": "CNQ",
+    "last_updated": "2025-06-23T16:33:32.846465",
+    "sector": "Materials"
+  },
+  "IWN": {
+    "ticker": "IWN",
+    "last_updated": "2025-06-23T16:33:33.306284",
+    "sector": "Super Investor Stats:"
+  },
+  "AFL": {
+    "ticker": "AFL",
+    "last_updated": "2025-06-23T16:33:33.784433",
+    "sector": "Financials"
+  },
+  "DASH": {
+    "ticker": "DASH",
+    "last_updated": "2025-06-23T16:33:34.320379",
+    "sector": "Communication Services"
+  },
+  "AMH": {
+    "ticker": "AMH",
+    "last_updated": "2025-06-23T16:33:34.819156",
+    "sector": "Financials"
+  },
+  "TSLA": {
+    "ticker": "TSLA",
+    "last_updated": "2025-06-23T16:33:35.257453",
+    "sector": "Consumer Goods"
+  },
+  "VFC": {
+    "ticker": "VFC",
+    "last_updated": "2025-06-23T16:33:35.730346",
+    "sector": "Consumer Discretionary"
+  },
+  "DLO": {
+    "ticker": "DLO",
+    "last_updated": "2025-06-23T16:33:36.215450",
+    "sector": "Technology"
+  },
+  "GTX": {
+    "ticker": "GTX",
+    "last_updated": "2025-06-23T16:33:36.684343",
+    "sector": "Consumer Goods"
+  },
+  "UNIT": {
+    "ticker": "UNIT",
+    "last_updated": "2025-06-23T16:33:37.141411",
+    "sector": "Financials"
+  },
+  "XLK": {
+    "ticker": "XLK",
+    "last_updated": "2025-06-23T16:33:37.607216",
+    "sector": "Super Investor Stats:"
+  },
+  "CRBG": {
+    "ticker": "CRBG",
+    "last_updated": "2025-06-23T16:33:38.074265",
+    "sector": "Financials"
+  },
+  "CRS": {
+    "ticker": "CRS",
+    "last_updated": "2025-06-23T16:33:38.538822",
+    "sector": "Materials"
+  },
+  "SFBS": {
+    "ticker": "SFBS",
+    "last_updated": "2025-06-23T16:33:38.984668",
+    "sector": "Financials"
+  },
+  "RRX": {
+    "ticker": "RRX",
+    "last_updated": "2025-06-23T16:33:39.445030",
+    "sector": "Industrials"
+  },
+  "MDU": {
+    "ticker": "MDU",
+    "last_updated": "2025-06-23T16:33:39.906078",
+    "sector": "Utilities"
+  },
+  "AMD": {
+    "ticker": "AMD",
+    "last_updated": "2025-06-23T16:33:40.344660",
+    "sector": "Information Technology"
+  },
+  "EXPD": {
+    "ticker": "EXPD",
+    "last_updated": "2025-06-23T16:33:40.819519",
+    "sector": "Industrials"
+  },
+  "SANM": {
+    "ticker": "SANM",
+    "last_updated": "2025-06-23T16:33:41.289105",
+    "sector": "Information Technology"
+  },
+  "MPLX": {
+    "ticker": "MPLX",
+    "last_updated": "2025-06-23T16:33:41.750495",
+    "sector": "Energy"
+  },
+  "VSAT": {
+    "ticker": "VSAT",
+    "last_updated": "2025-06-23T16:33:42.226391",
+    "sector": "Information Technology"
+  },
+  "RLI": {
+    "ticker": "RLI",
+    "last_updated": "2025-06-23T16:33:42.665588",
+    "sector": "Financials"
+  },
+  "HPE": {
+    "ticker": "HPE",
+    "last_updated": "2025-06-23T16:33:43.164402",
+    "sector": "Technology"
+  },
+  "AHCO": {
+    "ticker": "AHCO",
+    "last_updated": "2025-06-23T16:33:43.666212",
+    "sector": "Health Care"
+  },
+  "NTDOF": {
+    "ticker": "NTDOF",
+    "last_updated": "2025-06-23T16:33:44.123712",
+    "sector": "Information Technology"
+  },
+  "REGN": {
+    "ticker": "REGN",
+    "last_updated": "2025-06-23T16:33:44.618432",
+    "sector": "Health Care"
+  },
+  "AMBA": {
+    "ticker": "AMBA",
+    "last_updated": "2025-06-23T16:33:45.109596",
+    "sector": "Technology"
+  },
+  "SMRT": {
+    "ticker": "SMRT",
+    "last_updated": "2025-06-23T16:33:45.592881",
+    "sector": "Technology"
+  },
+  "SWZ": {
+    "ticker": "SWZ",
+    "last_updated": "2025-06-23T16:33:46.050630",
+    "sector": "Financials"
+  },
+  "BRO": {
+    "ticker": "BRO",
+    "last_updated": "2025-06-23T16:33:46.526073",
+    "sector": "Financials"
+  },
+  "STR": {
+    "ticker": "STR",
+    "last_updated": "2025-06-23T16:33:46.964883",
+    "sector": "Super Investor Stats:"
+  },
+  "DAR": {
+    "ticker": "DAR",
+    "last_updated": "2025-06-23T16:33:47.401301",
+    "sector": "Industrial Goods"
+  },
+  "DFH": {
+    "ticker": "DFH",
+    "last_updated": "2025-06-23T16:33:47.893423",
+    "sector": "Consumer Cyclical"
+  },
+  "MSCI": {
+    "ticker": "MSCI",
+    "last_updated": "2025-06-23T16:33:48.359387",
+    "sector": "Financials"
+  },
+  "FCNCA": {
+    "ticker": "FCNCA",
+    "last_updated": "2025-06-23T16:33:48.808688",
+    "sector": "Financials"
+  },
+  "RTX": {
+    "ticker": "RTX",
+    "last_updated": "2025-06-23T16:33:49.271645",
+    "sector": "Industrials"
+  },
+  "KVUE": {
+    "ticker": "KVUE",
+    "last_updated": "2025-06-23T16:33:49.738668",
+    "sector": "Consumer Staples"
+  },
+  "NOW": {
+    "ticker": "NOW",
+    "last_updated": "2025-06-23T16:33:50.231007",
+    "sector": "Technology"
+  },
+  "EMR": {
+    "ticker": "EMR",
+    "last_updated": "2025-06-23T16:33:50.703145",
+    "sector": "Industrials"
+  },
+  "MORN": {
+    "ticker": "MORN",
+    "last_updated": "2025-06-23T16:33:51.367686",
+    "sector": "Financials"
+  },
+  "GTES": {
+    "ticker": "GTES",
+    "last_updated": "2025-06-23T16:33:51.834652",
+    "sector": "Industrial Goods"
+  },
+  "HBB": {
+    "ticker": "HBB",
+    "last_updated": "2025-06-23T16:33:52.309295",
+    "sector": "Consumer Cyclical"
+  },
+  "CVX": {
+    "ticker": "CVX",
+    "last_updated": "2025-06-23T16:33:52.751873",
+    "sector": "Energy"
+  },
+  "LMT": {
+    "ticker": "LMT",
+    "last_updated": "2025-06-23T16:33:53.199078",
+    "sector": "Industrials"
+  },
+  "FIHL": {
+    "ticker": "FIHL",
+    "last_updated": "2025-06-23T16:33:53.674639",
+    "sector": "Financials"
+  },
+  "NTB": {
+    "ticker": "NTB",
+    "last_updated": "2025-06-23T16:33:54.135723",
+    "sector": "Financials"
+  },
+  "BP": {
+    "ticker": "BP",
+    "last_updated": "2025-06-23T16:33:54.571318",
+    "sector": "Materials"
+  },
+  "PHVS": {
+    "ticker": "PHVS",
+    "last_updated": "2025-06-23T16:33:55.032971",
+    "sector": "Health Care"
+  },
+  "CNDT": {
+    "ticker": "CNDT",
+    "last_updated": "2025-06-23T16:33:55.503323",
+    "sector": "Services"
+  },
+  "SOPH": {
+    "ticker": "SOPH",
+    "last_updated": "2025-06-23T16:33:55.962105",
+    "sector": "Health Care"
+  },
+  "JBTM": {
+    "ticker": "JBTM",
+    "last_updated": "2025-06-23T16:33:56.424803",
+    "sector": "Industrial Goods"
+  },
+  "WILLF": {
+    "ticker": "WILLF",
+    "last_updated": "2025-06-23T16:33:56.891248",
+    "sector": "Health Care"
+  },
+  "MKC": {
+    "ticker": "MKC",
+    "last_updated": "2025-06-23T16:33:57.351687",
+    "sector": "Consumer Staples"
+  },
+  "LEA": {
+    "ticker": "LEA",
+    "last_updated": "2025-06-23T16:33:57.811796",
+    "sector": "Consumer Discretionary"
+  },
+  "W": {
+    "ticker": "W",
+    "last_updated": "2025-06-23T16:33:58.289018",
+    "sector": "Services"
+  },
+  "RHI": {
+    "ticker": "RHI",
+    "last_updated": "2025-06-23T16:33:58.742258",
+    "sector": "Industrials"
+  },
+  "HMRZF": {
+    "ticker": "HMRZF",
+    "last_updated": "2025-06-23T16:33:59.203241",
+    "sector": "Consumer Cyclical"
+  },
+  "BNTGY": {
+    "ticker": "BNTGY",
+    "last_updated": "2025-06-23T16:33:59.672511",
+    "sector": "Materials"
+  },
+  "KRC": {
+    "ticker": "KRC",
+    "last_updated": "2025-06-23T16:34:00.135225",
+    "sector": "Financials"
+  },
+  "TPH": {
+    "ticker": "TPH",
+    "last_updated": "2025-06-23T16:34:00.603984",
+    "sector": "Industrial Goods"
+  },
+  "ESTC": {
+    "ticker": "ESTC",
+    "last_updated": "2025-06-23T16:34:01.086829",
+    "sector": "Technology"
+  },
+  "NWS": {
+    "ticker": "NWS",
+    "last_updated": "2025-06-23T16:34:01.546011",
+    "sector": "Services"
+  },
+  "JXN": {
+    "ticker": "JXN",
+    "last_updated": "2025-06-23T16:34:02.025144",
+    "sector": "Financials"
+  },
+  "BXC": {
+    "ticker": "BXC",
+    "last_updated": "2025-06-23T16:34:02.526921",
+    "sector": "Industrials"
+  },
+  "ACWI": {
+    "ticker": "ACWI",
+    "last_updated": "2025-06-23T16:34:02.988157",
+    "sector": "NA"
+  },
+  "AMSC": {
+    "ticker": "AMSC",
+    "last_updated": "2025-06-23T16:34:03.464285",
+    "sector": "Technology"
+  },
+  "TDY": {
+    "ticker": "TDY",
+    "last_updated": "2025-06-23T16:34:03.928343",
+    "sector": "Industrials"
+  },
+  "PAYX": {
+    "ticker": "PAYX",
+    "last_updated": "2025-06-23T16:34:04.403862",
+    "sector": "Information Technology"
+  },
+  "LEVI": {
+    "ticker": "LEVI",
+    "last_updated": "2025-06-23T16:34:04.865822",
+    "sector": "Consumer Cyclical"
+  },
+  "KR": {
+    "ticker": "KR",
+    "last_updated": "2025-06-23T16:34:05.326865",
+    "sector": "Consumer Staples"
+  },
+  "UAA": {
+    "ticker": "UAA",
+    "last_updated": "2025-06-23T16:34:05.792110",
+    "sector": "Consumer Goods"
+  },
+  "GSM": {
+    "ticker": "GSM",
+    "last_updated": "2025-06-23T16:34:06.245927",
+    "sector": "Materials"
+  },
+  "ABEV": {
+    "ticker": "ABEV",
+    "last_updated": "2025-06-23T16:34:06.704618",
+    "sector": "Consumer Goods"
+  },
+  "WEC": {
+    "ticker": "WEC",
+    "last_updated": "2025-06-23T16:34:07.161566",
+    "sector": "Energy"
+  },
+  "ROK": {
+    "ticker": "ROK",
+    "last_updated": "2025-06-23T16:34:07.678133",
+    "sector": "Industrials"
+  },
+  "CTRA": {
+    "ticker": "CTRA",
+    "last_updated": "2025-06-23T16:34:08.138221",
+    "sector": "Energy"
+  },
+  "MAMA": {
+    "ticker": "MAMA",
+    "last_updated": "2025-06-23T16:34:08.605286",
+    "sector": "Consumer Goods"
+  },
+  "HTZ": {
+    "ticker": "HTZ",
+    "last_updated": "2025-06-23T16:34:09.066408",
+    "sector": "Services"
+  },
+  "UPBD": {
+    "ticker": "UPBD",
+    "last_updated": "2025-06-23T16:34:09.540676",
+    "sector": "Consumer Discretionary"
+  },
+  "AMG": {
+    "ticker": "AMG",
+    "last_updated": "2025-06-23T16:34:09.996826",
+    "sector": "Financials"
+  },
+  "CMA": {
+    "ticker": "CMA",
+    "last_updated": "2025-06-23T16:34:10.456332",
+    "sector": "Financials"
+  },
+  "KRNT": {
+    "ticker": "KRNT",
+    "last_updated": "2025-06-23T16:34:10.914623",
+    "sector": "Technology"
+  },
+  "IVV": {
+    "ticker": "IVV",
+    "last_updated": "2025-06-23T16:34:11.369630",
+    "sector": "Super Investor Stats:"
+  },
+  "FMX": {
+    "ticker": "FMX",
+    "last_updated": "2025-06-23T16:34:11.822778",
+    "sector": "Consumer Goods"
+  },
+  "RERE": {
+    "ticker": "RERE",
+    "last_updated": "2025-06-23T16:34:12.292008",
+    "sector": "Technology"
+  },
+  "X-OLD": {
+    "ticker": "X-OLD",
+    "last_updated": "2025-06-23T16:34:12.790827",
+    "sector": "Materials"
+  },
+  "FFIV": {
+    "ticker": "FFIV",
+    "last_updated": "2025-06-23T16:34:13.290685",
+    "sector": "Information Technology"
+  },
+  "MLM": {
+    "ticker": "MLM",
+    "last_updated": "2025-06-23T16:34:13.749410",
+    "sector": "Materials"
+  },
+  "NUE": {
+    "ticker": "NUE",
+    "last_updated": "2025-06-23T16:34:14.218542",
+    "sector": "Materials"
+  },
+  "CHCT": {
+    "ticker": "CHCT",
+    "last_updated": "2025-06-23T16:34:14.686121",
+    "sector": "Real Estate"
+  },
+  "PGR": {
+    "ticker": "PGR",
+    "last_updated": "2025-06-23T16:34:15.130971",
+    "sector": "Financials"
+  },
+  "C": {
+    "ticker": "C",
+    "last_updated": "2025-06-23T16:34:15.570797",
+    "sector": "Financials"
+  },
+  "FND": {
+    "ticker": "FND",
+    "last_updated": "2025-06-23T16:34:16.038120",
+    "sector": "Consumer Cyclical"
+  },
+  "CTRI": {
+    "ticker": "CTRI",
+    "last_updated": "2025-06-23T16:34:16.520221",
+    "sector": "Utilities"
+  },
+  "SPHR": {
+    "ticker": "SPHR",
+    "last_updated": "2025-06-23T16:34:17.021476",
+    "sector": "Communication Services"
+  },
+  "MGM": {
+    "ticker": "MGM",
+    "last_updated": "2025-06-23T16:34:17.483567",
+    "sector": "Services"
+  },
+  "PMMF": {
+    "ticker": "PMMF",
+    "last_updated": "2025-06-23T16:34:17.943826",
+    "sector": "Super Investor Stats:"
+  },
+  "ASHTF": {
+    "ticker": "ASHTF",
+    "last_updated": "2025-06-23T16:34:18.415400",
+    "sector": "Industrials"
+  },
+  "WST": {
+    "ticker": "WST",
+    "last_updated": "2025-06-23T16:34:18.874950",
+    "sector": "Health Care"
+  },
+  "LIN": {
+    "ticker": "LIN",
+    "last_updated": "2025-06-23T16:34:19.351970",
+    "sector": "Materials"
+  },
+  "T": {
+    "ticker": "T",
+    "last_updated": "2025-06-23T16:34:19.783112",
+    "sector": "Communication Services"
+  },
+  "GD": {
+    "ticker": "GD",
+    "last_updated": "2025-06-23T16:34:20.256018",
+    "sector": "Industrials"
+  },
+  "VTR": {
+    "ticker": "VTR",
+    "last_updated": "2025-06-23T16:34:20.713484",
+    "sector": "Financials"
+  },
+  "ARES": {
+    "ticker": "ARES",
+    "last_updated": "2025-06-23T16:34:21.376823",
+    "sector": "Financials"
+  },
+  "SONY": {
+    "ticker": "SONY",
+    "last_updated": "2025-06-23T16:34:21.831091",
+    "sector": "Consumer Goods"
+  },
+  "MRP": {
+    "ticker": "MRP",
+    "last_updated": "2025-06-23T16:34:22.302264",
+    "sector": "Real Estate"
+  },
+  "CCL": {
+    "ticker": "CCL",
+    "last_updated": "2025-06-23T16:34:22.755671",
+    "sector": "Consumer Discretionary"
+  },
+  "NEM": {
+    "ticker": "NEM",
+    "last_updated": "2025-06-23T16:34:23.197337",
+    "sector": "Materials"
+  },
+  "G": {
+    "ticker": "G",
+    "last_updated": "2025-06-23T16:34:23.669070",
+    "sector": "Industrials"
+  },
+  "DCGO": {
+    "ticker": "DCGO",
+    "last_updated": "2025-06-23T16:34:24.153033",
+    "sector": "Health Care"
+  },
+  "FLYX": {
+    "ticker": "FLYX",
+    "last_updated": "2025-06-23T16:34:24.612917",
+    "sector": "Industrials"
+  },
+  "EFX": {
+    "ticker": "EFX",
+    "last_updated": "2025-06-23T16:34:25.140032",
+    "sector": "Industrials"
+  },
+  "ENOV": {
+    "ticker": "ENOV",
+    "last_updated": "2025-06-23T16:34:25.572973",
+    "sector": "Industrial Goods"
+  },
+  "GLNCY": {
+    "ticker": "GLNCY",
+    "last_updated": "2025-06-23T16:34:26.068241",
+    "sector": "Materials"
+  },
+  "HWM": {
+    "ticker": "HWM",
+    "last_updated": "2025-06-23T16:34:26.533491",
+    "sector": "Industrials"
+  },
+  "BDX": {
+    "ticker": "BDX",
+    "last_updated": "2025-06-23T16:34:26.999999",
+    "sector": "Health Care"
+  },
+  "CTSH": {
+    "ticker": "CTSH",
+    "last_updated": "2025-06-23T16:34:27.492828",
+    "sector": "Information Technology"
+  },
+  "BATRK": {
+    "ticker": "BATRK",
+    "last_updated": "2025-06-23T16:34:27.963543",
+    "sector": "Services"
+  },
+  "BXP": {
+    "ticker": "BXP",
+    "last_updated": "2025-06-23T16:34:28.449514",
+    "sector": "Financials"
+  },
+  "INTC": {
+    "ticker": "INTC",
+    "last_updated": "2025-06-23T16:34:28.927542",
+    "sector": "Information Technology"
+  },
+  "SNX": {
+    "ticker": "SNX",
+    "last_updated": "2025-06-23T16:34:29.372230",
+    "sector": "Technology"
+  },
+  "WCC": {
+    "ticker": "WCC",
+    "last_updated": "2025-06-23T16:34:29.870489",
+    "sector": "Services"
+  },
+  "ONIT": {
+    "ticker": "ONIT",
+    "last_updated": "2025-06-23T16:34:30.358060",
+    "sector": "Financials"
+  },
+  "GLDM": {
+    "ticker": "GLDM",
+    "last_updated": "2025-06-23T16:34:30.819866",
+    "sector": "Super Investor Stats:"
+  },
+  "VLTO": {
+    "ticker": "VLTO",
+    "last_updated": "2025-06-23T16:34:31.290529",
+    "sector": "Industrials"
+  },
+  "HGV": {
+    "ticker": "HGV",
+    "last_updated": "2025-06-23T16:34:31.727447",
+    "sector": "Consumer Cyclical"
+  },
+  "HES": {
+    "ticker": "HES",
+    "last_updated": "2025-06-23T16:34:32.188845",
+    "sector": "Energy"
+  },
+  "TRMD": {
+    "ticker": "TRMD",
+    "last_updated": "2025-06-23T16:34:32.642966",
+    "sector": "Industrials"
+  },
+  "BROS": {
+    "ticker": "BROS",
+    "last_updated": "2025-06-23T16:34:33.130958",
+    "sector": "Consumer Cyclical"
+  },
+  "CWCO": {
+    "ticker": "CWCO",
+    "last_updated": "2025-06-23T16:34:33.585306",
+    "sector": "Utilities"
+  },
+  "FLUIF": {
+    "ticker": "FLUIF",
+    "last_updated": "2025-06-23T16:34:34.046735",
+    "sector": "Industrials"
+  },
+  "BHF": {
+    "ticker": "BHF",
+    "last_updated": "2025-06-23T16:34:34.490047",
+    "sector": "Financials"
+  },
+  "WSC": {
+    "ticker": "WSC",
+    "last_updated": "2025-06-23T16:34:34.969760",
+    "sector": "Industrials"
+  },
+  "FCX": {
+    "ticker": "FCX",
+    "last_updated": "2025-06-23T16:34:35.442118",
+    "sector": "Materials"
+  },
+  "REG": {
+    "ticker": "REG",
+    "last_updated": "2025-06-23T16:34:35.904157",
+    "sector": "Financials"
+  },
+  "DBX": {
+    "ticker": "DBX",
+    "last_updated": "2025-06-23T16:34:36.396863",
+    "sector": "Technology"
+  },
+  "CGEN": {
+    "ticker": "CGEN",
+    "last_updated": "2025-06-23T16:34:36.851502",
+    "sector": "Health Care"
+  },
+  "JLL": {
+    "ticker": "JLL",
+    "last_updated": "2025-06-23T16:34:37.308826",
+    "sector": "Financials"
+  },
+  "DVN": {
+    "ticker": "DVN",
+    "last_updated": "2025-06-23T16:34:37.770760",
+    "sector": "Energy"
+  },
+  "ALGN": {
+    "ticker": "ALGN",
+    "last_updated": "2025-06-23T16:34:38.235246",
+    "sector": "Health Care"
+  },
+  "CBRE": {
+    "ticker": "CBRE",
+    "last_updated": "2025-06-23T16:34:38.695154",
+    "sector": "Financials"
+  },
+  "VICI": {
+    "ticker": "VICI",
+    "last_updated": "2025-06-23T16:34:39.167478",
+    "sector": "Financials"
+  },
+  "SION": {
+    "ticker": "SION",
+    "last_updated": "2025-06-23T16:34:39.648589",
+    "sector": "Health Care"
+  },
+  "CIGI": {
+    "ticker": "CIGI",
+    "last_updated": "2025-06-23T16:34:40.111742",
+    "sector": "Real Estate"
+  },
+  "IVT": {
+    "ticker": "IVT",
+    "last_updated": "2025-06-23T16:34:40.574613",
+    "sector": "Super Investor Stats:"
+  },
+  "DEA": {
+    "ticker": "DEA",
+    "last_updated": "2025-06-23T16:34:41.036453",
+    "sector": "Real Estate"
+  },
+  "SWKS": {
+    "ticker": "SWKS",
+    "last_updated": "2025-06-23T16:34:41.499550",
+    "sector": "Information Technology"
+  },
+  "CRM": {
+    "ticker": "CRM",
+    "last_updated": "2025-06-23T16:34:41.971268",
+    "sector": "Technology"
+  },
+  "EMBC": {
+    "ticker": "EMBC",
+    "last_updated": "2025-06-23T16:34:42.464053",
+    "sector": "Health Care"
+  },
+  "BWXT": {
+    "ticker": "BWXT",
+    "last_updated": "2025-06-23T16:34:42.926914",
+    "sector": "Industrial Goods"
+  },
+  "PBPB": {
+    "ticker": "PBPB",
+    "last_updated": "2025-06-23T16:34:43.404955",
+    "sector": "Services"
+  },
+  "TOST": {
+    "ticker": "TOST",
+    "last_updated": "2025-06-23T16:34:43.904240",
+    "sector": "Technology"
+  },
+  "CCJ": {
+    "ticker": "CCJ",
+    "last_updated": "2025-06-23T16:34:44.609373",
+    "sector": "Materials"
+  },
+  "FUJHF": {
+    "ticker": "FUJHF",
+    "last_updated": "2025-06-23T16:34:45.072443",
+    "sector": "Consumer Cyclical"
+  },
+  "CSW": {
+    "ticker": "CSW",
+    "last_updated": "2025-06-23T16:34:45.539826",
+    "sector": "Industrials"
+  },
+  "BAESF": {
+    "ticker": "BAESF",
+    "last_updated": "2025-06-23T16:34:46.001095",
+    "sector": "Industrials"
+  },
+  "SAIA": {
+    "ticker": "SAIA",
+    "last_updated": "2025-06-23T16:34:46.462260",
+    "sector": "Services"
+  },
+  "HINKF": {
+    "ticker": "HINKF",
+    "last_updated": "2025-06-23T16:34:46.925173",
+    "sector": "Consumer Goods"
+  },
+  "STLA": {
+    "ticker": "STLA",
+    "last_updated": "2025-06-23T16:34:47.373118",
+    "sector": "Consumer Goods"
+  },
+  "GOOG": {
+    "ticker": "GOOG",
+    "last_updated": "2025-06-23T16:34:47.860836",
+    "sector": "Technology"
+  },
+  "IFF": {
+    "ticker": "IFF",
+    "last_updated": "2025-06-23T16:34:48.327656",
+    "sector": "Materials"
+  },
+  "AAON": {
+    "ticker": "AAON",
+    "last_updated": "2025-06-23T16:34:48.801078",
+    "sector": "Industrial Goods"
+  },
+  "SUI": {
+    "ticker": "SUI",
+    "last_updated": "2025-06-23T16:34:49.305561",
+    "sector": "Real Estate"
+  },
+  "CRC": {
+    "ticker": "CRC",
+    "last_updated": "2025-06-23T16:34:49.768001",
+    "sector": "Materials"
+  },
+  "UOVEY": {
+    "ticker": "UOVEY",
+    "last_updated": "2025-06-23T16:34:50.228183",
+    "sector": "Financials"
+  },
+  "CSGS": {
+    "ticker": "CSGS",
+    "last_updated": "2025-06-23T16:34:50.707691",
+    "sector": "Information Technology"
+  },
+  "LTSSF": {
+    "ticker": "LTSSF",
+    "last_updated": "2025-06-23T16:34:51.347292",
+    "sector": "Consumer Staples"
+  },
+  "MA": {
+    "ticker": "MA",
+    "last_updated": "2025-06-23T16:34:51.794411",
+    "sector": "Services"
+  },
+  "SCHL": {
+    "ticker": "SCHL",
+    "last_updated": "2025-06-23T16:34:52.268642",
+    "sector": "Consumer Discretionary"
+  },
+  "UGI": {
+    "ticker": "UGI",
+    "last_updated": "2025-06-23T16:34:52.704552",
+    "sector": "Utilities"
+  },
+  "WBS": {
+    "ticker": "WBS",
+    "last_updated": "2025-06-23T16:34:53.174529",
+    "sector": "Financials"
+  },
+  "DOC": {
+    "ticker": "DOC",
+    "last_updated": "2025-06-23T16:34:53.630504",
+    "sector": "Real Estate"
+  },
+  "ESGD": {
+    "ticker": "ESGD",
+    "last_updated": "2025-06-23T16:34:54.098489",
+    "sector": "Super Investor Stats:"
+  },
+  "ZG": {
+    "ticker": "ZG",
+    "last_updated": "2025-06-23T16:34:54.560686",
+    "sector": "Communication Services"
+  },
+  "TECK": {
+    "ticker": "TECK",
+    "last_updated": "2025-06-23T16:34:55.039775",
+    "sector": "Materials"
+  },
+  "BAYRY": {
+    "ticker": "BAYRY",
+    "last_updated": "2025-06-23T16:34:55.477738",
+    "sector": "Health Care"
+  },
+  "EWTX": {
+    "ticker": "EWTX",
+    "last_updated": "2025-06-23T16:34:55.947747",
+    "sector": "Financials"
+  },
+  "RL": {
+    "ticker": "RL",
+    "last_updated": "2025-06-23T16:34:56.422255",
+    "sector": "Consumer Discretionary"
+  },
+  "XRAY": {
+    "ticker": "XRAY",
+    "last_updated": "2025-06-23T16:34:56.910629",
+    "sector": "Health Care"
+  },
+  "OMC": {
+    "ticker": "OMC",
+    "last_updated": "2025-06-23T16:34:57.373089",
+    "sector": "Consumer Discretionary"
+  },
+  "DLG.MI": {
+    "ticker": "DLG.MI",
+    "last_updated": "2025-06-23T16:34:57.835400",
+    "sector": "Consumer Cyclical"
+  },
+  "IEMG": {
+    "ticker": "IEMG",
+    "last_updated": "2025-06-23T16:34:58.293366",
+    "sector": "NA"
+  },
+  "JBLU": {
+    "ticker": "JBLU",
+    "last_updated": "2025-06-23T16:34:58.770453",
+    "sector": "Industrials"
+  },
+  "EXP": {
+    "ticker": "EXP",
+    "last_updated": "2025-06-23T16:34:59.202274",
+    "sector": "Industrials"
+  },
+  "DOCS": {
+    "ticker": "DOCS",
+    "last_updated": "2025-06-23T16:34:59.677636",
+    "sector": "Technology"
+  },
+  "NEE": {
+    "ticker": "NEE",
+    "last_updated": "2025-06-23T16:35:00.151632",
+    "sector": "Utilities"
+  },
+  "SEMR": {
+    "ticker": "SEMR",
+    "last_updated": "2025-06-23T16:35:00.636997",
+    "sector": "Technology"
+  },
+  "RBLX": {
+    "ticker": "RBLX",
+    "last_updated": "2025-06-23T16:35:01.127224",
+    "sector": "Communication Services"
+  },
+  "KNF": {
+    "ticker": "KNF",
+    "last_updated": "2025-06-23T16:35:01.585726",
+    "sector": "Materials"
+  },
+  "BX": {
+    "ticker": "BX",
+    "last_updated": "2025-06-23T16:35:02.085459",
+    "sector": "Financials"
+  },
+  "EL": {
+    "ticker": "EL",
+    "last_updated": "2025-06-23T16:35:02.611787",
+    "sector": "Consumer Staples"
+  },
+  "SNPS": {
+    "ticker": "SNPS",
+    "last_updated": "2025-06-23T16:35:03.077991",
+    "sector": "Information Technology"
+  }
+}
