@@ -1,0 +1,51 @@
+ticker,manager_count,managers,company,price,avg_portfolio_pct,max_portfolio_pct,portfolio_pct_std,total_shares,market_cap,cap_category,sector,industry,total_position_value,conviction_score,consistency_score,market_cap_display
+INTC,1,Christopher Davis - Davis Advisors,,0.0,99.58,99.58,0.0,0,0,Unknown,Information Technology,Unknown,0.0,251.95,99.58,N/A
+JOE,1,Bruce Berkowitz - Fairholme Capital,,0.0,78.07,78.07,0.0,0,0,Unknown,Financials,Unknown,0.0,198.18,78.07,N/A
+TTEK,1,Polen Capital Management,,0.0,67.42,67.42,0.0,0,0,Unknown,Industrials,Unknown,0.0,171.55,67.42,N/A
+IOO,1,Polen Capital Management,,0.0,63.12,63.12,0.0,0,0,Unknown,Super Investor Stats:,Unknown,0.0,160.8,63.12,N/A
+VT,1,Polen Capital Management,,0.0,59.1,59.1,0.0,0,0,Unknown,Super Investor Stats:,Unknown,0.0,150.75,59.1,N/A
+IEP,1,Carl Icahn - Icahn Capital Management,,0.0,54.55,54.55,0.0,0,0,Unknown,Financials,Unknown,0.0,139.38,54.55,N/A
+KARO,1,Polen Capital Management,,0.0,48.02,48.02,0.0,0,0,Unknown,Technology,Unknown,0.0,123.05,48.02,N/A
+CLBT,1,Polen Capital Management,,0.0,47.09,47.09,0.0,0,0,Unknown,Technology,Unknown,0.0,120.72,47.09,N/A
+LOAR,1,David Abrams - Abrams Capital Management,,0.0,46.92,46.92,0.0,0,0,Unknown,Industrials,Unknown,0.0,120.3,46.92,N/A
+HTZWW,2,"Daniel Loeb - Third Point, Francis Chou - Chou Associates",,0.0,35.57,71.0,50.11,0,0,Unknown,Super Investor Stats:,Unknown,0.0,112.64,0.7,N/A
+PHJMF,1,Thomas Russo - Gardner Russo & Quinn,,0.0,33.33,33.33,0.0,0,0,Unknown,Consumer Goods,Unknown,0.0,86.32,33.33,N/A
+GPI,1,Greg Alexander - Conifer Management,,0.0,32.91,32.91,0.0,0,0,Unknown,Consumer Discretionary,Unknown,0.0,85.28,32.91,N/A
+JHG,1,Nelson Peltz - Trian Fund Management,,0.0,30.84,30.84,0.0,0,0,Unknown,Financials,Unknown,0.0,80.1,30.84,N/A
+WING,2,"Polen Capital Management, Stephen Mandel - Lone Pine Capital",,0.0,30.27,59.65,41.55,0,0,Unknown,Services,Unknown,0.0,96.36,0.71,N/A
+OUT,2,"First Eagle Investment Management, Thomas Russo - Gardner Russo & Quinn",,0.0,30.26,60.49,42.75,0,0,Unknown,Services,Unknown,0.0,96.77,0.69,N/A
+SPY,3,"Francois Rochon - Giverny Capital, Polen Capital Management, Yacktman Asset Management",,0.0,28.3,84.82,48.95,0,0,Unknown,,Unknown,0.0,108.01,0.57,N/A
+SKIL,1,Polen Capital Management,,0.0,28.22,28.22,0.0,0,0,Unknown,Information Technology,Unknown,0.0,73.55,28.22,N/A
+FIX,2,"Polen Capital Management, Thomas Gayner - Markel Group",,0.0,28.01,55.98,39.56,0,0,Unknown,Industrials,Unknown,0.0,90.01,0.69,N/A
+ADSK,2,"Polen Capital Management, Viking Global Investors",,0.0,26.4,52.55,36.98,0,0,Unknown,Information Technology,Unknown,0.0,85.07,0.7,N/A
+RHI,1,Greenhaven Associates,,0.0,25.9,25.9,0.0,0,0,Unknown,Industrials,Unknown,0.0,67.75,25.9,N/A
+SAIA,1,Polen Capital Management,,0.0,22.73,22.73,0.0,0,0,Unknown,Services,Unknown,0.0,59.82,22.73,N/A
+AMRK,1,Yacktman Asset Management,,0.0,21.74,21.74,0.0,0,0,Unknown,Financials,Unknown,0.0,57.35,21.74,N/A
+HCC,2,"Mohnish Pabrai - Pabrai Investments, Third Avenue Management",,0.0,21.22,36.57,21.71,0,0,Unknown,Financials,Unknown,0.0,66.72,0.93,N/A
+RH,1,Christopher Davis - Davis Advisors,,0.0,20.55,20.55,0.0,0,0,Unknown,Services,Unknown,0.0,54.38,20.55,N/A
+TDG,3,"AltaRock Partners, Bryan Lawrence - Oakcliff Capital, Triple Frond Partners",,0.0,20.0,27.26,6.34,0,0,Unknown,Industrial Goods,Unknown,0.0,62.63,2.72,N/A
+MRKR,1,David Katz - Matrix Asset Advisors,,0.0,18.33,18.33,0.0,0,0,Unknown,Health Care,Unknown,0.0,48.82,18.33,N/A
+CVI,1,Carl Icahn - Icahn Capital Management,,0.0,17.76,17.76,0.0,0,0,Unknown,Materials,Unknown,0.0,47.4,17.76,N/A
+BBWI,1,Tom Bancroft - Makaira Partners,,0.0,16.66,16.66,0.0,0,0,Unknown,Services,Unknown,0.0,44.65,16.66,N/A
+PTLO,1,Glenn Welling - Engaged Capital,,0.0,16.61,16.61,0.0,0,0,Unknown,Consumer Cyclical,Unknown,0.0,44.52,16.61,N/A
+TRMD,1,Howard Marks - Oaktree Capital Management,,0.0,16.39,16.39,0.0,0,0,Unknown,Industrials,Unknown,0.0,43.98,16.39,N/A
+EXE,1,Howard Marks - Oaktree Capital Management,,0.0,15.31,15.31,0.0,0,0,Unknown,Energy,Unknown,0.0,41.28,15.31,N/A
+GTLS,2,"Alex Roepers - Atlantic Investment Management, Glenn Welling - Engaged Capital",,0.0,15.08,16.57,2.11,0,0,Unknown,Industrial Goods,Unknown,0.0,44.44,4.85,N/A
+CATO,1,Yacktman Asset Management,,0.0,15.02,15.02,0.0,0,0,Unknown,Consumer Discretionary,Unknown,0.0,40.55,15.02,N/A
+OLLI,2,"Lee Ainslie - Maverick Capital, Polen Capital Management",,0.0,14.38,28.6,20.12,0,0,Unknown,Services,Unknown,0.0,49.06,0.68,N/A
+ORLA,2,"First Eagle Investment Management, Prem Watsa - Fairfax Financial Holdings",,0.0,14.36,28.57,20.09,0,0,Unknown,Materials,Unknown,0.0,49.0,0.68,N/A
+TKO,1,Lindsell Train,,0.0,14.35,14.35,0.0,0,0,Unknown,Services,Unknown,0.0,38.88,14.35,N/A
+GIL,1,Bryan Lawrence - Oakcliff Capital,,0.0,14.25,14.25,0.0,0,0,Unknown,Consumer Goods,Unknown,0.0,38.62,14.25,N/A
+VAL,2,"Mohnish Pabrai - Pabrai Investments, Third Avenue Management",,0.0,14.18,23.87,13.7,0,0,Unknown,Energy,Unknown,0.0,46.3,0.96,N/A
+GRBK,2,"David Einhorn - Greenlight Capital, Third Avenue Management",,0.0,14.01,27.96,19.73,0,0,Unknown,Financials,Unknown,0.0,48.0,0.68,N/A
+HGV,1,Clifford Sosin - CAS Investment Partners,,0.0,13.89,13.89,0.0,0,0,Unknown,Consumer Cyclical,Unknown,0.0,37.72,13.89,N/A
+HKHHY,1,Thomas Russo - Gardner Russo & Quinn,,0.0,13.85,13.85,0.0,0,0,Unknown,Consumer Goods,Unknown,0.0,37.62,13.85,N/A
+NCNO,1,Dennis Hong - ShawSpring Partners,,0.0,13.78,13.78,0.0,0,0,Unknown,Technology,Unknown,0.0,37.45,13.78,N/A
+EVH,1,Glenn Welling - Engaged Capital,,0.0,12.51,12.51,0.0,0,0,Unknown,Technology,Unknown,0.0,34.28,12.51,N/A
+AER,1,Pat Dorsey - Dorsey Asset Management,,0.0,12.33,12.33,0.0,0,0,Unknown,Services,Unknown,0.0,33.83,12.33,N/A
+RYCEF,1,Ruane Cunniff - Sequoia Fund,,0.0,12.26,12.26,0.0,0,0,Unknown,Industrial Goods,Unknown,0.0,33.65,12.26,N/A
+APTV,2,"Alex Roepers - Atlantic Investment Management, Robert Olstein - Olstein Capital Management",,0.0,11.95,22.4,14.78,0,0,Unknown,Consumer Goods,Unknown,0.0,41.1,0.76,N/A
+WEN,1,Nelson Peltz - Trian Fund Management,,0.0,11.91,11.91,0.0,0,0,Unknown,Consumer Discretionary,Unknown,0.0,32.78,11.91,N/A
+BRZE,1,Dennis Hong - ShawSpring Partners,,0.0,11.77,11.77,0.0,0,0,Unknown,Technology,Unknown,0.0,32.42,11.77,N/A
+TRUP,1,Josh Tarasoff - Greenlea Lane Capital,,0.0,11.69,11.69,0.0,0,0,Unknown,Financials,Unknown,0.0,32.22,11.69,N/A
+MDLZ,1,Lindsell Train,,0.0,11.3,11.3,0.0,0,0,Unknown,Consumer Staples,Unknown,0.0,31.25,11.3,N/A
