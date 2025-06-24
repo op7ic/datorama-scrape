@@ -1,86 +1,86 @@
 ticker,manager_count,managers,company,price,avg_portfolio_pct,max_portfolio_pct,total_shares,market_cap,cap_category,sector,avg_gain_loss_pct,total_position_value,market_cap_display
-ET,5,"Bruce Berkowitz - Fairholme Capital, David Abrams - Abrams Capital Management, David Tepper - Appaloosa Management, Leon Cooperman, Samantha McLemore - Patient Capital Management",,18.59,0.0,0,0,0,Unknown,Energy,0.0,0.0,N/A
-B,4,"Charles Bobrinskoy - Ariel Focus Fund, First Eagle Investment Management, Harry Burn - Sound Shore, Howard Marks - Oaktree Capital Management",,19.44,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-CCCS,4,"Chuck Akre - Akre Capital Management, Polen Capital Management, Torray Funds, Triple Frond Partners",,9.03,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-GTX,4,"Howard Marks - Oaktree Capital Management, Kahn Brothers Group, Lee Ainslie - Maverick Capital, Prem Watsa - Fairfax Financial Holdings",,8.37,0.0,0,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
-LBTYA,4,"David Einhorn - Greenlight Capital, Francis Chou - Chou Associates, Howard Marks - Oaktree Capital Management, Seth Klarman - Baupost Group",,11.51,0.0,0,0,0,Unknown,Services,0.0,0.0,N/A
-NU,4,"Chase Coleman - Tiger Global Management, Lee Ainslie - Maverick Capital, Polen Capital Management, ValueAct Capital",,10.24,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-WRBY,4,"First Eagle Investment Management, Lee Ainslie - Maverick Capital, Polen Capital Management, Thomas Russo - Gardner Russo & Quinn",,18.23,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-AVTR,3,"Dodge & Cox, Harry Burn - Sound Shore, Robert Olstein - Olstein Capital Management",,16.21,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-CNH,3,"David Einhorn - Greenlight Capital, Mason Hawkins - Longleaf Partners, Tweedy Browne Co. - Tweedy Browne Value Fund",,12.28,0.0,0,0,0,Unknown,Industrial Goods,0.0,0.0,N/A
-CPRI,3,"David Einhorn - Greenlight Capital, Lee Ainslie - Maverick Capital, Prem Watsa - Fairfax Financial Holdings",,19.73,0.0,0,0,0,Unknown,Services,0.0,0.0,N/A
-DEI,3,"Christopher Davis - Davis Advisors, First Eagle Investment Management, Steven Romick - FPA Crescent Fund",,16.0,0.0,0,0,0,Unknown,Real Estate,0.0,0.0,N/A
-LEVI,3,"FPA Queens Road Small Cap Value Fund, Jensen Investment Management, Thomas Russo - Gardner Russo & Quinn",,15.59,0.0,0,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
-MANU,3,"John Rogers - Ariel Appreciation Fund, Leon Cooperman, Lindsell Train",,13.09,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-MAT,3,"John Rogers - Ariel Appreciation Fund, Mason Hawkins - Longleaf Partners, Samantha McLemore - Patient Capital Management",,19.43,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-MIR,3,"Lee Ainslie - Maverick Capital, Leon Cooperman, Meridian Contrarian Fund",,14.5,0.0,0,0,0,Unknown,Industrials,0.0,0.0,N/A
-NCLH,3,"John Rogers - Ariel Appreciation Fund, Lee Ainslie - Maverick Capital, Samantha McLemore - Patient Capital Management",,18.96,0.0,0,0,0,Unknown,Services,0.0,0.0,N/A
-NOV,3,"First Eagle Investment Management, Greenhaven Associates, Richard Pzena - Hancock Classic Value",,15.22,0.0,0,0,0,Unknown,Energy,0.0,0.0,N/A
-NVST,3,"John Rogers - Ariel Appreciation Fund, Meridian Contrarian Fund, Tweedy Browne Co. - Tweedy Browne Value Fund",,17.26,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-PARA,3,"Christopher Bloomstran - Semper Augustus, David Katz - Matrix Asset Advisors, John Rogers - Ariel Appreciation Fund",,11.95,0.0,0,0,0,Unknown,Communication Services,0.0,0.0,N/A
-STLA,3,"Bill Miller - Miller Value Partners, Francis Chou - Chou Associates, Greenhaven Associates",,11.21,0.0,0,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
-TEVA,3,"David Einhorn - Greenlight Capital, Harry Burn - Sound Shore, Viking Global Investors",,15.37,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-VFC,3,"Dodge & Cox, Glenn Welling - Engaged Capital, Meridian Contrarian Fund",,15.52,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-VSH,3,"First Eagle Investment Management, FPA Queens Road Small Cap Value Fund, Robert Olstein - Olstein Capital Management",,15.9,0.0,0,0,0,Unknown,Information Technology,0.0,0.0,N/A
-VTRS,3,"Bill Miller - Miller Value Partners, Christopher Davis - Davis Advisors, David Einhorn - Greenlight Capital",,8.71,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-WBD,3,"Bill Nygren - Oakmark Select Fund, Hillman Value Fund, Yacktman Asset Management",,11.03,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-ALIT,2,"David Einhorn - Greenlight Capital, Lee Ainslie - Maverick Capital",,5.93,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-AM,2,"Glenn Greenberg - Brave Warrior Advisors, Kahn Brothers Group",,18.0,0.0,0,0,0,Unknown,Energy,0.0,0.0,N/A
-BB,2,"Meridian Contrarian Fund, Prem Watsa - Fairfax Financial Holdings",,3.76,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-BHC,2,"Carl Icahn - Icahn Capital Management, Howard Marks - Oaktree Capital Management",,6.47,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-BKD,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,6.26,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-CCL,2,"Lee Ainslie - Maverick Capital, Viking Global Investors",,19.53,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-CLB,2,"Charles Bobrinskoy - Ariel Focus Fund, John Rogers - Ariel Appreciation Fund",,14.99,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-CLVT,2,"Lee Ainslie - Maverick Capital, Seth Klarman - Baupost Group",,3.93,0.0,0,0,0,Unknown,Unknown,0.0,0.0,N/A
-CTO,2,"Bill Miller - Miller Value Partners, Third Avenue Management",,19.31,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-DBRG,2,"Chuck Akre - Akre Capital Management, Meridian Contrarian Fund",,8.82,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-EQC-OLD,2,"FPA Queens Road Small Cap Value Fund, Third Avenue Management",,1.61,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-EYE,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,12.78,0.0,0,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
-GCI,2,"Bill Miller - Miller Value Partners, Leon Cooperman",,2.89,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-GRAB,2,"Chase Coleman - Tiger Global Management, Howard Marks - Oaktree Capital Management",,4.53,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-GT,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,9.24,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-HLN,2,"First Eagle Investment Management, Kahn Brothers Group",,10.29,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-HTZWW,2,"Daniel Loeb - Third Point, Francis Chou - Chou Associates",,2.26,0.0,0,0,0,Unknown,Unknown,0.0,0.0,N/A
-IVZ,2,"Nelson Peltz - Trian Fund Management, Robert Olstein - Olstein Capital Management",,15.17,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-KGC,2,"Christopher Bloomstran - Semper Augustus, First Eagle Investment Management",,12.61,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-LBTYK,2,"Lee Ainslie - Maverick Capital, Seth Klarman - Baupost Group",,11.97,0.0,0,0,0,Unknown,Services,0.0,0.0,N/A
-LXU,2,"First Eagle Investment Management, Third Avenue Management",,6.59,0.0,0,0,0,Unknown,Industrial Goods,0.0,0.0,N/A
-LYG,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,3.82,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-MX,2,"Howard Marks - Oaktree Capital Management, Prem Watsa - Fairfax Financial Holdings",,3.43,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-NUVB,2,"David Abrams - Abrams Capital Management, David Einhorn - Greenlight Capital",,1.76,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-OGN,2,"Harry Burn - Sound Shore, Kahn Brothers Group",,14.89,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-OI,2,"Lee Ainslie - Maverick Capital, Thomas Gayner - Markel Group",,11.47,0.0,0,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
-ORIC,2,"Meridian Contrarian Fund, Viking Global Investors",,5.58,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-ORLA,2,"First Eagle Investment Management, Prem Watsa - Fairfax Financial Holdings",,9.28,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-OUT,2,"First Eagle Investment Management, Thomas Russo - Gardner Russo & Quinn",,16.14,0.0,0,0,0,Unknown,Services,0.0,0.0,N/A
-PBF,2,"First Eagle Investment Management, Third Avenue Management",,19.09,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-PCG,2,"Daniel Loeb - Third Point, Steven Romick - FPA Crescent Fund",,17.18,0.0,0,0,0,Unknown,Utilities,0.0,0.0,N/A
-PENG,2,"First Eagle Investment Management, Meridian Contrarian Fund",,17.37,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-PTON,2,"David Einhorn - Greenlight Capital, Samantha McLemore - Patient Capital Management",,6.32,0.0,0,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
-RCKT,2,"Lee Ainslie - Maverick Capital, Torray Funds",,6.67,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-REZI,2,"Charles Bobrinskoy - Ariel Focus Fund, John Rogers - Ariel Appreciation Fund",,17.7,0.0,0,0,0,Unknown,Industrials,0.0,0.0,N/A
-RKT,2,"Christopher Davis - Davis Advisors, ValueAct Capital",,12.07,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-ROIV,2,"David Einhorn - Greenlight Capital, Viking Global Investors",,10.09,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-SAIL,2,"Lee Ainslie - Maverick Capital, Viking Global Investors",,18.75,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-SD,2,"Carl Icahn - Icahn Capital Management, Third Avenue Management",,11.42,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-STKL,2,"Howard Marks - Oaktree Capital Management, Leon Cooperman",,4.86,0.0,0,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
-TME,2,"Polen Capital Management, William Von Mueffling - Cantillon Capital Management",,14.41,0.0,0,0,0,Unknown,Communication Services,0.0,0.0,N/A
-UAA,2,"Lee Ainslie - Maverick Capital, Prem Watsa - Fairfax Financial Holdings",,6.24,0.0,0,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
-VALE,2,"Christopher Davis - Davis Advisors, Howard Marks - Oaktree Capital Management",,9.98,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-VYX,2,"Glenn Welling - Engaged Capital, Steven Romick - FPA Crescent Fund",,9.75,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-WSR,2,"First Eagle Investment Management, Third Avenue Management",,14.58,0.0,0,0,0,Unknown,Real Estate,0.0,0.0,N/A
-CTLP,1,David Abrams - Abrams Capital Management,,7.87,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-DCGO,1,David Katz - Matrix Asset Advisors,,2.64,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-DENN,1,Robert Olstein - Olstein Capital Management,,3.67,0.0,0,0,0,Unknown,Services,0.0,0.0,N/A
-EMBC,1,Yacktman Asset Management,,12.75,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-FOSL,1,Bill Miller - Miller Value Partners,,1.15,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-JELD,1,Bill Miller - Miller Value Partners,,5.97,0.0,0,0,0,Unknown,Industrials,0.0,0.0,N/A
-KOS,1,Samantha McLemore - Patient Capital Management,,2.28,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
-MNRO,1,Lee Ainslie - Maverick Capital,,14.47,0.0,0,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
-PTLO,1,Glenn Welling - Engaged Capital,,11.89,0.0,0,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
-SHYF,1,Robert Olstein - Olstein Capital Management,,8.09,0.0,0,0,0,Unknown,Industrials,0.0,0.0,N/A
-SMHI,1,Christopher Bloomstran - Semper Augustus,,5.06,0.0,0,0,0,Unknown,Energy,0.0,0.0,N/A
-SVV,1,Tom Bancroft - Makaira Partners,,6.9,0.0,0,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
-TAC,1,Howard Marks - Oaktree Capital Management,,9.33,0.0,0,0,0,Unknown,Utilities,0.0,0.0,N/A
-ZIMV,1,Charles Bobrinskoy - Ariel Focus Fund,,10.8,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-ZUMZ,1,Lee Ainslie - Maverick Capital,,14.89,0.0,0,0,0,Unknown,Services,0.0,0.0,N/A
+ET,5,"Bruce Berkowitz - Fairholme Capital, David Abrams - Abrams Capital Management, David Tepper - Appaloosa Management, Leon Cooperman, Samantha McLemore - Patient Capital Management",,18.59,4.94,5.16,0,0,Unknown,Energy,0.0,0.0,N/A
+NU,4,"Chase Coleman - Tiger Global Management, Lee Ainslie - Maverick Capital, Polen Capital Management, ValueAct Capital",,10.24,22.75,22.75,0,0,Unknown,Financials,0.0,0.0,N/A
+WRBY,4,"First Eagle Investment Management, Lee Ainslie - Maverick Capital, Polen Capital Management, Thomas Russo - Gardner Russo & Quinn",,18.23,20.34,20.35,0,0,Unknown,Health Care,0.0,0.0,N/A
+GTX,4,"Howard Marks - Oaktree Capital Management, Kahn Brothers Group, Lee Ainslie - Maverick Capital, Prem Watsa - Fairfax Financial Holdings",,8.37,16.16,16.27,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
+LBTYA,4,"David Einhorn - Greenlight Capital, Francis Chou - Chou Associates, Howard Marks - Oaktree Capital Management, Seth Klarman - Baupost Group",,11.51,14.6,14.61,0,0,Unknown,Services,0.0,0.0,N/A
+B,4,"Charles Bobrinskoy - Ariel Focus Fund, First Eagle Investment Management, Harry Burn - Sound Shore, Howard Marks - Oaktree Capital Management",,19.44,4.24,8.95,0,0,Unknown,Materials,0.0,0.0,N/A
+CCCS,4,"Chuck Akre - Akre Capital Management, Polen Capital Management, Torray Funds, Triple Frond Partners",,9.03,2.18,2.21,0,0,Unknown,Technology,0.0,0.0,N/A
+MIR,3,"Lee Ainslie - Maverick Capital, Leon Cooperman, Meridian Contrarian Fund",,14.5,40.28,40.28,0,0,Unknown,Industrials,0.0,0.0,N/A
+MANU,3,"John Rogers - Ariel Appreciation Fund, Leon Cooperman, Lindsell Train",,13.09,34.33,45.23,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+PARA,3,"Christopher Bloomstran - Semper Augustus, David Katz - Matrix Asset Advisors, John Rogers - Ariel Appreciation Fund",,11.95,17.48,38.35,0,0,Unknown,Communication Services,0.0,0.0,N/A
+STLA,3,"Bill Miller - Miller Value Partners, Francis Chou - Chou Associates, Greenhaven Associates",,11.21,15.47,16.5,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
+NCLH,3,"John Rogers - Ariel Appreciation Fund, Lee Ainslie - Maverick Capital, Samantha McLemore - Patient Capital Management",,18.96,15.41,44.54,0,0,Unknown,Services,0.0,0.0,N/A
+VFC,3,"Dodge & Cox, Glenn Welling - Engaged Capital, Meridian Contrarian Fund",,15.52,15.21,25.52,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+AVTR,3,"Dodge & Cox, Harry Burn - Sound Shore, Robert Olstein - Olstein Capital Management",,16.21,15.02,17.09,0,0,Unknown,Materials,0.0,0.0,N/A
+CPRI,3,"David Einhorn - Greenlight Capital, Lee Ainslie - Maverick Capital, Prem Watsa - Fairfax Financial Holdings",,19.73,14.92,14.95,0,0,Unknown,Services,0.0,0.0,N/A
+LEVI,3,"FPA Queens Road Small Cap Value Fund, Jensen Investment Management, Thomas Russo - Gardner Russo & Quinn",,15.59,13.66,13.66,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
+TEVA,3,"David Einhorn - Greenlight Capital, Harry Burn - Sound Shore, Viking Global Investors",,15.37,12.12,14.23,0,0,Unknown,Health Care,0.0,0.0,N/A
+WBD,3,"Bill Nygren - Oakmark Select Fund, Hillman Value Fund, Yacktman Asset Management",,11.03,12.11,35.04,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+NVST,3,"John Rogers - Ariel Appreciation Fund, Meridian Contrarian Fund, Tweedy Browne Co. - Tweedy Browne Value Fund",,17.26,9.5,9.5,0,0,Unknown,Health Care,0.0,0.0,N/A
+NOV,3,"First Eagle Investment Management, Greenhaven Associates, Richard Pzena - Hancock Classic Value",,15.22,9.29,13.8,0,0,Unknown,Energy,0.0,0.0,N/A
+MAT,3,"John Rogers - Ariel Appreciation Fund, Mason Hawkins - Longleaf Partners, Samantha McLemore - Patient Capital Management",,19.43,8.0,13.75,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+DEI,3,"Christopher Davis - Davis Advisors, First Eagle Investment Management, Steven Romick - FPA Crescent Fund",,16.0,6.5,6.5,0,0,Unknown,Real Estate,0.0,0.0,N/A
+CNH,3,"David Einhorn - Greenlight Capital, Mason Hawkins - Longleaf Partners, Tweedy Browne Co. - Tweedy Browne Value Fund",,12.28,3.72,3.75,0,0,Unknown,Industrial Goods,0.0,0.0,N/A
+VSH,3,"First Eagle Investment Management, FPA Queens Road Small Cap Value Fund, Robert Olstein - Olstein Capital Management",,15.9,3.14,3.14,0,0,Unknown,Information Technology,0.0,0.0,N/A
+VTRS,3,"Bill Miller - Miller Value Partners, Christopher Davis - Davis Advisors, David Einhorn - Greenlight Capital",,8.71,2.34,3.8,0,0,Unknown,Health Care,0.0,0.0,N/A
+ORIC,2,"Meridian Contrarian Fund, Viking Global Investors",,5.58,84.95,84.95,0,0,Unknown,Health Care,0.0,0.0,N/A
+EYE,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,12.78,77.54,77.54,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
+HTZWW,2,"Daniel Loeb - Third Point, Francis Chou - Chou Associates",,2.26,59.75,69.5,0,0,Unknown,Unknown,0.0,0.0,N/A
+RCKT,2,"Lee Ainslie - Maverick Capital, Torray Funds",,6.67,59.52,59.52,0,0,Unknown,Health Care,0.0,0.0,N/A
+OGN,2,"Harry Burn - Sound Shore, Kahn Brothers Group",,14.89,29.63,59.09,0,0,Unknown,Health Care,0.0,0.0,N/A
+CCL,2,"Lee Ainslie - Maverick Capital, Viking Global Investors",,19.53,29.19,29.19,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+SAIL,2,"Lee Ainslie - Maverick Capital, Viking Global Investors",,18.75,27.47,27.47,0,0,Unknown,Technology,0.0,0.0,N/A
+LBTYK,2,"Lee Ainslie - Maverick Capital, Seth Klarman - Baupost Group",,11.97,26.48,37.5,0,0,Unknown,Services,0.0,0.0,N/A
+OI,2,"Lee Ainslie - Maverick Capital, Thomas Gayner - Markel Group",,11.47,25.6,25.65,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
+LXU,2,"First Eagle Investment Management, Third Avenue Management",,6.59,25.19,25.19,0,0,Unknown,Industrial Goods,0.0,0.0,N/A
+RKT,2,"Christopher Davis - Davis Advisors, ValueAct Capital",,12.07,23.45,23.45,0,0,Unknown,Financials,0.0,0.0,N/A
+CLB,2,"Charles Bobrinskoy - Ariel Focus Fund, John Rogers - Ariel Appreciation Fund",,14.99,22.35,22.35,0,0,Unknown,Materials,0.0,0.0,N/A
+STKL,2,"Howard Marks - Oaktree Capital Management, Leon Cooperman",,4.86,21.92,22.02,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
+TME,2,"Polen Capital Management, William Von Mueffling - Cantillon Capital Management",,14.41,20.08,28.24,0,0,Unknown,Communication Services,0.0,0.0,N/A
+VYX,2,"Glenn Welling - Engaged Capital, Steven Romick - FPA Crescent Fund",,9.75,18.56,18.56,0,0,Unknown,Technology,0.0,0.0,N/A
+NUVB,2,"David Abrams - Abrams Capital Management, David Einhorn - Greenlight Capital",,1.76,17.57,20.45,0,0,Unknown,Health Care,0.0,0.0,N/A
+PENG,2,"First Eagle Investment Management, Meridian Contrarian Fund",,17.37,15.77,15.77,0,0,Unknown,Technology,0.0,0.0,N/A
+DBRG,2,"Chuck Akre - Akre Capital Management, Meridian Contrarian Fund",,8.82,15.76,15.87,0,0,Unknown,Financials,0.0,0.0,N/A
+BB,2,"Meridian Contrarian Fund, Prem Watsa - Fairfax Financial Holdings",,3.76,15.54,16.18,0,0,Unknown,Technology,0.0,0.0,N/A
+GCI,2,"Bill Miller - Miller Value Partners, Leon Cooperman",,2.89,14.54,14.88,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+ROIV,2,"David Einhorn - Greenlight Capital, Viking Global Investors",,10.09,14.27,14.57,0,0,Unknown,Health Care,0.0,0.0,N/A
+REZI,2,"Charles Bobrinskoy - Ariel Focus Fund, John Rogers - Ariel Appreciation Fund",,17.7,14.12,23.11,0,0,Unknown,Industrials,0.0,0.0,N/A
+WSR,2,"First Eagle Investment Management, Third Avenue Management",,14.58,13.69,13.72,0,0,Unknown,Real Estate,0.0,0.0,N/A
+PBF,2,"First Eagle Investment Management, Third Avenue Management",,19.09,13.41,13.41,0,0,Unknown,Materials,0.0,0.0,N/A
+PCG,2,"Daniel Loeb - Third Point, Steven Romick - FPA Crescent Fund",,17.18,12.43,19.5,0,0,Unknown,Utilities,0.0,0.0,N/A
+KGC,2,"Christopher Bloomstran - Semper Augustus, First Eagle Investment Management",,12.61,11.8,21.41,0,0,Unknown,Materials,0.0,0.0,N/A
+GT,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,9.24,11.69,11.69,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+ORLA,2,"First Eagle Investment Management, Prem Watsa - Fairfax Financial Holdings",,9.28,11.01,11.85,0,0,Unknown,Materials,0.0,0.0,N/A
+MX,2,"Howard Marks - Oaktree Capital Management, Prem Watsa - Fairfax Financial Holdings",,3.43,10.79,10.79,0,0,Unknown,Technology,0.0,0.0,N/A
+BKD,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,6.26,10.54,10.54,0,0,Unknown,Health Care,0.0,0.0,N/A
+LYG,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,3.82,10.21,10.21,0,0,Unknown,Financials,0.0,0.0,N/A
+UAA,2,"Lee Ainslie - Maverick Capital, Prem Watsa - Fairfax Financial Holdings",,6.24,10.09,10.1,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
+ALIT,2,"David Einhorn - Greenlight Capital, Lee Ainslie - Maverick Capital",,5.93,9.27,9.27,0,0,Unknown,Technology,0.0,0.0,N/A
+VALE,2,"Christopher Davis - Davis Advisors, Howard Marks - Oaktree Capital Management",,9.98,8.02,8.02,0,0,Unknown,Materials,0.0,0.0,N/A
+HLN,2,"First Eagle Investment Management, Kahn Brothers Group",,10.29,5.97,9.22,0,0,Unknown,Health Care,0.0,0.0,N/A
+CTO,2,"Bill Miller - Miller Value Partners, Third Avenue Management",,19.31,5.15,5.18,0,0,Unknown,Financials,0.0,0.0,N/A
+BHC,2,"Carl Icahn - Icahn Capital Management, Howard Marks - Oaktree Capital Management",,6.47,4.33,5.72,0,0,Unknown,Health Care,0.0,0.0,N/A
+AM,2,"Glenn Greenberg - Brave Warrior Advisors, Kahn Brothers Group",,18.0,2.16,2.22,0,0,Unknown,Energy,0.0,0.0,N/A
+OUT,2,"First Eagle Investment Management, Thomas Russo - Gardner Russo & Quinn",,16.14,1.7,1.73,0,0,Unknown,Services,0.0,0.0,N/A
+CLVT,2,"Lee Ainslie - Maverick Capital, Seth Klarman - Baupost Group",,3.93,1.52,1.78,0,0,Unknown,Unknown,0.0,0.0,N/A
+GRAB,2,"Chase Coleman - Tiger Global Management, Howard Marks - Oaktree Capital Management",,4.53,1.44,2.21,0,0,Unknown,Financials,0.0,0.0,N/A
+PTON,2,"David Einhorn - Greenlight Capital, Samantha McLemore - Patient Capital Management",,6.32,1.42,2.06,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
+IVZ,2,"Nelson Peltz - Trian Fund Management, Robert Olstein - Olstein Capital Management",,15.17,1.25,1.25,0,0,Unknown,Financials,0.0,0.0,N/A
+SD,2,"Carl Icahn - Icahn Capital Management, Third Avenue Management",,11.42,0.88,0.88,0,0,Unknown,Materials,0.0,0.0,N/A
+EQC-OLD,2,"FPA Queens Road Small Cap Value Fund, Third Avenue Management",,1.61,0.31,0.62,0,0,Unknown,Financials,0.0,0.0,N/A
+SVV,1,Tom Bancroft - Makaira Partners,,6.9,52.46,52.46,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
+SHYF,1,Robert Olstein - Olstein Capital Management,,8.09,47.59,47.59,0,0,Unknown,Industrials,0.0,0.0,N/A
+CTLP,1,David Abrams - Abrams Capital Management,,7.87,39.77,39.77,0,0,Unknown,Technology,0.0,0.0,N/A
+DCGO,1,David Katz - Matrix Asset Advisors,,2.64,35.98,35.98,0,0,Unknown,Health Care,0.0,0.0,N/A
+JELD,1,Bill Miller - Miller Value Partners,,5.97,34.51,34.51,0,0,Unknown,Industrials,0.0,0.0,N/A
+EMBC,1,Yacktman Asset Management,,12.75,22.98,22.98,0,0,Unknown,Health Care,0.0,0.0,N/A
+ZIMV,1,Charles Bobrinskoy - Ariel Focus Fund,,10.8,20.19,20.19,0,0,Unknown,Health Care,0.0,0.0,N/A
+TAC,1,Howard Marks - Oaktree Capital Management,,9.33,17.9,17.9,0,0,Unknown,Utilities,0.0,0.0,N/A
+ZUMZ,1,Lee Ainslie - Maverick Capital,,14.89,14.44,14.44,0,0,Unknown,Services,0.0,0.0,N/A
+KOS,1,Samantha McLemore - Patient Capital Management,,2.28,13.6,13.6,0,0,Unknown,Materials,0.0,0.0,N/A
+FOSL,1,Bill Miller - Miller Value Partners,,1.15,13.04,13.04,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+DENN,1,Robert Olstein - Olstein Capital Management,,3.67,11.72,11.72,0,0,Unknown,Services,0.0,0.0,N/A
+PTLO,1,Glenn Welling - Engaged Capital,,11.89,10.39,10.39,0,0,Unknown,Consumer Cyclical,0.0,0.0,N/A
+SMHI,1,Christopher Bloomstran - Semper Augustus,,5.06,3.95,3.95,0,0,Unknown,Energy,0.0,0.0,N/A
+MNRO,1,Lee Ainslie - Maverick Capital,,14.47,1.87,1.87,0,0,Unknown,Consumer Goods,0.0,0.0,N/A

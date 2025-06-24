@@ -1,16 +1,16 @@
 {
-  "analysis_date": "2025-06-24 07:25:00",
+  "analysis_date": "2025-06-24 13:50:15",
   "data_source": "Dataroma.com (no external APIs)",
   "total_managers": 80,
   "total_unique_stocks": 1508,
   "total_positions": 3223,
-  "positions_with_portfolio_pct": 0,
+  "positions_with_portfolio_pct": 3146,
   "positions_with_price_data": 2371,
   "positions_with_market_cap": 0,
   "positions_with_sector": 3161,
   "positions_with_gain_loss": 0,
   "total_position_value": 0.0,
-  "average_position_size": 0,
+  "average_position_size": 13.422479338842974,
   "market_cap_distribution": {
     "Unknown": 3223
   },
@@ -27,117 +27,176 @@
     "Consumer Goods": 109
   },
   "top_10_most_held": {
-    "MSFT": {
+    "1979.T": {
       "company": "",
-      "manager_count": 35,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 105.0,
-      "sector": "Information Technology",
+      "manager_count": 1,
+      "avg_portfolio_pct": 100.0,
+      "conviction_score": 253.0,
+      "sector": "Industrials",
       "market_cap": "N/A"
     },
-    "GOOGL": {
+    "ELF": {
       "company": "",
-      "manager_count": 30,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 90.0,
+      "manager_count": 1,
+      "avg_portfolio_pct": 98.15,
+      "conviction_score": 248.38,
+      "sector": "Consumer Goods",
+      "market_cap": "N/A"
+    },
+    "MCDIF": {
+      "company": "",
+      "manager_count": 1,
+      "avg_portfolio_pct": 98.08,
+      "conviction_score": 248.2,
+      "sector": "Industrial Goods",
+      "market_cap": "N/A"
+    },
+    "GRPN": {
+      "company": "",
+      "manager_count": 1,
+      "avg_portfolio_pct": 96.91,
+      "conviction_score": 245.27,
       "sector": "Technology",
       "market_cap": "N/A"
     },
-    "GOOG": {
+    "CFRUY": {
       "company": "",
-      "manager_count": 26,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 78.0,
-      "sector": "Technology",
-      "market_cap": "N/A"
-    },
-    "V": {
-      "company": "",
-      "manager_count": 24,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 72.0,
-      "sector": "Services",
-      "market_cap": "N/A"
-    },
-    "AMZN": {
-      "company": "",
-      "manager_count": 24,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 72.0,
+      "manager_count": 1,
+      "avg_portfolio_pct": 91.68,
+      "conviction_score": 232.2,
       "sector": "Consumer Discretionary",
       "market_cap": "N/A"
     },
-    "META": {
+    "TPC": {
       "company": "",
-      "manager_count": 24,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 72.0,
-      "sector": "Technology",
+      "manager_count": 1,
+      "avg_portfolio_pct": 86.8,
+      "conviction_score": 220.0,
+      "sector": "Industrial Goods",
       "market_cap": "N/A"
     },
-    "BRK.B": {
+    "ORIC": {
       "company": "",
-      "manager_count": 20,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 60.0,
-      "sector": "Financials",
-      "market_cap": "N/A"
-    },
-    "COF": {
-      "company": "",
-      "manager_count": 18,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 54.0,
-      "sector": "Financials",
-      "market_cap": "N/A"
-    },
-    "UNH": {
-      "company": "",
-      "manager_count": 17,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 51.0,
+      "manager_count": 2,
+      "avg_portfolio_pct": 84.95,
+      "conviction_score": 218.38,
       "sector": "Health Care",
       "market_cap": "N/A"
     },
-    "AAPL": {
+    "COIN": {
       "company": "",
-      "manager_count": 17,
-      "avg_portfolio_pct": 0.0,
-      "conviction_score": 51.0,
+      "manager_count": 1,
+      "avg_portfolio_pct": 81.07,
+      "conviction_score": 205.68,
       "sector": "Technology",
+      "market_cap": "N/A"
+    },
+    "SAFRY": {
+      "company": "",
+      "manager_count": 2,
+      "avg_portfolio_pct": 79.68,
+      "conviction_score": 205.2,
+      "sector": "Industrial Goods",
+      "market_cap": "N/A"
+    },
+    "PLAY": {
+      "company": "",
+      "manager_count": 1,
+      "avg_portfolio_pct": 80.88,
+      "conviction_score": 205.2,
+      "sector": "Consumer Discretionary",
       "market_cap": "N/A"
     }
   },
   "top_5_by_conviction": {
-    "MSFT": {
+    "1979.T": {
       "company": "",
-      "conviction_score": 105.0,
-      "manager_count": 35.0,
-      "avg_portfolio_pct": 0.0
+      "conviction_score": 253.0,
+      "manager_count": 1.0,
+      "avg_portfolio_pct": 100.0
     },
-    "GOOGL": {
+    "ELF": {
       "company": "",
-      "conviction_score": 90.0,
-      "manager_count": 30.0,
-      "avg_portfolio_pct": 0.0
+      "conviction_score": 248.38,
+      "manager_count": 1.0,
+      "avg_portfolio_pct": 98.15
     },
-    "GOOG": {
+    "MCDIF": {
       "company": "",
-      "conviction_score": 78.0,
-      "manager_count": 26.0,
-      "avg_portfolio_pct": 0.0
+      "conviction_score": 248.2,
+      "manager_count": 1.0,
+      "avg_portfolio_pct": 98.08
     },
-    "V": {
+    "GRPN": {
       "company": "",
-      "conviction_score": 72.0,
-      "manager_count": 24.0,
-      "avg_portfolio_pct": 0.0
+      "conviction_score": 245.27,
+      "manager_count": 1.0,
+      "avg_portfolio_pct": 96.91
     },
-    "AMZN": {
+    "CFRUY": {
       "company": "",
-      "conviction_score": 72.0,
-      "manager_count": 24.0,
-      "avg_portfolio_pct": 0.0
+      "conviction_score": 232.2,
+      "manager_count": 1.0,
+      "avg_portfolio_pct": 91.68
+    }
+  },
+  "top_5_concentrated": {
+    "Tweedy Browne Co. - Tweedy Browne Value Fund_1979.T": {
+      "manager": "Tweedy Browne Co. - Tweedy Browne Value Fund",
+      "company": "",
+      "ticker": "1979.T",
+      "portfolio_pct": 100.0
+    },
+    "Michael Burry - Scion Asset Management_EL": {
+      "manager": "Michael Burry - Scion Asset Management",
+      "company": "",
+      "ticker": "EL",
+      "portfolio_pct": 100.0
+    },
+    "Polen Capital Management_ELF": {
+      "manager": "Polen Capital Management",
+      "company": "",
+      "ticker": "ELF",
+      "portfolio_pct": 98.15
+    },
+    "Steven Romick - FPA Crescent Fund_MCDIF": {
+      "manager": "Steven Romick - FPA Crescent Fund",
+      "company": "",
+      "ticker": "MCDIF",
+      "portfolio_pct": 98.08
+    },
+    "Lee Ainslie - Maverick Capital_GRPN": {
+      "manager": "Lee Ainslie - Maverick Capital",
+      "company": "",
+      "ticker": "GRPN",
+      "portfolio_pct": 96.91
+    }
+  },
+  "top_5_hidden_gems": {
+    "1979.T": {
+      "company": "",
+      "managers": "Tweedy Browne Co. - Tweedy Browne Value Fund",
+      "avg_portfolio_pct": 100.0
+    },
+    "ELF": {
+      "company": "",
+      "managers": "Polen Capital Management",
+      "avg_portfolio_pct": 98.15
+    },
+    "MCDIF": {
+      "company": "",
+      "managers": "Steven Romick - FPA Crescent Fund",
+      "avg_portfolio_pct": 98.08
+    },
+    "GRPN": {
+      "company": "",
+      "managers": "Lee Ainslie - Maverick Capital",
+      "avg_portfolio_pct": 96.91
+    },
+    "CFRUY": {
+      "company": "",
+      "managers": "Steven Romick - FPA Crescent Fund",
+      "avg_portfolio_pct": 91.68
     }
   }
 }

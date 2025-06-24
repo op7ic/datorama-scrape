@@ -1,15 +1,15 @@
 ticker,manager_count,managers,company,price,avg_portfolio_pct,max_portfolio_pct,total_shares,market_cap,cap_category,sector,avg_gain_loss_pct,total_position_value,market_cap_display
-BB,2,"Meridian Contrarian Fund, Prem Watsa - Fairfax Financial Holdings",,3.76,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-CLVT,2,"Lee Ainslie - Maverick Capital, Seth Klarman - Baupost Group",,3.93,0.0,0,0,0,Unknown,Unknown,0.0,0.0,N/A
-EQC-OLD,2,"FPA Queens Road Small Cap Value Fund, Third Avenue Management",,1.61,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-GCI,2,"Bill Miller - Miller Value Partners, Leon Cooperman",,2.89,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-GRAB,2,"Chase Coleman - Tiger Global Management, Howard Marks - Oaktree Capital Management",,4.53,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-HTZWW,2,"Daniel Loeb - Third Point, Francis Chou - Chou Associates",,2.26,0.0,0,0,0,Unknown,Unknown,0.0,0.0,N/A
-LYG,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,3.82,0.0,0,0,0,Unknown,Financials,0.0,0.0,N/A
-MX,2,"Howard Marks - Oaktree Capital Management, Prem Watsa - Fairfax Financial Holdings",,3.43,0.0,0,0,0,Unknown,Technology,0.0,0.0,N/A
-NUVB,2,"David Abrams - Abrams Capital Management, David Einhorn - Greenlight Capital",,1.76,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-STKL,2,"Howard Marks - Oaktree Capital Management, Leon Cooperman",,4.86,0.0,0,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
-DCGO,1,David Katz - Matrix Asset Advisors,,2.64,0.0,0,0,0,Unknown,Health Care,0.0,0.0,N/A
-DENN,1,Robert Olstein - Olstein Capital Management,,3.67,0.0,0,0,0,Unknown,Services,0.0,0.0,N/A
-FOSL,1,Bill Miller - Miller Value Partners,,1.15,0.0,0,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
-KOS,1,Samantha McLemore - Patient Capital Management,,2.28,0.0,0,0,0,Unknown,Materials,0.0,0.0,N/A
+HTZWW,2,"Daniel Loeb - Third Point, Francis Chou - Chou Associates",,2.26,59.75,69.5,0,0,Unknown,Unknown,0.0,0.0,N/A
+STKL,2,"Howard Marks - Oaktree Capital Management, Leon Cooperman",,4.86,21.92,22.02,0,0,Unknown,Consumer Goods,0.0,0.0,N/A
+NUVB,2,"David Abrams - Abrams Capital Management, David Einhorn - Greenlight Capital",,1.76,17.57,20.45,0,0,Unknown,Health Care,0.0,0.0,N/A
+BB,2,"Meridian Contrarian Fund, Prem Watsa - Fairfax Financial Holdings",,3.76,15.54,16.18,0,0,Unknown,Technology,0.0,0.0,N/A
+GCI,2,"Bill Miller - Miller Value Partners, Leon Cooperman",,2.89,14.54,14.88,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+MX,2,"Howard Marks - Oaktree Capital Management, Prem Watsa - Fairfax Financial Holdings",,3.43,10.79,10.79,0,0,Unknown,Technology,0.0,0.0,N/A
+LYG,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,3.82,10.21,10.21,0,0,Unknown,Financials,0.0,0.0,N/A
+CLVT,2,"Lee Ainslie - Maverick Capital, Seth Klarman - Baupost Group",,3.93,1.52,1.78,0,0,Unknown,Unknown,0.0,0.0,N/A
+GRAB,2,"Chase Coleman - Tiger Global Management, Howard Marks - Oaktree Capital Management",,4.53,1.44,2.21,0,0,Unknown,Financials,0.0,0.0,N/A
+EQC-OLD,2,"FPA Queens Road Small Cap Value Fund, Third Avenue Management",,1.61,0.31,0.62,0,0,Unknown,Financials,0.0,0.0,N/A
+DCGO,1,David Katz - Matrix Asset Advisors,,2.64,35.98,35.98,0,0,Unknown,Health Care,0.0,0.0,N/A
+KOS,1,Samantha McLemore - Patient Capital Management,,2.28,13.6,13.6,0,0,Unknown,Materials,0.0,0.0,N/A
+FOSL,1,Bill Miller - Miller Value Partners,,1.15,13.04,13.04,0,0,Unknown,Consumer Discretionary,0.0,0.0,N/A
+DENN,1,Robert Olstein - Olstein Capital Management,,3.67,11.72,11.72,0,0,Unknown,Services,0.0,0.0,N/A

@@ -1,17 +1,17 @@
 sector,unique_stocks,total_positions,unique_managers,avg_portfolio_pct,total_value,avg_market_cap,avg_market_cap_display
-Financials,227,565,77,0.0,0.0,0.0,N/A
-Technology,161,393,70,0.0,0.0,0.0,N/A
-Health Care,160,337,54,0.0,0.0,0.0,N/A
-Consumer Discretionary,94,281,68,0.0,0.0,0.0,N/A
-Industrials,160,279,56,0.0,0.0,0.0,N/A
-Services,98,236,67,0.0,0.0,0.0,N/A
-Information Technology,81,232,59,0.0,0.0,0.0,N/A
-Materials,110,174,48,0.0,0.0,0.0,N/A
-Consumer Staples,53,145,35,0.0,0.0,0.0,N/A
-Consumer Goods,65,109,43,0.0,0.0,0.0,N/A
-Energy,57,104,43,0.0,0.0,0.0,N/A
-Industrial Goods,42,78,39,0.0,0.0,0.0,N/A
-Consumer Cyclical,50,77,33,0.0,0.0,0.0,N/A
-Communication Services,20,42,30,0.0,0.0,0.0,N/A
-Utilities,30,42,21,0.0,0.0,0.0,N/A
-Real Estate,22,34,16,0.0,0.0,0.0,N/A
+Financials,227,565,77,9.08,0.0,0.0,N/A
+Technology,161,393,70,15.15,0.0,0.0,N/A
+Health Care,160,337,54,14.57,0.0,0.0,N/A
+Consumer Discretionary,94,281,68,11.66,0.0,0.0,N/A
+Industrials,160,279,56,12.07,0.0,0.0,N/A
+Services,98,236,67,13.55,0.0,0.0,N/A
+Information Technology,81,232,59,18.35,0.0,0.0,N/A
+Materials,110,174,48,12.38,0.0,0.0,N/A
+Consumer Staples,53,145,35,10.95,0.0,0.0,N/A
+Consumer Goods,65,109,43,14.81,0.0,0.0,N/A
+Energy,57,104,43,13.38,0.0,0.0,N/A
+Industrial Goods,42,78,39,20.27,0.0,0.0,N/A
+Consumer Cyclical,50,77,33,16.94,0.0,0.0,N/A
+Communication Services,20,42,30,15.91,0.0,0.0,N/A
+Utilities,30,42,21,19.82,0.0,0.0,N/A
+Real Estate,22,34,16,6.61,0.0,0.0,N/A

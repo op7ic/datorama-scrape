@@ -1,17 +1,17 @@
 # Dataroma Stock Analysis Reports
 
-Generated on: 2025-06-24 07:25:01
+Generated on: 2025-06-24 13:50:15
 
 ## Summary Statistics
 
 - **Total Managers Tracked**: 80
 - **Total Unique Stocks**: 1,508
 - **Total Positions**: 3,223
-- **Average Position Size**: 0.00%
+- **Average Position Size**: 13.42%
 
 ## Data Quality
 
-- Positions with Portfolio %: 0
+- Positions with Portfolio %: 3,146
 - Positions with Price Data: 2,371
 - Positions with Market Cap: 0
 - Positions with Sector Data: 3,161
