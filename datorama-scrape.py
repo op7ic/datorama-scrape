@@ -8,14 +8,6 @@ import re
 import time
 from collections import defaultdict
 
-"""
-Workflow-Ready Dataroma Scraper
-- No interactive menus (runs automatically)
-- Monthly cache updates for stock data
-- Better extraction based on actual page structure
-- Enhanced stock data in cache (price, PE, etc.)
-"""
-
 class DataromaScraper:
     def __init__(self):
         self.base_url = "https://www.dataroma.com/m/"
