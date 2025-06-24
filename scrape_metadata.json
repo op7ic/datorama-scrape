@@ -1,10 +1,23 @@
 {
-  "last_updated": "2025-06-24T00:28:22.211108",
+  "last_updated": "2025-06-24T07:24:59.998252",
+  "scrape_date": "20250624",
   "total_holdings": 3223,
   "managers_tracked": 80,
   "unique_stocks": 1508,
-  "holdings_with_prices": 0,
+  "holdings_with_portfolio_pct": 0,
+  "holdings_with_prices": 2371,
+  "holdings_with_reported_prices": 0,
   "holdings_with_market_cap": 0,
-  "holdings_with_sector": 3223,
-  "file_location": "holdings/holdings_20250624.csv"
+  "holdings_with_sector": 3161,
+  "file_location": "holdings/holdings_20250624.csv",
+  "data_quality": {
+    "pct_with_portfolio_percent": 0.0,
+    "pct_with_prices": 73.6,
+    "pct_with_market_cap": 0.0,
+    "pct_with_sector": 98.1
+  },
+  "cache_info": {
+    "total_cached_stocks": 1508,
+    "cache_update_frequency": "monthly"
+  }
 }

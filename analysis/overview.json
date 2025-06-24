@@ -1,16 +1,16 @@
 {
-  "analysis_date": "2025-06-24 00:28:22",
+  "analysis_date": "2025-06-24 07:25:00",
   "data_source": "Dataroma.com (no external APIs)",
   "total_managers": 80,
   "total_unique_stocks": 1508,
   "total_positions": 3223,
-  "positions_with_portfolio_pct": 3215,
-  "positions_with_price_data": 0,
+  "positions_with_portfolio_pct": 0,
+  "positions_with_price_data": 2371,
   "positions_with_market_cap": 0,
-  "positions_with_sector": 3223,
+  "positions_with_sector": 3161,
   "positions_with_gain_loss": 0,
   "total_position_value": 0.0,
-  "average_position_size": 2.901863141524106,
+  "average_position_size": 0,
   "market_cap_distribution": {
     "Unknown": 3223
   },
@@ -27,176 +27,117 @@
     "Consumer Goods": 109
   },
   "top_10_most_held": {
-    "INTC": {
-      "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 99.58,
-      "conviction_score": 251.95,
-      "sector": "Information Technology",
-      "market_cap": "N/A"
-    },
-    "JOE": {
-      "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 78.07,
-      "conviction_score": 198.18,
-      "sector": "Financials",
-      "market_cap": "N/A"
-    },
-    "TTEK": {
-      "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 67.42,
-      "conviction_score": 171.55,
-      "sector": "Industrials",
-      "market_cap": "N/A"
-    },
-    "IOO": {
-      "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 63.12,
-      "conviction_score": 160.8,
-      "sector": "Super Investor Stats:",
-      "market_cap": "N/A"
-    },
-    "VT": {
-      "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 59.1,
-      "conviction_score": 150.75,
-      "sector": "Super Investor Stats:",
-      "market_cap": "N/A"
-    },
-    "IEP": {
-      "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 54.55,
-      "conviction_score": 139.38,
-      "sector": "Financials",
-      "market_cap": "N/A"
-    },
     "MSFT": {
       "company": "",
       "manager_count": 35,
-      "avg_portfolio_pct": 5.41,
-      "conviction_score": 128.6,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 105.0,
       "sector": "Information Technology",
       "market_cap": "N/A"
     },
-    "KARO": {
+    "GOOGL": {
       "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 48.02,
-      "conviction_score": 123.05,
+      "manager_count": 30,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 90.0,
       "sector": "Technology",
       "market_cap": "N/A"
     },
-    "CLBT": {
+    "GOOG": {
       "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 47.09,
-      "conviction_score": 120.72,
+      "manager_count": 26,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 78.0,
       "sector": "Technology",
       "market_cap": "N/A"
     },
-    "LOAR": {
+    "V": {
       "company": "",
-      "manager_count": 1,
-      "avg_portfolio_pct": 46.92,
-      "conviction_score": 120.3,
-      "sector": "Industrials",
+      "manager_count": 24,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 72.0,
+      "sector": "Services",
+      "market_cap": "N/A"
+    },
+    "AMZN": {
+      "company": "",
+      "manager_count": 24,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 72.0,
+      "sector": "Consumer Discretionary",
+      "market_cap": "N/A"
+    },
+    "META": {
+      "company": "",
+      "manager_count": 24,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 72.0,
+      "sector": "Technology",
+      "market_cap": "N/A"
+    },
+    "BRK.B": {
+      "company": "",
+      "manager_count": 20,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 60.0,
+      "sector": "Financials",
+      "market_cap": "N/A"
+    },
+    "COF": {
+      "company": "",
+      "manager_count": 18,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 54.0,
+      "sector": "Financials",
+      "market_cap": "N/A"
+    },
+    "UNH": {
+      "company": "",
+      "manager_count": 17,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 51.0,
+      "sector": "Health Care",
+      "market_cap": "N/A"
+    },
+    "AAPL": {
+      "company": "",
+      "manager_count": 17,
+      "avg_portfolio_pct": 0.0,
+      "conviction_score": 51.0,
+      "sector": "Technology",
       "market_cap": "N/A"
     }
   },
   "top_5_by_conviction": {
-    "INTC": {
+    "MSFT": {
       "company": "",
-      "conviction_score": 251.95,
-      "manager_count": 1.0,
-      "avg_portfolio_pct": 99.58
+      "conviction_score": 105.0,
+      "manager_count": 35.0,
+      "avg_portfolio_pct": 0.0
     },
-    "JOE": {
+    "GOOGL": {
       "company": "",
-      "conviction_score": 198.18,
-      "manager_count": 1.0,
-      "avg_portfolio_pct": 78.07
+      "conviction_score": 90.0,
+      "manager_count": 30.0,
+      "avg_portfolio_pct": 0.0
     },
-    "TTEK": {
+    "GOOG": {
       "company": "",
-      "conviction_score": 171.55,
-      "manager_count": 1.0,
-      "avg_portfolio_pct": 67.42
+      "conviction_score": 78.0,
+      "manager_count": 26.0,
+      "avg_portfolio_pct": 0.0
     },
-    "IOO": {
+    "V": {
       "company": "",
-      "conviction_score": 160.8,
-      "manager_count": 1.0,
-      "avg_portfolio_pct": 63.12
+      "conviction_score": 72.0,
+      "manager_count": 24.0,
+      "avg_portfolio_pct": 0.0
     },
-    "VT": {
+    "AMZN": {
       "company": "",
-      "conviction_score": 150.75,
-      "manager_count": 1.0,
-      "avg_portfolio_pct": 59.1
-    }
-  },
-  "top_5_concentrated": {
-    "Michael Burry - Scion Asset Management_EL": {
-      "manager": "Michael Burry - Scion Asset Management",
-      "company": "",
-      "ticker": "EL",
-      "portfolio_pct": 100.0
-    },
-    "Christopher Davis - Davis Advisors_INTC": {
-      "manager": "Christopher Davis - Davis Advisors",
-      "company": "",
-      "ticker": "INTC",
-      "portfolio_pct": 99.58
-    },
-    "Polen Capital Management_SPY": {
-      "manager": "Polen Capital Management",
-      "company": "",
-      "ticker": "SPY",
-      "portfolio_pct": 84.82
-    },
-    "Bruce Berkowitz - Fairholme Capital_JOE": {
-      "manager": "Bruce Berkowitz - Fairholme Capital",
-      "company": "",
-      "ticker": "JOE",
-      "portfolio_pct": 78.07
-    },
-    "Clifford Sosin - CAS Investment Partners_CVNA": {
-      "manager": "Clifford Sosin - CAS Investment Partners",
-      "company": "",
-      "ticker": "CVNA",
-      "portfolio_pct": 77.19
-    }
-  },
-  "top_5_hidden_gems": {
-    "INTC": {
-      "company": "",
-      "managers": "Christopher Davis - Davis Advisors",
-      "avg_portfolio_pct": 99.58
-    },
-    "JOE": {
-      "company": "",
-      "managers": "Bruce Berkowitz - Fairholme Capital",
-      "avg_portfolio_pct": 78.07
-    },
-    "TTEK": {
-      "company": "",
-      "managers": "Polen Capital Management",
-      "avg_portfolio_pct": 67.42
-    },
-    "IOO": {
-      "company": "",
-      "managers": "Polen Capital Management",
-      "avg_portfolio_pct": 63.12
-    },
-    "VT": {
-      "company": "",
-      "managers": "Polen Capital Management",
-      "avg_portfolio_pct": 59.1
+      "conviction_score": 72.0,
+      "manager_count": 24.0,
+      "avg_portfolio_pct": 0.0
     }
   }
 }
