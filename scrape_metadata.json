@@ -1,23 +1,24 @@
 {
-  "last_updated": "2025-06-24T07:24:59.998252",
+  "last_updated": "2025-06-24T13:50:14.410281",
   "scrape_date": "20250624",
-  "total_holdings": 3223,
-  "managers_tracked": 80,
-  "unique_stocks": 1508,
-  "holdings_with_portfolio_pct": 0,
-  "holdings_with_prices": 2371,
-  "holdings_with_reported_prices": 0,
-  "holdings_with_market_cap": 0,
-  "holdings_with_sector": 3161,
-  "file_location": "holdings/holdings_20250624.csv",
-  "data_quality": {
-    "pct_with_portfolio_percent": 0.0,
-    "pct_with_prices": 73.6,
-    "pct_with_market_cap": 0.0,
-    "pct_with_sector": 98.1
+  "extraction_stats": {
+    "managers_processed": 80,
+    "holdings_found": 3223,
+    "holdings_with_percent": 3146,
+    "holdings_with_shares": 0,
+    "holdings_with_price": 0,
+    "stocks_enriched": 0
   },
-  "cache_info": {
-    "total_cached_stocks": 1508,
-    "cache_update_frequency": "monthly"
+  "data_quality": {
+    "total_holdings": 3223,
+    "unique_managers": 80,
+    "unique_stocks": 1508,
+    "pct_with_portfolio_percent": 97.6,
+    "pct_with_shares": 0.0,
+    "pct_with_price": 0.0
+  },
+  "debug_info": {
+    "debug_mode": false,
+    "debug_files_created": []
   }
 }

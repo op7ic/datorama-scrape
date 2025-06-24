@@ -1,51 +1,51 @@
 ticker,manager_count,managers,company,price,avg_portfolio_pct,max_portfolio_pct,portfolio_pct_std,total_shares,market_cap,cap_category,sector,industry,total_position_value,conviction_score,consistency_score,market_cap_display
-INTC,1,Christopher Davis - Davis Advisors,,0.0,99.58,99.58,0.0,0,0,Unknown,Information Technology,Unknown,0.0,251.95,99.58,N/A
-JOE,1,Bruce Berkowitz - Fairholme Capital,,0.0,78.07,78.07,0.0,0,0,Unknown,Financials,Unknown,0.0,198.18,78.07,N/A
-TTEK,1,Polen Capital Management,,0.0,67.42,67.42,0.0,0,0,Unknown,Industrials,Unknown,0.0,171.55,67.42,N/A
-IOO,1,Polen Capital Management,,0.0,63.12,63.12,0.0,0,0,Unknown,Super Investor Stats:,Unknown,0.0,160.8,63.12,N/A
-VT,1,Polen Capital Management,,0.0,59.1,59.1,0.0,0,0,Unknown,Super Investor Stats:,Unknown,0.0,150.75,59.1,N/A
-IEP,1,Carl Icahn - Icahn Capital Management,,0.0,54.55,54.55,0.0,0,0,Unknown,Financials,Unknown,0.0,139.38,54.55,N/A
-KARO,1,Polen Capital Management,,0.0,48.02,48.02,0.0,0,0,Unknown,Technology,Unknown,0.0,123.05,48.02,N/A
-CLBT,1,Polen Capital Management,,0.0,47.09,47.09,0.0,0,0,Unknown,Technology,Unknown,0.0,120.72,47.09,N/A
-LOAR,1,David Abrams - Abrams Capital Management,,0.0,46.92,46.92,0.0,0,0,Unknown,Industrials,Unknown,0.0,120.3,46.92,N/A
-HTZWW,2,"Daniel Loeb - Third Point, Francis Chou - Chou Associates",,0.0,35.57,71.0,50.11,0,0,Unknown,Super Investor Stats:,Unknown,0.0,112.64,0.7,N/A
-PHJMF,1,Thomas Russo - Gardner Russo & Quinn,,0.0,33.33,33.33,0.0,0,0,Unknown,Consumer Goods,Unknown,0.0,86.32,33.33,N/A
-GPI,1,Greg Alexander - Conifer Management,,0.0,32.91,32.91,0.0,0,0,Unknown,Consumer Discretionary,Unknown,0.0,85.28,32.91,N/A
-JHG,1,Nelson Peltz - Trian Fund Management,,0.0,30.84,30.84,0.0,0,0,Unknown,Financials,Unknown,0.0,80.1,30.84,N/A
-WING,2,"Polen Capital Management, Stephen Mandel - Lone Pine Capital",,0.0,30.27,59.65,41.55,0,0,Unknown,Services,Unknown,0.0,96.36,0.71,N/A
-OUT,2,"First Eagle Investment Management, Thomas Russo - Gardner Russo & Quinn",,0.0,30.26,60.49,42.75,0,0,Unknown,Services,Unknown,0.0,96.77,0.69,N/A
-SPY,3,"Francois Rochon - Giverny Capital, Polen Capital Management, Yacktman Asset Management",,0.0,28.3,84.82,48.95,0,0,Unknown,,Unknown,0.0,108.01,0.57,N/A
-SKIL,1,Polen Capital Management,,0.0,28.22,28.22,0.0,0,0,Unknown,Information Technology,Unknown,0.0,73.55,28.22,N/A
-FIX,2,"Polen Capital Management, Thomas Gayner - Markel Group",,0.0,28.01,55.98,39.56,0,0,Unknown,Industrials,Unknown,0.0,90.01,0.69,N/A
-ADSK,2,"Polen Capital Management, Viking Global Investors",,0.0,26.4,52.55,36.98,0,0,Unknown,Information Technology,Unknown,0.0,85.07,0.7,N/A
-RHI,1,Greenhaven Associates,,0.0,25.9,25.9,0.0,0,0,Unknown,Industrials,Unknown,0.0,67.75,25.9,N/A
-SAIA,1,Polen Capital Management,,0.0,22.73,22.73,0.0,0,0,Unknown,Services,Unknown,0.0,59.82,22.73,N/A
-AMRK,1,Yacktman Asset Management,,0.0,21.74,21.74,0.0,0,0,Unknown,Financials,Unknown,0.0,57.35,21.74,N/A
-HCC,2,"Mohnish Pabrai - Pabrai Investments, Third Avenue Management",,0.0,21.22,36.57,21.71,0,0,Unknown,Financials,Unknown,0.0,66.72,0.93,N/A
-RH,1,Christopher Davis - Davis Advisors,,0.0,20.55,20.55,0.0,0,0,Unknown,Services,Unknown,0.0,54.38,20.55,N/A
-TDG,3,"AltaRock Partners, Bryan Lawrence - Oakcliff Capital, Triple Frond Partners",,0.0,20.0,27.26,6.34,0,0,Unknown,Industrial Goods,Unknown,0.0,62.63,2.72,N/A
-MRKR,1,David Katz - Matrix Asset Advisors,,0.0,18.33,18.33,0.0,0,0,Unknown,Health Care,Unknown,0.0,48.82,18.33,N/A
-CVI,1,Carl Icahn - Icahn Capital Management,,0.0,17.76,17.76,0.0,0,0,Unknown,Materials,Unknown,0.0,47.4,17.76,N/A
-BBWI,1,Tom Bancroft - Makaira Partners,,0.0,16.66,16.66,0.0,0,0,Unknown,Services,Unknown,0.0,44.65,16.66,N/A
-PTLO,1,Glenn Welling - Engaged Capital,,0.0,16.61,16.61,0.0,0,0,Unknown,Consumer Cyclical,Unknown,0.0,44.52,16.61,N/A
-TRMD,1,Howard Marks - Oaktree Capital Management,,0.0,16.39,16.39,0.0,0,0,Unknown,Industrials,Unknown,0.0,43.98,16.39,N/A
-EXE,1,Howard Marks - Oaktree Capital Management,,0.0,15.31,15.31,0.0,0,0,Unknown,Energy,Unknown,0.0,41.28,15.31,N/A
-GTLS,2,"Alex Roepers - Atlantic Investment Management, Glenn Welling - Engaged Capital",,0.0,15.08,16.57,2.11,0,0,Unknown,Industrial Goods,Unknown,0.0,44.44,4.85,N/A
-CATO,1,Yacktman Asset Management,,0.0,15.02,15.02,0.0,0,0,Unknown,Consumer Discretionary,Unknown,0.0,40.55,15.02,N/A
-OLLI,2,"Lee Ainslie - Maverick Capital, Polen Capital Management",,0.0,14.38,28.6,20.12,0,0,Unknown,Services,Unknown,0.0,49.06,0.68,N/A
-ORLA,2,"First Eagle Investment Management, Prem Watsa - Fairfax Financial Holdings",,0.0,14.36,28.57,20.09,0,0,Unknown,Materials,Unknown,0.0,49.0,0.68,N/A
-TKO,1,Lindsell Train,,0.0,14.35,14.35,0.0,0,0,Unknown,Services,Unknown,0.0,38.88,14.35,N/A
-GIL,1,Bryan Lawrence - Oakcliff Capital,,0.0,14.25,14.25,0.0,0,0,Unknown,Consumer Goods,Unknown,0.0,38.62,14.25,N/A
-VAL,2,"Mohnish Pabrai - Pabrai Investments, Third Avenue Management",,0.0,14.18,23.87,13.7,0,0,Unknown,Energy,Unknown,0.0,46.3,0.96,N/A
-GRBK,2,"David Einhorn - Greenlight Capital, Third Avenue Management",,0.0,14.01,27.96,19.73,0,0,Unknown,Financials,Unknown,0.0,48.0,0.68,N/A
-HGV,1,Clifford Sosin - CAS Investment Partners,,0.0,13.89,13.89,0.0,0,0,Unknown,Consumer Cyclical,Unknown,0.0,37.72,13.89,N/A
-HKHHY,1,Thomas Russo - Gardner Russo & Quinn,,0.0,13.85,13.85,0.0,0,0,Unknown,Consumer Goods,Unknown,0.0,37.62,13.85,N/A
-NCNO,1,Dennis Hong - ShawSpring Partners,,0.0,13.78,13.78,0.0,0,0,Unknown,Technology,Unknown,0.0,37.45,13.78,N/A
-EVH,1,Glenn Welling - Engaged Capital,,0.0,12.51,12.51,0.0,0,0,Unknown,Technology,Unknown,0.0,34.28,12.51,N/A
-AER,1,Pat Dorsey - Dorsey Asset Management,,0.0,12.33,12.33,0.0,0,0,Unknown,Services,Unknown,0.0,33.83,12.33,N/A
-RYCEF,1,Ruane Cunniff - Sequoia Fund,,0.0,12.26,12.26,0.0,0,0,Unknown,Industrial Goods,Unknown,0.0,33.65,12.26,N/A
-APTV,2,"Alex Roepers - Atlantic Investment Management, Robert Olstein - Olstein Capital Management",,0.0,11.95,22.4,14.78,0,0,Unknown,Consumer Goods,Unknown,0.0,41.1,0.76,N/A
-WEN,1,Nelson Peltz - Trian Fund Management,,0.0,11.91,11.91,0.0,0,0,Unknown,Consumer Discretionary,Unknown,0.0,32.78,11.91,N/A
-BRZE,1,Dennis Hong - ShawSpring Partners,,0.0,11.77,11.77,0.0,0,0,Unknown,Technology,Unknown,0.0,32.42,11.77,N/A
-TRUP,1,Josh Tarasoff - Greenlea Lane Capital,,0.0,11.69,11.69,0.0,0,0,Unknown,Financials,Unknown,0.0,32.22,11.69,N/A
-MDLZ,1,Lindsell Train,,0.0,11.3,11.3,0.0,0,0,Unknown,Consumer Staples,Unknown,0.0,31.25,11.3,N/A
+1979.T,1,Tweedy Browne Co. - Tweedy Browne Value Fund,,0.0,100.0,100.0,0.0,0,0,Unknown,Industrials,Unknown,0.0,253.0,100.0,N/A
+ELF,1,Polen Capital Management,,0.0,98.15,98.15,0.0,0,0,Unknown,Consumer Goods,Unknown,0.0,248.38,98.15,N/A
+MCDIF,1,Steven Romick - FPA Crescent Fund,,0.0,98.08,98.08,0.0,0,0,Unknown,Industrial Goods,Unknown,0.0,248.2,98.08,N/A
+GRPN,1,Lee Ainslie - Maverick Capital,,0.0,96.91,96.91,0.0,0,0,Unknown,Technology,Unknown,0.0,245.27,96.91,N/A
+CFRUY,1,Steven Romick - FPA Crescent Fund,,0.0,91.68,91.68,0.0,0,0,Unknown,Consumer Discretionary,Unknown,0.0,232.2,91.68,N/A
+TPC,1,Bill Miller - Miller Value Partners,,0.0,86.8,86.8,0.0,0,0,Unknown,Industrial Goods,Unknown,0.0,220.0,86.8,N/A
+ORIC,2,"Meridian Contrarian Fund, Viking Global Investors",,5.58,84.95,84.95,0.0,0,0,Unknown,Health Care,Unknown,0.0,218.38,84.95,N/A
+COIN,1,Samantha McLemore - Patient Capital Management,,0.0,81.07,81.07,0.0,0,0,Unknown,Technology,Unknown,0.0,205.68,81.07,N/A
+PLAY,1,Samantha McLemore - Patient Capital Management,,0.0,80.88,80.88,0.0,0,0,Unknown,Consumer Discretionary,Unknown,0.0,205.2,80.88,N/A
+TTMI,1,First Eagle Investment Management,,0.0,80.2,80.2,0.0,0,0,Unknown,Technology,Unknown,0.0,203.5,80.2,N/A
+SAFRY,2,"Steven Romick - FPA Crescent Fund, Tweedy Browne Co. - Tweedy Browne Value Fund",,263.15,79.68,79.69,0.01,0,0,Unknown,Industrial Goods,Unknown,0.0,205.2,78.89,N/A
+AMSC,1,Meridian Contrarian Fund,,0.0,79.05,79.05,0.0,0,0,Unknown,Technology,Unknown,0.0,200.62,79.05,N/A
+RBLX,1,ValueAct Capital,,0.0,79.04,79.04,0.0,0,0,Unknown,Communication Services,Unknown,0.0,200.6,79.04,N/A
+BNTGY,1,Tweedy Browne Co. - Tweedy Browne Value Fund,,0.0,77.64,77.64,0.0,0,0,Unknown,Materials,Unknown,0.0,197.1,77.64,N/A
+EYE,2,"First Eagle Investment Management, Lee Ainslie - Maverick Capital",,12.78,77.54,77.54,0.0,0,0,Unknown,Consumer Cyclical,Unknown,0.0,199.85,77.54,N/A
+NFE,1,Samantha McLemore - Patient Capital Management,,0.0,74.97,74.97,0.0,0,0,Unknown,Energy,Unknown,0.0,190.42,74.97,N/A
+ODD,1,Terry Smith - Fundsmith,,0.0,74.2,74.2,0.0,0,0,Unknown,Technology,Unknown,0.0,188.5,74.2,N/A
+UOVEY,1,Tweedy Browne Co. - Tweedy Browne Value Fund,,0.0,72.41,72.41,0.0,0,0,Unknown,Financials,Unknown,0.0,184.02,72.41,N/A
+ZDGE,1,Kahn Brothers Group,,0.0,71.37,71.37,0.0,0,0,Unknown,Technology,Unknown,0.0,181.42,71.37,N/A
+CCJ,1,Meridian Contrarian Fund,,0.0,71.06,71.06,0.0,0,0,Unknown,Materials,Unknown,0.0,180.65,71.06,N/A
+GHM,2,"First Eagle Investment Management, Robert Olstein - Olstein Capital Management",,28.84,68.33,68.39,0.08,0,0,Unknown,Industrial Goods,Unknown,0.0,176.86,63.27,N/A
+GEV,2,"Chase Coleman - Tiger Global Management, Christopher Bloomstran - Semper Augustus",,305.27,65.43,65.44,0.01,0,0,Unknown,Utilities,Unknown,0.0,169.58,64.78,N/A
+MTCH,1,Harry Burn - Sound Shore,,0.0,64.86,64.86,0.0,0,0,Unknown,Services,Unknown,0.0,165.15,64.86,N/A
+ECG,1,FPA Queens Road Small Cap Value Fund,,0.0,63.76,63.76,0.0,0,0,Unknown,Industrials,Unknown,0.0,162.4,63.76,N/A
+VRT,1,Leon Cooperman,,0.0,63.61,63.61,0.0,0,0,Unknown,Industrials,Unknown,0.0,162.02,63.61,N/A
+HTZ,1,Bill Ackman - Pershing Square Capital Management,,0.0,62.94,62.94,0.0,0,0,Unknown,Services,Unknown,0.0,160.35,62.94,N/A
+RNMBF,1,Tweedy Browne Co. - Tweedy Browne Value Fund,,0.0,60.79,60.79,0.0,0,0,Unknown,Industrials,Unknown,0.0,154.98,60.79,N/A
+WING,2,"Polen Capital Management, Stephen Mandel - Lone Pine Capital",,225.58,60.03,60.04,0.01,0,0,Unknown,Services,Unknown,0.0,156.08,59.44,N/A
+BATL,1,Howard Marks - Oaktree Capital Management,,0.0,60.0,60.0,0.0,0,0,Unknown,Energy,Unknown,0.0,153.0,60.0,N/A
+HTZWW,2,"Daniel Loeb - Third Point, Francis Chou - Chou Associates",,2.26,59.75,69.5,13.79,0,0,Unknown,Unknown,Unknown,0.0,160.25,4.04,N/A
+RCKT,2,"Lee Ainslie - Maverick Capital, Torray Funds",,6.67,59.52,59.52,0.0,0,0,Unknown,Health Care,Unknown,0.0,154.8,59.52,N/A
+NRG,1,David Tepper - Appaloosa Management,,0.0,59.28,59.28,0.0,0,0,Unknown,Utilities,Unknown,0.0,151.2,59.28,N/A
+CEG,1,Torray Funds,,0.0,58.3,58.3,0.0,0,0,Unknown,Utilities,Unknown,0.0,148.75,58.3,N/A
+BRZE,1,Dennis Hong - ShawSpring Partners,,0.0,58.18,58.18,0.0,0,0,Unknown,Technology,Unknown,0.0,148.45,58.18,N/A
+FIX,2,"Polen Capital Management, Thomas Gayner - Markel Group",,322.31,57.11,57.15,0.05,0,0,Unknown,Industrials,Unknown,0.0,148.79,54.39,N/A
+ZS,1,Chase Coleman - Tiger Global Management,,0.0,56.75,56.75,0.0,0,0,Unknown,Technology,Unknown,0.0,144.88,56.75,N/A
+VRNA,1,Lee Ainslie - Maverick Capital,,0.0,55.16,55.16,0.0,0,0,Unknown,Health Care,Unknown,0.0,140.9,55.16,N/A
+JBL,1,Lee Ainslie - Maverick Capital,,0.0,55.08,55.08,0.0,0,0,Unknown,Information Technology,Unknown,0.0,140.7,55.08,N/A
+DY,1,First Eagle Investment Management,,0.0,54.65,54.65,0.0,0,0,Unknown,Information Technology,Unknown,0.0,139.62,54.65,N/A
+ALGGF,1,Tweedy Browne Co. - Tweedy Browne Value Fund,,0.0,54.55,54.55,0.0,0,0,Unknown,Industrials,Unknown,0.0,139.38,54.55,N/A
+ZVIA,1,Meridian Contrarian Fund,,0.0,54.17,54.17,0.0,0,0,Unknown,Consumer Goods,Unknown,0.0,138.43,54.17,N/A
+MYRG,1,Third Avenue Management,,0.0,53.31,53.31,0.0,0,0,Unknown,Industrial Goods,Unknown,0.0,136.28,53.31,N/A
+IDT,1,Kahn Brothers Group,,0.0,53.02,53.02,0.0,0,0,Unknown,Technology,Unknown,0.0,135.55,53.02,N/A
+ATZ.TO,1,Meridian Contrarian Fund,,0.0,52.83,52.83,0.0,0,0,Unknown,Consumer Cyclical,Unknown,0.0,135.07,52.83,N/A
+W,1,Lee Ainslie - Maverick Capital,,0.0,52.58,52.58,0.0,0,0,Unknown,Services,Unknown,0.0,134.45,52.58,N/A
+SVV,1,Tom Bancroft - Makaira Partners,,6.9,52.46,52.46,0.0,0,0,Unknown,Consumer Cyclical,Unknown,0.0,134.15,52.46,N/A
+RLYB,1,Viking Global Investors,,0.0,52.31,52.31,0.0,0,0,Unknown,Health Care,Unknown,0.0,133.78,52.31,N/A
+CABO,1,Thomas Gayner - Markel Group,,0.0,52.02,52.02,0.0,0,0,Unknown,Technology,Unknown,0.0,133.05,52.02,N/A
+HLNCF,1,Dodge & Cox,,0.0,51.41,51.41,0.0,0,0,Unknown,Health Care,Unknown,0.0,131.52,51.41,N/A
+DNA,1,Viking Global Investors,,0.0,51.23,51.23,0.0,0,0,Unknown,Health Care,Unknown,0.0,131.07,51.23,N/A
