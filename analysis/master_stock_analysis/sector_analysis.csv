@@ -1,18 +1,18 @@
 sector,unique_stocks,total_positions,unique_managers,avg_portfolio_pct,total_value,avg_market_cap,avg_market_cap_display
 Financials,227,565,77,3.38,0.0,0.0,N/A
 Technology,161,393,70,3.15,0.0,0.0,N/A
-Health Care,160,337,54,1.82,0.0,0.0,N/A
+Health Care,160,337,54,1.8,0.0,0.0,N/A
 Consumer Discretionary,94,281,68,3.31,0.0,0.0,N/A
 Industrials,160,279,56,2.42,0.0,0.0,N/A
-Services,98,236,67,3.94,0.0,0.0,N/A
-Information Technology,81,232,59,3.62,0.0,0.0,N/A
-Materials,110,174,48,2.1,0.0,0.0,N/A
+Services,98,236,67,3.92,0.0,0.0,N/A
+Information Technology,81,232,59,3.61,0.0,0.0,N/A
+Materials,110,174,48,2.12,0.0,0.0,N/A
 Consumer Staples,53,145,35,2.47,0.0,0.0,N/A
 Consumer Goods,65,109,43,2.63,0.0,0.0,N/A
 Energy,57,104,43,2.66,0.0,0.0,N/A
 Industrial Goods,42,78,39,2.62,0.0,0.0,N/A
 Consumer Cyclical,50,77,33,1.98,0.0,0.0,N/A
-Super Investor Stats:,56,62,17,4.11,0.0,0.0,N/A
+Super Investor Stats:,56,62,17,4.21,0.0,0.0,N/A
 Communication Services,20,42,30,1.83,0.0,0.0,N/A
 Utilities,30,42,21,2.15,0.0,0.0,N/A
 Real Estate,22,34,16,0.87,0.0,0.0,N/A

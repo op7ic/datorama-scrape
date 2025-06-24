@@ -1,5 +1,5 @@
 {
-  "analysis_date": "2025-06-23 16:35:03",
+  "analysis_date": "2025-06-24 00:28:22",
   "data_source": "Dataroma.com (no external APIs)",
   "total_managers": 80,
   "total_unique_stocks": 1508,
@@ -10,7 +10,7 @@
   "positions_with_sector": 3223,
   "positions_with_gain_loss": 0,
   "total_position_value": 0.0,
-  "average_position_size": 2.902811819595646,
+  "average_position_size": 2.901863141524106,
   "market_cap_distribution": {
     "Unknown": 3223
   },
