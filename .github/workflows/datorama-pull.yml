@@ -39,7 +39,7 @@ jobs:
       run: |
         mkdir -p holdings
         mkdir -p cache
-        mkdir -p analysis/master_stock_analysis
+        mkdir -p analysis
     
     - name: Get recent holdings for comparison
       run: |
@@ -58,8 +58,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install beautifulsoup4 pandas requests lxml html5lib openpyxl numpy yfinance playwright beautifulsoup4 requests
-        playwright install chromium
+        pip install beautifulsoup4 pandas requests lxml html5lib openpyxl numpy yfinance beautifulsoup4 requests
     
     - name: Run smart scraper
       run: |
@@ -75,7 +74,7 @@ jobs:
     - name: Analyze holdings
       run: |
         echo "Analyzing holdings..."
-        python analyze_holdings.py --mode current
+        python analyze_holdings.py
     
     - name: Verify output
       run: |
