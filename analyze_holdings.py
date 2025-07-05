@@ -227,8 +227,30 @@ class HoldingsAnalyzer:
                     self.managers_df = pd.DataFrame(managers_list)
                 logging.info(f"Loaded {len(self.managers_df)} managers")
 
+        # Merge enriched stock data into holdings
+        self._merge_enriched_data()
+        
         # Add manager names to dataframes
         self._add_manager_names()
+
+    def _merge_enriched_data(self) -> None:
+        """Merge enriched stock data into holdings DataFrame."""
+        if self.holdings_df is not None and self.stocks_df is not None and not self.holdings_df.empty and not self.stocks_df.empty:
+            # Merge enriched stock data into holdings
+            enriched_columns = ['sector', 'market_cap', 'pe_ratio', 'dividend_yield', '52_week_low', '52_week_high']
+            available_columns = [col for col in enriched_columns if col in self.stocks_df.columns]
+            
+            if available_columns:
+                # Merge stock data into holdings
+                merge_data = self.stocks_df[['ticker'] + available_columns]
+                self.holdings_df = self.holdings_df.merge(
+                    merge_data, 
+                    on='ticker', 
+                    how='left'
+                )
+                logging.info(f"Merged enriched data for {len(available_columns)} fields: {', '.join(available_columns)}")
+            else:
+                logging.warning("No enriched data fields found in stocks data")
 
     def _add_manager_names(self) -> None:
         """Add human-readable manager names to dataframes."""
