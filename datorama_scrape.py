@@ -24,10 +24,6 @@ from bs4 import BeautifulSoup
 from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from playwright.async_api import async_playwright
 
-# Progress Update:
-# ✓ Set up imports with proper ordering and type hints
-# → Working on core scraper class implementation
-
 # Ensure log directory exists
 Path("log").mkdir(exist_ok=True)
 

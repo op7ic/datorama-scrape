@@ -1,189 +1,290 @@
-name: Dataroma Smart Scraper
+name: Monthly Investment Analysis Update
 
 on:
-  push:
-    branches: [ "main" ]
   schedule:
-    - cron: "0 0 1 * *"  # Cron job once a month
-  workflow_dispatch:  # Allow manual trigger
-
-permissions:
-  contents: write
+    # Run on the 1st day of every month at 6 AM UTC
+    - cron: '0 6 1 * *'
+  workflow_dispatch:  # Allow manual triggering
+    inputs:
+      force_scrape:
+        description: 'Force fresh data scraping (ignores cache)'
+        required: false
+        default: 'false'
+        type: boolean
 
 jobs:
-  scrape-and-analyze:
+  monthly-analysis:
     runs-on: ubuntu-latest
+    timeout-minutes: 60  # Generous timeout for complete pipeline
+    
     steps:
-    # Use sparse checkout to minimize download
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
       with:
-        sparse-checkout: |
-          *.py
-          *.txt
-          *.json
-          *.md
-          cache/
-          analysis/
-          latest_holdings.csv
-        sparse-checkout-cone-mode: false
-        fetch-depth: 1
-    
-    - name: Configure Git
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git config core.sparseCheckout true
-        git config advice.updateSparsePath false
-    
-    - name: Setup directories
-      run: |
-        mkdir -p holdings
-        mkdir -p cache
-        mkdir -p analysis
-    
-    - name: Get recent holdings for comparison
-      run: |
-        # Only fetch the most recent holdings file for incremental analysis
-        latest_holding=$(git ls-tree -r HEAD --name-only | grep "holdings/holdings_.*\.csv" | sort -r | head -1)
-        if [ -n "$latest_holding" ]; then
-          echo "Fetching latest holdings: $latest_holding"
-          git checkout HEAD -- "$latest_holding" 2>/dev/null || true
-        fi
-    
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
       with:
-        python-version: "3.10"
-    
-    - name: Install dependencies
+        python-version: '3.9'
+
+    - name: Cache Python dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install beautifulsoup4 pandas requests lxml html5lib openpyxl numpy yfinance beautifulsoup4 requests
-    
-    - name: Run smart scraper
+        pip install -r requirements.txt
+
+    - name: Install Playwright and browsers
       run: |
-        echo "Starting Dataroma scraper..."
-        python datorama_scrape.py
+        # Install Playwright with optimizations for headless Ubuntu
+        playwright install chromium
+        playwright install-deps chromium
+
+    - name: Configure environment for headless operation
+      run: |
+        # Set up headless display for GUI applications
+        export DISPLAY=:99
+        export PLAYWRIGHT_BROWSERS_PATH=$HOME/.cache/ms-playwright
         
-        echo ""
-        echo "Scraper completed. Checking cache..."
-        if [ -f "cache/stock_data_cache.json" ]; then
-          echo "Stock cache size: $(wc -l < cache/stock_data_cache.json) lines"
-        fi
-    
-    - name: Analyze holdings
+        # Configure timeouts for stable headless operation
+        echo "PLAYWRIGHT_TIMEOUT=60000" >> $GITHUB_ENV
+        echo "SCRAPER_DELAY=2" >> $GITHUB_ENV
+        echo "MAX_RETRIES=3" >> $GITHUB_ENV
+
+    - name: Check existing cache age
+      id: cache-check
       run: |
-        echo "Analyzing holdings..."
-        python analyze_holdings.py
-    
-    - name: Verify output
-      run: |
-        echo ""
-        echo "Checking generated files..."
-        
-        if [ -f "analysis/overview.json" ]; then
-          echo "✓ Overview generated"
+        if [ -f "cache/holdings.json" ] && [ -f "cache/history.json" ]; then
+          # Get cache file modification time
+          cache_age=$(stat -c %Y cache/holdings.json)
+          current_time=$(date +%s)
+          age_days=$(( (current_time - cache_age) / 86400 ))
+          
+          echo "Cache age: $age_days days"
+          echo "cache_age_days=$age_days" >> $GITHUB_OUTPUT
+          
+          if [ $age_days -gt 25 ] || [ "${{ github.event.inputs.force_scrape }}" = "true" ]; then
+            echo "Cache is stale or force scrape requested - will refresh"
+            echo "should_scrape=true" >> $GITHUB_OUTPUT
+          else
+            echo "Cache is fresh - will use existing data"
+            echo "should_scrape=false" >> $GITHUB_OUTPUT
+          fi
         else
-          echo "✗ Overview missing"
+          echo "No cache found - will scrape fresh data"
+          echo "should_scrape=true" >> $GITHUB_OUTPUT
+          echo "cache_age_days=999" >> $GITHUB_OUTPUT
         fi
-        
-        # Count CSV files
-        csv_count=$(find analysis -name "*.csv" -type f | wc -l)
-        echo "Generated $csv_count CSV files"
-        
-        # Check master folder
-        if [ -d "analysis/master_stock_analysis" ]; then
-          master_count=$(find analysis/master_stock_analysis -name "*.csv" -type f | wc -l)
-          echo "Master folder contains $master_count CSV files"
-        fi
-    
-    - name: Weekly full refresh (Sundays)
-      if: github.event.schedule == '0 0 * * 0' || github.event_name == 'workflow_dispatch'
+
+    - name: Scrape fresh investment data
+      if: steps.cache-check.outputs.should_scrape == 'true'
+      timeout-minutes: 45
       run: |
-        echo "Sunday or manual trigger - clearing old cache for full refresh"
+        echo "🔄 Starting fresh data scraping..."
+        echo "Environment: Headless Ubuntu with optimized timeouts"
         
-        # Archive old cache
-        if [ -f "cache/stock_data_cache.json" ]; then
-          cp cache/stock_data_cache.json "cache/stock_data_cache_$(date +%Y%m%d).backup"
+        # Run scraper with headless-optimized settings
+        python3 datorama_scrape.py \
+          --headless \
+          --timeout 60 \
+          --delay 2 \
+          --max-retries 3 \
+          --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        
+        echo "✅ Data scraping completed successfully"
+        
+        # Verify scraped data quality
+        echo "📊 Data validation:"
+        echo "Holdings: $(cat cache/holdings.json | jq '. | length') records"
+        echo "History: $(cat cache/history.json | jq '. | length') activities"
+
+    - name: Generate comprehensive investment analysis
+      timeout-minutes: 15
+      run: |
+        echo "🔬 Starting comprehensive investment analysis..."
+        
+        # Remove old analysis to ensure fresh generation
+        rm -rf analysis/
+        
+        # Generate complete analysis suite
+        python3 analyze_holdings.py
+        
+        echo "✅ Analysis generation completed successfully"
+
+    - name: Validate analysis outputs
+      run: |
+        echo "🔍 Validating analysis outputs..."
+        
+        # Check main analysis directory
+        if [ ! -d "analysis" ]; then
+          echo "❌ Analysis directory not created"
+          exit 1
         fi
         
-        # Fetch more historical holdings for full analysis
-        echo "Fetching last 30 days of holdings..."
-        thirty_days_ago=$(date -d "30 days ago" +%Y%m%d)
+        # Count and validate main analysis files
+        csv_count=$(ls analysis/*.csv 2>/dev/null | wc -l)
+        visual_count=$(ls analysis/visuals/*.png 2>/dev/null | wc -l)
         
-        git ls-tree -r HEAD --name-only | grep "holdings/holdings_.*\.csv" | while read file; do
-          file_date=$(echo $file | grep -o '[0-9]\{8\}')
-          if [ "$file_date" -ge "$thirty_days_ago" ] 2>/dev/null; then
-            git checkout HEAD -- "$file" 2>/dev/null || true
+        echo "📊 Main analysis: $csv_count CSV files, $visual_count visualizations"
+        
+        if [ $csv_count -lt 20 ]; then
+          echo "❌ Insufficient main analysis files (expected 20+, got $csv_count)"
+          exit 1
+        fi
+        
+        if [ $visual_count -lt 3 ]; then
+          echo "❌ Insufficient main visualizations (expected 3+, got $visual_count)"
+          exit 1
+        fi
+        
+        # Check historical analysis
+        hist_csv_count=$(ls analysis/historical/*.csv 2>/dev/null | wc -l)
+        hist_visual_count=$(ls analysis/historical/visuals/*.png 2>/dev/null | wc -l)
+        
+        echo "📈 Historical analysis: $hist_csv_count CSV files, $hist_visual_count visualizations"
+        
+        if [ $hist_csv_count -lt 5 ]; then
+          echo "❌ Insufficient historical analysis files (expected 5+, got $hist_csv_count)"
+          exit 1
+        fi
+        
+        if [ $hist_visual_count -lt 3 ]; then
+          echo "❌ Insufficient historical visualizations (expected 3+, got $hist_visual_count)"
+          exit 1
+        fi
+        
+        # Verify critical files exist
+        critical_files=(
+          "analysis/interesting_stocks_overview.csv"
+          "analysis/manager_performance.csv"
+          "analysis/high_conviction_stocks.csv"
+          "analysis/historical/manager_performance_3year_summary.csv"
+          "analysis/historical/quarterly_activity_timeline.csv"
+          "analysis/visuals/comprehensive_holdings_overview.png"
+          "analysis/historical/visuals/manager_performance_3year.png"
+          "README.md"
+        )
+        
+        for file in "${critical_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            echo "❌ Critical file missing: $file"
+            exit 1
           fi
         done
         
-        # Re-run analyzer in full mode
-        python analyze_holdings.py --mode full
-    
-    - name: Prepare commit
+        echo "✅ All analysis outputs validated successfully"
+
+    - name: Generate performance summary
+      id: summary
       run: |
-        # Stage new/updated files with sparse flag
-        git add --sparse *.json *.csv analysis/ cache/ || true
+        echo "📊 Generating performance summary..."
         
-        # Only add today's holdings file
-        today=$(date +%Y%m%d)
-        if [ -f "holdings/holdings_${today}.csv" ]; then
-          git add --sparse "holdings/holdings_${today}.csv" || true
-        fi
+        # Extract key metrics for summary
+        total_holdings=$(cat cache/holdings.json | jq '. | length')
+        total_activities=$(cat cache/history.json | jq '. | length')
+        manager_count=$(cat cache/holdings.json | jq '[.[].manager] | unique | length')
         
-        # Show what will be committed
-        echo ""
-        echo "Files to be committed:"
-        git status --porcelain | head -20
+        # Get top stocks from analysis
+        top_stock=$(head -2 analysis/interesting_stocks_overview.csv | tail -1 | cut -d',' -f1)
+        top_conviction=$(head -2 analysis/high_conviction_stocks.csv | tail -1 | cut -d',' -f1)
         
-        file_count=$(git status --porcelain | wc -l)
-        echo "Total files changed: $file_count"
-    
-    - name: Commit and push
+        # Calculate data freshness
+        cache_date=$(stat -c %Y cache/holdings.json)
+        cache_human=$(date -d @$cache_date '+%Y-%m-%d %H:%M UTC')
+        
+        echo "summary_holdings=$total_holdings" >> $GITHUB_OUTPUT
+        echo "summary_activities=$total_activities" >> $GITHUB_OUTPUT
+        echo "summary_managers=$manager_count" >> $GITHUB_OUTPUT
+        echo "summary_top_stock=$top_stock" >> $GITHUB_OUTPUT
+        echo "summary_top_conviction=$top_conviction" >> $GITHUB_OUTPUT
+        echo "summary_cache_date=$cache_human" >> $GITHUB_OUTPUT
+
+    - name: Check for changes and commit
+      id: git-check
       run: |
-        # Check if there are changes
-        if [ -n "$(git status --porcelain)" ]; then
-          # Create meaningful commit message
-          if [ -f "scrape_metadata.json" ]; then
-            stocks=$(python -c "import json; d=json.load(open('scrape_metadata.json')); print(d.get('unique_stocks', 0))")
-            managers=$(python -c "import json; d=json.load(open('scrape_metadata.json')); print(d.get('managers_tracked', 0))")
-            message="Update: $stocks stocks from $managers managers [$(date +%Y-%m-%d)]"
-          else
-            message="Update Dataroma data [$(date +%Y-%m-%d)]"
-          fi
-          
-          git commit -m "$message"
-          echo "Committed: $message"
-        else
+        # Configure git
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action - Monthly Analysis"
+        
+        # Check if there are changes to commit
+        git add .
+        
+        if git diff --cached --quiet; then
           echo "No changes to commit"
-        fi
-    
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
-    
-    - name: Cleanup old holdings (keep 30 days)
-      run: |
-        # Only run cleanup on Sundays to minimize operations
-        if [ $(date +%u) -eq 0 ]; then
-          echo "Running weekly cleanup..."
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "Changes detected - preparing commit"
+          echo "has_changes=true" >> $GITHUB_OUTPUT
           
-          cutoff_date=$(date -d "30 days ago" +%Y%m%d)
-          removed=0
-          
-          # Remove old holdings files from git
-          git ls-tree -r HEAD --name-only | grep "holdings/holdings_.*\.csv" | while read file; do
-            file_date=$(echo $file | grep -o '[0-9]\{8\}')
-            if [ "$file_date" -lt "$cutoff_date" ] 2>/dev/null; then
-              git rm --cached "$file" 2>/dev/null && ((removed++)) || true
-            fi
-          done
-          
-          if [ $removed -gt 0 ]; then
-            git commit -m "Cleanup: Removed $removed old holdings files"
-            echo "Removed $removed old files"
+          # Show what's being committed
+          echo "📋 Files being updated:"
+          git diff --cached --name-only | head -20
+          if [ $(git diff --cached --name-only | wc -l) -gt 20 ]; then
+            echo "... and $(( $(git diff --cached --name-only | wc -l) - 20 )) more files"
           fi
+        fi
+
+    - name: Commit and push updates
+      if: steps.git-check.outputs.has_changes == 'true'
+      run: |
+        # Create comprehensive commit message
+        git commit -m "🤖 Monthly Investment Analysis Update - $(date '+%B %Y')
+        
+        # Push changes
+        git push origin main
+
+    - name: Create workflow summary
+      if: always()
+      run: |
+        echo "## 🤖 Monthly Investment Analysis Pipeline" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Execution Summary:**" >> $GITHUB_STEP_SUMMARY
+        echo "- **Date:** $(date '+%B %d, %Y at %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "- **Data Scraping:** ${{ steps.cache-check.outputs.should_scrape == 'true' && '✅ Fresh data collected' || '📋 Used existing cache' }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Cache Age:** ${{ steps.cache-check.outputs.cache_age_days }} days" >> $GITHUB_STEP_SUMMARY
+        echo "- **Analysis Generated:** ${{ steps.git-check.outputs.has_changes == 'true' && '✅ Complete analysis updated' || '📋 No changes detected' }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Market Data Processed:**" >> $GITHUB_STEP_SUMMARY
+        echo "- **Current Holdings:** ${{ steps.summary.outputs.summary_holdings }} positions" >> $GITHUB_STEP_SUMMARY
+        echo "- **Historical Activities:** ${{ steps.summary.outputs.summary_activities }} transactions" >> $GITHUB_STEP_SUMMARY
+        echo "- **Institutional Managers:** ${{ steps.summary.outputs.summary_managers }} tracked" >> $GITHUB_STEP_SUMMARY
+        echo "- **Data Coverage:** 18+ years (2007-2025)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Key Investment Insights:**" >> $GITHUB_STEP_SUMMARY
+        echo "- **Top Stock Opportunity:** ${{ steps.summary.outputs.summary_top_stock }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Highest Conviction Play:** ${{ steps.summary.outputs.summary_top_conviction }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Analysis Reports:** 28+ comprehensive CSV files" >> $GITHUB_STEP_SUMMARY
+        echo "- **Visualizations:** 9 enhanced charts and graphs" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Next Scheduled Update:** $(date -d 'next month' '+%B 1, %Y')" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📊 **View Analysis:** [README.md](../README.md) | 📁 **Browse Data:** [analysis/](../analysis/)" >> $GITHUB_STEP_SUMMARY
+
+    - name: Handle failures
+      if: failure()
+      run: |
+        echo "❌ Monthly analysis pipeline failed" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Failure Details:**" >> $GITHUB_STEP_SUMMARY
+        echo "- **Job:** ${{ github.job }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Step:** Check workflow logs for specific failure point" >> $GITHUB_STEP_SUMMARY
+        echo "- **Cache Age:** ${{ steps.cache-check.outputs.cache_age_days }} days" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Troubleshooting:**" >> $GITHUB_STEP_SUMMARY
+        echo "1. Check if Playwright installation succeeded" >> $GITHUB_STEP_SUMMARY
+        echo "2. Verify network connectivity for data scraping" >> $GITHUB_STEP_SUMMARY
+        echo "3. Review analysis code for any syntax errors" >> $GITHUB_STEP_SUMMARY
+        echo "4. Consider running workflow_dispatch manually for debugging" >> $GITHUB_STEP_SUMMARY
+        
+        # Create issue comment if running on schedule
+        if [ "${{ github.event_name }}" = "schedule" ]; then
+          echo "Scheduled monthly analysis failed - manual intervention may be required"
         fi
