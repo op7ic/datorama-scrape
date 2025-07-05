@@ -93,7 +93,7 @@ jobs:
         echo "Environment: Headless Ubuntu with optimized timeouts"
         
         # Run scraper with headless-optimized settings
-        python3 datorama_scrape.py 
+        python3 datorama_scrape.py --no-browser
         echo "✅ Data scraping completed successfully"
         
         # Verify scraped data quality
