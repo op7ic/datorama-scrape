@@ -87,19 +87,13 @@ jobs:
 
     - name: Scrape fresh investment data
       if: steps.cache-check.outputs.should_scrape == 'true'
-      timeout-minutes: 45
+      timeout-minutes: 60
       run: |
         echo "🔄 Starting fresh data scraping..."
         echo "Environment: Headless Ubuntu with optimized timeouts"
         
         # Run scraper with headless-optimized settings
-        python3 datorama_scrape.py \
-          --headless \
-          --timeout 60 \
-          --delay 2 \
-          --max-retries 3 \
-          --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        
+        python3 datorama_scrape.py 
         echo "✅ Data scraping completed successfully"
         
         # Verify scraped data quality
