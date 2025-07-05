@@ -6,3 +6,8 @@ lxml>=4.9.3
 python-dateutil>=2.8.2
 aiohttp>=3.9.0
 yfinance
+matplotlib
+yfinance>=0.2.33
+matplotlib>=3.7.0
+seaborn>=0.13.0
+numpy>=1.24.0
