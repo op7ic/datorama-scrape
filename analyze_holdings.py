@@ -19,10 +19,6 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-# Progress Update:
-# ✓ Set up imports with proper ordering and type hints
-# → Working on manager name mapping and core functions
-
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,

@@ -706,7 +706,7 @@ class OptimizedDataromaScraper:
             List of activity dictionaries
         """
         manager_id = manager["id"]
-        url = f"{self.base_url}m_activity.php?m={manager_id}&typ=a&p={page}"
+        url = f"{self.base_url}m_activity.php?m={manager_id}&typ=a&L={page}&o=a"
         cache_key = f"managers/{manager_id}/activity_page{page}_{int(time.time())}.html"
 
         html = await self.fetch_page_with_js(url, cache_key)
@@ -754,46 +754,74 @@ class OptimizedDataromaScraper:
 
             # Check if there are more pages
             soup = BeautifulSoup(html, "html.parser")
-            page_links = soup.find_all(
-                "a", href=re.compile(r"activity\.php\?m=.*&p=\d+")
-            )
+            
+            # Find pagination div (Dataroma uses id="pages")
+            pages_div = soup.find("div", id="pages")
             total_pages = 1
-            for link in page_links:
-                match = re.search(r"p=(\d+)", link["href"])
-                if match:
-                    total_pages = max(total_pages, int(match.group(1)))
+            
+            if pages_div:
+                # Look for L= parameter in pagination links
+                page_links = pages_div.find_all(
+                    "a", href=lambda x: x and "L=" in str(x)
+                )
+                
+                for link in page_links:
+                    match = re.search(r"L=(\d+)", link["href"])
+                    if match:
+                        total_pages = max(total_pages, int(match.group(1)))
 
             # Fetch remaining pages if needed
-            if total_pages > 1 and self.use_playwright_for_stocks:
+            if total_pages > 1:
                 pages_to_fetch = min(total_pages, max_pages)
                 logging.info(
                     f"Found {total_pages} activity pages, "
                     f"fetching up to {pages_to_fetch}"
                 )
 
-                # Use async to fetch remaining pages
-                async def fetch_all_pages():
-                    tasks = []
-                    for page_num in range(2, pages_to_fetch + 1):
-                        task = self.get_manager_activity_async(manager, page_num)
-                        tasks.append(task)
+                if self.use_playwright_for_stocks and not is_wsl1_environment():
+                    # Use async to fetch remaining pages
+                    async def fetch_all_pages():
+                        tasks = []
+                        for page_num in range(2, pages_to_fetch + 1):
+                            task = self.get_manager_activity_async(manager, page_num)
+                            tasks.append(task)
 
-                    return await asyncio.gather(*tasks)
+                        return await asyncio.gather(*tasks)
 
-                try:
-                    loop = asyncio.get_event_loop()
-                except RuntimeError:
-                    loop = asyncio.new_event_loop()
-                    asyncio.set_event_loop(loop)
+                    try:
+                        loop = asyncio.get_event_loop()
+                    except RuntimeError:
+                        loop = asyncio.new_event_loop()
+                        asyncio.set_event_loop(loop)
 
-                if loop.is_running():
-                    # If loop is already running (e.g., in Jupyter), create task
-                    additional_activities = []
+                    if loop.is_running():
+                        # If loop is already running (e.g., in Jupyter), create task
+                        additional_activities = []
+                    else:
+                        additional_activities = loop.run_until_complete(fetch_all_pages())
+
+                    for activities in additional_activities:
+                        all_activities.extend(activities)
                 else:
-                    additional_activities = loop.run_until_complete(fetch_all_pages())
-
-                for activities in additional_activities:
-                    all_activities.extend(activities)
+                    # Synchronous fallback when Playwright is not available
+                    logging.info("Using synchronous fallback for pagination...")
+                    for page_num in range(2, pages_to_fetch + 1):
+                        page_url = f"{self.base_url}m_activity.php?m={manager_id}&typ=a&L={page_num}&o=a"
+                        cache_key = f"managers/{manager_id}/activity_page{page_num}_{int(time.time())}.html"
+                        
+                        logging.info(f"Fetching activity page {page_num}/{total_pages} for {manager['name']}")
+                        
+                        try:
+                            page_html = self.fetch_page(page_url, cache_key)
+                            if page_html:
+                                page_activities = self.parse_activity(page_html, manager_id)
+                                all_activities.extend(page_activities)
+                                logging.info(f"✓ Found {len(page_activities)} activities on page {page_num}")
+                            else:
+                                logging.warning(f"Failed to fetch page {page_num}")
+                        except Exception as e:
+                            logging.error(f"Error fetching page {page_num}: {e}")
+                            continue
 
         # Update cache
         if manager_id not in self.cached_data["history_by_manager"]:
