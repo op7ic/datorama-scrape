@@ -88,7 +88,8 @@ class OptimizedDataromaScraper:
     """Optimized scraper for Dataroma investment data."""
 
     def __init__(
-        self, use_playwright_for_stocks: bool = True, headless: bool = True
+        self, use_playwright_for_stocks: bool = True, headless: bool = True, 
+        rate_limit_delay: float = 2.5
     ) -> None:
         """
         Initialize the optimized scraper.
@@ -96,10 +97,13 @@ class OptimizedDataromaScraper:
         Args:
             use_playwright_for_stocks: Whether to use JS rendering for stock pages only
             headless: Whether to run browser in headless mode
+            rate_limit_delay: Delay in seconds between requests (default 2.5s to prevent rate limiting)
         """
         self.base_url = "https://www.dataroma.com/m/"
         self.cache_dir = "cache"
         self.html_dir = "cache/html"  # Same as original
+        self.rate_limit_delay = rate_limit_delay
+        self.last_request_time = 0.0
 
         # Detect WSL1 and disable Playwright if necessary
         if use_playwright_for_stocks and is_wsl1_environment():
@@ -165,6 +169,30 @@ class OptimizedDataromaScraper:
         session.mount("http://", adapter)
         session.mount("https://", adapter)
         return session
+
+    async def rate_limit(self) -> None:
+        """Apply rate limiting to prevent overwhelming the server (async version)."""
+        current_time = time.time()
+        time_since_last = current_time - self.last_request_time
+        
+        if time_since_last < self.rate_limit_delay:
+            sleep_time = self.rate_limit_delay - time_since_last
+            logging.debug(f"Rate limiting: sleeping for {sleep_time:.2f} seconds")
+            await asyncio.sleep(sleep_time)
+        
+        self.last_request_time = time.time()
+
+    def rate_limit_sync(self) -> None:
+        """Apply rate limiting to prevent overwhelming the server (sync version)."""
+        current_time = time.time()
+        time_since_last = current_time - self.last_request_time
+        
+        if time_since_last < self.rate_limit_delay:
+            sleep_time = self.rate_limit_delay - time_since_last
+            logging.debug(f"Rate limiting: sleeping for {sleep_time:.2f} seconds")
+            time.sleep(sleep_time)
+        
+        self.last_request_time = time.time()
 
     def ensure_directories(self) -> None:
         """Ensure all required directories exist."""
@@ -291,6 +319,9 @@ class OptimizedDataromaScraper:
                 return cached_html
 
         try:
+            # Apply rate limiting to prevent overwhelming the server
+            self.rate_limit_sync()
+            
             response = self.session.get(url, timeout=30)
             response.raise_for_status()
             html = response.text
@@ -324,6 +355,9 @@ class OptimizedDataromaScraper:
                 return cached_html
 
         try:
+            # Apply rate limiting to prevent overwhelming the server
+            await self.rate_limit()
+            
             async with async_playwright() as p:
                 browser = await p.chromium.launch(headless=self.headless)
                 page = await browser.new_page()
@@ -869,6 +903,9 @@ class OptimizedDataromaScraper:
             Dictionary with stock metrics
         """
         try:
+            # Apply rate limiting to prevent overwhelming Yahoo Finance
+            self.rate_limit_sync()
+            
             stock = yf.Ticker(ticker)
             info = stock.info
 
@@ -1146,6 +1183,7 @@ class OptimizedDataromaScraper:
         """
         start_time = datetime.now()
         logging.info("🚀 Starting optimized Dataroma scrape...")
+        logging.info(f"⏱️  Rate limiting enabled: {self.rate_limit_delay} seconds between requests")
 
         # Get managers list
         managers = self.get_managers_list()
