@@ -24,6 +24,7 @@ from bs4 import BeautifulSoup
 from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from playwright.async_api import async_playwright
 
+
 # Ensure log directory exists
 Path("log").mkdir(exist_ok=True)
 
