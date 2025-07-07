@@ -41,14 +41,15 @@ class OptimizedDataromaScraper:
 
     def __init__(
         self,
-        rate_limit_delay: float = 0.1,
-        stock_enrichment_delay: float = 0.1,
+        rate_limit_delay: float = 1.0,
+        stock_enrichment_delay: float = 0.5,
     ) -> None:
         """
         Initialize the optimized scraper.
 
-        Args:            rate_limit_delay: Delay in seconds between manager/activity requests (default 1.0s)
-            stock_enrichment_delay: Delay in seconds between stock API calls (default 1.0s with proxy rotation)
+        Args:
+            rate_limit_delay: Delay in seconds between manager/activity requests (default 1.0s)
+            stock_enrichment_delay: Delay in seconds between stock API calls (default 0.5s with proxy rotation)
         """
         self.base_url = "https://www.dataroma.com/m/"
         self.cache_dir = "cache"
@@ -95,6 +96,11 @@ class OptimizedDataromaScraper:
         self.retry_attempts_per_ticker = 2  # Max retry attempts per ticker
         self.ticker_retry_count = {}  # Track retry attempts per ticker
         self.use_backup_proxies = True  # Enable backup proxy retry system
+        
+        # Timeout configurations (accounting for slow proxies)
+        self.proxy_fetch_timeout = 15  # Timeout for fetching proxy lists
+        self.yahoo_proxy_timeout = 45  # Timeout for Yahoo Finance requests via proxy (1-2s proxy + response)
+        self.yahoo_direct_timeout = 30  # Timeout for direct Yahoo Finance requests (no proxy)
 
         # Yahoo Finance is our primary stock data source
         logging.info("ℹ️  Using Yahoo Finance for stock enrichment")
@@ -270,18 +276,19 @@ class OptimizedDataromaScraper:
         """Fetch fresh proxy list dynamically and select up to 1000 high-quality proxies."""
         import random
         
-        # Check if we have recent cached proxies (within last 30 minutes)
+        # Check if we have VERY recent cached proxies (within last 60 seconds only)
+        # Free proxies die quickly, so we need fresh ones
         proxy_cache_dir = f"{self.cache_dir}/proxy"
         os.makedirs(proxy_cache_dir, exist_ok=True)
         proxy_cache_file = f"{proxy_cache_dir}/proxy_pool_cache.json"
         try:
             if os.path.exists(proxy_cache_file):
                 cache_age = time.time() - os.path.getmtime(proxy_cache_file)
-                if cache_age < 1800:  # 30 minutes
+                if cache_age < 60:  # Only 60 seconds - proxies go stale quickly!
                     with open(proxy_cache_file, 'r') as f:
                         cached_data = json.load(f)
                         if len(cached_data.get('proxies', [])) > 1000:
-                            logging.info(f"✅ Using cached proxies ({len(cached_data['proxies'])} available, cache age: {cache_age/60:.1f} min)")
+                            logging.info(f"✅ Using very recent cached proxies ({len(cached_data['proxies'])} available, cache age: {cache_age:.0f} seconds)")
                             self.available_proxy_pool = cached_data['proxies']
                             
                             # Select active proxy pool from cached data
@@ -308,6 +315,13 @@ class OptimizedDataromaScraper:
                             return
         except Exception as e:
             logging.debug(f"Cache check failed: {e}")
+        
+        # Log why we're fetching fresh proxies
+        if os.path.exists(proxy_cache_file):
+            cache_age = time.time() - os.path.getmtime(proxy_cache_file)
+            logging.info(f"🔄 Proxy cache is {cache_age/60:.1f} minutes old (>1 min), fetching fresh proxies...")
+        else:
+            logging.info("🔄 No proxy cache found, fetching fresh proxies...")
 
         # Multiple proxy sources for robustness (JSON + text formats)
         proxy_sources_json = [
@@ -327,7 +341,7 @@ class OptimizedDataromaScraper:
         for json_source in proxy_sources_json:
             try:
                 logging.info("🔄 Fetching fresh proxy list dynamically...")
-                response = requests.get(json_source, timeout=5)
+                response = requests.get(json_source, timeout=15)
                 response.raise_for_status()
 
                 proxy_data = response.json()
@@ -390,7 +404,7 @@ class OptimizedDataromaScraper:
             try:
                 source_name = text_source.split('/')[-3] if len(text_source.split('/')) > 3 else text_source.split('/')[-1]
                 logging.info(f"🔄 Fetching from {source_name}...")
-                response = requests.get(text_source, timeout=5)
+                response = requests.get(text_source, timeout=15)
                 response.raise_for_status()
 
                 initial_count = len(all_working_proxies)
@@ -1739,7 +1753,7 @@ class OptimizedDataromaScraper:
                     if crumb:
                         params["crumb"] = crumb
 
-                    response = session.get(url, params=params, timeout=30)
+                    response = session.get(url, params=params, timeout=45)
 
                     # Handle 401 errors (refresh crumb and retry)
                     if (
