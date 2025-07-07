@@ -55,51 +55,8 @@ jobs:
     - name: Run enhanced data scraper
       id: scrape
       run: |
-        echo "🚀 Starting enhanced Dataroma scraper with Yahoo Finance integration..."
-        
-        # Run the scraper with timeout
-        if timeout 2100 python3 datorama_scrape.py; then
-          echo "✅ Enhanced scraper completed successfully"
-          echo "status=success" >> $GITHUB_OUTPUT
-        else
-          echo "⚠️ Enhanced scraper failed or timed out"
-          echo "status=failed" >> $GITHUB_OUTPUT
-        fi
-        
-        # Check if we got valid data
-        if [ -f "cache/holdings.json" ] && [ -f "cache/history.json" ]; then
-          holdings_count=$(cat cache/holdings.json | jq '. | length' 2>/dev/null || echo "0")
-          history_count=$(cat cache/history.json | jq '. | length' 2>/dev/null || echo "0")
-          
-          if [ "$holdings_count" -gt "100" ] && [ "$history_count" -gt "1000" ]; then
-            echo "✅ Valid data scraped: $holdings_count holdings, $history_count activities"
-            echo "data_valid=true" >> $GITHUB_OUTPUT
-          else
-            echo "⚠️ Insufficient data: $holdings_count holdings, $history_count activities"
-            echo "data_valid=false" >> $GITHUB_OUTPUT
-          fi
-        else
-          echo "❌ Cache files not created"
-          echo "data_valid=false" >> $GITHUB_OUTPUT
-        fi
-
-    - name: Fallback - Use cached data
-      if: steps.scrape.outputs.data_valid != 'true'
-      run: |
-        echo "📥 Using fallback mode - checking for existing data..."
-        
-        # Check if we have any previous data
-        if [ -f "cache/holdings.json" ] && [ -f "cache/history.json" ]; then
-          echo "✅ Previous cache data found - will proceed with analysis"
-        else
-          echo "⚠️ No previous data available - creating minimal dataset"
-          cat > cache/holdings.json << 'EOF'
-        []
-        EOF
-          cat > cache/history.json << 'EOF'
-        []
-        EOF
-        fi
+        echo "Starting enhanced Dataroma scraper with Yahoo Finance integration..."
+        python3 datorama_scrape.py
 
     - name: Generate comprehensive analysis
       if: always()
@@ -107,23 +64,6 @@ jobs:
         echo "📊 Starting comprehensive investment analysis..."
         python3 analyze_holdings.py || echo "⚠️ Analysis completed with warnings"
         echo "✅ Analysis generation completed"
-
-    - name: Verify analysis outputs
-      run: |
-        echo "🔍 Verifying analysis outputs..."
-        
-        # Check main analysis files
-        if [ -d "analysis/" ]; then
-          echo "Found $(find analysis/ -name "*.csv" | wc -l) analysis CSV files"
-          echo "Found $(find analysis/ -name "*.png" | wc -l) visualization files"
-        fi
-        
-        # Verify key files exist (if they should)
-        if [ -f "analysis/interesting_stocks_overview.csv" ]; then
-          echo "✅ Main analysis files verified"
-        else
-          echo "⚠️ Some analysis files may be missing"
-        fi
 
     - name: Commit and push changes
       run: |
