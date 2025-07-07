@@ -1,0 +1,642 @@
+{
+  "AXS": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 4.21,
+      "shares": 193000,
+      "value": 19346000.0,
+      "period": "Unknown"
+    }
+  ],
+  "FCNCA": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 3.82,
+      "shares": 9460,
+      "value": 17540000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CCJ": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 3.1,
+      "shares": 346289,
+      "value": 14253000.0,
+      "period": "Unknown"
+    }
+  ],
+  "PRGO": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 3.1,
+      "shares": 508000,
+      "value": 14244000.0,
+      "period": "Unknown"
+    }
+  ],
+  "EVRG": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.97,
+      "shares": 198000,
+      "value": 13652000.0,
+      "period": "Unknown"
+    }
+  ],
+  "VICI": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.88,
+      "shares": 406000,
+      "value": 13244000.0,
+      "period": "Unknown"
+    }
+  ],
+  "BEPC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.81,
+      "shares": 461800,
+      "value": 12893000.0,
+      "period": "Unknown"
+    }
+  ],
+  "PENG": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.8,
+      "shares": 739782,
+      "value": 12850000.0,
+      "period": "Unknown"
+    }
+  ],
+  "HNST": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.75,
+      "shares": 2683546,
+      "value": 12613000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CCK": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.6,
+      "shares": 133642,
+      "value": 11929000.0,
+      "period": "Unknown"
+    }
+  ],
+  "BWXT": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.56,
+      "shares": 119223,
+      "value": 11761000.0,
+      "period": "Unknown"
+    }
+  ],
+  "MIR": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.5,
+      "shares": 791000,
+      "value": 11470000.0,
+      "period": "Unknown"
+    }
+  ],
+  "NVST": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.39,
+      "shares": 635643,
+      "value": 10971000.0,
+      "period": "Unknown"
+    }
+  ],
+  "TRMB": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.32,
+      "shares": 162156,
+      "value": 10646000.0,
+      "period": "Unknown"
+    }
+  ],
+  "TCBI": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.21,
+      "shares": 136000,
+      "value": 10159000.0,
+      "period": "Unknown"
+    }
+  ],
+  "LPLA": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.2,
+      "shares": 30835,
+      "value": 10087000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CACI": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 2.09,
+      "shares": 26200,
+      "value": 9613000.0,
+      "period": "Unknown"
+    }
+  ],
+  "LEGN": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.99,
+      "shares": 268821,
+      "value": 9121000.0,
+      "period": "Unknown"
+    }
+  ],
+  "VSEC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.83,
+      "shares": 70000,
+      "value": 8399000.0,
+      "period": "Unknown"
+    }
+  ],
+  "HAYW": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.79,
+      "shares": 592000,
+      "value": 8241000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CNM": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.78,
+      "shares": 169000,
+      "value": 8164000.0,
+      "period": "Unknown"
+    }
+  ],
+  "THC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.75,
+      "shares": 59766,
+      "value": 8039000.0,
+      "period": "Unknown"
+    }
+  ],
+  "RRX": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.73,
+      "shares": 69600,
+      "value": 7924000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CEVA": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.71,
+      "shares": 307000,
+      "value": 7862000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CRC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.7,
+      "shares": 178000,
+      "value": 7827000.0,
+      "period": "Unknown"
+    }
+  ],
+  "QDEL": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.66,
+      "shares": 218000,
+      "value": 7623000.0,
+      "period": "Unknown"
+    }
+  ],
+  "UVE": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.62,
+      "shares": 314000,
+      "value": 7442000.0,
+      "period": "Unknown"
+    }
+  ],
+  "SG": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.59,
+      "shares": 291157,
+      "value": 7285000.0,
+      "period": "Unknown"
+    }
+  ],
+  "TTC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.58,
+      "shares": 99493,
+      "value": 7238000.0,
+      "period": "Unknown"
+    }
+  ],
+  "NGD": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.51,
+      "shares": 1868000,
+      "value": 6930000.0,
+      "period": "Unknown"
+    }
+  ],
+  "AMD": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.39,
+      "shares": 62000,
+      "value": 6370000.0,
+      "period": "Unknown"
+    }
+  ],
+  "KRNT": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.34,
+      "shares": 322000,
+      "value": 6144000.0,
+      "period": "Unknown"
+    }
+  ],
+  "AGS-OLD": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.3,
+      "shares": 493622,
+      "value": 5978000.0,
+      "period": "Unknown"
+    }
+  ],
+  "PACK": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.29,
+      "shares": 1096000,
+      "value": 5940000.0,
+      "period": "Unknown"
+    }
+  ],
+  "SWTX-OLD": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.29,
+      "shares": 134000,
+      "value": 5913000.0,
+      "period": "Unknown"
+    }
+  ],
+  "ADEA": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.28,
+      "shares": 444000,
+      "value": 5870000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CSTM": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.27,
+      "shares": 578913,
+      "value": 5841000.0,
+      "period": "Unknown"
+    }
+  ],
+  "BB": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.23,
+      "shares": 1501833,
+      "value": 5662000.0,
+      "period": "Unknown"
+    }
+  ],
+  "DLTR": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.23,
+      "shares": 75562,
+      "value": 5672000.0,
+      "period": "Unknown"
+    }
+  ],
+  "LUCK": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.23,
+      "shares": 578803,
+      "value": 5649000.0,
+      "period": "Unknown"
+    }
+  ],
+  "SUI": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.16,
+      "shares": 41288,
+      "value": 5311000.0,
+      "period": "Unknown"
+    }
+  ],
+  "DBRG": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.12,
+      "shares": 582121,
+      "value": 5134000.0,
+      "period": "Unknown"
+    }
+  ],
+  "OEC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.12,
+      "shares": 399188,
+      "value": 5162000.0,
+      "period": "Unknown"
+    }
+  ],
+  "UHAL": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.08,
+      "shares": 75800,
+      "value": 4954000.0,
+      "period": "Unknown"
+    }
+  ],
+  "KNX": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 1.05,
+      "shares": 110813,
+      "value": 4819000.0,
+      "period": "Unknown"
+    }
+  ],
+  "ATZ.TO": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.94,
+      "shares": 121416,
+      "value": 4310000.0,
+      "period": "Unknown"
+    }
+  ],
+  "PL": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.93,
+      "shares": 1264958,
+      "value": 4276000.0,
+      "period": "Unknown"
+    }
+  ],
+  "VFC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.91,
+      "shares": 269975,
+      "value": 4190000.0,
+      "period": "Unknown"
+    }
+  ],
+  "RAMP": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.87,
+      "shares": 152314,
+      "value": 3981000.0,
+      "period": "Unknown"
+    }
+  ],
+  "AMBA": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.82,
+      "shares": 75000,
+      "value": 3775000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CERT": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.81,
+      "shares": 378000,
+      "value": 3742000.0,
+      "period": "Unknown"
+    }
+  ],
+  "LASR": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.79,
+      "shares": 464717,
+      "value": 3611000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CRGY": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.7,
+      "shares": 285572,
+      "value": 3210000.0,
+      "period": "Unknown"
+    }
+  ],
+  "OUST": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.61,
+      "shares": 314000,
+      "value": 2820000.0,
+      "period": "Unknown"
+    }
+  ],
+  "CWCO": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.58,
+      "shares": 108000,
+      "value": 2645000.0,
+      "period": "Unknown"
+    }
+  ],
+  "DNN": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.56,
+      "shares": 1975000,
+      "value": 2568000.0,
+      "period": "Unknown"
+    }
+  ],
+  "FUN": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.56,
+      "shares": 72000,
+      "value": 2568000.0,
+      "period": "Unknown"
+    }
+  ],
+  "ZVIA": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.56,
+      "shares": 1200000,
+      "value": 2592000.0,
+      "period": "Unknown"
+    }
+  ],
+  "AMSC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.52,
+      "shares": 130432,
+      "value": 2366000.0,
+      "period": "Unknown"
+    }
+  ],
+  "NVTS": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.51,
+      "shares": 1136993,
+      "value": 2331000.0,
+      "period": "Unknown"
+    }
+  ],
+  "NXE": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.47,
+      "shares": 483655,
+      "value": 2172000.0,
+      "period": "Unknown"
+    }
+  ],
+  "ORIC": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.45,
+      "shares": 370000,
+      "value": 2065000.0,
+      "period": "Unknown"
+    }
+  ],
+  "ZBIO": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.42,
+      "shares": 243812,
+      "value": 1926000.0,
+      "period": "Unknown"
+    }
+  ],
+  "ALBO-OLD": [
+    {
+      "manager_id": "MVALX",
+      "manager_name": "Meridian Contrarian Fund",
+      "portfolio_percentage": 0.08,
+      "shares": 150750,
+      "value": 357000.0,
+      "period": "Unknown"
+    }
+  ]
+}
