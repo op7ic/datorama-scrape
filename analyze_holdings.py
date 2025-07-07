@@ -13,12 +13,11 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-
 
 # Configure logging
 logging.basicConfig(
@@ -2297,7 +2296,7 @@ class HoldingsAnalyzer:
 
             # Add value labels
             for i, (count, value) in enumerate(
-                zip(top_20["manager_count"], top_20["total_value"])
+                zip(top_20["manager_count"], top_20["total_value"], strict=False)
             ):
                 ax.text(
                     count + 0.1,
@@ -2709,7 +2708,7 @@ class HoldingsAnalyzer:
         ax1.grid(axis="x", alpha=0.3)
 
         # Add value labels on bars
-        for bar, value in zip(bars, top_performers["total_return_pct"]):
+        for bar, value in zip(bars, top_performers["total_return_pct"], strict=False):
             ax1.text(
                 bar.get_width() + max(top_performers["total_return_pct"]) * 0.01,
                 bar.get_y() + bar.get_height() / 2,
@@ -2946,7 +2945,7 @@ class HoldingsAnalyzer:
 
         # Add value labels
         for i, (bar, value) in enumerate(
-            zip(bars, top_winners["estimated_return_pct"])
+            zip(bars, top_winners["estimated_return_pct"], strict=False)
         ):
             ax1.text(
                 bar.get_width() + max(top_winners["estimated_return_pct"]) * 0.01,

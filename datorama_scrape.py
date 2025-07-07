@@ -17,7 +17,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from pathlib import Path
 from queue import Queue
-from typing import Any, Optional, Dict, List, Union
+from typing import Any, Optional
 
 import requests
 from bs4 import BeautifulSoup
@@ -276,7 +276,7 @@ class OptimizedDataromaScraper:
         if len(all_working_proxies) < 30:
             for backup_url in proxy_sources[1:]:
                 try:
-                    logging.info(f"🔄 Trying backup proxy source...")
+                    logging.info("🔄 Trying backup proxy source...")
                     response = requests.get(backup_url, timeout=10)
                     response.raise_for_status()
 
