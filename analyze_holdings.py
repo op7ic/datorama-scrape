@@ -13,11 +13,18 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-import matplotlib.dates as mdates
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
+
+# Try to import visualization libraries (optional)
+try:
+    import matplotlib.dates as mdates
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    HAS_MATPLOTLIB = True
+except ImportError:
+    HAS_MATPLOTLIB = False
+    logging.warning("Matplotlib/Seaborn not installed. Visualization features will be disabled.")
 
 # Configure logging
 logging.basicConfig(
@@ -2198,6 +2205,10 @@ class HoldingsAnalyzer:
 
     def create_sector_distribution_chart(self) -> None:
         """Create and save sector distribution visualization."""
+        if not HAS_MATPLOTLIB:
+            logging.warning("Matplotlib not available. Skipping sector distribution chart.")
+            return
+            
         sector_data = self.analyze_sector_distribution()
 
         if len(sector_data) > 0:
@@ -2237,6 +2248,10 @@ class HoldingsAnalyzer:
 
     def create_manager_performance_chart(self) -> None:
         """Create and save manager performance visualization."""
+        if not HAS_MATPLOTLIB:
+            logging.warning("Matplotlib not available. Skipping manager performance chart.")
+            return
+            
         manager_data = self.analyze_manager_performance()
 
         if len(manager_data) > 0:
@@ -2283,6 +2298,10 @@ class HoldingsAnalyzer:
 
     def create_top_holdings_chart(self) -> None:
         """Create and save top holdings visualization."""
+        if not HAS_MATPLOTLIB:
+            logging.warning("Matplotlib not available. Skipping top holdings chart.")
+            return
+            
         top_holdings = self.analyze_top_holdings()
 
         if len(top_holdings) > 0:

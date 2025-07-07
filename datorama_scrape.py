@@ -41,8 +41,8 @@ class OptimizedDataromaScraper:
 
     def __init__(
         self,
-        rate_limit_delay: float = 1.0,
-        stock_enrichment_delay: float = 1.0,
+        rate_limit_delay: float = 0.1,
+        stock_enrichment_delay: float = 0.1,
     ) -> None:
         """
         Initialize the optimized scraper.
@@ -67,35 +67,50 @@ class OptimizedDataromaScraper:
         self.yahoo_crumb = None  # Cache crumb for the session
         self.yahoo_crumb_file = f"{self.cache_dir}/yahoo_crumb.json"  # Persist crumb
 
-        # Proxy rotation for higher throughput
+        # Enhanced proxy rotation for maximum throughput
         self.use_proxy_rotation = True  # Enable proxy rotation
-        self.proxy_list = []
+        self.proxy_list = []  # Active proxy pool (1000+ proxies)
+        self.proxy_pool_size = 1000  # Target pool size (increased from 50-60)
         self.current_proxy_index = 0
         self.proxy_requests_count = {}  # Track requests per proxy
         self.proxy_rotation_interval = 50  # Rotate proxy every 50 requests
         self.current_proxy_requests = 0  # Requests made with current proxy
-        self.fetch_fresh_proxy_list()  # Always fetch fresh proxies
+        self.available_proxy_pool = []  # Full pool of downloaded proxies
+        self.proxy_refresh_threshold = 10  # Refresh when less than 10 working proxies
 
         # Enhanced proxy failure tracking and backoff
         self.proxy_failures = {}  # Track failures per proxy: {proxy_url: {failures: int, last_failure: datetime}}
-        self.proxy_cooldown_duration = 300  # 5 minutes cooldown for failed proxies
+        self.proxy_cooldown_duration = 120  # 2 minutes cooldown for failed proxies (reduced from 5)
         self.max_proxy_failures = (
-            3  # Mark proxy as temporarily unavailable after 3 failures
+            5  # Mark proxy as temporarily unavailable after 5 failures (increased from 3)
         )
         self.proxy_backoff_base = 2  # Base for exponential backoff (2^attempt seconds)
+        self.proxy_success_count = {}  # Track successful requests per proxy
+        self.proxy_refresh_count = 0  # Track how many times we've refreshed the pool
 
-        # Multi-threading configuration for concurrent downloads
+        # Two-tier retry system with backup proxy pools
+        self.backup_proxy_pool = []  # Backup proxy pool for retry attempts
+        self.backup_pool_size = 500  # Size of backup proxy pool
+        self.failed_ticker_queue = []  # Queue of failed tickers for retry
+        self.retry_attempts_per_ticker = 2  # Max retry attempts per ticker
+        self.ticker_retry_count = {}  # Track retry attempts per ticker
+        self.use_backup_proxies = True  # Enable backup proxy retry system
+
+        # Yahoo Finance is our primary stock data source
+        logging.info("ℹ️  Using Yahoo Finance for stock enrichment")
+
+        self.ensure_directories()
+
+        # Initialize proxy system after all attributes are set
+        self.fetch_fresh_proxy_list()  # Always fetch fresh proxies
+
+        # Multi-threading configuration for concurrent downloads (after proxy initialization)
         self.max_workers = min(
             10, len(self.proxy_list) if self.proxy_list else 3
         )  # Conservative threading
         self.proxy_queue = Queue()  # Queue for distributing proxies across threads
         self.request_lock = threading.Lock()  # Thread-safe request counting
         self._populate_proxy_queue()
-
-        # Yahoo Finance is our primary stock data source
-        logging.info("ℹ️  Using Yahoo Finance for stock enrichment")
-
-        self.ensure_directories()
 
         # Progress tracking
         self.progress = {
@@ -232,122 +247,192 @@ class OptimizedDataromaScraper:
         
         return 0.0
 
-    def fetch_fresh_proxy_list(self) -> None:
-        """Fetch fresh proxy list dynamically and randomly select 50-60 proxies."""
-        import random
+    def _determine_data_quality(self, stock_info: dict[str, Any]) -> str:
+        """Determine the quality level of stock data."""
+        if stock_info.get("enrichment_failed"):
+            return "failed"
+        
+        has_market_cap = stock_info.get("market_cap") is not None
+        has_pe_ratio = stock_info.get("pe_ratio") is not None
+        has_price = stock_info.get("current_price") is not None or stock_info.get("price") is not None
+        has_name = stock_info.get("company_name") is not None
+        
+        if has_market_cap and has_pe_ratio and has_price and has_name:
+            return "complete"
+        elif has_market_cap or has_pe_ratio or has_price:
+            return "partial"
+        elif has_name:
+            return "basic"
+        else:
+            return "minimal"
 
-        # Multiple proxy sources for robustness
-        proxy_sources = [
+    def fetch_fresh_proxy_list(self) -> None:
+        """Fetch fresh proxy list dynamically and select up to 1000 high-quality proxies."""
+        import random
+        
+        # Check if we have recent cached proxies (within last 30 minutes)
+        proxy_cache_dir = f"{self.cache_dir}/proxy"
+        os.makedirs(proxy_cache_dir, exist_ok=True)
+        proxy_cache_file = f"{proxy_cache_dir}/proxy_pool_cache.json"
+        try:
+            if os.path.exists(proxy_cache_file):
+                cache_age = time.time() - os.path.getmtime(proxy_cache_file)
+                if cache_age < 1800:  # 30 minutes
+                    with open(proxy_cache_file, 'r') as f:
+                        cached_data = json.load(f)
+                        if len(cached_data.get('proxies', [])) > 1000:
+                            logging.info(f"✅ Using cached proxies ({len(cached_data['proxies'])} available, cache age: {cache_age/60:.1f} min)")
+                            self.available_proxy_pool = cached_data['proxies']
+                            
+                            # Select active proxy pool from cached data
+                            import random
+                            target_count = min(self.proxy_pool_size, len(self.available_proxy_pool))
+                            sorted_proxies = sorted(self.available_proxy_pool, key=lambda x: x.get('score', 0), reverse=True)
+                            if len(sorted_proxies) >= target_count:
+                                # Take top 50% by score, then random selection from the rest
+                                top_half = sorted_proxies[:len(sorted_proxies)//2]
+                                remaining = sorted_proxies[len(sorted_proxies)//2:]
+                                needed_from_remaining = target_count - len(top_half)
+                                if needed_from_remaining > 0:
+                                    random.shuffle(remaining)
+                                    self.proxy_list = top_half + remaining[:needed_from_remaining]
+                                else:
+                                    self.proxy_list = top_half[:target_count]
+                            else:
+                                self.proxy_list = sorted_proxies
+                            
+                            random.shuffle(self.proxy_list)
+                            logging.info(f"🎯 Selected {len(self.proxy_list)} cached proxies for active use")
+                            
+                            self._create_backup_proxy_pool()
+                            return
+        except Exception as e:
+            logging.debug(f"Cache check failed: {e}")
+
+        # Multiple proxy sources for robustness (JSON + text formats)
+        proxy_sources_json = [
             "https://raw.githubusercontent.com/proxifly/free-proxy-list/refs/heads/main/proxies/all/data.json",
+        ]
+        
+        proxy_sources_text = [
             "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-raw.txt",
             "https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/proxy.txt",
+            "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/refs/heads/master/http.txt",
+            "https://raw.githubusercontent.com/vakhov/fresh-proxy-list/refs/heads/master/http.txt",
         ]
 
         all_working_proxies = []
 
-        # Try proxifly source first (JSON format)
-        try:
-            logging.info("🔄 Fetching fresh proxy list dynamically...")
-            response = requests.get(proxy_sources[0], timeout=15)
-            response.raise_for_status()
+        # Try JSON sources first (structured data with quality scores)
+        for json_source in proxy_sources_json:
+            try:
+                logging.info("🔄 Fetching fresh proxy list dynamically...")
+                response = requests.get(json_source, timeout=5)
+                response.raise_for_status()
 
-            proxy_data = response.json()
-            logging.info(f"📥 Retrieved {len(proxy_data)} total proxies from proxifly")
+                proxy_data = response.json()
+                logging.info(f"📥 Retrieved {len(proxy_data)} total proxies from {json_source.split('/')[-3]}")
 
-            # Filter for good quality proxies
-            for proxy in proxy_data:
-                # More lenient filtering to get more proxies
-                if (
-                    proxy.get("protocol") in ["http", "https"]
-                    and proxy.get("anonymity") in ["elite", "anonymous"]
-                    and proxy.get("score", 0) >= 0.5
-                ):  # Lower score threshold
-                    geolocation = proxy.get("geolocation", {})
-                    country = geolocation.get("country", "Unknown")
+                # Filter for good quality proxies
+                for proxy in proxy_data:
+                    # More lenient filtering to get more proxies
+                    if (
+                        proxy.get("protocol") in ["http", "https"]
+                        and proxy.get("anonymity") in ["elite", "anonymous"]
+                        and proxy.get("score", 0) >= 0.5
+                    ):  # Lower score threshold
+                        geolocation = proxy.get("geolocation", {})
+                        country = geolocation.get("country", "Unknown")
 
-                    # Handle different proxy URL formats
-                    proxy_url = proxy.get("proxy")
-                    if not proxy_url:
-                        # Construct URL if not provided
-                        ip = proxy.get("ip")
-                        port = proxy.get("port")
-                        if ip and port:
-                            proxy_url = f"http://{ip}:{port}"
-                        else:
-                            continue
-
-                    all_working_proxies.append(
-                        {
-                            "proxy": proxy_url,
-                            "ip": proxy.get(
-                                "ip",
-                                proxy_url.split("://")[1].split(":")[0]
-                                if "://" in proxy_url
-                                else "unknown",
-                            ),
-                            "port": proxy.get(
-                                "port",
-                                int(proxy_url.split(":")[-1])
-                                if ":" in proxy_url
-                                else 8080,
-                            ),
-                            "protocol": proxy.get("protocol", "http"),
-                            "anonymity": proxy.get("anonymity", "unknown"),
-                            "score": proxy.get("score", 1.0),
-                            "country": country,
-                            "city": geolocation.get("city", ""),
-                            "https_support": proxy.get("https", False),
-                        }
-                    )
-
-            logging.info(f"✅ Filtered to {len(all_working_proxies)} quality proxies")
-
-        except Exception as e:
-            logging.warning(f"⚠️  Primary proxy source failed: {e}")
-
-        # If we don't have enough proxies, try backup sources (simple text format)
-        if len(all_working_proxies) < 30:
-            for backup_url in proxy_sources[1:]:
-                try:
-                    logging.info("🔄 Trying backup proxy source...")
-                    response = requests.get(backup_url, timeout=10)
-                    response.raise_for_status()
-
-                    # Parse text format proxies (ip:port per line)
-                    lines = response.text.strip().split("\n")
-                    for line in lines[
-                        :200
-                    ]:  # Limit to first 200 to avoid processing too many
-                        line = line.strip()
-                        if ":" in line and not line.startswith("#"):
-                            try:
-                                ip, port = line.split(":", 1)
-                                if ip and port.isdigit():
-                                    all_working_proxies.append(
-                                        {
-                                            "proxy": f"http://{ip}:{port}",
-                                            "ip": ip,
-                                            "port": int(port),
-                                            "protocol": "http",
-                                            "anonymity": "unknown",
-                                            "score": 1.0,  # Default score for backup sources
-                                            "country": "Unknown",
-                                            "city": "",
-                                            "https_support": False,
-                                        }
-                                    )
-                            except ValueError:
+                        # Handle different proxy URL formats
+                        proxy_url = proxy.get("proxy")
+                        if not proxy_url:
+                            # Construct URL if not provided
+                            ip = proxy.get("ip")
+                            port = proxy.get("port")
+                            if ip and port:
+                                proxy_url = f"http://{ip}:{port}"
+                            else:
                                 continue
 
-                    logging.info(
-                        f"📥 Added {len(all_working_proxies)} total proxies from backup source"
-                    )
-                    if len(all_working_proxies) >= 50:
-                        break  # We have enough now
+                        all_working_proxies.append(
+                            {
+                                "proxy": proxy_url,
+                                "ip": proxy.get(
+                                    "ip",
+                                    proxy_url.split("://")[1].split(":")[0]
+                                    if "://" in proxy_url
+                                    else "unknown",
+                                ),
+                                "port": proxy.get(
+                                    "port",
+                                    int(proxy_url.split(":")[-1])
+                                    if ":" in proxy_url
+                                    else 8080,
+                                ),
+                                "protocol": proxy.get("protocol", "http"),
+                                "anonymity": proxy.get("anonymity", "unknown"),
+                                "score": proxy.get("score", 1.0),
+                                "country": country,
+                                "city": geolocation.get("city", ""),
+                                "https_support": proxy.get("https", False),
+                            }
+                        )
 
-                except Exception as e:
-                    logging.debug(f"Backup proxy source failed: {e}")
-                    continue
+                logging.info(f"✅ Filtered to {len(all_working_proxies)} quality proxies from JSON source")
+
+            except Exception as e:
+                logging.warning(f"⚠️  JSON proxy source failed: {e}")
+
+        # Always try text sources to maximize proxy diversity
+        logging.info(f"🔄 Fetching from {len(proxy_sources_text)} additional text sources...")
+        for text_source in proxy_sources_text:
+            try:
+                source_name = text_source.split('/')[-3] if len(text_source.split('/')) > 3 else text_source.split('/')[-1]
+                logging.info(f"🔄 Fetching from {source_name}...")
+                response = requests.get(text_source, timeout=5)
+                response.raise_for_status()
+
+                initial_count = len(all_working_proxies)
+                
+                # Parse text format proxies (ip:port per line)
+                lines = response.text.strip().split("\n")
+                for line in lines[:500]:  # Increased limit for more proxies
+                    line = line.strip()
+                    if ":" in line and not line.startswith("#") and not line.startswith("//"):
+                        try:
+                            # Handle different formats: ip:port or http://ip:port
+                            if line.startswith("http://") or line.startswith("https://"):
+                                proxy_url = line
+                                ip_port = line.split("://")[1]
+                                ip, port = ip_port.split(":", 1)
+                            else:
+                                ip, port = line.split(":", 1)
+                                proxy_url = f"http://{ip}:{port}"
+                            
+                            if ip and port.isdigit() and 1 <= int(port) <= 65535:
+                                all_working_proxies.append(
+                                    {
+                                        "proxy": proxy_url,
+                                        "ip": ip,
+                                        "port": int(port),
+                                        "protocol": "http",
+                                        "anonymity": "unknown",
+                                        "score": 0.8,  # Slightly lower score for text sources
+                                        "country": "Unknown",
+                                        "city": "",
+                                        "https_support": False,
+                                    }
+                                )
+                        except (ValueError, IndexError):
+                            continue
+
+                new_proxies = len(all_working_proxies) - initial_count
+                logging.info(f"📥 Added {new_proxies} proxies from {source_name}")
+
+            except Exception as e:
+                logging.warning(f"⚠️  Text proxy source {text_source.split('/')[-1]} failed: {e}")
+                continue
 
         # Randomly select 50-60 proxies from the available pool
         if all_working_proxies:
@@ -361,18 +446,36 @@ class OptimizedDataromaScraper:
             unique_proxy_list = list(unique_proxies.values())
             logging.info(f"📋 {len(unique_proxy_list)} unique proxies available")
 
-            # Randomly select 50-60 proxies
-            target_count = random.randint(50, 60)
-            if len(unique_proxy_list) >= target_count:
-                self.proxy_list = random.sample(unique_proxy_list, target_count)
+            # Store the full pool and select working proxies for active use
+            self.available_proxy_pool = unique_proxy_list
+            
+            # Select up to 1000 high-quality proxies for active use
+            target_count = min(self.proxy_pool_size, len(unique_proxy_list))
+            
+            # Prioritize by score and randomize
+            sorted_proxies = sorted(unique_proxy_list, key=lambda x: x.get('score', 0), reverse=True)
+            if len(sorted_proxies) >= target_count:
+                # Take top 50% by score, then random selection from the rest
+                top_half = sorted_proxies[:len(sorted_proxies)//2]
+                remaining = sorted_proxies[len(sorted_proxies)//2:]
+                
+                # Mix high-quality and random proxies
+                self.proxy_list = top_half[:target_count//2]
+                if len(remaining) > 0:
+                    additional_needed = target_count - len(self.proxy_list)
+                    if additional_needed > 0:
+                        self.proxy_list.extend(random.sample(remaining, min(additional_needed, len(remaining))))
             else:
-                self.proxy_list = unique_proxy_list
+                self.proxy_list = sorted_proxies
 
-            # Shuffle the list for random distribution
+            # Shuffle the final list for random distribution
             random.shuffle(self.proxy_list)
 
             logging.info(
-                f"🎯 Randomly selected {len(self.proxy_list)} proxies for load distribution"
+                f"🎯 Selected {len(self.proxy_list)} high-quality proxies from {len(self.available_proxy_pool)} total proxies"
+            )
+            logging.info(
+                f"📊 Pool composition: {len(self.available_proxy_pool)} total, {len(self.proxy_list)} active"
             )
 
             # Log geographic distribution for debugging
@@ -385,13 +488,140 @@ class OptimizedDataromaScraper:
                 [f"{country}: {count}" for country, count in sorted(countries.items())]
             )
             logging.info(f"🌍 Geographic distribution: {geo_info}")
+            
+            # Create backup proxy pool for retry attempts
+            self._create_backup_proxy_pool()
+            
+            # Cache the proxy pool for faster subsequent loads
+            try:
+                cache_data = {
+                    'proxies': self.available_proxy_pool,
+                    'timestamp': time.time(),
+                    'count': len(self.available_proxy_pool)
+                }
+                with open(proxy_cache_file, 'w') as f:
+                    json.dump(cache_data, f)
+                logging.debug(f"💾 Cached {len(self.available_proxy_pool)} proxies for future use")
+            except Exception as e:
+                logging.debug(f"Cache save failed: {e}")
 
         else:
             logging.warning(
                 "❌ Could not fetch any working proxies. Using direct connection."
             )
             self.proxy_list = []
+            self.backup_proxy_pool = []
             self.use_proxy_rotation = False
+
+    def _create_backup_proxy_pool(self) -> None:
+        """Create backup proxy pool from remaining available proxies for retry attempts."""
+        if not self.available_proxy_pool or not self.use_backup_proxies:
+            self.backup_proxy_pool = []
+            return
+        
+        import random
+        
+        # Get proxies not in the main active pool
+        active_proxy_urls = set(proxy['proxy'] for proxy in self.proxy_list)
+        remaining_proxies = [
+            proxy for proxy in self.available_proxy_pool 
+            if proxy['proxy'] not in active_proxy_urls
+        ]
+        
+        if not remaining_proxies:
+            logging.warning("⚠️ No remaining proxies for backup pool")
+            self.backup_proxy_pool = []
+            return
+        
+        # Randomly select backup proxies
+        backup_count = min(self.backup_pool_size, len(remaining_proxies))
+        self.backup_proxy_pool = random.sample(remaining_proxies, backup_count)
+        
+        # Shuffle for random distribution
+        random.shuffle(self.backup_proxy_pool)
+        
+        logging.info(f"🛡️ Created backup proxy pool: {len(self.backup_proxy_pool)} proxies")
+        
+        # Log backup pool geographic distribution
+        backup_countries = {}
+        for proxy in self.backup_proxy_pool:
+            country = proxy.get("country", "Unknown")
+            backup_countries[country] = backup_countries.get(country, 0) + 1
+        
+        top_backup_countries = sorted(backup_countries.items(), key=lambda x: x[1], reverse=True)[:5]
+        backup_geo_info = ", ".join([f"{country}: {count}" for country, count in top_backup_countries])
+        logging.info(f"🛡️ Backup pool distribution: {backup_geo_info}")
+
+    def refresh_proxy_pool(self) -> None:
+        """Refresh active proxy pool from available proxies without re-downloading."""
+        if not self.available_proxy_pool:
+            logging.warning("🔄 No available proxy pool, fetching fresh proxies...")
+            self.fetch_fresh_proxy_list()
+            return
+        
+        self.proxy_refresh_count += 1
+        logging.info(f"🔄 Refreshing proxy pool (refresh #{self.proxy_refresh_count})...")
+        
+        # Get currently failed proxies to avoid them
+        failed_proxy_urls = set()
+        current_time = datetime.now()
+        
+        for proxy_url, failure_info in self.proxy_failures.items():
+            failures = failure_info.get('failures', 0)
+            last_failure_str = failure_info.get('last_failure')
+            
+            if last_failure_str:
+                # Parse the ISO format datetime string
+                try:
+                    last_failure = datetime.fromisoformat(last_failure_str)
+                    # Check if proxy is still in cooldown
+                    time_since_failure = (current_time - last_failure).total_seconds()
+                    if failures >= self.max_proxy_failures and time_since_failure < self.proxy_cooldown_duration:
+                        failed_proxy_urls.add(proxy_url)
+                except ValueError:
+                    # If we can't parse the datetime, assume it's failed
+                    if failures >= self.max_proxy_failures:
+                        failed_proxy_urls.add(proxy_url)
+        
+        # Select fresh proxies from the pool, avoiding recently failed ones
+        fresh_proxies = []
+        for proxy in self.available_proxy_pool:
+            if proxy['proxy'] not in failed_proxy_urls:
+                fresh_proxies.append(proxy)
+        
+        if not fresh_proxies:
+            logging.warning("🚨 All proxies in pool have failed, fetching completely fresh list...")
+            self.fetch_fresh_proxy_list()
+            return
+        
+        # Select up to target pool size from fresh proxies
+        import random
+        target_count = min(self.proxy_pool_size, len(fresh_proxies))
+        
+        # Prioritize by score and mix with random selection
+        sorted_fresh = sorted(fresh_proxies, key=lambda x: x.get('score', 0), reverse=True)
+        
+        if len(sorted_fresh) >= target_count:
+            # Take top performers and mix with random selection
+            top_quarter = sorted_fresh[:len(sorted_fresh)//4]
+            remaining = sorted_fresh[len(sorted_fresh)//4:]
+            
+            self.proxy_list = top_quarter[:target_count//4]
+            if remaining:
+                additional_needed = target_count - len(self.proxy_list)
+                if additional_needed > 0:
+                    self.proxy_list.extend(random.sample(remaining, min(additional_needed, len(remaining))))
+        else:
+            self.proxy_list = sorted_fresh
+        
+        # Shuffle for random distribution
+        random.shuffle(self.proxy_list)
+        
+        # Reset request counters for the refreshed pool
+        self.proxy_requests_count.clear()
+        
+        logging.info(f"✅ Refreshed proxy pool: {len(self.proxy_list)} fresh proxies selected")
+        logging.info(f"📊 Pool stats: {len(failed_proxy_urls)} failed, {len(fresh_proxies)} available, {len(self.available_proxy_pool)} total")
 
     def get_next_proxy(self) -> Optional[dict]:
         """Get the next proxy in rotation, cycling through available proxies."""
@@ -408,11 +638,19 @@ class OptimizedDataromaScraper:
                 available_proxies.append((i, proxy, request_count))
 
         if not available_proxies:
-            # All proxies exhausted, refresh list
-            logging.warning("All proxies exhausted, refreshing proxy list")
-            self.fetch_fresh_proxy_list()
-            self.proxy_requests_count = {}  # Reset counters
-            return self.get_next_proxy()
+            # All proxies exhausted, try smart refresh first
+            logging.warning("⚠️ All active proxies exhausted, attempting smart refresh...")
+            try:
+                self.refresh_proxy_pool()
+                # Try again after refresh
+                return self.get_next_proxy()
+            except Exception as e:
+                logging.error(f"❌ Smart refresh failed: {e}")
+                # Fallback to full proxy list fetch
+                logging.warning("🔄 Falling back to full proxy list refresh...")
+                self.fetch_fresh_proxy_list()
+                self.proxy_requests_count = {}  # Reset counters
+                return self.get_next_proxy()
 
         # Sort by request count (use least used proxy)
         available_proxies.sort(key=lambda x: x[2])
@@ -461,7 +699,7 @@ class OptimizedDataromaScraper:
         try:
             proxy = self.proxy_queue.get_nowait()
             return proxy
-        except:
+        except Exception:
             # If queue is empty, get any available proxy
             return self.get_next_proxy()
 
@@ -476,6 +714,41 @@ class OptimizedDataromaScraper:
             ):  # Conservative per-proxy limit
                 self.proxy_queue.put(proxy)
 
+    def _validate_proxy_url(self, proxy_url: str) -> bool:
+        """Validate proxy URL format."""
+        if not proxy_url or not isinstance(proxy_url, str):
+            return False
+        
+        # Basic URL validation for HTTP/HTTPS proxies
+        url_pattern = re.compile(
+            r'^https?://'  # http:// or https://
+            r'(\d{1,3}\.){3}\d{1,3}'  # IP address
+            r':\d{1,5}$'  # Port
+        )
+        
+        if not url_pattern.match(proxy_url):
+            return False
+        
+        # Extract IP address and validate octets
+        try:
+            # Extract IP from URL
+            ip_part = proxy_url.split('://')[1].split(':')[0]
+            octets = ip_part.split('.')
+            
+            # Validate each octet is 0-255
+            for octet in octets:
+                if not 0 <= int(octet) <= 255:
+                    return False
+            
+            # Validate port
+            port = int(proxy_url.split(':')[-1])
+            if not 1 <= port <= 65535:
+                return False
+                
+            return True
+        except (IndexError, ValueError):
+            return False
+    
     def _is_proxy_available(self, proxy_url: str) -> bool:
         """Check if a proxy is available (not in cooldown)."""
         if proxy_url not in self.proxy_failures:
@@ -506,7 +779,7 @@ class OptimizedDataromaScraper:
                         f"🔄 Proxy {proxy_url} cooldown expired - back in rotation"
                     )
                     return True
-            except:
+            except (ValueError, TypeError, KeyError):
                 # If we can't parse the date, reset and allow
                 self.proxy_failures[proxy_url] = {"failures": 0, "last_failure": None}
                 return True
@@ -592,7 +865,7 @@ class OptimizedDataromaScraper:
                         f"Updating {ticker} - cache is {cache_age.days} days old"
                     )
                     return True
-            except:
+            except (ValueError, TypeError, KeyError):
                 # If we can't parse date, update to be safe
                 return True
 
@@ -1350,6 +1623,16 @@ class OptimizedDataromaScraper:
         Returns:
             Dictionary with stock metrics
         """
+        # Validate ticker symbol
+        if not ticker or not isinstance(ticker, str):
+            logging.error(f"Invalid ticker symbol: {ticker}")
+            return {"ticker": ticker, "error": "Invalid ticker symbol"}
+        
+        # Basic ticker validation - alphanumeric plus dots and hyphens (for BRK.A, etc.)
+        if not re.match(r'^[A-Za-z0-9\.\-]+$', ticker):
+            logging.error(f"Invalid ticker format: {ticker}")
+            return {"ticker": ticker, "error": "Invalid ticker format"}
+        
         max_proxy_attempts = 4  # Try up to 4 different proxies
         max_retries_per_proxy = 2  # 2 attempts per proxy
         session = None
@@ -1357,6 +1640,28 @@ class OptimizedDataromaScraper:
 
         # Get list of available proxies for fallback
         available_proxies = self.get_available_proxies()
+        
+        # If we have very few available proxies, try to refresh the list
+        if len(available_proxies) < self.proxy_refresh_threshold:
+            logging.warning(f"⚠️ Only {len(available_proxies)} proxies available (threshold: {self.proxy_refresh_threshold}), attempting smart refresh...")
+            try:
+                # Try smart refresh first (faster)
+                self.refresh_proxy_pool()
+                self._populate_proxy_queue()
+                available_proxies = self.get_available_proxies()
+                logging.info(f"✅ Smart proxy refresh completed, now have {len(available_proxies)} available proxies")
+                
+                # If still too few, do full refresh
+                if len(available_proxies) < self.proxy_refresh_threshold:
+                    logging.warning("⚠️ Still too few proxies after smart refresh, doing full refresh...")
+                    self.fetch_fresh_proxy_list()
+                    self._populate_proxy_queue()
+                    available_proxies = self.get_available_proxies()
+                    logging.info(f"✅ Full proxy refresh completed, now have {len(available_proxies)} available proxies")
+                    
+            except Exception as e:
+                logging.error(f"❌ Failed to refresh proxy list: {e}")
+        
         proxy_list = [proxy] if proxy else []
 
         # Add other available proxies as fallbacks
@@ -1372,6 +1677,11 @@ class OptimizedDataromaScraper:
                 continue
 
             proxy_url = current_proxy["proxy"]
+            
+            # Validate proxy URL format
+            if not self._validate_proxy_url(proxy_url):
+                logging.warning(f"Invalid proxy URL format: {proxy_url}")
+                continue
 
             # Skip if this proxy was already attempted or is in cooldown
             if proxy_url in attempted_proxies or not self._is_proxy_available(
@@ -1447,14 +1757,22 @@ class OptimizedDataromaScraper:
                     response.raise_for_status()
                     api_data = response.json()
 
-                    # Success! Reset failure count for this proxy
+                    # Success! Reset failure count and track success
                     self._reset_proxy_failures(proxy_url)
+                    self.proxy_success_count[proxy_url] = self.proxy_success_count.get(proxy_url, 0) + 1
 
                     # Parse and return response
                     result = self._parse_yahoo_response(ticker, api_data)
-                    logging.debug(
-                        f"✅ Successfully fetched {ticker} using proxy {proxy_url}"
-                    )
+                    
+                    # Log success with more detail
+                    if 'market_cap' in result and result.get('market_cap') and 'pe_ratio' in result and result.get('pe_ratio'):
+                        logging.info(
+                            f"✅ Successfully fetched {ticker} using proxy {proxy_url} - MC: ${result['market_cap']:,.0f}, PE: {result['pe_ratio']}"
+                        )
+                    else:
+                        logging.debug(
+                            f"✅ Fetched {ticker} using proxy {proxy_url} (partial data)"
+                        )
                     return result
 
                 except Exception as e:
@@ -1469,7 +1787,7 @@ class OptimizedDataromaScraper:
                     # Apply exponential backoff before next retry
                     if retry_attempt < max_retries_per_proxy - 1:
                         backoff_time = self.proxy_backoff_base ** (retry_attempt + 1)
-                        time.sleep(min(backoff_time, 10))  # Cap at 10 seconds
+                        time.sleep(min(backoff_time, 2))  # Cap at 2 seconds
 
                 finally:
                     if session:
@@ -1536,21 +1854,29 @@ class OptimizedDataromaScraper:
                     f"⚠️ Direct connection failed for {ticker} (attempt {direct_attempt + 1}): {e}"
                 )
                 if direct_attempt < 1:
-                    time.sleep(2)  # Brief delay before final retry
+                    time.sleep(0.5)  # Brief delay before final retry
             finally:
                 if session:
                     session.close()
                     session = None
 
-        # Complete failure
+        # Complete failure - but still return usable data structure
         error_msg = f"All connection methods failed (tried {len(attempted_proxies)} proxies + direct)"
         logging.error(f"❌ Complete failure for {ticker}: {error_msg}")
+        
+        # Return a data structure that won't break downstream processing
         return {
             "ticker": ticker,
             "error": error_msg,
             "data_source": "yahoo_finance_error",
             "last_updated": datetime.now().isoformat(),
             "proxies_attempted": len(attempted_proxies),
+            "market_cap": None,  # Explicitly set to None
+            "pe_ratio": None,    # Explicitly set to None
+            "current_price": None,
+            "company_name": ticker,  # Use ticker as fallback name
+            "data_quality": "failed",  # Mark as failed enrichment
+            "enrichment_failed": True,  # Flag for tracking
         }
 
     def _parse_yahoo_response(self, ticker: str, api_data: dict) -> dict[str, Any]:
@@ -1990,7 +2316,7 @@ class OptimizedDataromaScraper:
                         priority = 0.1  # Very low priority
                     else:
                         priority = 0.5  # Medium priority for incomplete data
-                except:
+                except (json.JSONDecodeError, KeyError, TypeError):
                     priority = 0.8  # High priority if cache is corrupted
             else:
                 priority = 1.0  # Highest priority for new stocks
@@ -2041,7 +2367,7 @@ class OptimizedDataromaScraper:
                 try:
                     with open(cache_file) as f:
                         cached_data = json.load(f)
-                except:
+                except (json.JSONDecodeError, IOError, OSError):
                     cached_data = None
 
             # Use smart caching logic
@@ -2200,7 +2526,7 @@ class OptimizedDataromaScraper:
                     try:
                         with open(cache_file) as f:
                             stock_data_map[ticker] = json.load(f)
-                    except:
+                    except (json.JSONDecodeError, IOError, OSError):
                         pass
 
         # Enrich holdings with the collected stock data
@@ -2225,9 +2551,8 @@ class OptimizedDataromaScraper:
                         "industry": stock_info.get("industry"),
                         "country": stock_info.get("country"),
                         "exchange": stock_info.get("exchange"),
-                        "data_quality": "complete"
-                        if stock_info.get("market_cap") and stock_info.get("pe_ratio")
-                        else "partial",
+                        "data_quality": self._determine_data_quality(stock_info),
+                        "enrichment_status": "failed" if stock_info.get("enrichment_failed") else "success",
                     }
                 )
 
@@ -2250,7 +2575,189 @@ class OptimizedDataromaScraper:
                 f"✓ Used {len(self.proxy_requests_count)} proxies for {sum(self.proxy_requests_count.values())} total requests"
             )
 
+        # Two-tier retry system: attempt to re-download failed tickers using backup proxies
+        if self.use_backup_proxies and self.backup_proxy_pool:
+            enriched_holdings = self._retry_failed_tickers(enriched_holdings, stock_data_map)
+
         return enriched_holdings
+
+    def _retry_failed_tickers(self, enriched_holdings: list[dict[str, Any]], stock_data_map: dict[str, Any]) -> list[dict[str, Any]]:
+        """
+        Two-tier retry system: retry failed tickers using backup proxy pool.
+        
+        Args:
+            enriched_holdings: Current enriched holdings list
+            stock_data_map: Current stock data mapping
+            
+        Returns:
+            Updated enriched holdings with retry results
+        """
+        # Identify failed tickers that need retry
+        failed_tickers = []
+        for holding in enriched_holdings:
+            ticker = holding.get('ticker')
+            if not ticker:
+                continue
+                
+            # Check if enrichment failed or has poor data quality
+            enrichment_status = holding.get('enrichment_status', 'unknown')
+            data_quality = holding.get('data_quality', 'unknown')
+            
+            # Retry if failed or if we have minimal/basic data and haven't exceeded retry limit
+            if (enrichment_status == 'failed' or data_quality in ['minimal', 'basic', 'failed']) and \
+               self.ticker_retry_count.get(ticker, 0) < self.retry_attempts_per_ticker:
+                failed_tickers.append(ticker)
+        
+        if not failed_tickers:
+            logging.info("🛡️ No failed tickers need retry")
+            return enriched_holdings
+        
+        logging.info(f"🛡️ Starting backup proxy retry for {len(failed_tickers)} failed tickers")
+        logging.info(f"🛡️ Using backup proxy pool of {len(self.backup_proxy_pool)} proxies")
+        
+        # Track retry attempts
+        for ticker in failed_tickers:
+            self.ticker_retry_count[ticker] = self.ticker_retry_count.get(ticker, 0) + 1
+        
+        # Use backup proxies for retry attempts
+        retry_stock_data = {}
+        successful_retries = 0
+        
+        def retry_fetch_stock_data(ticker):
+            """Fetch stock data using backup proxy pool."""
+            import random
+            
+            # Try multiple backup proxies for this ticker
+            max_backup_attempts = min(5, len(self.backup_proxy_pool))
+            
+            for attempt in range(max_backup_attempts):
+                # Select random backup proxy
+                backup_proxy = random.choice(self.backup_proxy_pool)
+                
+                try:
+                    logging.debug(f"🛡️ Retry attempt {attempt + 1}/{max_backup_attempts} for {ticker} using backup proxy {backup_proxy['proxy']}")
+                    
+                    # Use the same method but with backup proxy
+                    stock_data = self.get_stock_data_yfinance_threaded(ticker, backup_proxy)
+                    
+                    # Check if we got better data
+                    if not stock_data.get('error') and not stock_data.get('enrichment_failed'):
+                        quality = self._determine_data_quality(stock_data)
+                        if quality in ['complete', 'partial']:
+                            logging.info(f"🛡️ ✅ Backup proxy retry successful for {ticker} (quality: {quality})")
+                            return ticker, stock_data
+                    
+                except Exception as e:
+                    logging.debug(f"🛡️ Backup proxy attempt {attempt + 1} failed for {ticker}: {e}")
+                    continue
+            
+            # If all backup attempts failed, return error
+            logging.warning(f"🛡️ ❌ All backup proxy attempts failed for {ticker}")
+            return ticker, {
+                "ticker": ticker,
+                "error": "All backup proxy attempts failed",
+                "data_source": "backup_retry_failed",
+                "last_updated": datetime.now().isoformat(),
+                "enrichment_failed": True
+            }
+        
+        # Execute retry attempts with limited threading to avoid overwhelming backup proxies
+        if len(failed_tickers) > 1 and len(self.backup_proxy_pool) > 5:
+            # Use limited threading for backup retries
+            max_retry_workers = min(3, len(self.backup_proxy_pool) // 5)  # Conservative threading
+            logging.info(f"🛡️ Using {max_retry_workers} workers for backup proxy retries")
+            
+            with ThreadPoolExecutor(max_workers=max_retry_workers) as executor:
+                future_to_ticker = {
+                    executor.submit(retry_fetch_stock_data, ticker): ticker
+                    for ticker in failed_tickers
+                }
+                
+                for future in as_completed(future_to_ticker):
+                    ticker = future_to_ticker[future]
+                    try:
+                        result_ticker, stock_data = future.result()
+                        retry_stock_data[result_ticker] = stock_data
+                        
+                        if not stock_data.get('error') and not stock_data.get('enrichment_failed'):
+                            successful_retries += 1
+                            
+                    except Exception as e:
+                        logging.error(f"🛡️ ❌ Retry thread error for {ticker}: {e}")
+                        retry_stock_data[ticker] = {
+                            "ticker": ticker,
+                            "error": str(e),
+                            "data_source": "backup_retry_error",
+                            "last_updated": datetime.now().isoformat(),
+                            "enrichment_failed": True
+                        }
+        else:
+            # Sequential retry for small numbers of failed tickers
+            logging.info(f"🛡️ Using sequential retry for {len(failed_tickers)} tickers")
+            for ticker in failed_tickers:
+                result_ticker, stock_data = retry_fetch_stock_data(ticker)
+                retry_stock_data[result_ticker] = stock_data
+                
+                if not stock_data.get('error') and not stock_data.get('enrichment_failed'):
+                    successful_retries += 1
+        
+        # Update enriched holdings with retry results
+        updated_holdings = []
+        for holding in enriched_holdings:
+            ticker = holding.get('ticker')
+            
+            if ticker in retry_stock_data:
+                # Update with retry data
+                updated_holding = holding.copy()
+                retry_data = retry_stock_data[ticker]
+                
+                # Cache successful retry results
+                if not retry_data.get('error') and not retry_data.get('enrichment_failed'):
+                    cache_file = f"{self.cache_dir}/stocks/{ticker}.json"
+                    try:
+                        with open(cache_file, "w") as f:
+                            json.dump(retry_data, f, indent=2)
+                    except Exception as e:
+                        logging.error(f"Error caching retry data for {ticker}: {e}")
+                
+                # Update holding with retry results
+                updated_holding.update({
+                    "market_cap": retry_data.get("market_cap"),
+                    "pe_ratio": retry_data.get("pe_ratio"),
+                    "forward_pe": retry_data.get("forward_pe"),
+                    "current_price": retry_data.get("current_price") or retry_data.get("price"),
+                    "52_week_high": retry_data.get("52_week_high"),
+                    "52_week_low": retry_data.get("52_week_low"),
+                    "dividend_yield": retry_data.get("dividend_yield"),
+                    "sector": retry_data.get("sector"),
+                    "industry": retry_data.get("industry"),
+                    "country": retry_data.get("country"),
+                    "exchange": retry_data.get("exchange"),
+                    "data_quality": self._determine_data_quality(retry_data),
+                    "enrichment_status": "failed" if retry_data.get("enrichment_failed") else "success",
+                    "retry_attempt": self.ticker_retry_count.get(ticker, 0),
+                })
+                
+                updated_holdings.append(updated_holding)
+            else:
+                updated_holdings.append(holding)
+        
+        # Update stock data map with retry results
+        stock_data_map.update(retry_stock_data)
+        
+        # Save updated data
+        self.cached_data["holdings_enriched"] = updated_holdings
+        self.cached_data["stocks"] = stock_data_map
+        self.save_cache("holdings_enriched")
+        self.save_cache("stocks")
+        
+        logging.info(f"🛡️ ✅ Backup proxy retry complete: {successful_retries}/{len(failed_tickers)} tickers improved")
+        
+        if successful_retries > 0:
+            retry_success_rate = successful_retries / len(failed_tickers) * 100
+            logging.info(f"🛡️ 📊 Retry success rate: {retry_success_rate:.1f}%")
+        
+        return updated_holdings
 
     def scrape_all(
         self, limit_managers: Optional[int] = None, skip_enrichment: bool = False
