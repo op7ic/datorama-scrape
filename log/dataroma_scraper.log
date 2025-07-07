@@ -1,0 +1,18 @@
+2025-07-07 06:19:22,492 - INFO - 🔄 Fetching fresh proxy list dynamically...
+2025-07-07 06:19:22,773 - INFO - 📥 Retrieved 13804 total proxies from proxifly
+2025-07-07 06:19:22,797 - INFO - ✅ Filtered to 13653 quality proxies
+2025-07-07 06:19:22,801 - INFO - 📋 13653 unique proxies available
+2025-07-07 06:19:22,801 - INFO - 🎯 Randomly selected 50 proxies for load distribution
+2025-07-07 06:19:22,802 - INFO - 🌍 Geographic distribution: : 7, AM: 1, FR: 2, GB: 1, LU: 1, NL: 8, RO: 4, SG: 3, US: 23
+2025-07-07 06:19:22,806 - INFO - ℹ️  Using Yahoo Finance for stock enrichment
+2025-07-07 06:19:22,807 - INFO - 🚀 Starting optimized Dataroma scrape...
+2025-07-07 06:19:22,807 - INFO - ⏱️  Rate limiting: 1.0s for managers/activities, 1.0s for stock data
+2025-07-07 06:19:22,807 - INFO - 📋 Fetching managers list...
+2025-07-07 06:19:23,170 - INFO - ✓ Found 81 managers
+2025-07-07 06:19:23,170 - INFO - 
+============================================================
+2025-07-07 06:19:23,170 - INFO - Processing manager 1/81: Meridian Contrarian Fund
+2025-07-07 06:19:23,170 - INFO - 📊 Fetching holdings for Meridian Contrarian Fund (MVALX)...
+2025-07-07 06:19:23,978 - INFO - ✓ Found 64 holdings for Meridian Contrarian Fund
+2025-07-07 06:19:23,978 - INFO - 📈 Fetching activity for Meridian Contrarian Fund (MVALX)...
+2025-07-07 06:19:25,040 - INFO - Found 10 activity pages, fetching up to 10
