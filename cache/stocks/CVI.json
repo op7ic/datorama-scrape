@@ -1,0 +1,7 @@
+{
+  "ticker": "CVI",
+  "error": "All connection methods failed (tried 0 proxies + direct)",
+  "data_source": "yahoo_finance_error",
+  "last_updated": "2025-07-07T07:54:00.583653",
+  "proxies_attempted": 0
+}

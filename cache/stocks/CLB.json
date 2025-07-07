@@ -1,0 +1,7 @@
+{
+  "ticker": "CLB",
+  "error": "All connection methods failed (tried 4 proxies + direct)",
+  "data_source": "yahoo_finance_error",
+  "last_updated": "2025-07-07T07:53:27.226567",
+  "proxies_attempted": 4
+}

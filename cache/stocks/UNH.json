@@ -1,0 +1,7 @@
+{
+  "ticker": "UNH",
+  "error": "All connection methods failed (tried 3 proxies + direct)",
+  "data_source": "yahoo_finance_error",
+  "last_updated": "2025-07-07T07:53:05.366739",
+  "proxies_attempted": 3
+}

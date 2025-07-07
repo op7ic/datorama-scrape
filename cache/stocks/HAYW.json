@@ -1,0 +1,7 @@
+{
+  "ticker": "HAYW",
+  "error": "All connection methods failed (tried 3 proxies + direct)",
+  "data_source": "yahoo_finance_error",
+  "last_updated": "2025-07-07T07:51:59.174733",
+  "proxies_attempted": 3
+}

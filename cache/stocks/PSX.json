@@ -1,0 +1,7 @@
+{
+  "ticker": "PSX",
+  "error": "All connection methods failed (tried 3 proxies + direct)",
+  "data_source": "yahoo_finance_error",
+  "last_updated": "2025-07-07T07:52:35.891633",
+  "proxies_attempted": 3
+}

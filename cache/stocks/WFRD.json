@@ -1,0 +1,7 @@
+{
+  "ticker": "WFRD",
+  "error": "All connection methods failed (tried 0 proxies + direct)",
+  "data_source": "yahoo_finance_error",
+  "last_updated": "2025-07-07T07:54:09.798906",
+  "proxies_attempted": 0
+}
