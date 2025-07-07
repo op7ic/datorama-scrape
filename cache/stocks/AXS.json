@@ -1,7 +1,0 @@
-{
-  "ticker": "AXS",
-  "error": "All connection methods failed (tried 2 proxies + direct)",
-  "data_source": "yahoo_finance_error",
-  "last_updated": "2025-07-07T07:51:52.945625",
-  "proxies_attempted": 2
-}

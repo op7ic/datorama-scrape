@@ -1,7 +1,0 @@
-{
-  "ticker": "AZO",
-  "error": "All connection methods failed (tried 0 proxies + direct)",
-  "data_source": "yahoo_finance_error",
-  "last_updated": "2025-07-07T07:53:51.058876",
-  "proxies_attempted": 0
-}

@@ -1,7 +1,0 @@
-{
-  "ticker": "BRK.A",
-  "error": "All connection methods failed (tried 0 proxies + direct)",
-  "data_source": "yahoo_finance_error",
-  "last_updated": "2025-07-07T07:54:07.171536",
-  "proxies_attempted": 0
-}

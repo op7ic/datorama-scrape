@@ -1,7 +1,0 @@
-{
-  "ticker": "SHEL",
-  "error": "All connection methods failed (tried 0 proxies + direct)",
-  "data_source": "yahoo_finance_error",
-  "last_updated": "2025-07-07T07:54:09.671176",
-  "proxies_attempted": 0
-}
