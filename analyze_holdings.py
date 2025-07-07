@@ -183,7 +183,14 @@ class HoldingsAnalyzer:
 
                 logging.info(f"Loaded {len(self.holdings_df)} holdings")
         else:
-            raise FileNotFoundError(f"Holdings file not found: {holdings_file}")
+            logging.error(f"Holdings file not found: {holdings_file}")
+            logging.error(
+                "❌ No cached data available! Please run datorama_scrape.py first to download all data."
+            )
+            raise FileNotFoundError(
+                f"Holdings file not found: {holdings_file}\n"
+                "No cached data available! Please run 'python3 datorama_scrape.py' first to download all data."
+            )
 
         # Load history data
         history_file = self.cache_dir / "history.json"
@@ -4191,6 +4198,20 @@ def main() -> None:
     try:
         analyzer.load_data()
         analyzer.generate_all_reports()
+    except FileNotFoundError as e:
+        logging.error(f"❌ {e}")
+        logging.error("=" * 60)
+        logging.error("⚠️  FIRST RUN DETECTED - NO DATA AVAILABLE")
+        logging.error("=" * 60)
+        logging.error("Please run the data scraper first to download all data:")
+        logging.error("  python3 datorama_scrape.py")
+        logging.error("")
+        logging.error("This will download all manager portfolios from Dataroma")
+        logging.error("and enrich stock data using Yahoo Finance.")
+        logging.error("=" * 60)
+        import sys
+
+        sys.exit(1)
     except Exception as e:
         logging.error(f"Analysis failed: {e}")
         raise

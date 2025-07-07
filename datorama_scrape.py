@@ -6,7 +6,7 @@ This module scrapes manager holdings and activities from dataroma.com
 with intelligent caching and fallback mechanisms.
 """
 
-import asyncio
+# import asyncio  # Removed - no longer needed after Playwright removal
 import json
 import logging
 import os
@@ -198,6 +198,39 @@ class OptimizedDataromaScraper:
         ]
         for directory in directories:
             Path(directory).mkdir(parents=True, exist_ok=True)
+
+    def _clean_numeric(self, value: Any) -> float:
+        """Clean numeric values from strings."""
+        if value is None or value == "":
+            return 0.0
+        if isinstance(value, (int, float)):
+            return float(value)
+        # Remove common characters: $, %, commas
+        cleaned = str(value).replace("$", "").replace("%", "").replace(",", "").strip()
+        if cleaned.upper() in ["N/A", "NA", "-", ""]:
+            return 0.0
+        try:
+            return float(cleaned)
+        except (ValueError, TypeError):
+            return 0.0
+
+    def _parse_percentage_from_action(self, action: str) -> float:
+        """Extract percentage change from action string."""
+        if not action:
+            return 0.0
+        
+        # Look for patterns like "Add +25%" or "Reduce -15%"
+        percent_match = re.search(r"([+-]?\d+(?:\.\d+)?)%", action)
+        if percent_match:
+            return float(percent_match.group(1))
+        
+        # For actions without explicit percentage
+        if "Sold Out" in action:
+            return -100.0
+        elif "Buy" in action or "New" in action:
+            return 0.0
+        
+        return 0.0
 
     def fetch_fresh_proxy_list(self) -> None:
         """Fetch fresh proxy list dynamically and randomly select 50-60 proxies."""
@@ -690,65 +723,23 @@ class OptimizedDataromaScraper:
             logging.error(f"❌ Error fetching {url}: {e}")
             return None
 
-    async def fetch_page_with_js(
+    def fetch_page_with_js(
         self, url: str, cache_key: Optional[str] = None
     ) -> Optional[str]:
         """
-        Fetch a page using Playwright for JavaScript rendering.
+        DEPRECATED: Playwright has been removed.
+        Use fetch_page() instead for standard HTTP requests.
 
         Args:
             url: URL to fetch
             cache_key: Optional cache key for storing HTML
 
         Returns:
-            HTML content or None if failed
+            None (this method is deprecated)
         """
-        # Check cache first
-        if cache_key:
-            cached_html = self.get_cached_html(url, cache_key)
-            if cached_html:
-                return cached_html
-
-        try:
-            # Check if Playwright is available
-            if not PLAYWRIGHT_AVAILABLE or async_playwright is None:
-                logging.error("❌ Playwright not available for JavaScript rendering")
-                return None
-
-            # Apply rate limiting to prevent overwhelming the server
-            await self.rate_limit()
-
-            async with async_playwright() as p:
-                browser = await p.chromium.launch(headless=self.headless)
-                page = await browser.new_page()
-
-                # Set viewport and user agent
-                await page.set_viewport_size({"width": 1920, "height": 1080})
-                await page.set_extra_http_headers(self.headers)
-
-                # Navigate with timeout
-                await page.goto(url, wait_until="networkidle", timeout=60000)
-
-                # Wait for content
-                await page.wait_for_timeout(2000)
-
-                # Get HTML
-                html = await page.content()
-
-                await browser.close()
-
-                # Save to cache
-                if cache_key and html:
-                    self.save_html_cache(html, cache_key)
-
-                return html
-
-        except PlaywrightTimeoutError:
-            logging.error(f"⏱️  Timeout loading {url}")
-            return None
-        except Exception as e:
-            logging.error(f"❌ Playwright error for {url}: {e}")
-            return None
+        logging.error("❌ fetch_page_with_js is deprecated - Playwright has been removed")
+        logging.error("Use fetch_page() instead for standard HTTP requests")
+        return None
 
     def parse_managers_list(self, html: str) -> list[dict[str, Any]]:
         """
@@ -1025,18 +1016,28 @@ class OptimizedDataromaScraper:
                     # Parse activity type and percentage
                     activity_text = cells[2].get_text(strip=True)
 
-                    # Determine action type
+                    # Determine action type and extract percentage
                     action_type = None
                     action_class = None
+                    percentage_change = 0.0
+                    
                     if "Add" in activity_text:
                         action_type = "Add"
                         action_class = "increase_position"
+                        # Extract percentage from "Add +25%" format
+                        percent_match = re.search(r"\+([\d.]+)%", activity_text)
+                        if percent_match:
+                            percentage_change = float(percent_match.group(1))
                     elif "Buy" in activity_text:
                         action_type = "Buy"
                         action_class = "new_position"
                     elif "Reduce" in activity_text:
                         action_type = "Reduce"
                         action_class = "decrease_position"
+                        # Extract percentage from "Reduce -15%" format
+                        percent_match = re.search(r"-([\d.]+)%", activity_text)
+                        if percent_match:
+                            percentage_change = -float(percent_match.group(1))
                     elif "Sell" in activity_text:
                         action_type = "Sell"
                         action_class = "exit_position"
@@ -1081,6 +1082,7 @@ class OptimizedDataromaScraper:
                         "shares": abs(shares),  # Make positive
                         "portfolio_percentage": abs(portfolio_percentage),
                         "portfolio_impact": portfolio_impact,
+                        "percentage_change": percentage_change,
                         "timestamp": datetime.now().isoformat(),
                     }
 
@@ -1098,29 +1100,7 @@ class OptimizedDataromaScraper:
 
         return activities
 
-    async def get_manager_activity_async(
-        self, manager: dict[str, Any], page: int = 1
-    ) -> list[dict[str, Any]]:
-        """
-        Get activity history for a manager using async Playwright.
-
-        Args:
-            manager: Manager dictionary
-            page: Page number to fetch
-
-        Returns:
-            List of activity dictionaries
-        """
-        manager_id = manager["id"]
-        url = f"{self.base_url}m_activity.php?m={manager_id}&typ=a&L={page}&o=a"
-        cache_key = f"managers/{manager_id}/activity_page{page}_{int(time.time())}.html"
-
-        html = await self.fetch_page_with_js(url, cache_key)
-        if not html:
-            logging.error(f"❌ Failed to fetch activity page {page} for {manager_id}")
-            return []
-
-        return self.parse_activity(html, manager_id)
+    # Removed async def get_manager_activity_async - Playwright removed
 
     def get_manager_activity(
         self, manager: dict[str, Any], max_pages: int = 20
@@ -1184,63 +1164,32 @@ class OptimizedDataromaScraper:
                     f"fetching up to {pages_to_fetch}"
                 )
 
-                if self.use_playwright_for_stocks and not is_wsl1_environment():
-                    # Use async to fetch remaining pages
-                    async def fetch_all_pages():
-                        tasks = []
-                        for page_num in range(2, pages_to_fetch + 1):
-                            task = self.get_manager_activity_async(manager, page_num)
-                            tasks.append(task)
+                # Always use synchronous fetching (Playwright removed)
+                # Fetch pages synchronously
+                logging.info("Using synchronous fallback for pagination...")
+                for page_num in range(2, pages_to_fetch + 1):
+                    page_url = f"{self.base_url}m_activity.php?m={manager_id}&typ=a&L={page_num}&o=a"
+                    cache_key = f"managers/{manager_id}/activity_page{page_num}_{int(time.time())}.html"
 
-                        return await asyncio.gather(*tasks)
+                    logging.info(
+                        f"Fetching activity page {page_num}/{total_pages} for {manager['name']}"
+                    )
 
-                    # Use the modern approach for getting event loop
                     try:
-                        loop = asyncio.get_running_loop()
-                        # If we have a running loop, we can't use run_until_complete
-                        loop_is_running = True
-                    except RuntimeError:
-                        # No running loop, create a new one
-                        loop = asyncio.new_event_loop()
-                        asyncio.set_event_loop(loop)
-                        loop_is_running = False
-
-                    if loop_is_running:
-                        # If loop is already running (e.g., in Jupyter), create task
-                        additional_activities = []
-                    else:
-                        additional_activities = loop.run_until_complete(
-                            fetch_all_pages()
-                        )
-
-                    for activities in additional_activities:
-                        all_activities.extend(activities)
-                else:
-                    # Synchronous fallback when Playwright is not available
-                    logging.info("Using synchronous fallback for pagination...")
-                    for page_num in range(2, pages_to_fetch + 1):
-                        page_url = f"{self.base_url}m_activity.php?m={manager_id}&typ=a&L={page_num}&o=a"
-                        cache_key = f"managers/{manager_id}/activity_page{page_num}_{int(time.time())}.html"
-
-                        logging.info(
-                            f"Fetching activity page {page_num}/{total_pages} for {manager['name']}"
-                        )
-
-                        try:
-                            page_html = self.fetch_page(page_url, cache_key)
-                            if page_html:
-                                page_activities = self.parse_activity(
-                                    page_html, manager_id
-                                )
-                                all_activities.extend(page_activities)
-                                logging.info(
-                                    f"✓ Found {len(page_activities)} activities on page {page_num}"
-                                )
-                            else:
-                                logging.warning(f"Failed to fetch page {page_num}")
-                        except Exception as e:
-                            logging.error(f"Error fetching page {page_num}: {e}")
-                            continue
+                        page_html = self.fetch_page(page_url, cache_key)
+                        if page_html:
+                            page_activities = self.parse_activity(
+                                page_html, manager_id
+                            )
+                            all_activities.extend(page_activities)
+                            logging.info(
+                                f"✓ Found {len(page_activities)} activities on page {page_num}"
+                            )
+                        else:
+                            logging.warning(f"Failed to fetch page {page_num}")
+                    except Exception as e:
+                        logging.error(f"Error fetching page {page_num}: {e}")
+                        continue
 
         # Update cache
         if manager_id not in self.cached_data["history_by_manager"]:
