@@ -273,7 +273,7 @@ class HoldingsAnalyzer:
             else:
                 logging.warning("No enriched data fields found in stocks data")
 
-    def _extract_percentage_change(self, action: str) -> float | None:
+    def _extract_percentage_change(self, action: str) -> Optional[float]:
         """Extract percentage change from action string.
 
         Examples:

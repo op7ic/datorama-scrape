@@ -10,83 +10,20 @@ import asyncio
 import json
 import logging
 import os
-import platform
 import re
-import subprocess
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from pathlib import Path
 from queue import Queue
-from typing import Any, Optional
+from typing import Any, Optional, Dict, List, Union
 
 import requests
 from bs4 import BeautifulSoup
 
-# Conditional Playwright imports to avoid dependency issues
-try:
-    from playwright.async_api import TimeoutError as PlaywrightTimeoutError
-    from playwright.async_api import async_playwright
-
-    PLAYWRIGHT_AVAILABLE = True
-except ImportError:
-    # Define fallback classes for when Playwright is not available
-    class PlaywrightTimeoutError(Exception):
-        pass
-
-    async_playwright = None
-    PLAYWRIGHT_AVAILABLE = False
-
-
 # Ensure log directory exists
 Path("log").mkdir(exist_ok=True)
-
-
-def is_wsl1_environment() -> bool:
-    """Detect if running in WSL1 which has poor GUI support."""
-    try:
-        if platform.system() != "Linux":
-            return False
-
-        # Check for WSL in kernel version
-        with open("/proc/version") as f:
-            version = f.read().lower()
-            if "microsoft" not in version:
-                return False
-
-        # Check if it's WSL1 by looking for WSL version
-        try:
-            result = subprocess.run(
-                ["wsl.exe", "--status"],
-                capture_output=True,
-                text=True,
-                timeout=5,
-            )
-            if (
-                "version 1" in result.stdout.lower()
-                or "version: 1" in result.stdout.lower()
-            ):
-                return True
-        except Exception:
-            pass
-
-        # WSL1 detection based on kernel version patterns
-        # WSL1 typically has 4.4.x kernels and specific build patterns
-        if "microsoft" in version and "4.4" in version:
-            return True
-
-        # Additional WSL1 patterns (older GCC, specific build patterns)
-        # But exclude WSL2 patterns
-        if "WSL2" in version or "standard-WSL" in version or "5.15" in version:
-            return False
-
-        return "microsoft" in version and any(
-            pattern in version for pattern in ["-microsoft", "gcc version 5.4"]
-        )
-    except Exception:
-        return False
-
 
 # Set up enhanced logging
 logging.basicConfig(
@@ -104,18 +41,13 @@ class OptimizedDataromaScraper:
 
     def __init__(
         self,
-        use_playwright_for_stocks: bool = True,
-        headless: bool = True,
         rate_limit_delay: float = 1.0,
         stock_enrichment_delay: float = 1.0,
     ) -> None:
         """
         Initialize the optimized scraper.
 
-        Args:
-            use_playwright_for_stocks: Whether to use JS rendering for stock pages only
-            headless: Whether to run browser in headless mode
-            rate_limit_delay: Delay in seconds between manager/activity requests (default 1.0s)
+        Args:            rate_limit_delay: Delay in seconds between manager/activity requests (default 1.0s)
             stock_enrichment_delay: Delay in seconds between stock API calls (default 1.0s with proxy rotation)
         """
         self.base_url = "https://www.dataroma.com/m/"
@@ -163,25 +95,6 @@ class OptimizedDataromaScraper:
         # Yahoo Finance is our primary stock data source
         logging.info("ℹ️  Using Yahoo Finance for stock enrichment")
 
-        # Detect WSL1 and disable Playwright if necessary
-        if use_playwright_for_stocks and is_wsl1_environment():
-            logging.warning(
-                "⚠️  WSL1 detected - Playwright may hang. "
-                "Disabling browser fallback for stability."
-            )
-            logging.info(
-                "💡 Using yfinance as primary backup instead of browser automation."
-            )
-            self.use_playwright_for_stocks = False
-        elif use_playwright_for_stocks and not PLAYWRIGHT_AVAILABLE:
-            logging.warning(
-                "⚠️  Playwright not available. " "Disabling browser fallback."
-            )
-            self.use_playwright_for_stocks = False
-        else:
-            self.use_playwright_for_stocks = use_playwright_for_stocks
-
-        self.headless = headless
         self.ensure_directories()
 
         # Progress tracking
@@ -447,7 +360,7 @@ class OptimizedDataromaScraper:
             self.proxy_list = []
             self.use_proxy_rotation = False
 
-    def get_next_proxy(self) -> dict | None:
+    def get_next_proxy(self) -> Optional[dict]:
         """Get the next proxy in rotation, cycling through available proxies."""
         if not self.use_proxy_rotation or not self.proxy_list:
             return None
@@ -507,7 +420,7 @@ class OptimizedDataromaScraper:
             for _ in range(3):  # Each proxy can handle multiple concurrent connections
                 self.proxy_queue.put(proxy)
 
-    def get_thread_proxy(self) -> dict | None:
+    def get_thread_proxy(self) -> Optional[dict]:
         """Get a proxy for a specific thread, with fallback."""
         if not self.use_proxy_rotation or self.proxy_queue.empty():
             return None
@@ -1281,13 +1194,18 @@ class OptimizedDataromaScraper:
 
                         return await asyncio.gather(*tasks)
 
+                    # Use the modern approach for getting event loop
                     try:
-                        loop = asyncio.get_event_loop()
+                        loop = asyncio.get_running_loop()
+                        # If we have a running loop, we can't use run_until_complete
+                        loop_is_running = True
                     except RuntimeError:
+                        # No running loop, create a new one
                         loop = asyncio.new_event_loop()
                         asyncio.set_event_loop(loop)
+                        loop_is_running = False
 
-                    if loop.is_running():
+                    if loop_is_running:
                         # If loop is already running (e.g., in Jupyter), create task
                         additional_activities = []
                     else:
@@ -1377,7 +1295,7 @@ class OptimizedDataromaScraper:
                 f"📊 Yahoo Finance requests: {self.yahoo_total_requests}/{self.yahoo_max_requests_per_run} (using {len(self.proxy_requests_count)} proxies)"
             )
 
-    def _load_persistent_crumb(self) -> str | None:
+    def _load_persistent_crumb(self) -> Optional[str]:
         """Load a persistent crumb from cache (valid for months in 2025)."""
         try:
             if os.path.exists(self.yahoo_crumb_file):
@@ -1464,7 +1382,7 @@ class OptimizedDataromaScraper:
         return self.yahoo_session, self.yahoo_crumb
 
     def get_stock_data_yfinance_threaded(
-        self, ticker: str, proxy: dict | None = None
+        self, ticker: str, proxy: Optional[dict] = None
     ) -> dict[str, Any]:
         """
         Thread-safe Yahoo Finance API call with enhanced proxy backoff and retry mechanism.
@@ -2039,30 +1957,6 @@ class OptimizedDataromaScraper:
         data["last_updated"] = datetime.now().isoformat()
         return data
 
-    async def get_stock_data_browser(self, ticker: str) -> dict[str, Any]:
-        """
-        Get stock data using browser rendering.
-
-        Args:
-            ticker: Stock ticker symbol
-
-        Returns:
-            Dictionary with stock metrics
-        """
-        url = f"{self.base_url}stock.php?ticker={ticker}"
-        cache_key = f"stocks/{ticker}_{int(time.time())}.html"
-
-        html = await self.fetch_page_with_js(url, cache_key)
-        if not html:
-            logging.error(f"❌ Failed to fetch stock page for {ticker}")
-            return {
-                "ticker": ticker,
-                "error": "Failed to fetch",
-                "data_source": "browser_error",
-            }
-
-        return self.parse_stock_page(html, ticker)
-
     def get_stock_data(self, ticker: str) -> dict[str, Any]:
         """
         Get stock data with fallback mechanisms.
@@ -2096,35 +1990,6 @@ class OptimizedDataromaScraper:
             self.yahoo_cache_metadata["stocks_updated_this_week"].append(ticker)
             self.yahoo_cache_metadata["total_requests_this_week"] += 1
             self.save_yahoo_cache_metadata()
-
-        # If Yahoo Finance failed and we have browser support, try that
-        if (
-            data.get("error")
-            and self.use_playwright_for_stocks
-            and not is_wsl1_environment()
-        ):
-            logging.info(f"Trying browser fallback for {ticker}...")
-            try:
-                loop = asyncio.get_event_loop()
-            except RuntimeError:
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-
-            if loop.is_running():
-                # Running in async context
-                browser_data = {
-                    "ticker": ticker,
-                    "error": "Cannot use browser in async context",
-                }
-            else:
-                browser_data = loop.run_until_complete(
-                    self.get_stock_data_browser(ticker)
-                )
-
-            # Merge data, preferring non-error values
-            if not browser_data.get("error"):
-                data.update(browser_data)
-
         # Save to cache
         try:
             with open(cache_file, "w") as f:
@@ -2872,16 +2737,6 @@ def main() -> None:
         help="Limit number of managers to scrape",
     )
     parser.add_argument(
-        "--no-browser",
-        action="store_true",
-        help="Disable browser rendering for stock pages",
-    )
-    parser.add_argument(
-        "--headful",
-        action="store_true",
-        help="Run browser in headful mode (visible)",
-    )
-    parser.add_argument(
         "--skip-enrichment",
         action="store_true",
         help="Skip stock data enrichment",
@@ -2895,10 +2750,7 @@ def main() -> None:
     args = parser.parse_args()
 
     # Initialize scraper
-    scraper = OptimizedDataromaScraper(
-        use_playwright_for_stocks=not args.no_browser,
-        headless=not args.headful,
-    )
+    scraper = OptimizedDataromaScraper()
 
     # Run scraping
     if args.managers:
